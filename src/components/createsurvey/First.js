@@ -1,6 +1,6 @@
 import {useRef, useState} from "react";
 import { useSelector, useDispatch } from "react-redux/";
-import { changetitle,pluscontent} from "../../components/Slice/OnepageSlice";
+import { changetitle,pluscontent,minuscontent} from "../../components/Slice/OnepageSlice";
 import Firstcontent from "./Firstcontent";
 
 
@@ -12,6 +12,10 @@ function First(props) {
 
     const listpush = (e) => {
       dispatch(pluscontent(props.id));
+    };
+
+    const listminus = (e) => {
+      dispatch(minuscontent(props.id));
     };
 
     const passtitle = (e) =>{
@@ -38,6 +42,7 @@ function First(props) {
           ))}
           </div>
           <button className="firstbtn" onClick={listpush} >+</button>
+          <button className="firstbtn" onClick={listminus} >-</button>
           </div>        
       </div>
     );

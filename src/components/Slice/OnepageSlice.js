@@ -1,10 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    Isrc : [
-        '질문을 입력해주세요',
-        '질문을 입력해주세요',
-    ],
+    survey : 
+        {
+            title : '설문 제목',
+            subtitle: '설문 개요'
+        }
+    ,
     Oblist : ['내용', '내용'],
     count: 2,
     contentcount:1,
@@ -37,7 +39,7 @@ export const OnepageSlice = createSlice({
     initialState,
     reducers:{
         increament: (state) =>{
-            state.data.push({id: state.count , type:'객관식'});
+            state.data.push({id: state.count , type:'객관식', title:'',content: [{id: state.count*100, con:''}]});
             state.count+=1;
         },
         changeval: (state, action ) =>{
@@ -63,11 +65,26 @@ export const OnepageSlice = createSlice({
             state.contentcount+=1;
             // console.log(action.payload.id);
         },
+        minuscontent:(state, action) =>{
+            state.data[action.payload].content.pop()
+            state.contentcount-=1;
+            // console.log(action.payload.id);
+        },
 
         changecontent:(state, action) =>{
             state.data[action.payload.id].content[action.payload.idx].con=action.payload.item;
             // console.log(action.payload.id);
         },
+        changesurtitle:(state, action) =>{
+            state.survey.title=action.payload;
+            // console.log(action.payload.id);
+        },
+        changesursubtitle:(state, action) =>{
+            state.survey.subtitle=action.payload;
+            // console.log(action.payload.id);
+        },
+
+        
 
         
 
@@ -78,5 +95,5 @@ export const OnepageSlice = createSlice({
     }
 });
 
-export const {increament, changeval,conincreament, changetype, changetitle, pluscontent, changecontent} = OnepageSlice.actions;
+export const {increament, changeval,conincreament, changetype, changetitle, pluscontent,minuscontent, changecontent,changesurtitle, changesursubtitle} = OnepageSlice.actions;
 export default OnepageSlice.reducer;
