@@ -1,32 +1,43 @@
 import {useRef, useState} from "react";
 import { useSelector, useDispatch } from "react-redux/";
-import { conincreament} from "../../components/Slice/OnepageSlice";
+import { changetitle,pluscontent} from "../../components/Slice/OnepageSlice";
 import Firstcontent from "./Firstcontent";
 
 
 function First(props) {
 
-    
-    const [questionc, setquestionc] = useState();
-    const [question, setquestion] = useState();
-    const Oblist = useSelector((state)=>state.onepage.Oblist);
+    const title = useSelector((state)=>state.onepage.data[props.id].title);
+    const content = useSelector((state)=>state.onepage.data[props.id].content);
     const dispatch = useDispatch();
+
+    const listpush = (e) => {
+      dispatch(pluscontent(props.id));
+    };
+
+    const passtitle = (e) =>{
+      const passs={
+        id: props.id,
+        item : e
+      }
+      dispatch(changetitle(passs));
+
+    };
 
 
     return (
       <div className="first">
        <input  className="firsttitle" type = "text"
-                     value={question}
-                     onChange ={(e)=>setquestion(e.target.value)} />
+                     value={title}
+                     onChange ={(e)=>passtitle(e.target.value)} />
         <div className="firstcon">
         <div className="firstnum" >
-          {Oblist.map((item) =>(
+          {content.map((item,idx) =>(
             <div >
-            <Firstcontent />
+            <Firstcontent id={props.id} idx={idx} />
            </div>
           ))}
           </div>
-          <button className="firstbtn" onClick={()=>dispatch(conincreament())} >+</button>
+          <button className="firstbtn" onClick={listpush} >+</button>
           </div>        
       </div>
     );

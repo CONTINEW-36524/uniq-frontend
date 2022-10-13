@@ -12,7 +12,7 @@ import DropDown from "../../components/createsurvey/dropdown";
 import {useDrag} from 'react-use-gesture';
 
 const Onepage = (props) =>{
-    const Isrc = useSelector((state)=>state.onepage.Isrc);
+    const data = useSelector((state)=>state.onepage.data);
     const count = useSelector((state)=>state.onepage.count);
     const dispatch = useDispatch();
     const [title, settitle] = useState('설문 제목');
@@ -57,9 +57,9 @@ const Onepage = (props) =>{
                  value={subtitle}
                  onChange ={(e)=>setsubtitle(e.target.value)} />
         </div>
-        { Isrc.map((item,index)=>(
+        { data.map((item,index)=>(
             
-                     <DropDown />
+                     <DropDown id={item.id}/>
                   )
              )}
             
