@@ -31,7 +31,7 @@ function App(props) {
             {/* <li/><li/><li/><li/><li/><li/><li/><li/><li/><li/><li/><li/><li/><li/><li/><li/><li/>
           <li/><li/><li/><li/><li/><li/><li/><li/><li/><li/><li/><li/><li/><li/><li/><li/><li/> */}
             <Nav.Link className = "item" href="/login">회원가입/로그인</Nav.Link>
-            <Nav.Link className = "item" href="/myspace">나의공간</Nav.Link>
+            <Nav.Link className = "item" href="/myspace">나의공간</Nav.Link> 
         </Container>
       </Navbar>
 
