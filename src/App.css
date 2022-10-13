@@ -1,0 +1,113 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.btn_image {
+  width: 10vmin;
+  height: 4vmin;
+  margin : 0px;
+  padding : 0px;
+}
+
+.btn{
+  background-color: white;
+  stroke: white;
+  width: 10vmin;
+  height: 4vmin;
+  margin-left: 75px;
+}
+
+.nav{
+  background-color: #fff;
+  color: black;
+
+}
+
+.Navbar-logo{
+  background-image: url('/public/assets/logo.png');
+  background-position: center;
+  background-size: cover;
+  height:30px;
+  color:#fff;
+  justify-self: start;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  vertical-align: middle;
+  width: 100px;
+  /* height: fit-content; */
+
+}
+
+.container{
+  width: 1200px;
+  /* height: auto; */
+  display: flex;
+}
+
+  상단바
+  .menu * {
+    display: inline;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    align-items: center;
+    height: 70px;
+  }
+  
+  .menu {
+    font-size: 20px;
+    font-style: italic;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    font-weight: bold;
+    padding-bottom: 10px;
+    color : black;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  } 
+.Onepagebtn{
+  background-color: white;
+  stroke: white;
+  width: 10vmin;
+  height: 4vmin;
+  margin-left: 75px;
+}
+

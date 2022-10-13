@@ -1,0 +1,56 @@
+.outline-box {
+    display : flex;
+    justify-content: center;
+}
+
+.view {
+    display : flex;
+    justify-content: center;
+}
+
+#banner {
+    margin : 10px;
+}
+
+hr {
+    margin : 10px;
+}
+footer {
+    height : 50px;
+}
+
+.short-answer{
+    display: flex;
+    justify-content : center;
+}
+
+.short-answer1{
+    display: flex;
+    justify-content : center;
+    flex-direction: column;
+    align-items:center;
+    background: #707070;
+    width : 212px;
+    height: 201.8px;
+    margin :10px;
+    padding : 10px;
+    color:white;
+}
+
+.short-answer2{
+    display: flex;
+    justify-content : center;
+    flex-direction: column;
+    align-items:center;
+    background: #FFCBCB;
+    width : 212px;
+    height: 201.8px;
+    margin :10px;
+    padding : 10px;
+}
+
+.text-short-answer {
+    display: flex;
+    width : 174px;
+    height: 112.11px;
+}
