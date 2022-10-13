@@ -5,10 +5,7 @@ import Home from "./pages/Home/Home";
 import About from "./pages/About";
 import Template from "./pages/Template";
 import Login from "./pages/Login";
-import MySpace from "./pages/MySpace";
-import MyUNIQ from "./components/MyUNIQ";
-import FavoriteUNIQ from "./components/FavoriteUNIQ"
-import RecentSurvey from "./components/RecentSurvey"
+import MySpace from "./pages/MySpace/MySpace";
 import NotFound from "./pages/NotFound";
 import Logo from "./assets/logo.png";
 import CreateSurvey from "./pages/CreateSurvey";
