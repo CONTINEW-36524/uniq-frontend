@@ -118,14 +118,25 @@ scroll-snap-align: center;
   border-radius: 10px;
   height: 45px;
 }
-.btn4 {
+/* .btn4 {
   background-color: #FFEC6C;
   border: none;
   border-radius: 10px;
   height: 45px;
+} */
+
+/* kakao login button */
+.kakao_btn{
+  background-image: url('/public/img/kakao_login.png');
+  background-repeat: no-repeat;
+  background-size : cover;
+  margin: 10px auto;
+  border: none;
+  border-radius: 10px;
+  color: transparent;
+  width: 300px;
+  height: 50px;
 }
-
-
 
 /* 페이지 2 */
 .parent {
