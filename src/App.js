@@ -1,5 +1,5 @@
-import React from "react";
-
+import React, {useEffect, useState} from 'react';
+import axios from 'axios';
 import { Link, Route, Routes, BrowserRouter as Router } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import About from "./pages/About";
@@ -21,6 +21,17 @@ import {Button, Container, Nav, Navbar, NavDropdown, Form, Col, Row} from 'react
 
 
 function App(props) {
+  const [hello, setHello] = useState('')
+
+    useEffect(() => {
+        axios.get('/api/hello')
+        .then(response => setHello(response.data))
+        .catch(error => console.log(error))
+    }, []);
+
+
+
+
   return (
     <Router>
       <Navbar className="menu" >
@@ -34,6 +45,12 @@ function App(props) {
             <Nav.Link className = "item" href="/myspace">나의공간</Nav.Link> 
         </Container>
       </Navbar>
+      
+      {/* Spring boot React 연동 확인 테스트용 */}
+      <br></br>
+      <div>
+        (Test) 백엔드에서 가져온 데이터 : {hello}
+      </div>
 
       <main>
         {/* Switch has been replaced with Routes from v6 */}
