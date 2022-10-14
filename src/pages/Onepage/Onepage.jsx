@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from "react-redux/";
 
-import { increament, changeval} from "../../components/Slice/OnepageSlice";
+import { increament, changesurtitle,changesursubtitle} from "../../components/Slice/OnepageSlice";
 import { useState} from 'react';
 import React from "react";
 import { NavLink } from 'react-router-dom';
@@ -12,7 +12,9 @@ import DropDown from "../../components/createsurvey/dropdown";
 import {useDrag} from 'react-use-gesture';
 
 const Onepage = (props) =>{
-    const Isrc = useSelector((state)=>state.onepage.Isrc);
+
+    const survey = useSelector((state)=>state.onepage.survey);
+    const data = useSelector((state)=>state.onepage.data);
     const count = useSelector((state)=>state.onepage.count);
     const dispatch = useDispatch();
     const [title, settitle] = useState('설문 제목');
@@ -48,18 +50,18 @@ const Onepage = (props) =>{
         onclick = {toggleActive} >
       
             <input class="title-header" type = "text"
-                     value={title}
-                     onChange ={(e)=>settitle(e.target.value)} 
+                     value={survey.title}
+                     onChange ={(e)=>changesurtitle(e.target.value)} 
                      
             />
       
         <input  class="title-header" type = "text"
-                 value={subtitle}
-                 onChange ={(e)=>setsubtitle(e.target.value)} />
+                 value={survey.subtitle}
+                 onChange ={(e)=>changesursubtitle(e.target.value)} />
         </div>
-        { Isrc.map((item,index)=>(
+        { data.map((item,index)=>(
             
-                     <DropDown />
+                     <DropDown id={item.id}/>
                   )
              )}
             
