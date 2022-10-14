@@ -42,7 +42,7 @@ const Onepage = (props) =>{
      }
 
     return ( 
-    <div className="container">
+    <div className="container1">
        <div className="craP">
         <div id = "test"
         value = {active}
