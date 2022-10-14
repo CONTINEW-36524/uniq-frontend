@@ -30,16 +30,18 @@ function First(props) {
 
     return (
       <div className="first">
-       <input  className="firsttitle" type = "text"
+       <input  className="firsttitle" type = "text" placeholder='질문을 입력하세요'
                      value={title}
                      onChange ={(e)=>passtitle(e.target.value)} />
         <div className="firstcon">
         <div className="firstnum" >
+          <ul className="firstlist">
           {content.map((item,idx) =>(
             <div >
-            <Firstcontent id={props.id} idx={idx} />
+            <li><Firstcontent id={props.id} idx={idx} /></li>
            </div>
           ))}
+          </ul>
           </div>
           <button className="firstbtn" onClick={listpush} >+</button>
           <button className="firstbtn" onClick={listminus} >-</button>

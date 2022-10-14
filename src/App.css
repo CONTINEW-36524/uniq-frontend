@@ -80,6 +80,14 @@
   display: flex;
 }
 
+.container1{
+  width: 1200px;
+  /* height: auto; */
+  display: flex;
+  justify-content: center;
+}
+
+
   상단바
   .menu * {
     display: inline;

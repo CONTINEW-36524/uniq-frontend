@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link} from "react-router-dom";
 import './modal.css';
+import Onepage from '../../pages/Onepage/Onepage'
+import Card from '../../pages/Card/Card'
 import { useSelector, useDispatch } from "react-redux/";
 import { useState} from 'react'
 
@@ -12,6 +14,7 @@ const AddAsk = (props) => {
     const [sub, setSub] = useState(0)
     const [linear, setLinear] = useState(0)
 
+    const pagetype = useSelector((state)=>state.createSurvey.surveyType); 
     const dispatch = useDispatch();
 
     const changeMult = (e) =>{
@@ -38,6 +41,11 @@ const AddAsk = (props) => {
 
 
 
+    const selecttype = {
+        onepage: "/Onepage",
+        card: "/Card"
+      };
+
   return (
     <div>
 
@@ -52,11 +60,13 @@ const AddAsk = (props) => {
         </div>
 
         <div>
-        <Link to="/Onepage">
+
+        <Link to={selecttype[pagetype]}>
         <button onClick={
-            add
-        }>만들기</button>
-        </Link>
+            add}>만들기</button>
+         </Link>
+        
+
         </div>
     </div>
     );

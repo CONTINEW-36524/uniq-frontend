@@ -4,8 +4,8 @@ const initialState = {
     id : 0,
     survey : 
         {
-            title : '설문 제목',
-            subtitle: '설문 개요'
+            title : '',
+            subtitle: ''
         }
     ,
     Oblist : ['내용', '내용'],
