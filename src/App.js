@@ -11,6 +11,7 @@ import Logo from "./assets/logo.png";
 import CreateSurvey from "./pages/CreateSurvey";
 import Option from "./pages/Option/Option";
 import Onepage from "./pages/Onepage/Onepage";
+import Card from "./pages/Card/Card"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import {Button, Container, Nav, Navbar, NavDropdown, Form, Col, Row} from 'react-bootstrap';
@@ -56,6 +57,7 @@ function App(props) {
           <Route path="/Onepage" element={<Onepage />}/>
           <Route path="/option" element={<Option/>}/>
           <Route path="/login" element={<Login />} />
+          <Route path="/Card" element={<Card />} />
           <Route path="/Onepage" element={<Onepage />}/>
           <Route path="/myspace" element={<MySpace />}>
          
