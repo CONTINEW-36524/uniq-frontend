@@ -69,10 +69,6 @@ const Onepage = (props) =>{
             <button className="w-btn-outline w-btn-yellow-outline" type="button" onClick={nextpage} >생성하기</button>
             <p class="count">{count}</p>
        </div>
-
-            
-        
-
       <section>
       <div className={`${isSidebarOpen ? 'show-sidebar' : 'l-navbar'}`}>
         <nav class="sidenav">

@@ -1,13 +1,30 @@
 import './Home.css'
 import React from "react";
-import { useState } from 'react';
+import { useState} from 'react';
+import { useSelector, useDispatch } from "react-redux/";
 import { Link } from "react-router-dom";
 import CardSlider from '../../components/Card/CardSlider';
+import Modal from "../../components/createsurvey/Modal"
+import SelectType from "../../components/createsurvey/SelectType.js"
+import {exit} from "../../components/Slice/CreateSurveySlice.js"
+import AddAsk from '../../components/createsurvey/AddAsk';
 
 function Home() {
 
   const [goleft,setGoleft] = useState(false);
   const [goRight,setGoRight] = useState(false);
+  const dispatch = useDispatch()
+  const next = useSelector((state)=>state.createSurvey.next);
+  const [modalOpen, setModalOpen] = useState(false);
+
+  const openModal = () => {
+    setModalOpen(true);
+    console.log(next)
+  };
+  const closeModal = () => {
+    setModalOpen(false);
+    dispatch(exit())
+  };
 
 
   return (
@@ -21,8 +38,19 @@ function Home() {
           <h1 class="display-3">UNIQ</h1>
           <br/>
           <p>설문조사 무료 디자인 툴</p> 
-          <Link to="/createSurvey" style={{ textDecoration: 'none' }}>
-          <button class='btn3' > <b> 설문 생성하러 가기 </b></button> </Link>
+
+          <div  style={{ textDecoration: 'none' }}>
+          <button class='btn3' onClick={openModal}> <b> 설문 생성하러 가기 </b></button> <br/>
+          { next ?
+           <Modal open={modalOpen} close={closeModal} header="질문 유형 개수를 선택해주세요.">
+           <AddAsk/>
+           </Modal>:
+          <Modal open={modalOpen} close={closeModal} header="설문이 보여지는 유형을 선택해주세요.">
+          <SelectType />
+          </Modal>
+          }
+        </div>
+
           <Link to="/createSurvey" style={{ textDecoration: 'none' }}>
           <button class='btn4'> <b>로그인하기</b> </button> </Link>
         </div>

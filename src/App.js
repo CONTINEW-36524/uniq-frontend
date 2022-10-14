@@ -44,7 +44,6 @@ function App(props) {
       </Navbar>
       
       {/* Spring boot React 연동 확인 테스트용 */}
-    
 
       <main>
         {/* Switch has been replaced with Routes from v6 */}

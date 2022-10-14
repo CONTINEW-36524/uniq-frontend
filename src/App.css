@@ -112,3 +112,10 @@
     color : black;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   } 
+  .Onepagebtn{
+    background-color: white;
+    stroke: white;
+    width: 10vmin;
+    height: 4vmin;
+    margin-left: 75px;
+  }
