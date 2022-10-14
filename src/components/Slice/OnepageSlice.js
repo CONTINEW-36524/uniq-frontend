@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
+    id : 0,
     survey : 
         {
             title : '',
@@ -40,6 +41,14 @@ export const OnepageSlice = createSlice({
     reducers:{
         increament: (state) =>{
             state.data.push({id: state.count , type:'객관식', title:'',content: [{id: state.count*100, con:''}]});
+            state.count+=1;
+        },
+        increament2: (state) =>{
+            state.data.push({id: state.count , type:'주관식', title:'',content: [{id: state.count*100, con:''}]});
+            state.count+=1;
+        },
+        increament3: (state) =>{
+            state.data.push({id: state.count , type:'선형배율', title:'',content: [{id: state.count*100, con:''}]});
             state.count+=1;
         },
         changeval: (state, action ) =>{
@@ -95,5 +104,5 @@ export const OnepageSlice = createSlice({
     }
 });
 
-export const {increament, changeval,conincreament, changetype, changetitle, pluscontent,minuscontent, changecontent,changesurtitle, changesursubtitle} = OnepageSlice.actions;
+export const {increament, changeval,conincreament, changetype, changetitle, pluscontent,minuscontent, changecontent,changesurtitle, changesursubtitle, increament2, increament3} = OnepageSlice.actions;
 export default OnepageSlice.reducer;
