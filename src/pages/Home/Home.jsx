@@ -26,6 +26,11 @@ function Home() {
     dispatch(exit())
   };
 
+const CLIENT_ID = "637c722561c612190048a1d771920d91";
+const REDIRECT_URI =  "http://localhost:3000/oauth/callback/kakao";
+const KAKAO_AUTH_URL = `https://kauth.kakao.com/oauth/authorize?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=code`;
+
+
   return (
 
     <div class='detail'>
@@ -49,6 +54,7 @@ function Home() {
               </Modal>
             }
           </div>
+          
           {/* kakao login link */}
           <a href={KAKAO_AUTH_URL}>
             <button class='kakao_btn'> </button>
@@ -82,9 +88,8 @@ function Home() {
           <h3 class="intext"> 어쩌구저쩌구3</h3>
         </div>
       </div>
-      
+
     </div>
   );
 }
-export const KAKAO_AUTH_URL = `https://kauth.kakao.com/oauth/authorize?client_id=637c722561c612190048a1d771920d91&redirect_uri=http://localhost:3000/oauth/callback/kakao&response_type=code`;
 export default Home;
