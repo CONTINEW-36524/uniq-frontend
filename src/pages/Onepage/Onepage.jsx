@@ -16,7 +16,6 @@ const Onepage = (props) =>{
     const survey = useSelector((state)=>state.onepage.survey);
     const data = useSelector((state)=>state.onepage.data);
 
-    const id = useSelector((state)=>state.onepage.id)
 
     const count = useSelector((state)=>state.onepage.count);
     const dispatch = useDispatch();
@@ -64,13 +63,7 @@ const Onepage = (props) =>{
         </div>
         <ul className="firstlist">
         { data.map((item,index)=>(
-<<<<<<< HEAD
-                    <li> <DropDown id={item.id}/></li>
-                    
-=======
-            
-                    <li> <DropDown id={item.id} /></li>
->>>>>>> HM
+                    <li> <DropDown id={item.id}/></li>    
                   )
 
              )

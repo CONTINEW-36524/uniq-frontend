@@ -12,7 +12,7 @@ const initialState = {
     Oblist : ['내용', '내용'],
     count: 2,
     contentcount:1,
-    pagecount:0,
+    pagecount:1,
 
     data :[
         { 
@@ -24,7 +24,15 @@ const initialState = {
                 con:''
             }]
         },
-        
+        { 
+            id: uuid(), 
+            type : '객관식',
+            title:'' ,
+            content:[{
+                id: 0,
+                con:''
+            }]
+        },
     ]
 }
 
@@ -62,22 +70,26 @@ export const OnepageSlice = createSlice({
         },
 
         changetitle:(state, action) =>{
-            state.data[action.payload.id].title=action.payload.item;
+            const index = state.data.findIndex((data) => data.id == action.payload.id)
+            state.data[index].title=action.payload.item;
             // console.log(action.payload.id);
         },
         pluscontent:(state, action) =>{
-            state.data[action.payload].content.push({id:(action.payload*100)+state.contentcount, con:''})
+            const index = state.data.findIndex((data) => data.id == action.payload)
+            state.data[index].content.push({id:(index+100)+state.contentcount, con:''})
             state.contentcount+=1;
             // console.log(action.payload.id);
         },
         minuscontent:(state, action) =>{
-            state.data[action.payload].content.pop()
+            const index = state.data.findIndex((data) => data.id == action.payload)
+            state.data[index].content.pop()
             state.contentcount-=1;
             // console.log(action.payload.id);
         },
 
         changecontent:(state, action) =>{
-            state.data[action.payload.id].content[action.payload.idx].con=action.payload.item;
+            const index = state.data.findIndex((data) => data.id == action.payload.id)
+            state.data[index].content[action.payload.idx].con=action.payload.item;
             // console.log(action.payload.id);
         },
         changesurtitle:(state, action) =>{
@@ -89,19 +101,21 @@ export const OnepageSlice = createSlice({
             // console.log(action.payload.id);
         },
         deletecontent:(state, action) =>{
+            if(state.count>1){
             const id = action.payload;
             const temp = state.data.filter((data) => data.id != id);
             console.log(id)
             state.data = temp
             state.count-=1
-            
+            if(state.count==state.pagecount)state.pagecount-=1;
+            }
         },
 
         pluscardpage:(state) =>{
             state.pagecount+=1;
             if(state.pagecount===state.count)
             {
-                state.data.push({id: state.count , type:'객관식', title:'',content: [{id: state.count*100, con:''}]});
+                state.data.push({id: uuid() , type:'객관식', title:'',content: [{id: state.count*100, con:''}]});
                 state.count+=1
             }
         },
@@ -110,6 +124,7 @@ export const OnepageSlice = createSlice({
             if(state.pagecount>0){
             state.pagecount-=1;
             }
+
         },
 
         
