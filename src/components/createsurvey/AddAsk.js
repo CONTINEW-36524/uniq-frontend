@@ -57,7 +57,6 @@ const AddAsk = (props) => {
             <input type = "number" min='0' onChange = {changeSub}/>주관식
             </div>
             <div><input type = "number" min='0' onChange = {changeLine}/>선형배율</div>
-        
         </div>
 
         <div>
