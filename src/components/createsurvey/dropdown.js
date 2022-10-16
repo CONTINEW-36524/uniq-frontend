@@ -44,6 +44,8 @@ const DropDown = (props) => {
    
   };
 
+ 
+
 
   // console.log({isOpen});
   // console.log({dropDownRef});
@@ -62,14 +64,13 @@ const DropDown = (props) => {
         버튼
       </button>
      
-      
       <ul  className={classNames(styles.menu, {[styles.active]:isOpen})}>
-      { question.map((item)=>(
-                 <li><button className={classNames(styles.list)} onClick={() =>{ pass(item)}}>{item}</button></li>
-                 )
-             )}
-    
-      </ul>
+        { question.map((item)=>(
+                  <li><button className={classNames(styles.list)} onClick={() =>{ pass(item)}}>{item}</button></li>
+                  )
+              )}
+      
+        </ul>
       </div>
 
       

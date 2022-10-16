@@ -62,7 +62,7 @@ const Onepage = (props) =>{
         <ul className="firstlist">
         { data.map((item,index)=>(
             
-                    <li> <DropDown id={item.id}/></li>
+                    <li> <DropDown id={item.id} /></li>
                   )
              )}
         </ul>

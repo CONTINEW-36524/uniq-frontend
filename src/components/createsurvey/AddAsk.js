@@ -10,9 +10,9 @@ import { increament, increament2, increament3} from "../../components/Slice/Onep
 
 
 const AddAsk = (props) => {
-    const [mult, setMult] = useState(1)
-    const [sub, setSub] = useState(1)
-    const [linear, setLinear] = useState(1)
+    const [mult, setMult] = useState(0)
+    const [sub, setSub] = useState(0)
+    const [linear, setLinear] = useState(0)
 
     const pagetype = useSelector((state)=>state.createSurvey.surveyType); 
     const dispatch = useDispatch();
