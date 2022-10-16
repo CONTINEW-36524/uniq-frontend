@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import uuid from "react-uuid" 
 
 const initialState = {
     id : 0,
@@ -14,25 +15,16 @@ const initialState = {
     pagecount:0,
 
     data :[
-        {
-            id: 0,
+        { 
+            id: uuid(), 
             type : '객관식',
             title:'' ,
             content:[{
                 id: 0,
                 con:''
             }]
-
         },
-        {
-            id: 1,
-            type : '객관식',
-            title:'' ,
-            content:[{
-                id: 100,
-                con:''
-            }]
-        }
+        
     ]
 }
 
@@ -41,15 +33,16 @@ export const OnepageSlice = createSlice({
     initialState,
     reducers:{
         increament: (state) =>{
-            state.data.push({id: state.count , type:'객관식', title:'',content: [{id: state.count*100, con:''}]});
+            state.data.push({id:uuid() , type:'객관식', title:'',content: [{id: state.count*100, con:''}]});
             state.count+=1;
+            // console.log("타입 머에여" + state.data[state.count].type)
         },
         increament2: (state) =>{
-            state.data.push({id: state.count , type:'주관식', title:'',content: [{id: state.count*100, con:''}]});
+            state.data.push({id: uuid() , type:'주관식', title:'',content: [{id: state.count*100, con:''}]});
             state.count+=1;
         },
         increament3: (state) =>{
-            state.data.push({id: state.count , type:'선형배율', title:'',content: [{id: state.count*100, con:''}]});
+            state.data.push({id: uuid() , type:'선형배율', title:'',content: [{id: state.count*100, con:''}]});
             state.count+=1;
         },
         changeval: (state, action ) =>{
@@ -62,8 +55,10 @@ export const OnepageSlice = createSlice({
         },
 
         changetype:(state, action) =>{
-            state.data[action.payload.id].type=action.payload.item;
-            // console.log(action.payload.id);
+            const index = state.data.findIndex((data) => data.id == action.payload.id)
+            console.log(action.payload.id)
+            state.data[index].type=action.payload.item;
+            console.log(index);
         },
 
         changetitle:(state, action) =>{
@@ -93,6 +88,14 @@ export const OnepageSlice = createSlice({
             state.survey.subtitle=action.payload;
             // console.log(action.payload.id);
         },
+        deletecontent:(state, action) =>{
+            const id = action.payload;
+            const temp = state.data.filter((data) => data.id != id);
+            console.log(id)
+            state.data = temp
+            state.count-=1
+            
+        },
 
         pluscardpage:(state) =>{
             state.pagecount+=1;
@@ -120,5 +123,6 @@ export const OnepageSlice = createSlice({
     }
 });
 
-export const {increament, changeval,conincreament, changetype, changetitle, pluscontent,minuscontent, changecontent,changesurtitle, changesursubtitle, increament2, increament3, pluscardpage,minuscardpage} = OnepageSlice.actions;
+export const {increament, changeval,conincreament, changetype, changetitle, pluscontent,minuscontent, changecontent,changesurtitle, changesursubtitle, increament2, increament3, pluscardpage,minuscardpage, deletecontent} = OnepageSlice.actions;
+
 export default OnepageSlice.reducer;
