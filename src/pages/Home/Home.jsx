@@ -8,6 +8,7 @@ import Modal from "../../components/createsurvey/Modal"
 import SelectType from "../../components/createsurvey/SelectType.js"
 import { exit } from "../../components/Slice/CreateSurveySlice.js"
 import AddAsk from '../../components/createsurvey/AddAsk';
+import KakaoLogin from '../KakaoLogin';
 
 function Home() {
 
@@ -25,11 +26,6 @@ function Home() {
     setModalOpen(false);
     dispatch(exit())
   };
-
-const CLIENT_ID = "637c722561c612190048a1d771920d91";
-const REDIRECT_URI =  "http://localhost:3000/oauth/callback/kakao";
-const KAKAO_AUTH_URL = `https://kauth.kakao.com/oauth/authorize?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=code`;
-
 
   return (
 
@@ -55,10 +51,7 @@ const KAKAO_AUTH_URL = `https://kauth.kakao.com/oauth/authorize?client_id=${CLIE
             }
           </div>
           
-          {/* kakao login link */}
-          <a href={KAKAO_AUTH_URL}>
-            <button class='kakao_btn'> </button>
-          </a>
+          <KakaoLogin/>
 
         </div>
       </div>

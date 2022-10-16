@@ -11,6 +11,7 @@ import Logo from "./assets/logo.png";
 import CreateSurvey from "./pages/CreateSurvey";
 import Option from "./pages/Option/Option";
 import Onepage from "./pages/Onepage/Onepage";
+import KakaoLogin from './pages/KakaoLogin';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import {Button, Container, Nav, Navbar, NavDropdown, Form, Col, Row} from 'react-bootstrap';
@@ -58,6 +59,7 @@ function App(props) {
           <Route path="/option" element={<Option/>}/>
           <Route path="/login" element={<Login />} />
           <Route path="/Onepage" element={<Onepage />}/>
+          <Route path="/oauth/callback/kakao" element={<KakaoLogin />}/>
           <Route path="/myspace" element={<MySpace />}>
          
             {/* child선언
