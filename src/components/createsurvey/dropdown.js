@@ -69,7 +69,7 @@ const DropDown = (props) => {
       <button className={"thirdbtn" + (btnclick ? " thirdactive" : "")} type = "text"
                  onClick={(toggleActive)}>필수</button>
       <div>
-      <button className="change" ref={dropDownRef}
+      <button value={props.id} className="change" ref={dropDownRef}
         onClick={() =>setIsOpen(!isOpen)}>
         질문유형
       </button>

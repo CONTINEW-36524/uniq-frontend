@@ -6,11 +6,8 @@ import Firstcontent from "./Firstcontent";
 
 function First(props) {
 
-    // const title = useSelector((state)=>state.onepage.data[props.id].title);
-    // const content = useSelector((state)=>state.onepage.data[props.id].content);
-
     const data = useSelector((state)=>state.onepage.data);
-
+    const temp= data.filter((data)=>data.id===props.id)
     const dispatch = useDispatch();
 
     const listpush = (e) => {
@@ -35,12 +32,12 @@ function First(props) {
     return (
       <div className="first">
        <input  className="firsttitle" type = "text" placeholder='질문을 입력하세요'
-                     value={title}
+                     value={temp[0].title}
                      onChange ={(e)=>passtitle(e.target.value)} />
         <div className="firstcon">
         <div className="firstnum" >
           <ul className="firstlist">
-          {content.map((item,idx) =>(
+          {temp[0].content.map((item,idx) =>(
             <div >
             <li><Firstcontent id={props.id} idx={idx} /></li>
            </div>

@@ -12,6 +12,7 @@ const initialState = {
     Oblist : ['내용', '내용'],
     count: 2,
     contentcount:1,
+    pagecount:0,
 
     data :[
         { 
@@ -95,6 +96,22 @@ export const OnepageSlice = createSlice({
             state.count-=1
             
         },
+
+        pluscardpage:(state) =>{
+            state.pagecount+=1;
+            if(state.pagecount===state.count)
+            {
+                state.data.push({id: state.count , type:'객관식', title:'',content: [{id: state.count*100, con:''}]});
+                state.count+=1
+            }
+        },
+
+        minuscardpage:(state) =>{
+            if(state.pagecount>0){
+            state.pagecount-=1;
+            }
+        },
+
         
 
         
@@ -106,6 +123,6 @@ export const OnepageSlice = createSlice({
     }
 });
 
-export const {increament, changeval,conincreament, changetype, changetitle, pluscontent,minuscontent,
-     changecontent,changesurtitle, changesursubtitle, increament2, increament3, deletecontent} = OnepageSlice.actions;
+export const {increament, changeval,conincreament, changetype, changetitle, pluscontent,minuscontent, changecontent,changesurtitle, changesursubtitle, increament2, increament3, pluscardpage,minuscardpage, deletecontent} = OnepageSlice.actions;
+
 export default OnepageSlice.reducer;
