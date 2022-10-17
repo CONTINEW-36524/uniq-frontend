@@ -100,8 +100,11 @@ animation : smoothAppear 1s
   background-size: contain;
   background-position: right center;
   color: black;
-  text-shadow: gray 0.3em 0.3em 0.3em;
-  font-family: 'GmarketSansMedium';
+  /* text-shadow: gray 0.3em 0.3em 0.3em; */
+  font-family: 'SDSamliphopangche_Outline';
+}
+.display-3{
+  color : green;
 }
 .jumbotron p {
   font-size: 25px;
@@ -200,6 +203,20 @@ font-size: 25px;
 
 }
 
+
+@font-face {
+  font-family: 'S-CoreDream-3Light';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SBAggroB';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 
 @keyframes fadein{
   0% {
