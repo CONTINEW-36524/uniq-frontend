@@ -1,31 +1,114 @@
-button.btn1 {
-    position: relative;
-    top: 130px;
-    left : 25px;
-  }
-  button.btn2 {
-    position: relative;
-    top: 200px;
-    left : -25px;
-  }
-  button.btn5 {
-    position: relative;
-    top: 85px;
-    left : 170px;
-    opacity:0;
-  }
-  button.btn6 {
-    position: relative;
-    top: 100px;
-    left : 200px;
-  }
-  input.title1{
-    position: relative;
-    top: 85px;
-    left : 70px;
-    margin: 80px;
+.container {
+  width: 70%;
+  align-items: flex-start;
+  overflow: scroll;
+  -ms-overflow-style: none;
+}
+/* 스크롤바 숨기기 */
+.container::-webkit-scrollbar { 
+  display: none;
+  width: 0 !important;
+}
 
-  }
+.containerHeader {
+  width: 70%;
+  height: fit-content;
+  background-color: #b6cefc;
+  padding: 1%;
+  display: grid;
+  position: absolute;
+}
+.form {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.containerContent {
+  width: 70%;
+  height: fit-content;
+  background-color: #b6cefc;
+  padding: 1%;
+  display: inline-block; 
+  position: absolute;
+  margin-top: 260px;
+}
+
+.containerFooter {
+  width: 100.1%;
+  height: 200px;
+  background-color: #b6cefc;
+  padding: 2%;
+  display: inline-block; 
+  
+  /* 어딘가에서 css가 겹쳐서 그런가
+  footer만 옆으로 살짝 이동해 있길래 강제로 -로 이동*/
+  left:-0.5px;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+  
+
+/* 질문 추가 버튼 */
+.plusBtn {
+  position: relative;
+  top: -150px; 
+  left: 70px;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  box-shadow: gray 0.2em 0.2em 0.2em;
+  font-size: 30px;
+}
+
+
+/* 노란색 생성하기 버튼 */
+.w-btn-yellow-outline {
+  border: 3px solid #fce205;
+  color: #6e6e6e;
+  top: 20px;
+  left: 500px;
+}
+.w-btn-outline {
+  position: relative;
+  padding: 15px 30px;
+  border-radius: 15px;
+  font-family: "paybooc-Light", sans-serif;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.25s;
+}
+.w-btn-outline:hover {
+  transform: scale(1.1);
+  background-color: #FFEC6C;
+}
+.w-btn-outline:active {
+  background-color: #fce205;
+  color: #6e6e6e;
+}
+
+
+/* 페이지 번호 나타내는 p태그 */
+.count{
+  position: relative;
+  font-size: 18px;
+  top: 20px;
+  left: -100px;
+}
+
+
+
+
+
+
+
+input.title1{
+  position: relative;
+  top: 85px;
+  left : 70px;
+  margin: 80px;
+}
 
 input{
   box-shadow: 0 5px 18px -7px rgba(0,0,0,1);
@@ -48,28 +131,19 @@ input{
   input.title4{
     width: auto;
     margin-top: 10px;
-    height: 20px;
+    height: 10px;
     margin-bottom: 10px;
     margin-right: 20px;
-    font-size: 15px;
-    border-radius: 15px;
-    outline: none;
-    padding-left: 10px;
+    border: solid 2px
 
   }
 
-  .count{
-    position: relative;
-    font-size: 18px;
-    top: 130px;
-    left : 200px;
-  }
 
- .layout{
 
-display: flex;
+.layout{
+  display: flex;
+}
 
- }
 
   /* VARIABLES CSS */
 :root {
@@ -263,54 +337,20 @@ a {
   transition: 1s;
   }
   
-  .hide-menu{
+.hide-menu{
   width: 376px;
   height: 500px;
   position: absolute;
   left: -376px;
   transition: 1s;
-  }
-
-.craP{
-  width: 600px;
-  overflow: hidden;
-  height: auto;
-  background-color: #b6cefc;
-  padding-bottom: 20%;
-  margin-bottom: 3% ;
-  box-shadow: 0 5px 18px -7px rgba(0,0,0,1);
-  /* align-content: center; */
 }
 
 
-.w-btn-yellow-outline {
-  border: 3px solid #fce205;
-  color: #6e6e6e;
-}
-
-.w-btn-outline {
-  position: relative;
-  padding: 15px 30px;
-  border-radius: 15px;
-  font-family: "paybooc-Light", sans-serif;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-  text-decoration: none;
-  font-weight: 600;
-  transition: 0.25s;
-  position: relative;
-  top: 170px;
-  left : 300px;
-}
-.w-btn-outline:active {
-  background-color: #fce205;
-  color: #6e6e6e;
-  transform: scale(1.5);
-}
-button {
+/* button {
   margin: 20px;
   padding: 0;
   box-sizing: border-box;
-}
+} */
 
 .title{
   display: flex;
@@ -329,26 +369,21 @@ button {
   display: flex;
   justify-content: center;
   align-content: center;
-  margin : 100px;
+  margin : 20px;
   
 }
 .first{
   display: flex;
   flex-direction: column;
   align-content: center;
-  margin-right: 40px;
-
-  
+  width: 550px;
 }
 
 .firsttitle{
-    width: 300px;
-    height: 60px;
-    margin-bottom: 20px;
-    font-size: 20px;
-    border-radius: 15px;
-    outline: none;
-    padding-left: 10px;
+  height: 40px;
+  width: 450px;
+  margin: 10px;
+  margin-bottom: 5px;
 }
 .change{
   height: 30px;
@@ -356,43 +391,66 @@ button {
 
 .firstcontent{
   display: flex;
+  width: 300px;
+  height: 45px;
 }
 
 .firstnum{
   width: 300px;
-  
+  margin: 8px;
+  margin-right: 72px;
   align-content: center;
 }
 
 .firstcon{
   display: flex;
-  background-color: #fff;
+  width: 500px;
   height: auto;
 }
 .firstbtn{
-  width:20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
+  margin-top: 12px;
+  margin-left: 8px;
+}
+
+.second{
+  width: 550px;
+}
+.secondtitle{ 
+  height: 40px;
+  width: 450px;
+  margin: 10px;
 }
 
 .secondcon{
-  width: 300px;
-  height : 200px;
+  margin-left: 12px;
+  width: 85%;
+  height: 6.25em;
+  resize: none;
 }
 
+.thirdCon {
+  padding: 1%;
+  margin-left: 10px;
+  width: 550px;
+}
 .third{
-  display: flex;
+  width:550px
+  
 }
-
+.thirdtitle {
+  height: 40px;
+  width: 450px;
+  margin: 10px;
+}
 .thirdbtn{
-  width:65px;
+  width: 65px;
   height: 50px;
+  margin: 1px;
 }
 
 .thirdactive{
   background-color: lightblue;
-}
-
-.firstlist{
-  list-style-type : decimal ;
 }
 
