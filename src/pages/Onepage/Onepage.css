@@ -32,6 +32,11 @@
   margin-top: 260px;
   animation: smoothApper 1s;
 }
+
+.fadein{
+  animation : smoothAppear 1s
+}
+
 @keyframes smoothAppear {
   from {
     opacity: 0;
@@ -42,6 +47,7 @@
     transform: translateY(0);
   }
 }
+
 .containerFooter {
   width: 100.1%;
   height: 200px;

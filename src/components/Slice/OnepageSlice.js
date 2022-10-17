@@ -130,7 +130,18 @@ export const OnepageSlice = createSlice({
 
         },
 
-        
+        deleteinit(state, action){
+            if (action.payload = 0)
+            {
+                state.count=0
+                state.data.pop()
+                state.data.pop()
+            }
+            else{
+                state.count=1
+                state.data.pop()
+            }
+        }
 
         
 
@@ -141,6 +152,6 @@ export const OnepageSlice = createSlice({
     }
 });
 
-export const {increament, changeval,conincreament, changetype, changetitle, pluscontent,minuscontent, changecontent,changesurtitle, changesursubtitle, increament2, increament3, pluscardpage,minuscardpage, deletecontent} = OnepageSlice.actions;
+export const {increament, changeval,conincreament, changetype, changetitle, pluscontent,minuscontent, changecontent,changesurtitle, changesursubtitle, increament2, increament3, pluscardpage,minuscardpage, deletecontent, deleteinit} = OnepageSlice.actions;
 
 export default OnepageSlice.reducer;

@@ -73,7 +73,7 @@ const Onepage = (props) =>{
             </div>
             <div className="containerContent">
                     {pagecount+1}
-                    <div className="fadein" key={pagecount+1}>
+                    <div className="fadein" key={data[pagecount].id}>
                     <DropDown  id={data[pagecount].id}/>
                     </div> 
        
