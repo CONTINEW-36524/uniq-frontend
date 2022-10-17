@@ -41,6 +41,7 @@ const AddAsk = (props) => {
 
 
 
+
     const selecttype = {
         onepage: "/Onepage",
         card: "/Card"

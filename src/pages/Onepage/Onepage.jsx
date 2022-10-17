@@ -34,7 +34,7 @@ const Onepage = (props) =>{
         })
     }
     const nextpage = () => {
-        alert('Next Page')
+       alert('Next Page')
     }
     const toggleSidebar = () =>{
       closeSidebar(isSidebarOpen => !isSidebarOpen)
