@@ -131,11 +131,12 @@ export const OnepageSlice = createSlice({
         },
 
         deleteinit(state, action){
-            if (action.payload = 0)
+            if (action.payload == 0)
             {
                 state.count=0
                 state.data.pop()
                 state.data.pop()
+                state.pagecount=0
             }
             else{
                 state.count=1
