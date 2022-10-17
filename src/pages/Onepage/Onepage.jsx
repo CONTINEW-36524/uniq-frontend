@@ -123,7 +123,7 @@ const Onepage = (props) =>{
                         <div>
                             <div class="nav__brand">
                                 <FcList color="white" size="50" role="button" onClick={()=>toggleSidebar()}/>
-                                <a class="nav__logo">커스터마이징</a>
+                                {/* <a class="nav__logo">커스터마이징</a> */}
                             </div>
                             <ul >
                                 <li>서식 옵션</li>

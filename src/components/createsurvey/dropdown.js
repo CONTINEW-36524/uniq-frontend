@@ -10,7 +10,7 @@ import First from "./First"
 import Second from "./Second"
 import Third from "./Third";
 
-
+import { FcList } from "react-icons/fc";
 import uuid from "react-uuid";
 import Toggle from '../../components/createsurvey/Toggle';
 
@@ -62,7 +62,10 @@ const DropDown = (props) => {
   // console.log({isOpen});
   // console.log({dropDownRef});
 
-
+  const [isSidebarOpen2, closeSidebar2] = useState(false);
+  const toggleSidebar2 = () =>{
+    closeSidebar2(isSidebarOpen => !isSidebarOpen)
+  }
   
   return (
 
@@ -70,22 +73,24 @@ const DropDown = (props) => {
 
       <content>{selectCom()}</content>
 
-        <div className={styles.side}>
+      <div className={styles.side}>
         <Toggle/>
-        
+          
         <button className={styles.change} ref={dropDownRef}
           onClick={() =>setIsOpen(!isOpen)}>
-          ▼
+            ▼
         </button>
-        <button className={styles.option}>☰</button>
 
-      <button value={props.id} className={styles.delete} onClick={handleDelete}>x</button>
-      <ul  className={classNames(styles.menu, {[styles.active]:isOpen})}>
-      { question.map((item)=>(
-                 <li><button className={classNames(styles.list)} onClick={() =>{ pass(item)}}>{item}</button></li>)
-      )}
-    
-      </ul>
+        <button className={styles.option} onClick={()=>toggleSidebar2()}>☰</button>
+          
+        <button value={props.id} className={styles.delete} onClick={handleDelete}>X</button>
+        
+        <ul  className={classNames(styles.menu, {[styles.active]:isOpen})}>
+        { question.map((item)=>(
+          <li><button className={classNames(styles.list)} onClick={() =>{ pass(item)}}>{item}</button></li>)
+        )}
+        </ul>
+
       </div>
 
       
