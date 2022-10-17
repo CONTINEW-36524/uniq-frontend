@@ -3,6 +3,7 @@
     height: 100%;
 }
 
+/* Template top */
 .tptop {
     position: relative;
     display: flex;
@@ -13,11 +14,13 @@
     width: 940px;
     margin-right: auto;
     margin-left: auto;
-
+    margin-bottom: 5%;
 }
+
 .tptopcontent {
     margin-top: 5
 }
+
 .tptopleft {
     position: relative;
     height: 400px;
@@ -34,33 +37,6 @@
     background-image: url('../../assets/templateImage.png');
     background-repeat: no-repeat;
     background-size: 470px 400px;
-}
-
-.tpcategory {
-    display: flex;
-    position: relative;
-    border-radius: 15px;
-    vertical-align: middle;
-    background-color: #DAE6FE;
-    width: 50%;
-    height: 60px;
-    margin-right: auto;
-    margin-left: auto;
-    padding-left: 50px;
-}
-
-.tpbuttom {
-    position: relative;
-    display: grid;
-    text-align: center;
-    align-items: center;
-    place-items: center;
-    width: 940px;
-    justify-content: center;
-    gap: 20px;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    margin-right: auto;
-    margin-left: auto;
 }
 
 .tpcreate {
@@ -90,6 +66,26 @@
     box-shadow: 0 7px 28px rgba(0, 0, 0, 0.25), 0 5px 5px rgba(0, 0, 0, 0.22);
 }
 
+.tplogin:hover,
+.tpcreate:hover {
+    transform: translateY(-5px);
+}
+
+/* Template middle, bottom */
+/* .tpbottom {
+    position: relative;
+    display: grid;
+    text-align: center;
+    align-items: center;
+    place-items: center;
+    width: 50%;
+    justify-content: center;
+    gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin-right: auto;
+    margin-left: auto;
+}
+
 .tptt {
     border: 1px dashed;
     width: 50%;
@@ -108,7 +104,7 @@
 
 #tpbox {
     border: solid 2px;
-    height: 215px;
+    height: 100%;
     margin-top: 5%;
 }
 
@@ -117,26 +113,18 @@
     transform: translateY(-10px);
 }
 
-.tpplus {
-    position: relative;
-    border-radius: 50%;
-    margin-top: 40%;
-    width: 40px;
-    height: 40px;
-}
-
 .tpboximg {
     background: url('../../assets/showingImage.png');
     background-size: contain;
-    width: 150px;
-    height: 150px;
+    width: 110px;
+    height: 100px;
 }
 
 .tphead {
-    font-size: 20px;
+    font-size: 15px;
     margin-top: 5px;
 }
 
 .tpboxcontent {
-    font-size: 12px;
-}
+    font-size: 10px;
+} */

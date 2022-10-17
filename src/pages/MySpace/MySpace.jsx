@@ -67,7 +67,7 @@ function MySpace(props) {
       </div>
 
       <hr class="mstt" />
-      <div class="msbuttom">
+      <div class="msbottom">
         <div id="msbox">
           <div class="msboximg">
             <button class="msplus" onClick={openModal}>+</button>

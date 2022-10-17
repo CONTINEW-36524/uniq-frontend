@@ -4,6 +4,14 @@
 
 }
 
+.mstt {
+    border: 1px dashed;
+    width: 50%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* MySpace Top */
 .mstop {
     text-align: center;
     align-items: center;
@@ -17,6 +25,18 @@
     margin-left: auto;
 }
 
+.mscreate {
+    border-radius: 15px;
+    border: solid 0.5px;
+    cursor: pointer;
+    margin: auto;
+    margin-top: 25%;
+    width: 150px;
+    height: 40px;
+    background-color: white;
+}
+
+/* MySpace Middle */
 .msmiddle {
     padding-left: 20px;
     position: relative;
@@ -25,34 +45,6 @@
     background-color: #DAE6FE;
     width: 50%;
     height: 60px;
-    margin-right: auto;
-    margin-left: auto;
-}
-
-.mscategory {
-    display: flex;
-    position: relative;
-    border-radius: 15px;
-    vertical-align: middle;
-    background-color: #DAE6FE;
-    width: 50%;
-    height: 60px;
-    margin-right: auto;
-    margin-left: auto;
-    padding-left: 50px;
-}
-
-.msbuttom {
-
-    position: relative;
-    display: grid;
-    text-align: center;
-    align-items: center;
-    place-items: center;
-    width: 940px;
-    justify-content: center;
-    gap: 20px;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
     margin-right: auto;
     margin-left: auto;
 }
@@ -69,15 +61,17 @@
     background-color: white;
 }
 
-.mscreate {
+.mscategory {
+    display: flex;
+    position: relative;
     border-radius: 15px;
-    border: solid 0.5px;
-    cursor: pointer;
-    margin: auto;
-    margin-top: 25%;
-    width: 150px;
-    height: 40px;
-    background-color: white;
+    vertical-align: middle;
+    background-color: #DAE6FE;
+    width: 50%;
+    height: 60px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 50px;
 }
 
 .msatext {
@@ -102,9 +96,18 @@
     width: 80px;
 }
 
-.mstt {
-    border: 1px dashed;
-    width: 50%;
+/* MySpace Bottom */
+.msbottom {
+
+    position: relative;
+    display: grid;
+    text-align: center;
+    align-items: center;
+    place-items: center;
+    width: 940px;
+    justify-content: center;
+    gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     margin-right: auto;
     margin-left: auto;
 }
@@ -136,7 +139,7 @@
 
 .mshead {
     font-size: 20px;
-    margin-top:5px;
+    margin-top: 5px;
 }
 
 .msboxcontent {
