@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Link, Route, Routes, BrowserRouter as Router } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import About from "./pages/About";
-import Template from "./pages/Template";
+import Template from "./pages/Template/Template";
 import Login from "./pages/Login";
 import MySpace from "./pages/MySpace/MySpace";
 import NotFound from "./pages/NotFound";
@@ -11,11 +11,12 @@ import Logo from "./assets/logo.png";
 import CreateSurvey from "./pages/CreateSurvey";
 import Option from "./pages/Option/Option";
 import Onepage from "./pages/Onepage/Onepage";
+import KakaoLogin from './pages/KakaoLogin';
 import Card from "./pages/Card/Card"
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import {Button, Container, Nav, Navbar, NavDropdown, Form, Col, Row} from 'react-bootstrap';
-
 
 
 function App(props) {
@@ -59,12 +60,8 @@ function App(props) {
           <Route path="/login" element={<Login />} />
           <Route path="/Card" element={<Card />} />
           <Route path="/Onepage" element={<Onepage />}/>
+          <Route path="/oauth/callback/kakao" element={<KakaoLogin />}/>
           <Route path="/myspace" element={<MySpace />}>
-         
-            {/* child선언
-            <Route path={"/myspace/MyUNIQ"} element={<MyUNIQ />} />
-            <Route path={"/myspace/FavoriteUNIQ"} element={<FavoriteUNIQ />} />
-            <Route path={"/myspace/RecentSurvey"} element={<RecentSurvey />} /> */}
           </Route>
           <Route path="*" element={<NotFound />} />
           {/* 지정하지 않은 주소로 들어올 때는 NotFound가 뜬다. */}

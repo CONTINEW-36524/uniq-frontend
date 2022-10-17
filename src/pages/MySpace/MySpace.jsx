@@ -1,18 +1,16 @@
 import "./MySpace.css"
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import boximg from "../../assets/showingImage.png"
 import { useSelector, useDispatch } from "react-redux/";
 import Modal from "../../components/createsurvey/Modal"
 import SelectType from "../../components/createsurvey/SelectType.js"
-import {exit} from "../../components/Slice/CreateSurveySlice.js"
+import { exit } from "../../components/Slice/CreateSurveySlice.js"
 import AddAsk from '../../components/createsurvey/AddAsk';
 
 function MySpace(props) {
   const selectList = ["", "category1", "category2", "category3"];
   const [selected, setSelected] = useState("");
   const dispatch = useDispatch()
-  const next = useSelector((state)=>state.createSurvey.next);
+  const next = useSelector((state) => state.createSurvey.next);
   const [modalOpen, setModalOpen] = useState(false);
 
   const openModal = () => {
@@ -24,44 +22,39 @@ function MySpace(props) {
     dispatch(exit())
   };
 
-  const MyUNIQ = () => {
-    alert("나의 UNIQ");
-  };
-  const FavoriteUNIQ = () => {
-    alert('UNIQ 찜 목록');
-  };
-  const RecentSurvey = () => {
-    alert("최근 설문지");
-  };
+  const surveyList = [["설문조사 이름", "카테고리"], ["설문조사 이름", "카테고리"],
+  ["설문조사 이름", "카테고리"], ["설문조사 이름", "카테고리"], ["설문조사 이름", "카테고리"], ["설문조사 이름", "카테고리"], ["설문조사 이름", "카테고리"]];
+  // db에서 나중에 data 가져오기.
+
   const handleSelect = (e) => {
     setSelected(e.target.vlaue);
   }
 
   return (
-    <div id="wrapper">
-      <div class="top">
-      <button class='create' onClick={openModal}> 설문 생성하기</button> 
-          { next ?
-           <Modal open={modalOpen} close={closeModal} header="질문 유형 개수를 선택해주세요.">
-           <AddAsk/>
-           </Modal>:
+    <div id="mswrapper">
+      <div class="mstop">
+        <button class='mscreate' onClick={openModal}> 설문 생성하기</button>
+        {next ?
+          <Modal open={modalOpen} close={closeModal} header="질문 유형 개수를 선택해주세요.">
+            <AddAsk />
+          </Modal> :
           <Modal open={modalOpen} close={closeModal} header="설문이 보여지는 유형을 선택해주세요.">
-          <SelectType />
+            <SelectType />
           </Modal>
-          }
+        }
       </div>
 
-      <hr class="tt" />
-      <div class="middle">
-        <button class="msbtn" onClick={MyUNIQ}>나의 UNIQ</button>
-        <button class="msbtn" onClick={FavoriteUNIQ}>UNIQ 찜 목록</button>
-        <button class="msbtn" onClick={RecentSurvey}>최근 설문지</button>
+      <hr class="mstt" />
+      <div class="msmiddle">
+        <button class="msbtn" >나의 UNIQ</button>
+        <button class="msbtn" >UNIQ 찜 목록</button>
+        <button class="msbtn" >최근 설문지</button>
       </div>
 
-      <hr class="tt" />
-      <div class="category">
-        <div class="atext">카테고리 선택&nbsp;&nbsp;&nbsp;&nbsp;</div>
-        <div class="catedrop">
+      <hr class="mstt" />
+      <div class="mscategory">
+        <div class="msatext">카테고리 선택&nbsp;&nbsp;&nbsp;&nbsp;</div>
+        <div class="mscatedrop">
           <select onChange={handleSelect} value={selected}>
             {selectList.map((item) => (
               <option value={item} kye={item}>
@@ -70,71 +63,37 @@ function MySpace(props) {
             ))}
           </select>
         </div>
-        <button class="search">검색</button>
+        <button class="mssearch">검색</button>
       </div>
 
-      <hr class="tt" />
-      <div class="buttom">
-        <div id="box">
-          <div class="boximg">
-            <Link to="/createSurvey">
-              <button class="plus">+</button>
-            </Link>
+      <hr class="mstt" />
+      <div class="msbuttom">
+        <div id="msbox">
+          <div class="msboximg">
+            <button class="msplus" onClick={openModal}>+</button>
+            {next ?
+              <Modal open={modalOpen} close={closeModal} header="질문 유형 개수를 선택해주세요.">
+                <AddAsk />
+              </Modal> :
+              <Modal open={modalOpen} close={closeModal} header="설문이 보여지는 유형을 선택해주세요.">
+                <SelectType />
+              </Modal>
+            }
           </div>
-          <div class="boxdata">
-            <h1 class="head">설문 생성하기</h1>
+          <div class="msboxdata">
+            <h1 class="mshead">설문 생성하기</h1>
           </div>
         </div>
 
-        <div id="box">
-          <div class="boximg" />
-          <div class="boxdata">
-            <h1 class="head">설문조사 이름</h1>
-            <span class="boxcontent">카테고리</span>
+        {surveyList.map((item) => (
+          <div id="msbox">
+            <div class="msboximg" />
+            <div class="msboxdata">
+              <h1 class="mshead">{item[0]}</h1>
+              <span class="msboxcontent">{item[1]}</span>
+            </div>
           </div>
-        </div>
-        <div id="box">
-          <div class="boximg" />
-          <div class="boxdata">
-            <h1 class="head">설문조사 이름</h1>
-            <span class="boxcontent">카테고리</span>
-          </div>
-        </div>
-        <div id="box">
-          <div class="boximg" />
-          <div class="boxdata">
-            <h1 class="head">설문조사 이름</h1>
-            <span class="boxcontent">카테고리</span>
-          </div>
-        </div>
-        <div id="box">
-          <div class="boximg" />
-          <div class="boxdata">
-            <h1 class="head">설문조사 이름</h1>
-            <span class="boxcontent">카테고리</span>
-          </div>
-        </div>
-        <div id="box">
-          <div class="boximg" />
-          <div class="boxdata">
-            <h1 class="head">설문조사 이름</h1>
-            <span class="boxcontent">카테고리</span>
-          </div>
-        </div>
-        <div id="box">
-          <div class="boximg" />
-          <div class="boxdata">
-            <h1 class="head">설문조사 이름</h1>
-            <span class="boxcontent">카테고리</span>
-          </div>
-        </div>
-        <div id="box">
-          <div class="boximg" />
-          <div class="boxdata">
-            <h1 class="head">설문조사 이름</h1>
-            <span class="boxcontent">카테고리</span>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   );

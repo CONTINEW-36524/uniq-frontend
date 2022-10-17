@@ -12,7 +12,7 @@ const initialState = {
     Oblist : ['내용', '내용'],
     count: 2,
     contentcount:1,
-    pagecount:0,
+    pagecount:1,
 
     data :[
         { 
@@ -33,7 +33,7 @@ const initialState = {
                 con:''
             }]
         },
-        
+
     ]
 }
 
@@ -77,7 +77,8 @@ export const OnepageSlice = createSlice({
         },
         pluscontent:(state, action) =>{
             const index = state.data.findIndex((data) => data.id == action.payload)
-            state.data[index].content.push({id:(action.payload*100)+state.contentcount, con:''})
+
+            state.data[index].content.push({id:(index+100)+state.contentcount, con:''})
             state.contentcount+=1;
             // console.log(action.payload.id);
         },
@@ -95,7 +96,7 @@ export const OnepageSlice = createSlice({
         },
         changesurtitle:(state, action) =>{
             state.survey.title=action.payload;
-            // console.log(action.payload);
+
         },
         changesursubtitle:(state, action) =>{
             state.survey.subtitle=action.payload;
@@ -108,16 +109,16 @@ export const OnepageSlice = createSlice({
             console.log(id)
             state.data = temp
             state.count-=1
-                if(state.count<=state.pagecount)state.pagecount-=1;
+
+            if(state.count==state.pagecount)state.pagecount-=1;
             }
-            
         },
 
         pluscardpage:(state) =>{
             state.pagecount+=1;
             if(state.pagecount===state.count)
             {
-                state.data.push({id: state.count , type:'객관식', title:'',content: [{id: state.count*100, con:''}]});
+                state.data.push({id: uuid() , type:'객관식', title:'',content: [{id: state.count*100, con:''}]});
                 state.count+=1
             }
         },
@@ -126,6 +127,7 @@ export const OnepageSlice = createSlice({
             if(state.pagecount>0){
             state.pagecount-=1;
             }
+
         },
 
         

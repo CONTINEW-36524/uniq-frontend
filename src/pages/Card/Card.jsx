@@ -18,20 +18,18 @@ const Onepage = (props) =>{
     const count = useSelector((state)=>state.onepage.count);
     const pagecount = useSelector((state)=>state.onepage.pagecount);
     const dispatch = useDispatch();
-    const [title, settitle] = useState('설문 제목');
-    const [subtitle, setsubtitle] = useState('설문 개요');
 
     const [isSidebarOpen, closeSidebar] = useState(false);
 
-    const [logoPos, setlogoPos] = useState({x:0, y:0});
-    const bindLogoPos = useDrag(()=>{});
-    const [active, setAtive] = useState("inactive");
+    // const [logoPos, setlogoPos] = useState({x:0, y:0});
+    // const bindLogoPos = useDrag(()=>{});
+    // const [active, setAtive] = useState("inactive");
 
-    const toggleActive = (e) => {
-        setAtive ((prev)=>{
-            return e.target.value;
-        })
-    }
+    // const toggleActive = (e) => {
+    //     setAtive ((prev)=>{
+    //         return e.target.value;
+    //     })
+    // }
 
 
     const nextpage = () => {
@@ -45,17 +43,12 @@ const Onepage = (props) =>{
     return ( 
     <div className="container1">
        <div className="craP">
-        <div id = "test"
-        value = {active}
-        className="title"
-        onclick = {toggleActive} >
-      
-            <input class="title-header" type = "text" placeholder='설문 제목'
-                     value={survey.title}
-                     onChange ={(e)=>dispatch(changesurtitle(e.target.value))} 
-                     
-            />
-      
+
+        <div id = "test" className="title">
+        <input class="title-header" type = "text" placeholder='설문 제목'
+                value={survey.title}
+                onChange ={(e)=>dispatch(changesurtitle(e.target.value))} />
+
         <input  class="title-header" type = "text" placeholder='설문 개요'
                  value={survey.subtitle}
                  onChange ={(e)=>dispatch(changesursubtitle(e.target.value))} />
