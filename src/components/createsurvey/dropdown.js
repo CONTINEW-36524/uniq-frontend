@@ -1,6 +1,6 @@
 import {useRef, useState} from "react";
 import { useSelector, useDispatch } from "react-redux/";
-import { changetype} from "../../components/Slice/OnepageSlice";
+import { changetype, deletecontent} from "../../components/Slice/OnepageSlice";
 import useDetectClose from "../../hooks/useDetectClose";
 import "../../pages/Onepage/Onepage.css";
 import styles from "./Dropdown.module.css";
@@ -9,14 +9,16 @@ import { Link, Route, Routes, BrowserRouter as Router } from "react-router-dom";
 import First from "./First"
 import Second from "./Second"
 import Third from "./Third";
+
 import uuid from "react-uuid";
 import Toggle from '../../components/createsurvey/Toggle';
 
 
 
+
 const DropDown = (props) => {
   const dropDownRef = useRef(null);
-  const type = useSelector((state)=>state.onepage.data[props.id].type);
+  const data= useSelector((state)=>state.onepage.data);
   const [isOpen, setIsOpen] = useDetectClose(dropDownRef, false);
   const [question, setquestion] = useState(['객관식','주관식','선형배율']);
   const dispatch = useDispatch();
@@ -76,7 +78,8 @@ const DropDown = (props) => {
         </button>
         <button className={styles.option}>☰</button>
 
-      <button value={props.id} onClick={handleDelete}>삭제</button>
+
+      <button value={props.id} className={styles.delete} onClick={handleDelete}>x</button>
       <ul  className={classNames(styles.menu, {[styles.active]:isOpen})}>
       { question.map((item)=>(
                  <li><button className={classNames(styles.list)} onClick={() =>{ pass(item)}}>{item}</button></li>)

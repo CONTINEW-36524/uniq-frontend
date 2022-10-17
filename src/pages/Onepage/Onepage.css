@@ -30,6 +30,22 @@
   display: inline-block; 
   position: absolute;
   margin-top: 260px;
+  animation: smoothApper 1s;
+}
+
+.fadein{
+  animation : smoothAppear 1s
+}
+
+@keyframes smoothAppear {
+  from {
+    opacity: 0;
+    transform: translateY(-5%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .containerFooter {
@@ -67,7 +83,7 @@
   border: 3px solid #fce205;
   color: #6e6e6e;
   top: 20px;
-  left: 500px;
+  left: 200px;
 }
 .w-btn-outline {
   position: relative;

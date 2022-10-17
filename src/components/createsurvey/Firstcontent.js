@@ -16,6 +16,7 @@ function Firstcontent(props) {
 
 
 
+
   const passcontent = (e) =>{
     const passs={
       id: props.id,

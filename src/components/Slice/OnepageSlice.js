@@ -33,6 +33,7 @@ const initialState = {
                 con:''
             }]
         },
+
     ]
 }
 
@@ -76,6 +77,7 @@ export const OnepageSlice = createSlice({
         },
         pluscontent:(state, action) =>{
             const index = state.data.findIndex((data) => data.id == action.payload)
+
             state.data[index].content.push({id:(index+100)+state.contentcount, con:''})
             state.contentcount+=1;
             // console.log(action.payload.id);
@@ -94,7 +96,7 @@ export const OnepageSlice = createSlice({
         },
         changesurtitle:(state, action) =>{
             state.survey.title=action.payload;
-            console.log(action.payload);
+
         },
         changesursubtitle:(state, action) =>{
             state.survey.subtitle=action.payload;
@@ -107,6 +109,7 @@ export const OnepageSlice = createSlice({
             console.log(id)
             state.data = temp
             state.count-=1
+
             if(state.count==state.pagecount)state.pagecount-=1;
             }
         },
@@ -127,7 +130,19 @@ export const OnepageSlice = createSlice({
 
         },
 
-        
+        deleteinit(state, action){
+            if (action.payload == 0)
+            {
+                state.count=0
+                state.data.pop()
+                state.data.pop()
+                state.pagecount=0
+            }
+            else{
+                state.count=1
+                state.data.pop()
+            }
+        }
 
         
 
@@ -138,6 +153,6 @@ export const OnepageSlice = createSlice({
     }
 });
 
-export const {increament, changeval,conincreament, changetype, changetitle, pluscontent,minuscontent, changecontent,changesurtitle, changesursubtitle, increament2, increament3, pluscardpage,minuscardpage, deletecontent} = OnepageSlice.actions;
+export const {increament, changeval,conincreament, changetype, changetitle, pluscontent,minuscontent, changecontent,changesurtitle, changesursubtitle, increament2, increament3, pluscardpage,minuscardpage, deletecontent, deleteinit} = OnepageSlice.actions;
 
 export default OnepageSlice.reducer;

@@ -6,7 +6,7 @@ import Card from '../../pages/Card/Card'
 import { useSelector, useDispatch } from "react-redux/";
 import { useState} from 'react'
 
-import { increament, increament2, increament3} from "../../components/Slice/OnepageSlice";
+import { increament, increament2, increament3, deleteinit} from "../../components/Slice/OnepageSlice";
 
 
 const AddAsk = (props) => {
@@ -28,9 +28,10 @@ const AddAsk = (props) => {
         setLinear(e.target.value)
     }
     const add  = () => {
-    for (let i = 0; i <mult-2; i++) {
-        dispatch(increament())
-      }
+    if (mult < 2)
+    {
+        dispatch(deleteinit(mult))
+        
     for (let i = 0; i <sub; i++) {
         dispatch(increament2())
       }
@@ -38,7 +39,20 @@ const AddAsk = (props) => {
         dispatch(increament3())
       }
     }
-
+    else 
+    {
+        for (let i = 0; i <mult-2; i++) {
+            dispatch(increament())
+          }
+        for (let i = 0; i <sub; i++) {
+            dispatch(increament2())
+          }
+        for (let i = 0; i <linear; i++) {
+            dispatch(increament3())
+          }
+        }
+    }
+    
 
 
     const selecttype = {
@@ -47,22 +61,22 @@ const AddAsk = (props) => {
       };
 
   return (
-    <div>
+    <div className='typecardcontainer'>
 
-        <div className='typeCard'>
-            <div>
-            <input type = "number" min='0' onChange = {changeMult}/>객관식
+        <div className='numq' >
+            <div >
+            <input  className='typecarddiv' type = "number" min='0' value={mult} onChange = {changeMult}/>객관식
             </div>
             <div>
-            <input type = "number" min='0' onChange = {changeSub}/>주관식
+            <input className='typecarddiv' type = "number" min='0' value={sub} onChange = {changeSub}/>주관식
             </div>
-            <div><input type = "number" min='0' onChange = {changeLine}/>선형배율</div>
+            <div><input  className='typecarddiv'type = "number" min='0' value={linear} onChange = {changeLine}/>선형배율</div>
         </div>
 
-        <div>
+        <div  className='popupmakebtn'>
 
         <Link to={selecttype[pagetype]}>
-        <button onClick={
+        <button   onClick={
             add}>만들기</button>
          </Link>
         
