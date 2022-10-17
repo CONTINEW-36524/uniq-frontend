@@ -2,7 +2,6 @@ import {useRef, useState} from "react";
 import { useSelector, useDispatch } from "react-redux/";
 import { changetitle,changecontent} from "../../components/Slice/OnepageSlice";
 
-
 function Second(props) {
 
   const title = useSelector((state)=>state.onepage.data[props.id].title);
@@ -31,15 +30,20 @@ function Second(props) {
 
 
     return (
-      <>
-                     <input  className="firsttitle" type = "text"
-                     value={title}
-                     onChange ={(e)=>passtitle(e.target.value)} />
+    <>
+      <div className="second">
+        <input className="secondtitle" type = "text"
+          placeholder="질문을 입력해주세요."
+          value={title}
+          onChange ={(e)=>passtitle(e.target.value)} 
+        />
 
-                    <textarea   className="secondcon"type = "text"
-                    value={content[0].con}
-                       onChange ={(e)=>passcontent(e.target.value)} />
-      </>
+        <textarea className="secondcon" type = "text"
+          value={content[0].con}
+          onChange ={(e)=>passcontent(e.target.value)} 
+        />
+      </div>
+    </>
     );
   }
 

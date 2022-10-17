@@ -10,20 +10,53 @@
     box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
     opacity: 0;
     visibility: hidden;
-    transform: translateY(-20px);
+    transform: translateY(0px) translateX(-130px);
     transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
     padding: 10px;
-  }
-  
-  
+}
+
 .active {
     opacity: 1;
     visibility: visible;
-    transform: translateY(-30px);
-  }
+    transform: translateY(0px) translateX(-130px);
+}
 
 .list{
   background: #fff;
   border : 0;
   outline: 0;
+}
+
+.layout {
+    margin: 30px;
+    display: flex;
+    background-color: white;
+
+}
+
+.side {
+    width: auto;
+    text-align: center;
+    display: inline-flex;
+    margin: 15px;
+    
+}
+
+.change {
+    width: 40px;
+    height: fit-content;
+    background-color: rgb(233,233,234);
+    border: none;
+    border-radius: 5px;
+    margin-left: 10px;
+
+}
+
+.option {
+    width: 40px;
+    height: fit-content;
+    border: none;
+    border-radius: 5px;
+    margin-left: 10px;
+    background-color: rgb(233,233,234);
 }
