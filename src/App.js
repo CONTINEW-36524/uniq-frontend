@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Link, Route, Routes, BrowserRouter as Router } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import About from "./pages/About";
-import Template from "./pages/Template";
+import Template from "./pages/Template/Template";
 import Login from "./pages/Login";
 import MySpace from "./pages/MySpace/MySpace";
 import NotFound from "./pages/NotFound";
@@ -62,11 +62,6 @@ function App(props) {
           <Route path="/login" element={<Login />} />
           <Route path="/Onepage" element={<Onepage />}/>
           <Route path="/myspace" element={<MySpace />}>
-         
-            {/* child선언
-            <Route path={"/myspace/MyUNIQ"} element={<MyUNIQ />} />
-            <Route path={"/myspace/FavoriteUNIQ"} element={<FavoriteUNIQ />} />
-            <Route path={"/myspace/RecentSurvey"} element={<RecentSurvey />} /> */}
           </Route>
           <Route path="*" element={<NotFound />} />
           {/* 지정하지 않은 주소로 들어올 때는 NotFound가 뜬다. */}
