@@ -3,6 +3,8 @@
   align-items: flex-start;
   overflow: scroll;
   -ms-overflow-style: none;
+  margin-bottom: 20px;
+  
 }
 /* 스크롤바 숨기기 */
 .container::-webkit-scrollbar { 
@@ -17,6 +19,7 @@
   padding: 1%;
   display: grid;
   position: absolute;
+  margin-top: 120px;
 }
 .form {
   margin-left: 20px;
@@ -29,7 +32,8 @@
   padding: 1%;
   display: inline-block; 
   position: absolute;
-  margin-top: 260px;
+  margin-top: 380px;
+ 
   animation: smoothApper 1s;
 }
 
@@ -46,6 +50,7 @@
     opacity: 1;
     transform: translateY(0);
   }
+
 }
 
 .containerFooter {
@@ -79,13 +84,13 @@
 
 
 /* 노란색 생성하기 버튼 */
-.w-btn-yellow-outline {
+.w-btn-yellow-outline2 {
   border: 3px solid #fce205;
   color: #6e6e6e;
   top: 20px;
-  left: 200px;
+  left: 500px;
 }
-.w-btn-outline {
+.w-btn-outline2 {
   position: relative;
   padding: 15px 30px;
   border-radius: 15px;
@@ -95,11 +100,11 @@
   font-weight: 600;
   transition: 0.25s;
 }
-.w-btn-outline:hover {
+.w-btn-outline2:hover {
   transform: scale(1.1);
   background-color: #FFEC6C;
 }
-.w-btn-outline:active {
+.w-btn-outline2:active {
   background-color: #fce205;
   color: #6e6e6e;
 }
@@ -110,6 +115,8 @@
   position: relative;
   font-size: 18px;
   top: 15px;
+  left: -100px;
+  text-align: center;
 }
 
 
