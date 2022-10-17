@@ -19,7 +19,6 @@ import './App.css';
 import {Button, Container, Nav, Navbar, NavDropdown, Form, Col, Row} from 'react-bootstrap';
 
 
-
 function App(props) {
   const [hello, setHello] = useState('')
 

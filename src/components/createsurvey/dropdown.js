@@ -9,16 +9,16 @@ import { Link, Route, Routes, BrowserRouter as Router } from "react-router-dom";
 import First from "./First"
 import Second from "./Second"
 import Third from "./Third";
-import uuid from "react-uuid";
 
+import uuid from "react-uuid";
+import Toggle from '../../components/createsurvey/Toggle';
 
 
 
 
 const DropDown = (props) => {
   const dropDownRef = useRef(null);
-  // const type = useSelector((state)=>state.onepage.data[props.id].type);
-  const data = useSelector((state) => state.onepage.data);
+  const data= useSelector((state)=>state.onepage.data);
   const [isOpen, setIsOpen] = useDetectClose(dropDownRef, false);
   const [question, setquestion] = useState(['객관식','주관식','선형배율']);
   const dispatch = useDispatch();
@@ -41,9 +41,8 @@ const DropDown = (props) => {
       id: props.id,
       item : e
     }
-    console.log("드롭다운프룹스아이디"+props.id);
     dispatch(changetype(passs));
-   
+
   };
   
   const handleDelete =(e) => {
@@ -58,28 +57,36 @@ const DropDown = (props) => {
     // console.log({type})
     return (selectComponent[type])
   }
+
   // console.log({isOpen});
   // console.log({dropDownRef});
 
+
   
   return (
-    <div className="layout">
-      {/* {type && <content>{selectComponent[type]}</content>} */}
+
+    <div className={styles.layout}>
+
       <content>{selectCom()}</content>
-      <button className={"thirdbtn" + (btnclick ? " thirdactive" : "")} type = "text"
-                 onClick={(toggleActive)}>필수</button>
-      <div>
-      <button value={props.id} className="change" ref={dropDownRef}
-        onClick={() =>setIsOpen(!isOpen)}>
-        질문유형
-      </button>
-      <button value={props.id} onClick={handleDelete}>삭제</button>
+
+        <div className={styles.side}>
+        <Toggle/>
+        
+        <button className={styles.change} ref={dropDownRef}
+          onClick={() =>setIsOpen(!isOpen)}>
+          ▼
+        </button>
+        <button className={styles.option}>☰</button>
+
+
+      <button value={props.id} className={styles.delete} onClick={handleDelete}>x</button>
       <ul  className={classNames(styles.menu, {[styles.active]:isOpen})}>
       { question.map((item)=>(
                  <li><button className={classNames(styles.list)} onClick={() =>{ pass(item)}}>{item}</button></li>)
       )}
     
       </ul>
+
       </div>
 
       

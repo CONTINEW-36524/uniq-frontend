@@ -1,7 +1,7 @@
 /* Scroll down */
 body {
   overflow: hidden;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'GmarketSansMedium';
   
 }
 
@@ -20,6 +20,7 @@ display: flex;
 justify-content: center;
 align-items: center;
 scroll-snap-align: center;
+animation : smoothAppear 1s
 }
 
 /* 1은 없어도 되나봐요 이유는 모르겠음 */
@@ -70,7 +71,7 @@ scroll-snap-align: center;
 
 .menu {
   font-size: 20px;
-  font-style: italic;
+  font-family: 'GmarketSansMedium';
   text-align: center;
   padding-top: 80px;
   position: fixed;
@@ -100,6 +101,7 @@ scroll-snap-align: center;
   background-position: right center;
   color: black;
   text-shadow: gray 0.3em 0.3em 0.3em;
+  font-family: 'GmarketSansMedium';
 }
 .jumbotron p {
   font-size: 25px;
@@ -180,4 +182,44 @@ font-size: 25px;
   float: right;
   margin-top: 35px;
   padding-left: 50px;
+}
+
+@font-face {
+  font-family: 'GmarketSansMedium';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.fadein{
+  font-size: medium;
+  position: relative;
+  overflow: hidden;
+  animation: fadein 7s ease-in-out;
+
+
+}
+
+
+@keyframes fadein{
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+
+}
+
+@keyframes smoothAppear {
+  from {
+    opacity: 0;
+    transform: translateY(-5%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
