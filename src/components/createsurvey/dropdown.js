@@ -1,6 +1,6 @@
 import {useRef, useState} from "react";
 import { useSelector, useDispatch } from "react-redux/";
-import { changetype} from "../../components/Slice/OnepageSlice";
+import { changetype, deletecontent} from "../../components/Slice/OnepageSlice";
 import useDetectClose from "../../hooks/useDetectClose";
 import "../../pages/Onepage/Onepage.css";
 import styles from "./Dropdown.module.css";
@@ -19,7 +19,7 @@ import Toggle from '../../components/createsurvey/Toggle';
 
 const DropDown = (props) => {
   const dropDownRef = useRef(null);
-  const type = useSelector((state)=>state.onepage.data[props.id].type);
+  const data= useSelector((state)=>state.onepage.data);
   const [isOpen, setIsOpen] = useDetectClose(dropDownRef, false);
   const [question, setquestion] = useState(['객관식','주관식','선형배율']);
   const dispatch = useDispatch();
