@@ -52,13 +52,13 @@ const Onepage = (props) =>{
       
             <input class="title-header" type = "text" placeholder='설문 제목'
                      value={survey.title}
-                     onChange ={(e)=>changesurtitle(e.target.value)} 
+                     onChange ={(e)=>dispatch(changesurtitle(e.target.value))} 
                      
             />
       
         <input  class="title-header" type = "text" placeholder='설문 개요'
                  value={survey.subtitle}
-                 onChange ={(e)=>changesursubtitle(e.target.value)} />
+                 onChange ={(e)=>dispatch(changesursubtitle(e.target.value))} />
         </div>
         
                     {pagecount+1}
