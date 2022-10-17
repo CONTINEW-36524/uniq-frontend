@@ -9,10 +9,14 @@ import { Link, Route, Routes, BrowserRouter as Router } from "react-router-dom";
 import First from "./First"
 import Second from "./Second"
 import Third from "./Third";
+<<<<<<< HEAD
 import uuid from "react-uuid";
 
 
 
+=======
+import Toggle from '../../components/createsurvey/Toggle';
+>>>>>>> MinYoung
 
 
 const DropDown = (props) => {
@@ -45,6 +49,7 @@ const DropDown = (props) => {
     dispatch(changetype(passs));
    
   };
+<<<<<<< HEAD
   
   const handleDelete =(e) => {
     // console.log(e.target.value)
@@ -58,11 +63,18 @@ const DropDown = (props) => {
     // console.log({type})
     return (selectComponent[type])
   }
+=======
+
+  
+
+
+>>>>>>> MinYoung
   // console.log({isOpen});
   // console.log({dropDownRef});
 
   
   return (
+<<<<<<< HEAD
     <div className="layout">
       {/* {type && <content>{selectComponent[type]}</content>} */}
       <content>{selectCom()}</content>
@@ -80,9 +92,40 @@ const DropDown = (props) => {
       )}
     
       </ul>
+=======
+
+    <div className={styles.layout}>
+      
+      {type && <content>{selectComponent[type]}</content>}
+      
+      {/* <button className={"thirdbtn" + (btnclick ? " thirdactive" : "")} type = "text"
+                 onClick={(toggleActive)}>필수
+      </button> */}
+
+      {/* 필수체크하는 토글 & 질문선택 드롭다운 */}
+      <div className={styles.side}>
+        <Toggle/>
+        
+        <button className={styles.change} ref={dropDownRef}
+          onClick={() =>setIsOpen(!isOpen)}>
+          ▼
+        </button>
+        <button className={styles.option}>☰</button>
+        <div>
+          <ul  className={classNames(styles.menu, {[styles.active]:isOpen})}>
+          { 
+            question.map((item)=>(
+            <li><button className={classNames(styles.list)} onClick={() =>{ pass(item)}}>{item}</button></li>
+            ))
+          }
+          </ul>
+        </div>
+        
+>>>>>>> MinYoung
       </div>
 
       
+
     </div>
   );
 };
