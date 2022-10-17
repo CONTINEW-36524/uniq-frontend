@@ -79,7 +79,7 @@ const DropDown = (props) => {
         </button>
         <button className={styles.option}>☰</button>
 
-      <button value={props.id} onClick={handleDelete}>삭제</button>
+      <button value={props.id} className={styles.delete} onClick={handleDelete}>x</button>
       <ul  className={classNames(styles.menu, {[styles.active]:isOpen})}>
       { question.map((item)=>(
                  <li><button className={classNames(styles.list)} onClick={() =>{ pass(item)}}>{item}</button></li>)
