@@ -9,7 +9,9 @@ import { Link, Route, Routes, BrowserRouter as Router } from "react-router-dom";
 import First from "./First"
 import Second from "./Second"
 import Third from "./Third";
+import uuid from "react-uuid";
 import Toggle from '../../components/createsurvey/Toggle';
+
 
 
 const DropDown = (props) => {
@@ -37,13 +39,22 @@ const DropDown = (props) => {
       id: props.id,
       item : e
     }
-    // console.log(passs);
     dispatch(changetype(passs));
-   
+
   };
-
   
-
+  const handleDelete =(e) => {
+    // console.log(e.target.value)
+    dispatch(deletecontent(e.target.value));
+  }
+  const selectCom = () =>{
+    const temp = data.filter(item => item.id === props.id)
+    // console.log(temp)
+  
+    const type = temp[0].type
+    // console.log({type})
+    return (selectComponent[type])
+  }
 
   // console.log({isOpen});
   // console.log({dropDownRef});
@@ -53,15 +64,10 @@ const DropDown = (props) => {
   return (
 
     <div className={styles.layout}>
-      
-      {type && <content>{selectComponent[type]}</content>}
-      
-      {/* <button className={"thirdbtn" + (btnclick ? " thirdactive" : "")} type = "text"
-                 onClick={(toggleActive)}>필수
-      </button> */}
 
-      {/* 필수체크하는 토글 & 질문선택 드롭다운 */}
-      <div className={styles.side}>
+      <content>{selectCom()}</content>
+
+        <div className={styles.side}>
         <Toggle/>
         
         <button className={styles.change} ref={dropDownRef}
@@ -69,20 +75,18 @@ const DropDown = (props) => {
           ▼
         </button>
         <button className={styles.option}>☰</button>
-        <div>
-          <ul  className={classNames(styles.menu, {[styles.active]:isOpen})}>
-          { 
-            question.map((item)=>(
-            <li><button className={classNames(styles.list)} onClick={() =>{ pass(item)}}>{item}</button></li>
-            ))
-          }
-          </ul>
-        </div>
-        
+
+      <button value={props.id} onClick={handleDelete}>삭제</button>
+      <ul  className={classNames(styles.menu, {[styles.active]:isOpen})}>
+      { question.map((item)=>(
+                 <li><button className={classNames(styles.list)} onClick={() =>{ pass(item)}}>{item}</button></li>)
+      )}
+    
+      </ul>
+
       </div>
 
       
-
     </div>
   );
 };

@@ -59,9 +59,10 @@ const Onepage = (props) =>{
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formGroupexplain">
                         <Form.Label>설문지 설명</Form.Label>
-                        <Form.Control type="explain" placeholder="설문지 설명을 입력하세요." />
+                        <Form.Control type="explain" placeholder="설문지 설명을 입력하세요." value={survey.subtitle} onChange ={(e)=>dispatch(changesursubtitle(e.target.value))} />
                     </Form.Group>
                 </Form>
+
             </div>
 
             <div className="containerContent">

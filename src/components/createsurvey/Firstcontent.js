@@ -5,9 +5,16 @@ import { changecontent} from "../../components/Slice/OnepageSlice";
 
 function Firstcontent(props) {
 
-  const content = useSelector((state)=>state.onepage.data[props.id].content);
+
+  // const content = useSelector((state)=>state.onepage.data[props.id].content);
+  const data = useSelector((state)=>state.onepage.data);
+
+  const content = data.filter(item => item.id === props.id)[0].content
+  console.log(content)
   const [questionc, setquestionc] = useState();
   const dispatch = useDispatch();
+
+
 
   const passcontent = (e) =>{
     const passs={
