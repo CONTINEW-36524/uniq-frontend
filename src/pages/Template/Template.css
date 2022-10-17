@@ -15,7 +15,9 @@
     margin-left: auto;
 
 }
-
+.tptopcontent {
+    margin-top: 5
+}
 .tptopleft {
     position: relative;
     height: 400px;

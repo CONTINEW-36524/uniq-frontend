@@ -1,17 +1,16 @@
 import "./MySpace.css"
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux/";
 import Modal from "../../components/createsurvey/Modal"
 import SelectType from "../../components/createsurvey/SelectType.js"
-import {exit} from "../../components/Slice/CreateSurveySlice.js"
+import { exit } from "../../components/Slice/CreateSurveySlice.js"
 import AddAsk from '../../components/createsurvey/AddAsk';
 
 function MySpace(props) {
   const selectList = ["", "category1", "category2", "category3"];
   const [selected, setSelected] = useState("");
   const dispatch = useDispatch()
-  const next = useSelector((state)=>state.createSurvey.next);
+  const next = useSelector((state) => state.createSurvey.next);
   const [modalOpen, setModalOpen] = useState(false);
 
   const openModal = () => {
@@ -27,16 +26,6 @@ function MySpace(props) {
   ["설문조사 이름", "카테고리"], ["설문조사 이름", "카테고리"], ["설문조사 이름", "카테고리"], ["설문조사 이름", "카테고리"], ["설문조사 이름", "카테고리"]];
   // db에서 나중에 data 가져오기.
 
-  const MyUNIQ = () => {
-    alert("나의 UNIQ");
-  };
-  const FavoriteUNIQ = () => {
-    alert('UNIQ 찜 목록');
-  };
-  const RecentSurvey = () => {
-    alert("최근 설문지");
-  };
-
   const handleSelect = (e) => {
     setSelected(e.target.vlaue);
   }
@@ -44,22 +33,22 @@ function MySpace(props) {
   return (
     <div id="mswrapper">
       <div class="mstop">
-      <button class='mscreate' onClick={openModal}> 설문 생성하기</button> 
-          { next ?
-           <Modal open={modalOpen} close={closeModal} header="질문 유형 개수를 선택해주세요.">
-           <AddAsk/>
-           </Modal>:
+        <button class='mscreate' onClick={openModal}> 설문 생성하기</button>
+        {next ?
+          <Modal open={modalOpen} close={closeModal} header="질문 유형 개수를 선택해주세요.">
+            <AddAsk />
+          </Modal> :
           <Modal open={modalOpen} close={closeModal} header="설문이 보여지는 유형을 선택해주세요.">
-          <SelectType />
+            <SelectType />
           </Modal>
-          }
+        }
       </div>
 
       <hr class="mstt" />
       <div class="msmiddle">
-        <button class="msbtn" onClick={MyUNIQ}>나의 UNIQ</button>
-        <button class="msbtn" onClick={FavoriteUNIQ}>UNIQ 찜 목록</button>
-        <button class="msbtn" onClick={RecentSurvey}>최근 설문지</button>
+        <button class="msbtn" >나의 UNIQ</button>
+        <button class="msbtn" >UNIQ 찜 목록</button>
+        <button class="msbtn" >최근 설문지</button>
       </div>
 
       <hr class="mstt" />
@@ -81,9 +70,15 @@ function MySpace(props) {
       <div class="msbuttom">
         <div id="msbox">
           <div class="msboximg">
-            <Link to="/createSurvey">
-              <button class="msplus">+</button>
-            </Link>
+            <button class="msplus" onClick={openModal}>+</button>
+            {next ?
+              <Modal open={modalOpen} close={closeModal} header="질문 유형 개수를 선택해주세요.">
+                <AddAsk />
+              </Modal> :
+              <Modal open={modalOpen} close={closeModal} header="설문이 보여지는 유형을 선택해주세요.">
+                <SelectType />
+              </Modal>
+            }
           </div>
           <div class="msboxdata">
             <h1 class="mshead">설문 생성하기</h1>
