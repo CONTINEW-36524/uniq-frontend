@@ -138,6 +138,7 @@ export const OnepageSlice = createSlice({
                 state.data.pop()
                 state.data.pop()
                 state.data.push({id: uuid() , type:'객관식', title:'',content: [{id: state.count*100, con:''}]});
+
             }
             else{
                 state.pagecount=0
