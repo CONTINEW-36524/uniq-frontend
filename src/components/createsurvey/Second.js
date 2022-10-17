@@ -1,22 +1,49 @@
 import {useRef, useState} from "react";
+import { useSelector, useDispatch } from "react-redux/";
+import { changetitle,changecontent} from "../../components/Slice/OnepageSlice";
 
 
 function Second(props) {
 
-    const [switchOn, switchChange] = useState(false);
-    const [questionc, setquestionc] = useState();
-    const [question, setquestion] = useState();
+  // const title = useSelector((state)=>state.onepage.data[props.id].title);
+  // const content = useSelector((state)=>state.onepage.data[props.id].content);
+  
+  const data = useSelector((state)=>state.onepage.data);
+  const title = data.filter(item => item.id === props.id)[0].title
+  const content = data.filter(item => item.id === props.id)[0].content
+  
+  const dispatch = useDispatch();
+
+  const passtitle = (e) =>{
+    const passs={
+      id: props.id,
+      item : e
+    }
+    dispatch(changetitle(passs));
+
+  };
+
+  const passcontent = (e) =>{
+    const passs={
+      id: props.id,
+      idx:0,
+      item : e
+    }
+    dispatch(changecontent(passs));
+
+  };
+
 
 
     return (
       <>
-                     <input  className="firsttitle" type = "text"
-                     value={question}
-                     onChange ={(e)=>setquestion(e.target.value)} />
+                     <input  className="firsttitle" type = "text" placeholder='질문을 입력하세요'
+                     value={title}
+                     onChange ={(e)=>passtitle(e.target.value)} />
 
                     <textarea   className="secondcon"type = "text"
-            value={questionc}
-                       onChange ={(e)=>setquestionc(e.target.value)} />
+                    value={content[0].con}
+                       onChange ={(e)=>passcontent(e.target.value)} />
       </>
     );
   }

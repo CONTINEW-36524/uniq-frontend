@@ -1,10 +1,27 @@
 import "./MySpace.css"
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux/";
+import Modal from "../../components/createsurvey/Modal"
+import SelectType from "../../components/createsurvey/SelectType.js"
+import {exit} from "../../components/Slice/CreateSurveySlice.js"
+import AddAsk from '../../components/createsurvey/AddAsk';
 
 function MySpace(props) {
   const selectList = ["", "category1", "category2", "category3"];
   const [selected, setSelected] = useState("");
+  const dispatch = useDispatch()
+  const next = useSelector((state)=>state.createSurvey.next);
+  const [modalOpen, setModalOpen] = useState(false);
+
+  const openModal = () => {
+    setModalOpen(true);
+    console.log(next)
+  };
+  const closeModal = () => {
+    setModalOpen(false);
+    dispatch(exit())
+  };
 
   const surveyList = [["설문조사 이름", "카테고리"], ["설문조사 이름", "카테고리"],
   ["설문조사 이름", "카테고리"], ["설문조사 이름", "카테고리"], ["설문조사 이름", "카테고리"], ["설문조사 이름", "카테고리"], ["설문조사 이름", "카테고리"]];
@@ -27,9 +44,15 @@ function MySpace(props) {
   return (
     <div id="mswrapper">
       <div class="mstop">
-        <Link to="/createSurvey">
-          <button class="mscreate">설문 생성하기</button>
-        </Link>
+      <button class='mscreate' onClick={openModal}> 설문 생성하기</button> 
+          { next ?
+           <Modal open={modalOpen} close={closeModal} header="질문 유형 개수를 선택해주세요.">
+           <AddAsk/>
+           </Modal>:
+          <Modal open={modalOpen} close={closeModal} header="설문이 보여지는 유형을 선택해주세요.">
+          <SelectType />
+          </Modal>
+          }
       </div>
 
       <hr class="mstt" />
