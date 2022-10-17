@@ -94,7 +94,7 @@ export const OnepageSlice = createSlice({
         },
         changesurtitle:(state, action) =>{
             state.survey.title=action.payload;
-            // console.log(action.payload.id);
+            console.log(action.payload);
         },
         changesursubtitle:(state, action) =>{
             state.survey.subtitle=action.payload;
