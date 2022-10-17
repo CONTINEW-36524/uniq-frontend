@@ -2,7 +2,8 @@ import {useRef, useState} from "react";
 import { useSelector, useDispatch } from "react-redux/";
 import { changetitle,pluscontent,minuscontent} from "../../components/Slice/OnepageSlice";
 import Firstcontent from "./Firstcontent";
-
+import "../../pages/Onepage/Onepage.css";
+import styles from "./Dropdown.module.css";
 function First(props) {
 
 
@@ -50,9 +51,11 @@ function First(props) {
                 <Firstcontent id={props.id} idx={idx} />
               </div>
             ))}
-          </div>    
-          <button className="firstbtn" onClick={listpush}>+</button>
-          <button className="firstbtn" onClick={listminus}>-</button>
+          </div> 
+          <div className={styles.side}>  
+          <button className={styles.plus} onClick={listpush}>+</button>
+          <button className={styles.minus} onClick={listminus}>-</button>
+        </div> 
         </div>  
 
       </div>

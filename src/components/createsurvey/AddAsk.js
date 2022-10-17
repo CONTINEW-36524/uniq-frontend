@@ -76,9 +76,9 @@ const AddAsk = (props) => {
         <div  className='popupmakebtn'>
 
         <Link to={selecttype[pagetype]}>
-        <button   onClick={
-            add}>만들기</button>
-         </Link>
+        <button  onClick={add}>만들기</button>
+        <button >기본양식으로 만들기</button>
+        </Link>
         
 
         </div>
