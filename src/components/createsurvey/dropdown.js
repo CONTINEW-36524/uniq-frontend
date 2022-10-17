@@ -9,14 +9,11 @@ import { Link, Route, Routes, BrowserRouter as Router } from "react-router-dom";
 import First from "./First"
 import Second from "./Second"
 import Third from "./Third";
-<<<<<<< HEAD
+
 import uuid from "react-uuid";
-
-
-
-=======
 import Toggle from '../../components/createsurvey/Toggle';
->>>>>>> MinYoung
+
+
 
 
 const DropDown = (props) => {
@@ -45,11 +42,9 @@ const DropDown = (props) => {
       id: props.id,
       item : e
     }
-    console.log("드롭다운프룹스아이디"+props.id);
     dispatch(changetype(passs));
    
   };
-<<<<<<< HEAD
   
   const handleDelete =(e) => {
     // console.log(e.target.value)
@@ -63,47 +58,16 @@ const DropDown = (props) => {
     // console.log({type})
     return (selectComponent[type])
   }
-=======
-
-  
-
-
->>>>>>> MinYoung
   // console.log({isOpen});
   // console.log({dropDownRef});
 
   
   return (
-<<<<<<< HEAD
-    <div className="layout">
-      {/* {type && <content>{selectComponent[type]}</content>} */}
-      <content>{selectCom()}</content>
-      <button className={"thirdbtn" + (btnclick ? " thirdactive" : "")} type = "text"
-                 onClick={(toggleActive)}>필수</button>
-      <div>
-      <button value={props.id} className="change" ref={dropDownRef}
-        onClick={() =>setIsOpen(!isOpen)}>
-        질문유형
-      </button>
-      <button value={props.id} onClick={handleDelete}>삭제</button>
-      <ul  className={classNames(styles.menu, {[styles.active]:isOpen})}>
-      { question.map((item)=>(
-                 <li><button className={classNames(styles.list)} onClick={() =>{ pass(item)}}>{item}</button></li>)
-      )}
-    
-      </ul>
-=======
-
     <div className={styles.layout}>
-      
-      {type && <content>{selectComponent[type]}</content>}
-      
-      {/* <button className={"thirdbtn" + (btnclick ? " thirdactive" : "")} type = "text"
-                 onClick={(toggleActive)}>필수
-      </button> */}
 
-      {/* 필수체크하는 토글 & 질문선택 드롭다운 */}
-      <div className={styles.side}>
+      <content>{selectCom()}</content>
+
+        <div className={styles.side}>
         <Toggle/>
         
         <button className={styles.change} ref={dropDownRef}
@@ -111,21 +75,16 @@ const DropDown = (props) => {
           ▼
         </button>
         <button className={styles.option}>☰</button>
-        <div>
-          <ul  className={classNames(styles.menu, {[styles.active]:isOpen})}>
-          { 
-            question.map((item)=>(
-            <li><button className={classNames(styles.list)} onClick={() =>{ pass(item)}}>{item}</button></li>
-            ))
-          }
-          </ul>
-        </div>
-        
->>>>>>> MinYoung
+      <button value={props.id} onClick={handleDelete}>삭제</button>
+      <ul  className={classNames(styles.menu, {[styles.active]:isOpen})}>
+      { question.map((item)=>(
+                 <li><button className={classNames(styles.list)} onClick={() =>{ pass(item)}}>{item}</button></li>)
+      )}
+    
+      </ul>
       </div>
 
       
-
     </div>
   );
 };
