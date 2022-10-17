@@ -1,37 +1,38 @@
 import { createSlice } from "@reduxjs/toolkit";
+import uuid from "react-uuid" 
 
 const initialState = {
     id : 0,
     survey : 
         {
-            title : '설문 제목',
-            subtitle: '설문 개요'
+            title : '',
+            subtitle: ''
         }
     ,
     Oblist : ['내용', '내용'],
     count: 2,
     contentcount:1,
+    pagecount:1,
 
     data :[
-        {
-            id: 0,
+        { 
+            id: uuid(), 
             type : '객관식',
             title:'' ,
             content:[{
                 id: 0,
                 con:''
             }]
-
         },
-        {
-            id: 1,
+        { 
+            id: uuid(), 
             type : '객관식',
             title:'' ,
             content:[{
-                id: 100,
+                id: 0,
                 con:''
             }]
-        }
+        },
     ]
 }
 
@@ -40,15 +41,16 @@ export const OnepageSlice = createSlice({
     initialState,
     reducers:{
         increament: (state) =>{
-            state.data.push({id: state.count , type:'객관식', title:'',content: [{id: state.count*100, con:''}]});
+            state.data.push({id:uuid() , type:'객관식', title:'',content: [{id: state.count*100, con:''}]});
             state.count+=1;
+            // console.log("타입 머에여" + state.data[state.count].type)
         },
         increament2: (state) =>{
-            state.data.push({id: state.count , type:'주관식', title:'',content: [{id: state.count*100, con:''}]});
+            state.data.push({id: uuid() , type:'주관식', title:'',content: [{id: state.count*100, con:''}]});
             state.count+=1;
         },
         increament3: (state) =>{
-            state.data.push({id: state.count , type:'선형배율', title:'',content: [{id: state.count*100, con:''}]});
+            state.data.push({id: uuid() , type:'선형배율', title:'',content: [{id: state.count*100, con:''}]});
             state.count+=1;
         },
         changeval: (state, action ) =>{
@@ -61,36 +63,68 @@ export const OnepageSlice = createSlice({
         },
 
         changetype:(state, action) =>{
-            state.data[action.payload.id].type=action.payload.item;
-            // console.log(action.payload.id);
+            const index = state.data.findIndex((data) => data.id == action.payload.id)
+            console.log(action.payload.id)
+            state.data[index].type=action.payload.item;
+            console.log(index);
         },
 
         changetitle:(state, action) =>{
-            state.data[action.payload.id].title=action.payload.item;
+            const index = state.data.findIndex((data) => data.id == action.payload.id)
+            state.data[index].title=action.payload.item;
             // console.log(action.payload.id);
         },
         pluscontent:(state, action) =>{
-            state.data[action.payload].content.push({id:(action.payload*100)+state.contentcount, con:''})
+            const index = state.data.findIndex((data) => data.id == action.payload)
+            state.data[index].content.push({id:(index+100)+state.contentcount, con:''})
             state.contentcount+=1;
             // console.log(action.payload.id);
         },
         minuscontent:(state, action) =>{
-            state.data[action.payload].content.pop()
+            const index = state.data.findIndex((data) => data.id == action.payload)
+            state.data[index].content.pop()
             state.contentcount-=1;
             // console.log(action.payload.id);
         },
 
         changecontent:(state, action) =>{
-            state.data[action.payload.id].content[action.payload.idx].con=action.payload.item;
+            const index = state.data.findIndex((data) => data.id == action.payload.id)
+            state.data[index].content[action.payload.idx].con=action.payload.item;
             // console.log(action.payload.id);
         },
         changesurtitle:(state, action) =>{
             state.survey.title=action.payload;
-            // console.log(action.payload.id);
+            console.log(action.payload);
         },
         changesursubtitle:(state, action) =>{
             state.survey.subtitle=action.payload;
             // console.log(action.payload.id);
+        },
+        deletecontent:(state, action) =>{
+            if(state.count>1){
+            const id = action.payload;
+            const temp = state.data.filter((data) => data.id != id);
+            console.log(id)
+            state.data = temp
+            state.count-=1
+            if(state.count==state.pagecount)state.pagecount-=1;
+            }
+        },
+
+        pluscardpage:(state) =>{
+            state.pagecount+=1;
+            if(state.pagecount===state.count)
+            {
+                state.data.push({id: uuid() , type:'객관식', title:'',content: [{id: state.count*100, con:''}]});
+                state.count+=1
+            }
+        },
+
+        minuscardpage:(state) =>{
+            if(state.pagecount>0){
+            state.pagecount-=1;
+            }
+
         },
 
         
@@ -104,5 +138,6 @@ export const OnepageSlice = createSlice({
     }
 });
 
-export const {increament, changeval,conincreament, changetype, changetitle, pluscontent,minuscontent, changecontent,changesurtitle, changesursubtitle, increament2, increament3} = OnepageSlice.actions;
+export const {increament, changeval,conincreament, changetype, changetitle, pluscontent,minuscontent, changecontent,changesurtitle, changesursubtitle, increament2, increament3, pluscardpage,minuscardpage, deletecontent} = OnepageSlice.actions;
+
 export default OnepageSlice.reducer;

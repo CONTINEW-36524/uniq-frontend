@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link} from "react-router-dom";
 import './modal.css';
+import Onepage from '../../pages/Onepage/Onepage'
+import Card from '../../pages/Card/Card'
 import { useSelector, useDispatch } from "react-redux/";
 import { useState} from 'react'
 
@@ -8,10 +10,11 @@ import { increament, increament2, increament3} from "../../components/Slice/Onep
 
 
 const AddAsk = (props) => {
-    const [mult, setMult] = useState(1)
-    const [sub, setSub] = useState(1)
-    const [linear, setLinear] = useState(1)
+    const [mult, setMult] = useState(0)
+    const [sub, setSub] = useState(0)
+    const [linear, setLinear] = useState(0)
 
+    const pagetype = useSelector((state)=>state.createSurvey.surveyType); 
     const dispatch = useDispatch();
 
     const changeMult = (e) =>{
@@ -38,6 +41,11 @@ const AddAsk = (props) => {
 
 
 
+    const selecttype = {
+        onepage: "/Onepage",
+        card: "/Card"
+      };
+
   return (
     <div>
 
@@ -49,15 +57,16 @@ const AddAsk = (props) => {
             <input type = "number" min='0' onChange = {changeSub}/>주관식
             </div>
             <div><input type = "number" min='0' onChange = {changeLine}/>선형배율</div>
-        
         </div>
 
         <div>
-        <Link to="/Onepage">
+
+        <Link to={selecttype[pagetype]}>
         <button onClick={
-            add
-        }>만들기</button>
-        </Link>
+            add}>만들기</button>
+         </Link>
+        
+
         </div>
     </div>
     );

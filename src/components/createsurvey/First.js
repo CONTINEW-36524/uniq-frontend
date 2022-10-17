@@ -6,8 +6,8 @@ import Firstcontent from "./Firstcontent";
 
 function First(props) {
 
-    const title = useSelector((state)=>state.onepage.data[props.id].title);
-    const content = useSelector((state)=>state.onepage.data[props.id].content);
+    const data = useSelector((state)=>state.onepage.data);
+    const temp= data.filter((data)=>data.id===props.id)
     const dispatch = useDispatch();
 
     const listpush = (e) => {
@@ -27,19 +27,22 @@ function First(props) {
 
     };
 
-
+    const title = data.filter(item => item.id === props.id)[0].title
+    const content = data.filter(item => item.id === props.id)[0].content
     return (
       <div className="first">
-       <input  className="firsttitle" type = "text"
-                     value={title}
+       <input  className="firsttitle" type = "text" placeholder='질문을 입력하세요'
+                     value={temp[0].title}
                      onChange ={(e)=>passtitle(e.target.value)} />
         <div className="firstcon">
         <div className="firstnum" >
-          {content.map((item,idx) =>(
+          <ul className="firstlist">
+          {temp[0].content.map((item,idx) =>(
             <div >
-            <Firstcontent id={props.id} idx={idx} />
+            <li><Firstcontent id={props.id} idx={idx} /></li>
            </div>
           ))}
+          </ul>
           </div>
           <button className="firstbtn" onClick={listpush} >+</button>
           <button className="firstbtn" onClick={listminus} >-</button>

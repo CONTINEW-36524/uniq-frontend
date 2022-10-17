@@ -36,9 +36,7 @@ export const CreateSurveySlice = createSlice({
             state.QType.mult = 0
             state.QType.linear = 0
 
-            // state.QType.short = 0
-            // state.QType.dropbox = 0
-            // state.QType.checkbox = 0
+
             console.log(state.next)
         },
         create : (state)=>{
@@ -47,6 +45,7 @@ export const CreateSurveySlice = createSlice({
         }
     }
 });
+
 
 export const {selectOnepage, selectCard, increament, exit} = CreateSurveySlice.actions;
 export default CreateSurveySlice.reducer;
