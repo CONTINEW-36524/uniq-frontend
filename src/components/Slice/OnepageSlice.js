@@ -131,13 +131,16 @@ export const OnepageSlice = createSlice({
         },
 
         deleteinit(state, action){
-            if (action.payload = 0)
+            if (action.payload == 0)
             {
-                state.count=0
+                state.pagecount=0
+                state.count=1
                 state.data.pop()
                 state.data.pop()
+                state.data.push({id: uuid() , type:'객관식', title:'',content: [{id: state.count*100, con:''}]});
             }
             else{
+                state.pagecount=0
                 state.count=1
                 state.data.pop()
             }
