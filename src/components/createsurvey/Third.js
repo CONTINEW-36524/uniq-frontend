@@ -42,6 +42,7 @@ function Third(props) {
   };
 
 
+
   return (
     <>
       <div className="third">
@@ -62,6 +63,7 @@ function Third(props) {
             ))}
           </div>
         </div>
+
       </div>
     </>
   );
