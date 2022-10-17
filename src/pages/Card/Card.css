@@ -6,3 +6,18 @@
     margin-left: 10px;
     background-color: rgb(233,233,234);
 }
+
+.fadein{
+    animation : smoothAppear 1s
+}
+
+@keyframes smoothAppear {
+    from {
+      opacity: 0;
+      transform: translateY(-5%);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }

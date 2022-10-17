@@ -20,6 +20,7 @@ display: flex;
 justify-content: center;
 align-items: center;
 scroll-snap-align: center;
+animation : smoothAppear 1s
 }
 
 /* 1은 없어도 되나봐요 이유는 모르겠음 */
@@ -210,4 +211,15 @@ font-size: 25px;
     transform: none;
   }
 
+}
+
+@keyframes smoothAppear {
+  from {
+    opacity: 0;
+    transform: translateY(-5%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

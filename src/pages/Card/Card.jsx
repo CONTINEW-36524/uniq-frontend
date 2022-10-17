@@ -72,11 +72,11 @@ const Onepage = (props) =>{
 
             </div>
             <div className="containerContent">
-            {pagecount+1}
-                    <DropDown id={data[pagecount].id}/>
-                  
+                    {pagecount+1}
+                    <div className="fadein" key={pagecount+1}>
+                    <DropDown  id={data[pagecount].id}/>
+                    </div> 
        
-           
                 <div className="containerFooter">
 
                     <button class="nextcard" onClick={()=>dispatch(minuscardpage())}>이전</button>
