@@ -47,22 +47,22 @@ const AddAsk = (props) => {
       };
 
   return (
-    <div>
+    <div className='typecardcontainer'>
 
-        <div className='typeCard'>
-            <div>
-            <input type = "number" min='0' onChange = {changeMult}/>객관식
+        <div className='numq' >
+            <div >
+            <input  className='typecarddiv' type = "number" min='0' value={mult} onChange = {changeMult}/>객관식
             </div>
             <div>
-            <input type = "number" min='0' onChange = {changeSub}/>주관식
+            <input className='typecarddiv' type = "number" min='0' value={sub} onChange = {changeSub}/>주관식
             </div>
-            <div><input type = "number" min='0' onChange = {changeLine}/>선형배율</div>
+            <div><input  className='typecarddiv'type = "number" min='0' value={linear} onChange = {changeLine}/>선형배율</div>
         </div>
 
-        <div>
+        <div  className='popupmakebtn'>
 
         <Link to={selecttype[pagetype]}>
-        <button onClick={
+        <button   onClick={
             add}>만들기</button>
          </Link>
         
