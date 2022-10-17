@@ -1,14 +1,9 @@
 /* Scroll down */
 body {
   overflow: hidden;
-  font-family: 'Courier New', Courier, monospace;
-  -ms-overflow-style: none; /* 스크롤바 숨기기 */
+  font-family: 'GmarketSansMedium';
+  
 }
-/* 스크롤바 숨기기 */
-::-webkit-scrollbar {
-  display: none;
-}
-
 
 .detail{
 width:100%;
@@ -25,6 +20,7 @@ display: flex;
 justify-content: center;
 align-items: center;
 scroll-snap-align: center;
+animation : smoothAppear 1s
 }
 
 /* 1은 없어도 되나봐요 이유는 모르겠음 */
@@ -75,7 +71,7 @@ scroll-snap-align: center;
 
 .menu {
   font-size: 20px;
-  font-style: italic;
+  font-family: 'GmarketSansMedium';
   text-align: center;
   padding-top: 80px;
   position: fixed;
@@ -94,7 +90,7 @@ scroll-snap-align: center;
 /* 페이지 1 */
 .jumbotron {
   align-items: center;
-  padding-top: 250px;
+  padding-top: 50px;
   padding-bottom: 180px;
   padding-right: 650px;
   margin-bottom: 100px;
@@ -102,11 +98,11 @@ scroll-snap-align: center;
   background: url('/public/assets/banner.png');
   background-repeat: no-repeat;
   background-size: contain;
-  background-position: right bottom;
+  background-position: right center;
   color: black;
   text-shadow: gray 0.3em 0.3em 0.3em;
+  font-family: 'GmarketSansMedium';
 }
-
 .jumbotron p {
   font-size: 25px;
   margin-bottom: 35px;
@@ -135,7 +131,6 @@ scroll-snap-align: center;
 .parent {
 display: block;
 padding-bottom: 150px;
-margin-top: 250px;
 }
 .recent {
 font-size: 24px;
@@ -155,66 +150,76 @@ margin-bottom: 50px;
 }
 
 /* 화살표 */
-.prev1:hover {
+.prev:hover {
 cursor: pointer;
 }
-.prev1{
+.prev{
 background-color: #bcbcbc;
 padding: 10px;
 margin-right: 10px;
-margin-top: 100px;
 }
-.prev1 b{
+.prev b{
 color: white;
 font-size: 25px;
 }
 
-.next1:hover{
+.next:hover{
 cursor: pointer;
 }
-.next1{
+.next{
 background-color: #bcbcbc;
 padding: 10px;
 margin-left: 15px;
-margin-top: 100px;
 }
-.next1 b{
+.next b{
 color: white;
 font-size: 25px;
 }
 
-/* 인기있는 템플릿 */
-/* 화살표2 */
-.prev2:hover {
-  cursor: pointer;
-}
-.prev2{
-  background-color: #bcbcbc;
-  padding: 10px;
-  margin-right: 10px;
-  margin-top: 100px;
-}
-.prev2 b{
-  color: white;
-  font-size: 25px;
-}
-  
-.next2:hover{
-  cursor: pointer;
-}
-.next2{
-  background-color: #bcbcbc;
-  padding: 10px;
-  margin-left: 15px;
-  margin-top: 100px;
-}
-.next2 b{
-  color: white;
-  font-size: 25px;
-}
+
 
 .intext {
   float: right;
   margin-top: 35px;
   padding-left: 50px;
+}
+
+@font-face {
+  font-family: 'GmarketSansMedium';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.fadein{
+  font-size: medium;
+  position: relative;
+  overflow: hidden;
+  animation: fadein 7s ease-in-out;
+
+
+}
+
+
+@keyframes fadein{
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+
+}
+
+@keyframes smoothAppear {
+  from {
+    opacity: 0;
+    transform: translateY(-5%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

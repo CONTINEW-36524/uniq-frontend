@@ -3,7 +3,6 @@
   align-items: flex-start;
   overflow: scroll;
   -ms-overflow-style: none;
-  
 }
 /* 스크롤바 숨기기 */
 .container::-webkit-scrollbar { 
@@ -18,7 +17,6 @@
   padding: 1%;
   display: grid;
   position: absolute;
-  margin-top: 120px;
 }
 .form {
   margin-left: 20px;
@@ -31,7 +29,23 @@
   padding: 1%;
   display: inline-block; 
   position: absolute;
-  margin-top: 380px;
+  margin-top: 260px;
+  animation: smoothApper 1s;
+}
+
+.fadein{
+  animation : smoothAppear 1s
+}
+
+@keyframes smoothAppear {
+  from {
+    opacity: 0;
+    transform: translateY(-5%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .containerFooter {
@@ -69,7 +83,7 @@
   border: 3px solid #fce205;
   color: #6e6e6e;
   top: 20px;
-  left: 500px;
+  left: 200px;
 }
 .w-btn-outline {
   position: relative;
@@ -95,8 +109,7 @@
 .count{
   position: relative;
   font-size: 18px;
-  top: 20px;
-  left: -100px;
+  top: 15px;
 }
 
 

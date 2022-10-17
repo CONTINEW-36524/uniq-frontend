@@ -34,7 +34,7 @@ const Onepage = (props) =>{
         })
     }
     const nextpage = () => {
-        alert('Next Page')
+       alert('Next Page')
     }
     const toggleSidebar = () =>{
       closeSidebar(isSidebarOpen => !isSidebarOpen)
@@ -106,7 +106,9 @@ const Onepage = (props) =>{
 
             <div className="containerContent">
                 { data.map((item,index)=>( 
+                    <div className="fadein">
                     <DropDown id={item.id}/> 
+                    </div>
                 ))}
                 <div className="containerFooter">
                     <button class="plusBtn" onClick={()=>dispatch(increament())}> + </button>
