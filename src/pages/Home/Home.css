@@ -5,6 +5,12 @@ body {
   
 }
 
+/* 스크롤바 숨기기 */
+::-webkit-scrollbar {
+  display: none;
+}
+
+
 .detail{
 width:100%;
 height:100vh; 
@@ -99,7 +105,7 @@ background-color: rgba(255, 234, 44, 0.24);
 /* 페이지 1 */
 .jumbotron {
   align-items: center;
-  padding-top: 50px;
+  padding-top: 250px;
   padding-bottom: 180px;
   padding-right: 650px;
   margin-bottom: 100px;
@@ -107,7 +113,7 @@ background-color: rgba(255, 234, 44, 0.24);
   background: url('/public/assets/banner.png');
   background-repeat: no-repeat;
   background-size: contain;
-  background-position: right center;
+  background-position: right bottom;
   color: black;
   /* text-shadow: gray 0.3em 0.3em 0.3em; */
   font-family: 'Pretendard-Regular';
@@ -123,6 +129,7 @@ background-color: rgba(255, 234, 44, 0.24);
   font-weight: normal;
   font-style: normal;
 }
+
 .jumbotron p {
   font-size: 20px;
   margin-bottom: 35px;
@@ -151,6 +158,7 @@ background-color: rgba(255, 234, 44, 0.24);
 .parent {
 display: block;
 padding-bottom: 150px;
+margin-top: 250px;
 }
 .recent {
 font-size: 24px;
@@ -170,33 +178,63 @@ margin-bottom: 50px;
 }
 
 /* 화살표 */
-.prev:hover {
+.prev1:hover {
 cursor: pointer;
 }
-.prev{
+.prev1{
 background-color: #bcbcbc;
 padding: 10px;
 margin-right: 10px;
+margin-top: 100px;
 }
-.prev b{
+.prev1 b{
 color: white;
 font-size: 25px;
 }
 
-.next:hover{
+.next1:hover{
 cursor: pointer;
 }
-.next{
+.next1{
 background-color: #bcbcbc;
 padding: 10px;
 margin-left: 15px;
+margin-top: 100px;
 }
-.next b{
+.next1 b{
 color: white;
 font-size: 25px;
 }
 
-
+/* 인기있는 템플릿 */
+/* 화살표2 */
+.prev2:hover {
+  cursor: pointer;
+}
+.prev2{
+  background-color: #bcbcbc;
+  padding: 10px;
+  margin-right: 10px;
+  margin-top: 100px;
+}
+.prev2 b{
+  color: white;
+  font-size: 25px;
+}
+  
+.next2:hover{
+  cursor: pointer;
+}
+.next2{
+  background-color: #bcbcbc;
+  padding: 10px;
+  margin-left: 15px;
+  margin-top: 100px;
+}
+.next2 b{
+  color: white;
+  font-size: 25px;
+}
 
 .intext {
   float: right;

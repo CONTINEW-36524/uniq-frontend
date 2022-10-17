@@ -21,4 +21,50 @@
       opacity: 1;
       transform: translateY(0);
     }
-  }
+}
+
+.containerFooterCard {
+  padding: 2%;
+  display: flex;
+  justify-content: center;
+}
+
+/* 노란색 생성하기 버튼 */
+.w-btn-yellow-outline {
+  border: 3px solid #fce205;
+  color: #6e6e6e;
+  top: 20px;
+  left: 380px;
+}
+.w-btn-outline {
+  position: relative;
+  padding: 15px 30px;
+  border-radius: 15px;
+  font-family: "paybooc-Light", sans-serif;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.25s;
+}
+.w-btn-outline:hover {
+  transform: scale(1.1);
+  background-color: #FFEC6C;
+}
+.w-btn-outline:active {
+  background-color: #fce205;
+  color: #6e6e6e;
+}
+
+.Cardpage {
+  display: inline-flex;
+  position: relative;
+  left: 50px;
+  top: 30px;
+}
+
+/* 페이지 번호 나타내는 p태그 */
+.CardNum {
+  position: relative;
+  font-size: 18px;
+  
+}

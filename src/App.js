@@ -33,7 +33,7 @@ function App(props) {
 
   return (
     <Router>
-      <Navbar className="menu" >
+      <Navbar collapseOnSelect fixed="top" className="menu" bg="white">
         <Container>
           <Navbar.Brand href="/" className='Navbar-logo'></Navbar.Brand>
             <Nav.Link className = "item" href="/about">소개</Nav.Link>
@@ -47,7 +47,7 @@ function App(props) {
       
       {/* Spring boot React 연동 확인 테스트용 */}
 
-      <main>
+      <main className='main'>
         {/* Switch has been replaced with Routes from v6 */}
         <Routes>
           <Route exact path="/" element={<Home />} />

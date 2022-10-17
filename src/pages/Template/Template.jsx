@@ -31,9 +31,9 @@ function Template() {
     <div id="tpwrapper">
       <div class="tptop">
         <div class="tptopleft">
-          <h1 class="tptopcontent">
-            당신에게 맞는 템플릿을 찾아보세요!
-          </h1>
+          <h2 class="tptopcontent">
+            당신에게 맞는 템플릿을 <br></br>찾아보세요!
+          </h2>
           <p></p>
           <>UNIQ는 다양한 템플릿을 통해 당신에게 적합한 설문지를 생성하도록 도와줍니다.</>
           <p></p>
@@ -56,11 +56,11 @@ function Template() {
         </div>
 
       </div>
-
+      
       <hr class="tptt" />
       <div class="recentTem">
           최신 UNIQ 템플릿
-        </div>
+      </div>
       <div class="tpbuttom">
 
         {recentList.map((item) => (
@@ -73,6 +73,7 @@ function Template() {
           </div>
         ))}
       </div>
+      <br></br> <br></br>
       <hr class="tptt" />
       <div class="popularTem">
           인기있는 UNIQ 템플릿

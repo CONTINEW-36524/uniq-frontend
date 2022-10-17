@@ -104,13 +104,13 @@ export const OnepageSlice = createSlice({
         },
         deletecontent:(state, action) =>{
             if(state.count>1){
-            const id = action.payload;
-            const temp = state.data.filter((data) => data.id != id);
-            console.log(id)
-            state.data = temp
-            state.count-=1
+                const id = action.payload;
+                const temp = state.data.filter((data) => data.id != id);
+                console.log(id)
+                state.data = temp
+                state.count-=1
 
-            if(state.count==state.pagecount)state.pagecount-=1;
+                if(state.count==state.pagecount)state.pagecount-=1;
             }
         },
 
