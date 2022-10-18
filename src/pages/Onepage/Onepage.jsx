@@ -13,8 +13,9 @@ import {useDrag} from 'react-use-gesture';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 
-const Onepage = (props) =>{
 
+const Onepage = (props) =>{
+    const surId= useSelector((state)=>state.onepage.id);
     const survey = useSelector((state)=>state.onepage.survey);
     const data = useSelector((state)=>state.onepage.data);
     const count = useSelector((state)=>state.onepage.count);
@@ -34,7 +35,7 @@ const Onepage = (props) =>{
         })
     }
     const nextpage = () => {
-       alert('Next Page')
+       alert('설문이 생성되었습니다!\n'+"http://localhost:3000/"+surId)
     }
     const toggleSidebar = () =>{
       closeSidebar(isSidebarOpen => !isSidebarOpen)
@@ -42,53 +43,9 @@ const Onepage = (props) =>{
 
     return ( 
 
-// <<<<<<< HEAD
-//     <div className="container1">
-//        <div className="craP">
-//         <div id = "test"
-//         value = {active}
-//         className="title"
-//         onclick = {toggleActive} >
-      
-//             <input class="title-header" type = "text" placeholder='설문 제목'
-//                      value={survey.title}
-//                      onChange ={(e)=>
-//                         dispatch(changesurtitle(e.target.value))
-                        
-//                     } 
-                     
-//             />
-      
-//         <input  class="title-header" type = "text" placeholder='설문 개요'
-//                  value={survey.subtitle}
-//                  onChange ={(e)=>dispatch(changesursubtitle(e.target.value))} />
-//         </div>
-//         <ul className="firstlist">
-//         { data.map((item,index)=>(
-//                     <li> <DropDown id={item.id}/></li>    
-//                   )
-
-//              )
-//              }
-//         </ul>
-            
-//             <button class="btn1" onClick={()=>dispatch(increament())}>+</button>
-//             <button className="w-btn-outline w-btn-yellow-outline" type="button" onClick={nextpage} >생성하기</button>
-//             <p class="count">{count}</p>
-//        </div>
-
-// =======
         
         <div className="container">
             <div className="containerHeader">
-                {/* 설문 제목, 설문 개요 */}
-                {/* <input class="title-header" type = "text"
-                    value={survey.title}
-                    onChange ={(e)=>changesurtitle(e.target.value)} />
-                
-                <input class="title-header" type = "text"
-                    value={survey.subtitle}
-                    onChange ={(e)=>changesursubtitle(e.target.value)} /> */}
                 <Form class="form">
                     <Form.Group className="mb-3" controlId="formGrouptitle">
                         <Form.Label column="lg" lg={2}>설문지 제목</Form.Label>
@@ -116,9 +73,7 @@ const Onepage = (props) =>{
                     <p class="count">- {count} -</p>
                 </div>
             </div>
-
-            
-
+           
             <section>
                 <div className={`${isSidebarOpen ? 'show-sidebar' : 'l-navbar'}`}>
                     <nav class="sidenav">
