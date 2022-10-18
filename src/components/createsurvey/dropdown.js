@@ -74,7 +74,7 @@ const DropDown = (props) => {
       <content>{selectCom()}</content>
 
       <div className={styles.side}>
-        <Toggle/>
+        <Toggle id={props.id}/>
           
         <button className={styles.change} ref={dropDownRef}
           onClick={() =>setIsOpen(!isOpen)}>
