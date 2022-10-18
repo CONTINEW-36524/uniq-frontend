@@ -6,7 +6,7 @@ const StyledCard = styled.div`
   overflow: hidden;
   -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
-
+  background-color : white;
   cursor: pointer;
   transition: 0.2s;
 

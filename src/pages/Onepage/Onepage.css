@@ -3,6 +3,8 @@
   align-items: flex-start;
   overflow: scroll;
   -ms-overflow-style: none;
+  margin-bottom: 20px;
+  font-family: 'GmarketSansMedium';
 }
 /* 스크롤바 숨기기 */
 .container::-webkit-scrollbar { 
@@ -17,6 +19,7 @@
   padding: 1%;
   display: grid;
   position: absolute;
+  margin-top: 120px;
 }
 .form {
   margin-left: 20px;
@@ -29,7 +32,8 @@
   padding: 1%;
   display: inline-block; 
   position: absolute;
-  margin-top: 260px;
+  margin-top: 380px;
+ 
   animation: smoothApper 1s;
 }
 
@@ -46,6 +50,7 @@
     opacity: 1;
     transform: translateY(0);
   }
+
 }
 
 .containerFooter {
@@ -62,8 +67,22 @@
   display: flex;
   justify-content: center;
   align-items: flex-end;
+
+  font-family: 'GmarketSansMedium';
+}
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
 }
   
+@font-face {
+  font-family: 'GmarketSansMedium';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 
 /* 질문 추가 버튼 */
 .plusBtn {
@@ -79,13 +98,13 @@
 
 
 /* 노란색 생성하기 버튼 */
-.w-btn-yellow-outline {
+.w-btn-yellow-outline2 {
   border: 3px solid #fce205;
   color: #6e6e6e;
   top: 20px;
-  left: 200px;
+  left: 500px;
 }
-.w-btn-outline {
+.w-btn-outline2 {
   position: relative;
   padding: 15px 30px;
   border-radius: 15px;
@@ -95,11 +114,11 @@
   font-weight: 600;
   transition: 0.25s;
 }
-.w-btn-outline:hover {
+.w-btn-outline2:hover {
   transform: scale(1.1);
   background-color: #FFEC6C;
 }
-.w-btn-outline:active {
+.w-btn-outline2:active {
   background-color: #fce205;
   color: #6e6e6e;
 }
@@ -109,8 +128,9 @@
 .count{
   position: relative;
   font-size: 18px;
-  top: 20px;
+  top: 15px;
   left: -100px;
+  text-align: center;
 }
 
 
@@ -219,6 +239,7 @@ a {
 .l-navbar {
   position: fixed;
   right: 0;
+  top: 80px;
   width: var(--nav--width);
   height: 120vh;
   background-color: var(--sub-color);
@@ -232,6 +253,7 @@ a {
 .show-sidebar{
   position: fixed;
   right: 0;
+  top: 80px;
   display: flex;
   width: 50rem;
   height: 120vh;
@@ -450,6 +472,7 @@ a {
   padding: 1%;
   margin-left: 10px;
   width: 550px;
+  justify-content: center;
 }
 .third{
   width:550px
@@ -464,6 +487,7 @@ a {
   width: 65px;
   height: 50px;
   margin: 1px;
+  border: none;
 }
 
 .thirdactive{

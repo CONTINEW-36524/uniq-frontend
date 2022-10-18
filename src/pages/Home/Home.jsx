@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useSelector, useDispatch } from "react-redux/";
 import { Link } from "react-router-dom";
 import CardSlider from '../../components/Card/CardSlider';
+import CardSlider2 from '../../components/Card/CardSlider2';
 import Modal from "../../components/createsurvey/Modal"
 import SelectType from "../../components/createsurvey/SelectType.js"
 import { exit } from "../../components/Slice/CreateSurveySlice.js"
@@ -12,8 +13,11 @@ import KakaoLogin from '../KakaoLogin';
 
 function Home() {
 
-  const [goleft, setGoleft] = useState(false);
-  const [goRight, setGoRight] = useState(false);
+  const [goleft1, setGoleft1] = useState(false);
+  const [goRight1, setGoRight1] = useState(false);
+  const [goleft2, setGoleft2] = useState(false);
+  const [goRight2, setGoRight2] = useState(false);
+
   const dispatch = useDispatch()
   const next = useSelector((state) => state.createSurvey.next);
   const [modalOpen, setModalOpen] = useState(false);
@@ -34,14 +38,14 @@ function Home() {
       {/* page 1 */}
       <div class="list">
         <div class="jumbotron">
+          <br/>
           <h1 class="display-8">이제는 설문 템플릿도 공유하자! </h1>
-          <h1 class="display-3">UNIQ</h1>
-          <br />
-          <p>설문조사 무료 디자인 툴</p>
-
+          <br/>  
+          <h1 class="display-3">UNIQ </h1> 
+          <br/>
+          <p>설문조사 무료 디자인 툴<br/>원하는 템플릿을 선택해 간편하게 설문조사를 만들어보세요!</p>
           <div style={{ textDecoration: 'none' }}>
-            <button class='btn3' onClick={openModal}> <b> 설문 생성하러 가기 </b></button> <br />
-            {next ?
+            <button class='btn3' onClick={openModal}> <b> 설문 생성하러 가기 </b></button>             {next ?
               <Modal open={modalOpen} close={closeModal} header="질문 유형 개수를 선택해주세요.">
                 <AddAsk />
               </Modal> :
@@ -49,28 +53,27 @@ function Home() {
                 <SelectType />
               </Modal>
             }
+            <KakaoLogin/>
           </div>
           
-          <KakaoLogin/>
-
         </div>
       </div>
 
       {/* page 2 */}
-      <div class='list'>
+      <div class='list1'>
         <div class='parent'>
           <b class='recent'>최신 UNIQ 템플릿</b>
           <div class="container">
-            <div class="prev" onClick={(e) => { setGoleft(!goleft) }}> <b>‹</b> </div>
-            <CardSlider goleft={goleft} goRight={goRight} />
-            <div class="next" onClick={(e) => { setGoRight(!goRight) }}> <b>›</b> </div>
+            <div class="prev1" onClick={(e) => { setGoleft1(!goleft1) }}> <b>‹</b> </div>
+            <CardSlider goleft={goleft1} goRight={goRight1} />
+            <div class="next1" onClick={(e) => { setGoRight1(!goRight1) }}> <b>›</b> </div>
           </div>
 
           <b class='popular'>인기있는 UNIQ 템플릿</b>
           <div class="container">
-            <div class="prev" onClick={(e) => { setGoleft(!goleft) }}> <b>‹</b> </div>
-            <CardSlider goleft={goleft} goRight={goRight} />
-            <div class="next" onClick={(e) => { setGoRight(!goRight) }}> <b>›</b> </div>
+            <div class="prev2" onClick={(e) => { setGoleft2(!goleft2) }}> <b>‹</b> </div>
+            <CardSlider2 goleft={goleft2} goRight={goRight2} />
+            <div class="next2" onClick={(e) => { setGoRight2(!goRight2) }}> <b>›</b> </div>
           </div>
         </div>
       </div>
@@ -78,7 +81,7 @@ function Home() {
       {/* page 3 */}
       <div class="list">
         <div class="three">
-          <h3 class="intext"> 어쩌구저쩌구3</h3>
+          <h3 class="intext">UNIQ 소개 추가 예정</h3>
         </div>
       </div>
 

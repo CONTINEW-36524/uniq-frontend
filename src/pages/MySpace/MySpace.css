@@ -1,17 +1,29 @@
 #mswrapper {
     width: 100%;
     height: 100%;
-
+    margin-top: 100px;
+    font-family: "Pretendard-Regular";
+    animation:  smoothAppear 1s;
 }
 
-.mstt {
-    border: 1px dashed;
-    width: 50%;
-    margin-right: auto;
-    margin-left: auto;
-}
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+  }
+  @keyframes smoothAppear {
+    from {
+      opacity: 0;
+      transform: translateY(-5%);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
 
-/* MySpace Top */
 .mstop {
     text-align: center;
     align-items: center;
@@ -25,18 +37,6 @@
     margin-left: auto;
 }
 
-.mscreate {
-    border-radius: 15px;
-    border: solid 0.5px;
-    cursor: pointer;
-    margin: auto;
-    margin-top: 25%;
-    width: 150px;
-    height: 40px;
-    background-color: white;
-}
-
-/* MySpace Middle */
 .msmiddle {
     padding-left: 20px;
     position: relative;
@@ -45,6 +45,34 @@
     background-color: #DAE6FE;
     width: 50%;
     height: 60px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.mscategory {
+    display: flex;
+    position: relative;
+    border-radius: 15px;
+    vertical-align: middle;
+    background-color: #DAE6FE;
+    width: 50%;
+    height: 60px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 50px;
+}
+
+.msbuttom {
+
+    position: relative;
+    display: grid;
+    text-align: center;
+    align-items: center;
+    place-items: center;
+    width: 940px;
+    justify-content: center;
+    gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     margin-right: auto;
     margin-left: auto;
 }
@@ -61,17 +89,19 @@
     background-color: white;
 }
 
-.mscategory {
-    display: flex;
-    position: relative;
+.mscreate {
     border-radius: 15px;
-    vertical-align: middle;
-    background-color: #DAE6FE;
-    width: 50%;
-    height: 60px;
-    margin-right: auto;
-    margin-left: auto;
-    padding-left: 50px;
+    border: none;
+    border-color: black;
+    cursor: pointer;
+    margin: auto;
+    margin-top: 28%;
+    width: 150px;
+    height: 40px;
+    font-weight: 500;
+    background-color: #5AC0EF;
+    color: white;
+    box-shadow: 0 7px 28px rgba(0, 0, 0, 0.25), 0 5px 5px rgba(0, 0, 0, 0.22);
 }
 
 .msatext {
@@ -96,18 +126,9 @@
     width: 80px;
 }
 
-/* MySpace Bottom */
-.msbottom {
-
-    position: relative;
-    display: grid;
-    text-align: center;
-    align-items: center;
-    place-items: center;
-    width: 940px;
-    justify-content: center;
-    gap: 20px;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+.mstt {
+    border: 1px dashed;
+    width: 50%;
     margin-right: auto;
     margin-left: auto;
 }
@@ -139,7 +160,7 @@
 
 .mshead {
     font-size: 20px;
-    margin-top: 5px;
+    margin-top:5px;
 }
 
 .msboxcontent {

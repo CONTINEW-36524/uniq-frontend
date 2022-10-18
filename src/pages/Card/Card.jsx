@@ -47,7 +47,7 @@ const Onepage = (props) =>{
 
 
 
-<div className="container">
+        <div className="container">
             <div className="containerHeader">
                 {/* 설문 제목, 설문 개요 */}
                 {/* <input class="title-header" type = "text"
@@ -72,21 +72,19 @@ const Onepage = (props) =>{
 
             </div>
             <div className="containerContent">
-                    {pagecount+1}
-                    <div className="fadein" key={data[pagecount].id}>
+                <div className="fadein" key={data[pagecount].id}>
                     <DropDown  id={data[pagecount].id}/>
-                    </div> 
+                </div> 
        
-                <div className="containerFooter">
-
-                    <button class="nextcard" onClick={()=>dispatch(minuscardpage())}>이전</button>
-            <button class="nextcard" onClick={()=>dispatch(pluscardpage())}>다음</button>
-                    <button className="w-btn-outline w-btn-yellow-outline" type="button" onClick={nextpage} >생성하기</button>
-                    <p class="count">- {count} -</p>
+                <div className="containerFooterCard">
+                    <div class="Cardpage">
+                        <button class="nextcard" onClick={()=>dispatch(minuscardpage())}>이전</button>
+                        <p class="CardNum">- {pagecount+1}/{count} -</p>
+                        <button class="nextcard" onClick={()=>dispatch(pluscardpage())}>다음</button>
+                    </div>
+                    <button className="w-btn-outline w-btn-yellow-outline" type="button" onClick={nextpage} >생성하기</button>   
                 </div>
-                </div>
-
-            
+            </div>
 
             <section>
                 <div className={`${isSidebarOpen ? 'show-sidebar' : 'l-navbar'}`}>
@@ -107,12 +105,6 @@ const Onepage = (props) =>{
                 </div>
             </section>
         </div>
-
-
-
-        
-
-    
 
     );
 }
