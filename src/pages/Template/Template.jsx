@@ -8,6 +8,7 @@ import SelectType from "../../components/createsurvey/SelectType.js"
 import { exit } from "../../components/Slice/CreateSurveySlice.js"
 import AddAsk from '../../components/createsurvey/AddAsk';
 import CardSlider from '../../components/Card/CardSlider';
+import KakaoLogin from '../KakaoLogin';
 
 function Template() {
 
@@ -50,9 +51,7 @@ function Template() {
             </Modal>
           }
           <p></p>
-          <Link to="/login">
-            <button class="tplogin">로그인 하기</button>
-          </Link>
+          {/* <KakaoLogin/> */}
         </div>
         <div class="tptopright">
 

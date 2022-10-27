@@ -98,7 +98,7 @@
   }
   
   .menu {
-    font-size: 20px;
+    font-size: 16px;
     font-family: 'yg-jalnan';
     text-align: center;
     position: absolute;
@@ -106,11 +106,24 @@
     left: 0;
     right: 0;
     height: 80px;
-    font-weight: bold;
+    font-weight: medium;
     padding-bottom: 10px;
     color : black;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   } 
+  .item1 {
+    padding-bottom: 15px;
+  }
+  .item2 {
+    padding-bottom: 15px;
+  }
+  .item3 {
+    padding-bottom: 15px;
+  }
+  .item1:hover{color: #61dafb}
+  .item2:hover{color: #61dafb}
+  .item3:hover{color: #61dafb}
+
   .Onepagebtn{
     background-color: white;
     stroke: white;
