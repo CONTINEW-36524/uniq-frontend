@@ -38,12 +38,12 @@ function Home() {
       {/* page 1 */}
       <div class="list">
         <div class="jumbotron">
-          <br/>
+          <br />
           <h1 class="display-8">이제는 설문 템플릿도 공유하자! </h1>
-          <br/>  
-          <h1 class="display-3">UNIQ </h1> 
-          <br/>
-          <p>설문조사 무료 디자인 툴<br/>원하는 템플릿을 선택해 간편하게 설문조사를 만들어보세요!</p>
+          <br />
+          <h1 class="display-3">UNIQ </h1>
+          <br />
+          <p>설문조사 무료 디자인 툴<br />원하는 템플릿을 선택해 간편하게 설문조사를 만들어보세요!</p>
           <div style={{ textDecoration: 'none' }}>
             <button class='btn3' onClick={openModal}> <b> 설문 생성하러 가기 </b></button>             {next ?
               <Modal open={modalOpen} close={closeModal} header="질문 유형 개수를 선택해주세요.">
@@ -53,9 +53,9 @@ function Home() {
                 <SelectType />
               </Modal>
             }
-            <KakaoLogin/>
+            <KakaoLogin />
           </div>
-          
+
         </div>
       </div>
 

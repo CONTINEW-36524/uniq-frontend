@@ -1,13 +1,13 @@
-
 import "./Template.css"
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux/";
 import Modal from "../../components/createsurvey/Modal"
 import SelectType from "../../components/createsurvey/SelectType.js"
 import { exit } from "../../components/Slice/CreateSurveySlice.js"
 import AddAsk from '../../components/createsurvey/AddAsk';
 import CardSlider from '../../components/Card/CardSlider';
+import CardSlider2 from '../../components/Card/CardSlider2';
+import CardSlider3 from '../../components/Card/CardSlider3';
 
 function Template() {
 
@@ -16,6 +16,10 @@ function Template() {
   const [modalOpen, setModalOpen] = useState(false);
   const [goleft, setGoleft] = useState(false);
   const [goRight, setGoRight] = useState(false);
+  const [goleft2, setGoleft2] = useState(false);
+  const [goRight2, setGoRight2] = useState(false);
+  const [goleft3, setGoleft3] = useState(false);
+  const [goRight3, setGoRight3] = useState(false);
 
   // const recentList = [["설문조사 이름", "#카테고리"], ["설문조사 이름", "#카테고리"], ["설문조사 이름", "#카테고리"], ["설문조사 이름", "#카테고리"]];
   // // db에서 나중에 data 가져오기.
@@ -50,62 +54,36 @@ function Template() {
             </Modal>
           }
           <p></p>
-          <Link to="/login">
-            <button class="tplogin">로그인 하기</button>
-          </Link>
         </div>
         <div class="tptopright">
 
         </div>
 
       </div>
-      <div class='list'>
+      <div class='tplist'>
         <div class='parent'>
           <b class='recent'>최신 UNIQ 템플릿</b>
           <div class="container">
-            <div class="prev" onClick={(e) => { setGoleft(!goleft) }}> <b>‹</b> </div>
+            <div class="tpprev" onClick={(e) => { setGoleft(!goleft) }}> <b>‹</b> </div>
             <CardSlider goleft={goleft} goRight={goRight} />
-            <div class="next" onClick={(e) => { setGoRight(!goRight) }}> <b>›</b> </div>
+            <div class="tpnext" onClick={(e) => { setGoRight(!goRight) }}> <b>›</b> </div>
           </div>
 
           <b class='popular'>인기있는 UNIQ 템플릿</b>
           <div class="container">
-            <div class="prev" onClick={(e) => { setGoleft(!goleft) }}> <b>‹</b> </div>
-            <CardSlider goleft={goleft} goRight={goRight} />
-            <div class="next" onClick={(e) => { setGoRight(!goRight) }}> <b>›</b> </div>
+            <div class="tpprev" onClick={(e) => { setGoleft2(!goleft2) }}> <b>‹</b> </div>
+            <CardSlider2 goleft={goleft2} goRight={goRight2} />
+            <div class="tpnext" onClick={(e) => { setGoRight2(!goRight2) }}> <b>›</b> </div>
           </div>
-        </div>
-      </div>
-      {/* <div class="recentTem">
-          <b>최신 UNIQ 템플릿</b>
-        </div>
-      <div class="tpbottom">
 
-        {recentList.map((item) => (
-          <div id="tpbox">
-            <div class="tpboximg" />
-            <div class="tpboxdata">
-              <h1 class="tphead">{item[0]}</h1>
-              <span class="tpboxcontent">{item[1]}</span>
-            </div>
+          <b class='popular'>AI 추천 템플릿</b>
+          <div class="container">
+            <div class="tpprev" onClick={(e) => { setGoleft3(!goleft3) }}> <b>‹</b> </div>
+            <CardSlider3 goleft={goleft3} goRight={goRight3} />
+            <div class="tpnext" onClick={(e) => { setGoRight3(!goRight3) }}> <b>›</b> </div>
           </div>
-        ))}
-      </div>
-      <hr class="tptt" />
-      <div class="popularTem">
-          <b>인기있는 UNIQ 템플릿</b>
         </div>
-      <div class="tpbottom">
-        {popularList.map((item) => (
-          <div id="tpbox">
-            <div class="tpboximg" />
-            <div class="tpboxdata">
-              <h1 class="tphead">{item[0]}</h1>
-              <span class="tpboxcontent">{item[1]}</span>
-            </div>
-          </div>
-        ))}
-      </div> */}
+      </div>
     </div>
   );
 }
