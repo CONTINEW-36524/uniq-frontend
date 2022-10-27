@@ -84,7 +84,9 @@ function Home() {
       {/* page 3 */}
       <div class="list">
         <div class="three">
-          <h3 class="intext">UNIQ 소개 추가 예정</h3>
+          <h3 class="intext1">다양한 형태의 설문지 폼</h3>
+          <br/>
+          <h5 class="intext2">One page형 Card형 원하는 형식으로 생성해보세요.</h5>
         </div>
       </div>
 
