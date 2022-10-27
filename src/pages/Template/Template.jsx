@@ -47,9 +47,6 @@ function Template() {
               </Modal>
             }
           <p></p>
-          <Link to="/login">
-            <button class="tplogin">로그인 하기</button>
-          </Link>
         </div>
         <div class="tptopright">
 

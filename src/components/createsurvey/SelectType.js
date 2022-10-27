@@ -10,11 +10,17 @@ const SelectType = (props) => {
 
   return (
     // 모달이 열릴때 openModal 클래스가 생성된다.
-    <div  className="popuptypecontainer">
-        <button className="onpagetype" onClick={()=>{
+    <div className="popuptypecontainer">
+      <div>
+        <h5 className="onepageText">One Page 형식</h5>
+        <button className="onepagetype" onClick={()=>{
             dispatch(selectOnepage())
-        }}>onepage형식</button>
-        <button className="cardtype" onClick={()=>{dispatch(selectCard())}}>card형식</button>
+        }}></button>
+      </div>
+      <div>
+        <h5 className="cardText">Card 형식</h5>
+        <button className="cardtype" onClick={()=>{dispatch(selectCard())}}></button>
+      </div>
     </div>
   );
 };

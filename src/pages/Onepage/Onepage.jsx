@@ -12,6 +12,7 @@ import DropDown from "../../components/createsurvey/dropdown";
 import {useDrag} from 'react-use-gesture';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
+// import { TextField, FormControl } from "@material-ui/core";
 
 const Onepage = (props) =>{
 
@@ -92,12 +93,20 @@ const Onepage = (props) =>{
                 <Form class="form">
                     <Form.Group className="mb-3" controlId="formGrouptitle">
                         <Form.Label column="lg" lg={2}>설문지 제목</Form.Label>
-                        <Form.Control size="lg" type="title" value={survey.title}
-                     onChange ={(e)=>dispatch(changesurtitle(e.target.value))}placeholder="설문지 제목을 입력하세요." />
+                        <Form.Control size="lg" type="title" value={survey.title} multiline rows={3}
+                            onChange ={(e)=>dispatch(changesurtitle(e.target.value))}placeholder="설문지 제목을 입력하세요." />
+                        {/* <FormControl fullWidth sx={{ m: 1 }}> 
+                            <TextField
+                                label="내용"
+                                multiline rows={3}
+                                placeholder="설문지 설명을 입력하세요."
+                            
+                             />
+                        </FormControl> */}
+                            
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formGroupexplain">
                         <Form.Label>설문지 설명</Form.Label>
-
                         <Form.Control type="explain" placeholder="설문지 설명을 입력하세요." value={survey.subtitle} onChange ={(e)=>dispatch(changesursubtitle(e.target.value))} />
                     </Form.Group>
                 </Form>
@@ -127,7 +136,7 @@ const Onepage = (props) =>{
                                 <FcList color="white" size="50" role="button" onClick={()=>toggleSidebar()}/>
                                 {/* <a class="nav__logo">커스터마이징</a> */}
                             </div>
-                            <ul >
+                            <ul>
                                 <li>서식 옵션</li>
                                 <li>설정 옵션</li>
                                 <li>공유 옵션</li>

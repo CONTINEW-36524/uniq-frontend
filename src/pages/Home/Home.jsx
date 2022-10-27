@@ -45,11 +45,12 @@ function Home() {
           <p>설문조사 무료 디자인 툴</p>
 
           <div style={{ textDecoration: 'none' }}>
-            <button class='btn3' onClick={openModal}> <b> 설문 생성하러 가기 </b></button>             {next ?
+            <button class='btn3' onClick={openModal}> <b> 설문 생성하러 가기 </b></button>             
+            {next ?
               <Modal open={modalOpen} close={closeModal} header="질문 유형 개수를 선택해주세요.">
                 <AddAsk />
               </Modal> :
-              <Modal open={modalOpen} close={closeModal} header="설문이 보여지는 유형을 선택해주세요.">
+              <Modal open={modalOpen} close={closeModal} header="설문 유형을 선택해주세요.">
                 <SelectType />
               </Modal>
             }

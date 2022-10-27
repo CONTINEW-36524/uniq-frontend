@@ -110,14 +110,7 @@
 }
 
 
-/* 페이지 번호 나타내는 p태그 */
-.count{
-  position: relative;
-  font-size: 18px;
-  top: 15px;
-  left: -100px;
-  text-align: center;
-}
+
 
 
 
@@ -450,6 +443,7 @@ a {
   width: 85%;
   height: 6.25em;
   resize: none;
+  
 }
 
 .thirdCon {

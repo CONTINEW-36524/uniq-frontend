@@ -14,9 +14,9 @@
   border: 0;
 }
 .modal > section {
-  width: 90%;
-  max-width: 900px;
-  height: 450px;
+  width: 1500px;
+  max-width: 1000px;
+  height: 550px;
   margin: 0 auto;
   border-radius: 0.3rem;
   background-color: #fff;
@@ -32,10 +32,12 @@
 }
 .modal > section > header button {
   position: absolute;
-  top: 15px;
-  right: 15px;
+  top: -10px;
+  right: 20px;
   width: 30px;
-  font-size: 21px;
+  height: 30px;
+  margin-right: 10px;
+  font-size: 40px;
   font-weight: 700;
   text-align: center;
   color: #999;
@@ -45,10 +47,10 @@
   padding: 16px;
   border-bottom: 1px solid #dee2e6;
   border-top: 1px solid #dee2e6;
-  height: 70%;
+  height: 75%;
 }
 .modal > section > footer {
-  padding: 12px 16px;
+  padding: 12px 10px;
   text-align: right;
 }
 .modal > section > footer button {
@@ -83,42 +85,101 @@
   }
 }
 
-.onpagetype{
-  width: 300px;
-  height: 250px;
-  margin: 150px;
-  left: 200px;
+.onepagetype{
+  /* padding: 5%; */
+  /* align-items: center; */
+  margin-right: 100px;
+  width: 550px;
+  height: 290px;
+  background-color: #F3F6FA;
+  background-image: url('/public/assets/onepagePopup.png');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
 }
-
+.onepagetype:hover {
+  transform: translateY(-0.7%);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+}
 .cardtype{
-  width: 300px;
-  height: 250px;
-  
+  width: 550px;
+  height: 290px;
+  background-color: #F3F6FA;
+  background-image: url('/public/assets/cardPopup.png');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+.cardtype:hover {
+  transform: translateY(-0.7%);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
 }
 
 .popuptypecontainer{
   display: flex;
   justify-content: center;
   align-content: center;
+  margin-top: 10px;
 }
 .typecardcontainer{
-  width: 1000px;
-  
+  width: 850px;
+  display: inline-block; 
+  margin: 0.5px;  
+  margin-left: 50px;
+  margin-top: 30px;
 }
 
 .typecarddiv{
-  margin-left: 300px;
-  margin-top: 30px;
-  
+  margin-top: 3px;
+  margin-right: 250px;
+  float: right;
+}
+
+
+.numq{
+  margin-top: 20px;
+  margin-bottom: 50px;
+  align-items: center;
+  align-content: center;
+}
+
+.onepagePopup{
+  width: 300px;
+  height: 300px;
+}
+.onepageText {
+  text-align: center;
+  margin-right: 80px;
+}
+.cardText{
+  text-align: center;
+  margin-left: 15px;
+}
+.QType{
+  display: block;
+  padding-top: 2%;
+}
+.qType{
+  display: inline;
+  margin-left: 250px;
 }
 
 .popupmakebtn{
+  width: 500px;
   margin-left: 300px;
   margin-top: 20px;
   margin-bottom: 20px;
-
-  
+  text-align: center;
 }
-.numq{
-  margin-bottom: 60px;
+
+.makeBtn{
+  width: 30px;
+  height: 50px;
+  font-size: 20px;
+  text-decoration-line: none;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+.makeBtn:hover{
+  transform: translateY(-0.7%);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
 }
