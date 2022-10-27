@@ -2,7 +2,6 @@ import "./MySpace.css"
 import React, { useState } from "react";
 import { Container, Stack, Typography } from '@mui/material';
 import { useSelector, useDispatch } from "react-redux/";
-import { Container, Stack, Typography } from '@mui/material';
 import { exit } from "../../components/Slice/CreateSurveySlice.js"
 import AddAsk from '../../components/createsurvey/AddAsk';
 import { MyspaceSidebar } from '../../section/myspace'
@@ -60,15 +59,13 @@ function MySpace(props) {
         <button class="msbtn" >나의 UNIQ</button>
         <button class="msbtn" >UNIQ 찜 목록</button>
         <button class="msbtn" >최근 설문지</button>
-      </div>
-        <Stack direction="row" spacing={1} flexShrink={0} sx={{ my: 1 }}>
-          <MyspaceSidebar
+        <MyspaceSidebar
             openFilter={openFilter}
             onOpenFilter={handleOpenFilter}
             onCloseFilter={handleCloseFilter}
           />
-        </Stack>
-
+      </div>
+      <p></p>
       <div class="msbuttom">
         <div id="msbox">
           <div class="msboximg">
@@ -87,7 +84,7 @@ function MySpace(props) {
           </div>
         </div>
 
-        {surveyList.map((item) => (
+        {/* {surveyList.map((item) => (
           <div id="msbox">
             <div class="msboximg" />
             <div class="msboxdata">
@@ -95,7 +92,7 @@ function MySpace(props) {
               <span class="msboxcontent">{item[1]}</span>
             </div>
           </div>
-        ))}
+        ))} */}
       </div>
     </div>
   );
