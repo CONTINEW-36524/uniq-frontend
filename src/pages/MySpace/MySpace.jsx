@@ -2,7 +2,6 @@ import "./MySpace.css"
 import React, { useState } from "react";
 import { Container, Stack, Typography } from '@mui/material';
 import { useSelector, useDispatch } from "react-redux/";
-import { Container, Stack, Typography } from '@mui/material';
 import { exit } from "../../components/Slice/CreateSurveySlice.js"
 import AddAsk from '../../components/createsurvey/AddAsk';
 import { MyspaceSidebar } from '../../section/myspace'
