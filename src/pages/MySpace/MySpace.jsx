@@ -1,10 +1,12 @@
 import "./MySpace.css"
 import React, { useState } from "react";
+import { Container, Stack, Typography } from '@mui/material';
 import { useSelector, useDispatch } from "react-redux/";
 import Modal from "../../components/createsurvey/Modal"
 import SelectType from "../../components/createsurvey/SelectType.js"
 import { exit } from "../../components/Slice/CreateSurveySlice.js"
 import AddAsk from '../../components/createsurvey/AddAsk';
+import { MyspaceSidebar } from '../../section/myspace'
 
 function MySpace(props) {
   const selectList = ["", "category1", "category2", "category3"];
@@ -12,6 +14,7 @@ function MySpace(props) {
   const dispatch = useDispatch()
   const next = useSelector((state) => state.createSurvey.next);
   const [modalOpen, setModalOpen] = useState(false);
+  const [openFilter, setOpenFilter] = useState(false);
 
   const openModal = () => {
     setModalOpen(true);
@@ -20,6 +23,13 @@ function MySpace(props) {
   const closeModal = () => {
     setModalOpen(false);
     dispatch(exit())
+  };
+  const handleOpenFilter = () => {
+    setOpenFilter(true);
+  };
+
+  const handleCloseFilter = () => {
+    setOpenFilter(false);
   };
 
   const surveyList = [["설문조사 이름", "카테고리"], ["설문조사 이름", "카테고리"],
@@ -50,23 +60,14 @@ function MySpace(props) {
         <button class="msbtn" >UNIQ 찜 목록</button>
         <button class="msbtn" >최근 설문지</button>
       </div>
+        <Stack direction="row" spacing={1} flexShrink={0} sx={{ my: 1 }}>
+          <MyspaceSidebar
+            openFilter={openFilter}
+            onOpenFilter={handleOpenFilter}
+            onCloseFilter={handleCloseFilter}
+          />
+        </Stack>
 
-      <hr class="mstt" />
-      <div class="mscategory">
-        <div class="msatext">카테고리 선택&nbsp;&nbsp;&nbsp;&nbsp;</div>
-        <div class="mscatedrop">
-          <select onChange={handleSelect} value={selected}>
-            {selectList.map((item) => (
-              <option value={item} kye={item}>
-                {item}
-              </option>
-            ))}
-          </select>
-        </div>
-        <button class="mssearch">검색</button>
-      </div>
-
-      <hr class="mstt" />
       <div class="msbuttom">
         <div id="msbox">
           <div class="msboximg">
