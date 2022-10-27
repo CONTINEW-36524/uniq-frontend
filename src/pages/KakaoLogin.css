@@ -1,12 +1,21 @@
 /* kakao login button */
 .KakaoBtn{
+  
+  
   background-image: url('/public/img/kakao_login.png');
   background-repeat: no-repeat;
   background-size : cover;
   
   border: none;
-  border-radius: 10px;
+  border-radius: 5px;
   color: transparent;
-  width: 300px;
-  height: 50px;
+  width: 160px;
+  height: 40px;
+
+  cursor: pointer;
+    margin: auto;
+    margin-top: 1%;
+    margin-left: 5%;
+    box-shadow: 0 7px 28px rgba(0, 0, 0, 0.25), 0 5px 5px rgba(0, 0, 0, 0.22);
+
 }

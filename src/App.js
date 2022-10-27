@@ -11,12 +11,13 @@ import Logo from "./assets/logo.png";
 import CreateSurvey from "./pages/CreateSurvey";
 import Option from "./pages/Option/Option";
 import Onepage from "./pages/Onepage/Onepage";
-import KakaoLogin from './pages/KakaoLogin';
 import Card from "./pages/Card/Card"
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import {Button, Container, Nav, Navbar, NavDropdown, Form, Col, Row} from 'react-bootstrap';
+
+import { REST_API_KEY, REDIRECT_URI, KAKAO_AUTH_URL} from './pages/KakaoLogin';
 
 
 function App(props) {
@@ -36,12 +37,19 @@ function App(props) {
       <Navbar collapseOnSelect fixed="top" className="menu" bg="white">
         <Container>
           <Navbar.Brand href="/" className='Navbar-logo'></Navbar.Brand>
-            <Nav.Link className = "item" href="/about">소개</Nav.Link>
+            {/* <Nav.Link className = "item" href="/about">소개</Nav.Link> */}
+            <div className='item1'>
             <Nav.Link href="/template">템플릿</Nav.Link>
+            </div>
             {/* <li/><li/><li/><li/><li/><li/><li/><li/><li/><li/><li/><li/><li/><li/><li/><li/><li/>
           <li/><li/><li/><li/><li/><li/><li/><li/><li/><li/><li/><li/><li/><li/><li/><li/><li/> */}
-            <Nav.Link className = "item" href="/login">회원가입/로그인</Nav.Link>
-            <Nav.Link className = "item" href="/myspace">나의공간</Nav.Link> 
+            <div className='item2'>
+              <Nav.Link href="/myspace">나의공간</Nav.Link> 
+            </div>
+            <li/>
+            <div className='item3'>
+            <Nav.Link href={KAKAO_AUTH_URL}>로그인</Nav.Link>
+            </div>
         </Container>
       </Navbar>
       
@@ -57,10 +65,10 @@ function App(props) {
           {/* <Route path="/respond" element={<Respond />}/> */}
           <Route path="/Onepage" element={<Onepage />}/>
           <Route path="/option" element={<Option/>}/>
-          <Route path="/login" element={<Login />} />
+          <Route path="/oauth/callback/kakao" />
           <Route path="/Card" element={<Card />} />
           <Route path="/Onepage" element={<Onepage />}/>
-          <Route path="/oauth/callback/kakao" element={<KakaoLogin />}/>
+          
           <Route path="/myspace" element={<MySpace />}>
           </Route>
           <Route path="*" element={<NotFound />} />

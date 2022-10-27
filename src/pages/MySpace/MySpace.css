@@ -49,18 +49,6 @@
     margin-left: auto;
 }
 
-.mscategory {
-    display: flex;
-    position: relative;
-    border-radius: 15px;
-    vertical-align: middle;
-    background-color: #DAE6FE;
-    width: 50%;
-    height: 60px;
-    margin-right: auto;
-    margin-left: auto;
-    padding-left: 50px;
-}
 
 .msbuttom {
 

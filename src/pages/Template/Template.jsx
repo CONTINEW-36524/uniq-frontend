@@ -6,6 +6,7 @@ import SelectType from "../../components/createsurvey/SelectType.js"
 import { exit } from "../../components/Slice/CreateSurveySlice.js"
 import AddAsk from '../../components/createsurvey/AddAsk';
 import CardSlider from '../../components/Card/CardSlider';
+import KakaoLogin from '../KakaoLogin';
 import CardSlider2 from '../../components/Card/CardSlider2';
 import CardSlider3 from '../../components/Card/CardSlider3';
 
