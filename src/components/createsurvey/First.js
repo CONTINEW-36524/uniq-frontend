@@ -51,8 +51,9 @@ function First(props) {
               </div>
             ))}
           </div>    
-          <button className="firstbtn" onClick={listpush}>+</button>
+          
           <button className="firstbtn" onClick={listminus}>-</button>
+          <button className="firstbtn" onClick={listpush}>+</button>
         </div>  
 
       </div>

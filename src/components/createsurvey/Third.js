@@ -54,16 +54,20 @@ function Third(props) {
           placeholder="질문을 입력해주세요."
           onChange ={(e)=>passtitle(e.target.value)} 
         />
+
         <div className="thirdCon">
           <div className={classNames(styles.third)}>
-            {btnvalue.map((item,index) =>(
-            <button className={"thirdbtn" + (index+1 == btnclick ? " thirdactive" : "")} type = "text"
-              value={index} onClick={()=>{
-              toggleActive(item);
-              passcontent(item);
-              }}>{item}</button>
-            ))}
+            {/* <input className="label1" placeholder="라벨"/> */}
+              {btnvalue.map((item,index) =>(
+              <button className={"thirdbtn" + (index+1 == btnclick ? " thirdactive" : "")} type = "text"
+                value={index} onClick={()=>{
+                toggleActive(item);
+                passcontent(item);
+                }}>{item}</button>
+              ))}
+            {/* <input className="label2" placeholder="라벨"/> */}
           </div>
+          
         </div>
 
       </div>
