@@ -5,8 +5,9 @@ import "slick-carousel/slick/slick-theme.css";
 import styled from "styled-components";
 import React, { Component } from "react";
 import Slider from "react-slick";
-import sampleImg1 from '../assets/banner.png';
-import sampleImg2 from '../assets/banner.png';
+import sampleImg1 from '../assets/banner1.png';
+import sampleImg2 from '../assets/banner2.png';
+import sampleImg3 from '../assets/banner3.png';
 
 const Wrap = styled.div`
 margin: 5% auto;
@@ -77,7 +78,7 @@ export default class BannerSlider extends Component {
           <img src={ sampleImg1 } />
           </div>
           <div>
-          <img src={ sampleImg2 } />
+          <img src={ sampleImg3 } />
           </div>
           <div>
           <img src={ sampleImg1 } />
