@@ -38,12 +38,18 @@ function App(props) {
         <Container>
           <Navbar.Brand href="/" className='Navbar-logo'></Navbar.Brand>
             {/* <Nav.Link className = "item" href="/about">소개</Nav.Link> */}
+            <div className='item1'>
             <Nav.Link href="/template">템플릿</Nav.Link>
+            </div>
             {/* <li/><li/><li/><li/><li/><li/><li/><li/><li/><li/><li/><li/><li/><li/><li/><li/><li/>
           <li/><li/><li/><li/><li/><li/><li/><li/><li/><li/><li/><li/><li/><li/><li/><li/><li/> */}
-            <Nav.Link className = "item" href="/myspace">나의공간</Nav.Link> 
+            <div className='item2'>
+              <Nav.Link href="/myspace">나의공간</Nav.Link> 
+            </div>
             <li/>
-            <Nav.Link className = "item" href={KAKAO_AUTH_URL}>로그인</Nav.Link>
+            <div className='item3'>
+            <Nav.Link href={KAKAO_AUTH_URL}>로그인</Nav.Link>
+            </div>
         </Container>
       </Navbar>
       

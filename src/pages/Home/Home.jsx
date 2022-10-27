@@ -35,6 +35,7 @@ function Home() {
     <div class='detail'>
 
       {/* page 1 */}
+      
       <div class="list">
         {/* <div class="jumbotron">
           <h1 class="display-8">이제는 설문 템플릿도 공유하자! </h1>
@@ -44,17 +45,19 @@ function Home() {
 
           <div style={{ textDecoration: 'none' }}>
             <button class='btn3' onClick={openModal}> <b> 설문 생성하러 가기 </b></button> <br /> */}
-        <BannerSlider />
-        {next ?
+       
+          <BannerSlider />
+        {/* {next ?
           <Modal open={modalOpen} close={closeModal} header="질문 유형 개수를 선택해주세요.">
             <AddAsk />
           </Modal> :
           <Modal open={modalOpen} close={closeModal} header="설문이 보여지는 유형을 선택해주세요.">
             <SelectType />
           </Modal>
-        }
+        } */}
 
       </div>
+  
 
 
 

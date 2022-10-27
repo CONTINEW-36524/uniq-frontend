@@ -111,6 +111,19 @@
     color : black;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   } 
+  .item1 {
+    padding-bottom: 15px;
+  }
+  .item2 {
+    padding-bottom: 15px;
+  }
+  .item3 {
+    padding-bottom: 15px;
+  }
+  .item1:hover{color: #61dafb}
+  .item2:hover{color: #61dafb}
+  .item3:hover{color: #61dafb}
+
   .Onepagebtn{
     background-color: white;
     stroke: white;
