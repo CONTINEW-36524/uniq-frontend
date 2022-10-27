@@ -1,4 +1,4 @@
-// 인기있는 UNIQ 템플릿
+// AI 템플릿
 import React, { useRef, useEffect } from "react";
 import styled from "styled-components";
 import CardComponent from "./CardComponent";

@@ -86,7 +86,7 @@
 .onpagetype{
   width: 300px;
   height: 250px;
-  margin: 150px;
+  margin: 75px;
   left: 200px;
   background-color: rgb(255, 214, 221);
 }
@@ -94,17 +94,22 @@
 .cardtype{
   width: 300px;
   height: 250px;
+  margin: 75px;
   background-color: rgb(214, 255, 219);
 }
 
 .popuptypecontainer{
+  width:100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-content: center;
+  align-items: center;
 }
+
 .typecardcontainer{
-  width: 1000px;
-  
+  width: 100%;
+  height: 100%;
 }
 
 .typecarddiv{
@@ -121,5 +126,6 @@
   
 }
 .numq{
+  width:100%;
   margin-bottom: 60px;
 }

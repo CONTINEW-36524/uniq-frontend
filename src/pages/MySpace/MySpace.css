@@ -1,9 +1,9 @@
 #mswrapper {
     width: 100%;
     height: 100%;
-    margin-top: 100px;
+    margin-top: 120px;
     font-family: "Pretendard-Regular";
-    animation:  smoothAppear 1s;
+    animation: smoothAppear 1s;
 }
 
 @font-face {
@@ -11,18 +11,20 @@
     src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
     font-weight: 400;
     font-style: normal;
-  }
-  @keyframes smoothAppear {
+}
+
+@keyframes smoothAppear {
     from {
-      opacity: 0;
-      transform: translateY(-5%);
+        opacity: 0;
+        transform: translateY(-5%);
     }
+
     to {
-      opacity: 1;
-      transform: translateY(0);
+        opacity: 1;
+        transform: translateY(0);
     }
-  }
-  
+}
+
 
 .mstop {
     text-align: center;
@@ -37,51 +39,9 @@
     margin-left: auto;
 }
 
-.msmiddle {
-    padding-left: 20px;
-    position: relative;
-    border-radius: 15px;
-    vertical-align: middle;
-    background-color: #DAE6FE;
-    width: 50%;
-    height: 60px;
-    margin-right: auto;
-    margin-left: auto;
-}
-
-
-.msbuttom {
-
-    position: relative;
-    display: grid;
-    text-align: center;
-    align-items: center;
-    place-items: center;
-    width: 940px;
-    justify-content: center;
-    gap: 20px;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    margin-right: auto;
-    margin-left: auto;
-}
-
-.msbtn {
-    font-size: 12px;
-    border-radius: 15px;
-    border: none;
-    cursor: pointer;
-    margin-top: 15px;
-    margin-left: 40px;
-    margin-right: 15px;
-    width: 20%;
-    height: 30px;
-    background-color: white;
-}
-
 .mscreate {
     border-radius: 15px;
     border: none;
-    border-color: black;
     cursor: pointer;
     margin: auto;
     margin-top: 28%;
@@ -93,26 +53,32 @@
     box-shadow: 0 7px 28px rgba(0, 0, 0, 0.25), 0 5px 5px rgba(0, 0, 0, 0.22);
 }
 
-.msatext {
-    margin-top: 15px;
-    margin-left: 50px;
-}
-
-.mscatedrop {
-    margin-top: 15px;
-    margin-left: 20px;
-}
-
-.mssearch {
-    font-size: 12px;
-    border: none;
-    background-color: white;
+.msmiddle {
+    padding-bottom: 10px;
+    position: relative;
     border-radius: 15px;
+    vertical-align: middle;
+    background-color: #DAE6FE;
+    width: 50%;
+    height: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.msbtn {
+    font-size: 12px;
+    border-radius: 15px;
+    border: none;
     cursor: pointer;
     margin-top: 15px;
-    margin-left: 20px;
+    margin-left: 25px;
+    margin-right: 0px;
+    width: 20%;
     height: 30px;
-    width: 80px;
+    background-color: white;
+}
+.msbtn#last {
+    margin-right: 280px;
 }
 
 .mstt {
@@ -122,36 +88,113 @@
     margin-left: auto;
 }
 
+.mslist {
+    margin-top: -200px;
+    width: 80vw;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    animation: smoothAppear 1s;
+}
+
+.msparent {
+    display: block;
+    padding-bottom: 50px;
+    margin-top: 250px;
+}
+
+.msrecent {
+    font-size: 24px;
+    margin-left: 160px;
+    margin-bottom: 50px;
+}
+
+.mscontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.msprev:hover {
+    cursor: pointer;
+}
+
+.msprev {
+    background-color: #bcbcbc;
+    padding: 10px;
+    margin-right: 10px;
+    margin-top: 100px;
+}
+
+.msprev b {
+    color: white;
+    font-size: 25px;
+}
+
+.msnext:hover {
+    cursor: pointer;
+}
+
+.msnext {
+    background-color: #bcbcbc;
+    padding: 10px;
+    margin-left: 15px;
+    margin-top: 100px;
+}
+
+.msnext b {
+    color: white;
+    font-size: 25px;
+}
+
+/* 설문 생성 box */
 #msbox {
-    border: solid 2px;
-    height: 215px;
+    width: 240px;
+    height: 220px;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    cursor: pointer;
+    transition: 0.2s;
 }
 
 #msbox:hover {
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-    transform: translateY(-10px);
+    transform: translateY(-0.7%);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
 }
 
 .msplus {
     position: relative;
     border-radius: 50%;
-    margin-top: 40%;
+    margin-left: 41%;
+    margin-top: 22%;
     width: 40px;
     height: 40px;
 }
 
 .msboximg {
+    display: block;
     background: url('../../assets/showingImage.png');
-    background-size: contain;
-    width: 150px;
-    height: 150px;
+    background-size: 100% 150px;
+    height: 110px;
+    overflow: hidden;
 }
 
-.mshead {
-    font-size: 20px;
-    margin-top:5px;
+.msboxdata {
+    padding: 1rem;
+    overflow: hidden;
 }
 
-.msboxcontent {
-    font-size: 12px;
+.msbox-middle {
+    margin-bottom: 0.5rem;
+    /* 글자가 너무 길어질 경우 말줄임표로 대체 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }

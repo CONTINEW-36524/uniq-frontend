@@ -6,7 +6,6 @@ import SelectType from "../../components/createsurvey/SelectType.js"
 import { exit } from "../../components/Slice/CreateSurveySlice.js"
 import AddAsk from '../../components/createsurvey/AddAsk';
 import CardSlider from '../../components/Card/CardSlider';
-import KakaoLogin from '../KakaoLogin';
 import CardSlider2 from '../../components/Card/CardSlider2';
 import CardSlider3 from '../../components/Card/CardSlider3';
 
@@ -57,28 +56,27 @@ function Template() {
           <p></p>
         </div>
         <div class="tptopright">
-
         </div>
-
       </div>
+      
       <div class='tplist'>
-        <div class='parent'>
-          <b class='recent'>최신 UNIQ 템플릿</b>
-          <div class="container">
+        <div class='tpparent'>
+          <b class='tprecent'>최신 UNIQ 템플릿</b>
+          <div class="tpcontainer">
             <div class="tpprev" onClick={(e) => { setGoleft(!goleft) }}> <b>‹</b> </div>
             <CardSlider goleft={goleft} goRight={goRight} />
             <div class="tpnext" onClick={(e) => { setGoRight(!goRight) }}> <b>›</b> </div>
           </div>
 
-          <b class='popular'>인기있는 UNIQ 템플릿</b>
-          <div class="container">
+          <b class='tppopular'>인기있는 UNIQ 템플릿</b>
+          <div class="tpcontainer">
             <div class="tpprev" onClick={(e) => { setGoleft2(!goleft2) }}> <b>‹</b> </div>
             <CardSlider2 goleft={goleft2} goRight={goRight2} />
             <div class="tpnext" onClick={(e) => { setGoRight2(!goRight2) }}> <b>›</b> </div>
           </div>
 
-          <b class='popular'>AI 추천 템플릿</b>
-          <div class="container">
+          <b class='tpai'>AI 추천 템플릿</b>
+          <div class="tpcontainer">
             <div class="tpprev" onClick={(e) => { setGoleft3(!goleft3) }}> <b>‹</b> </div>
             <CardSlider3 goleft={goleft3} goRight={goRight3} />
             <div class="tpnext" onClick={(e) => { setGoRight3(!goRight3) }}> <b>›</b> </div>
