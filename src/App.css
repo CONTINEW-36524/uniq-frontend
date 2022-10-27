@@ -98,7 +98,7 @@
   }
   
   .menu {
-    font-size: 20px;
+    font-size: 16px;
     font-family: 'yg-jalnan';
     text-align: center;
     position: absolute;
@@ -106,7 +106,7 @@
     left: 0;
     right: 0;
     height: 80px;
-    font-weight: bold;
+    font-weight: medium;
     padding-bottom: 10px;
     color : black;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
