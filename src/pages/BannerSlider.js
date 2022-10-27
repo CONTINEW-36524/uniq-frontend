@@ -75,6 +75,9 @@ export default class BannerSlider extends Component {
           <img src={ sampleImg2 } />
           </div>
           <div>
+          <img src={ sampleImg1 } />
+          </div>
+          <div>
           <img src={ sampleImg3 } />
           </div>
           <div>
@@ -82,9 +85,6 @@ export default class BannerSlider extends Component {
           </div>
           <div>
           <img src={ sampleImg2 } />
-          </div>
-          <div>
-          <img src={ sampleImg3 } />
           </div>
         </Slider>
         </Wrap>
