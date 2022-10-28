@@ -52,7 +52,20 @@ useEffect(()=>{
 }, [])
 
 useEffect(()=>{console.log(responddata);},[responddata])
-  return (
+
+
+
+return( 
+  <>
+    <Startreturn responddata={responddata}/>
+  </>
+);
+  
+}
+
+function Startreturn(props){
+  if(props.responddata.length>0){
+    return (
     <>
         {/* <div class='respondContainer'>
             <WithHeaderAndQuoteExample/>
@@ -62,10 +75,10 @@ useEffect(()=>{console.log(responddata);},[responddata])
           <div className="containerHeader">
             <Form class="form">
               <Form.Group className="mb-3" controlId="formGrouptitle">
-                <h3 class='respondHeadTitle'> {responddata[0].maintitle} </h3>
+                <h3 class='respondHeadTitle'> {props.responddata[0].maintitle} </h3>
               </Form.Group>
               <Form.Group className="mb-3" controlId="formGroupexplain">
-                <h5 class='respondHeadOverview'> {responddata[0].subtitle} </h5>
+                <h5 class='respondHeadOverview'> {props.responddata[0].subtitle} </h5>
               </Form.Group>
             </Form>
             
@@ -78,7 +91,7 @@ useEffect(()=>{console.log(responddata);},[responddata])
               </div>
             ))} */}
 
-            { <WithHeaderAndQuoteExample responddata={responddata} /> }
+            { <WithHeaderAndQuoteExample responddata={props.responddata} /> }
             
             <div className="respondContainerFooter">
               <button className="w-btn-outline2 w-btn-yellow-outline2" type="button" > 제출하기</button>
@@ -86,8 +99,9 @@ useEffect(()=>{console.log(responddata);},[responddata])
           </div>
         </div>
     </> 
-  );
-}
+ );
+          }
+        }
 
 
 function WithHeaderAndQuoteExample(props) {
@@ -192,7 +206,8 @@ function LinearQuestion() {
       <p className='rightText'>매우 그렇다</p>
     </div>
   );
-}
+    }
+  
 
 
 
