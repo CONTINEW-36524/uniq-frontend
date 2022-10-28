@@ -27,7 +27,6 @@
 
 
 .mstop {
-    text-align: center;
     align-items: center;
     justify-content: center;
     position: relative;
@@ -45,6 +44,7 @@
     cursor: pointer;
     margin: auto;
     margin-top: 28%;
+    margin-left: 41.5%;
     width: 150px;
     height: 40px;
     font-weight: 500;

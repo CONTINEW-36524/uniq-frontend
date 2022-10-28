@@ -66,7 +66,7 @@ const AddAsk = (props) => {
         <div className='numq'>
             <div className='QType'>
               <p className="qType">객관식 :</p>
-              <input className='typecarddiv' type = "number" min='0' value={mult} onChange = {changeMult}/>
+              <input className='typecarddiv' id='gackguan' type = "number" min='0' value={mult} onChange = {changeMult}/>
             </div>
             <div className='QType'>
               <p className="qType">주관식 : </p>
@@ -74,17 +74,17 @@ const AddAsk = (props) => {
             </div>
             <div className='QType'>
               <p className="qType">선형배율 : </p>
-              <input className='typecarddiv' type = "number" min='0' value={linear} onChange = {changeLine}/>
+              <input className='typecarddiv' id='sunhyung' type = "number" min='0' value={linear} onChange = {changeLine}/>
             </div>
         </div>
 
         <div className='popupmakebtn'>
-          <Link className='makeBtn' to={selecttype[pagetype]}>
+          <Link to={selecttype[pagetype]}>
             <button className='makeBtn' onClick={add}>만들기</button>
           </Link>
           <Link to={selecttype[pagetype]}>
-            <button  onClick={add}>만들기</button>
-            <button >기본양식으로 만들기</button>
+            {/* <button  onClick={add}>만들기</button> */}
+            <button className='standBtn'>기본양식으로 만들기</button>
           </Link>
 
         </div>

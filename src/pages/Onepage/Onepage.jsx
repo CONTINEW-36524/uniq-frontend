@@ -13,6 +13,8 @@ import {useDrag} from 'react-use-gesture';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import axios from 'axios';
+import QRModal from '../../components/createQR/QRModal'
+
 // import { TextField, FormControl } from "@material-ui/core";
 
 
@@ -24,7 +26,8 @@ const Onepage = (props) =>{
     const dispatch = useDispatch();
     const [title, settitle] = useState('설문 제목');
     const [subtitle, setsubtitle] = useState('설문 개요');
-
+    const [modalOpen, setModalOpen] = useState(false);
+    const [ip, setIp] = useState("");
     const [isSidebarOpen, closeSidebar] = useState(false);
 
     const [logoPos, setlogoPos] = useState({x:0, y:0});
@@ -50,10 +53,11 @@ const Onepage = (props) =>{
     }
     const nextpage = () => {
        alert('설문이 생성되었습니다!\n'+"http://localhost:3000/"+surId)
+       setIp("http://localhost:3000/respond")
+       setModalOpen(true);
     }
 
     const testAxios=() =>{
-        
         axios.post('/api/create/survey',survey
             ).then(function (response) {
                 console.log(response)
@@ -69,6 +73,7 @@ const Onepage = (props) =>{
     const toggleSidebar = () =>{
       closeSidebar(isSidebarOpen => !isSidebarOpen)
     }
+    
 
     return ( 
 
@@ -107,8 +112,11 @@ const Onepage = (props) =>{
                 ))}
                 <div className="containerFooter">
                     <button class="plusBtn" onClick={()=>dispatch(increament())}> + </button>
-                    <button className="w-btn-outline2 w-btn-yellow-outline2" type="button" onClick={testAxios} >생성하기</button>
                     <p class="count">- {count} -</p>
+                    <button className="w-btn-outline2 w-btn-yellow-outline2" type="button" onClick={nextpage}>생성하기</button> 
+                    {/* nextpage대신 testAxios 였음 */}
+                    {modalOpen && <QRModal setModalOpen={setModalOpen} ip={ip}/>}
+
                 </div>
             </div>
            
