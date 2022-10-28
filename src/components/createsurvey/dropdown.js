@@ -19,7 +19,7 @@ import Toggle from '../../components/createsurvey/Toggle';
 
 const DropDown = (props) => {
   const dropDownRef = useRef(null);
-  const data= useSelector((state)=>state.onepage.data);
+  const data= useSelector((state)=>state.onepage.survey.data);
   const [isOpen, setIsOpen] = useDetectClose(dropDownRef, false);
   const [question, setquestion] = useState(['객관식','주관식','선형배율']);
   const dispatch = useDispatch();

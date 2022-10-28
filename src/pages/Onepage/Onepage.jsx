@@ -12,11 +12,12 @@ import DropDown from "../../components/createsurvey/dropdown";
 import {useDrag} from 'react-use-gesture';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
+import axios from 'axios';
 
 const Onepage = (props) =>{
 
     const survey = useSelector((state)=>state.onepage.survey);
-    const data = useSelector((state)=>state.onepage.data);
+    const data1 = useSelector((state)=>state.onepage.survey.data);
     const count = useSelector((state)=>state.onepage.count);
     const dispatch = useDispatch();
     const [title, settitle] = useState('설문 제목');
@@ -27,6 +28,18 @@ const Onepage = (props) =>{
     const [logoPos, setlogoPos] = useState({x:0, y:0});
     const bindLogoPos = useDrag(()=>{});
     const [active, setAtive] = useState("inactive");
+    const formData = new FormData();
+    const config = {"Content-Type": 'application/json'};
+    
+
+    formData.append("data",JSON.stringify(
+        {
+         id: "11",
+         type: "객관식",
+         title: "hi",
+         content: [{id: 1, con: "123"}]
+        }
+        ))
 
     const toggleActive = (e) => {
         setAtive ((prev)=>{
@@ -36,6 +49,21 @@ const Onepage = (props) =>{
     const nextpage = () => {
        alert('Next Page')
     }
+
+    const testAxios=() =>{
+        
+        axios.post('/api/create/survey',survey
+            ).then(function (response) {
+                console.log(response)
+              })
+          .catch(function(){
+            console.log('실패함')
+          })
+          console.log(JSON.stringify(data1))
+          
+
+
+    }  
     const toggleSidebar = () =>{
       closeSidebar(isSidebarOpen => !isSidebarOpen)
     }
@@ -92,7 +120,7 @@ const Onepage = (props) =>{
                 <Form class="form">
                     <Form.Group className="mb-3" controlId="formGrouptitle">
                         <Form.Label column="lg" lg={2}>설문지 제목</Form.Label>
-                        <Form.Control size="lg" type="title" value={survey.title}
+                        <Form.Control size="lg" type="title" value={survey.maintitle}
                      onChange ={(e)=>dispatch(changesurtitle(e.target.value))}placeholder="설문지 제목을 입력하세요." />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formGroupexplain">
@@ -105,14 +133,14 @@ const Onepage = (props) =>{
             </div>
 
             <div className="containerContent">
-                { data.map((item,index)=>( 
+                { data1.map((item,index)=>( 
                     <div className="fadein">
                     <DropDown id={item.id}/> 
                     </div>
                 ))}
                 <div className="containerFooter">
                     <button class="plusBtn" onClick={()=>dispatch(increament())}> + </button>
-                    <button className="w-btn-outline2 w-btn-yellow-outline2" type="button" onClick={nextpage} >생성하기</button>
+                    <button className="w-btn-outline2 w-btn-yellow-outline2" type="button" onClick={testAxios} >생성하기</button>
                     <p class="count">- {count} -</p>
                 </div>
             </div>

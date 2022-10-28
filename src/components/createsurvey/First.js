@@ -7,7 +7,7 @@ import styles from "./Dropdown.module.css";
 function First(props) {
 
 
-    const data = useSelector((state)=>state.onepage.data);
+    const data = useSelector((state)=>state.onepage.survey.data);
     const temp= data.filter((data)=>data.id===props.id)
     const dispatch = useDispatch();
 
