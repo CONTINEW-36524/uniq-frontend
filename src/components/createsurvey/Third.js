@@ -1,10 +1,10 @@
 
-import styles from "../../pages/Onepage/Onepage.css";
+import onepageStyles from "../../pages/Onepage/Onepage.css";
 import classNames from "classnames";
 import {useRef, useState} from "react";
 import { useSelector, useDispatch } from "react-redux/";
 import { changetitle,changecontent} from "../../components/Slice/OnepageSlice";
-
+import styles from "./Dropdown.module.css";
 
 function Third(props) {
 
@@ -56,16 +56,14 @@ function Third(props) {
         />
 
         <div className="thirdCon">
-          <div className={classNames(styles.third)}>
-            {/* <input className="label1" placeholder="라벨"/> */}
-              {btnvalue.map((item,index) =>(
-              <button className={"thirdbtn" + (index+1 == btnclick ? " thirdactive" : "")} type = "text"
-                value={index} onClick={()=>{
-                toggleActive(item);
-                passcontent(item);
-                }}>{item}</button>
-              ))}
-            {/* <input className="label2" placeholder="라벨"/> */}
+          <div className={classNames(onepageStyles.third)}>
+            {btnvalue.map((item,index) =>(
+            <button className={"thirdbtn" + (index+1 == btnclick ? " thirdactive" : "")} type = "text"
+              value={index} onClick={()=>{
+              toggleActive(item);
+              passcontent(item);
+              }}>{item}</button>
+            ))}
           </div>
           
         </div>

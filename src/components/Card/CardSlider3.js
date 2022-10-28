@@ -1,4 +1,4 @@
-// 최신 UNIQ템플릿
+// AI 템플릿
 import React, { useRef, useEffect } from "react";
 import styled from "styled-components";
 import CardComponent from "./CardComponent";
@@ -24,7 +24,7 @@ const StyledCardSlider = styled.div`
   }
 `;
 
-export default function CardSlider(props) {
+export default function CardSlider2(props) {
 
   const goleft = props.goleft;
   const goRight = props.goRight;
@@ -63,40 +63,16 @@ export default function CardSlider(props) {
     <StyledCardSlider ref={SliderRef}>
 
       <CardComponent
-        img="https://yozm.wishket.com/media/news/1231/image017.png"
-        Category="학교/교육"
-        keyword="#퀴즈"
-        title="강의 퀴즈"
+        img="https://img.freepik.com/free-photo/paper-note-frame-with-brown-memphis-pattern-background_53876-119795.jpg?w=1380&t=st=1666794435~exp=1666795035~hmac=c65eb8af8eff8cf7f46bd81d5eb8637be5b6de271b6178945560089d978065ba"
+        Category="AI"
+        title="AI추천 기본"
+        keyword="#AI"
       />
       <CardComponent
-        img="https://realfabric.net/wys2/file_attach/2018/02/09/1518160180_6385_original_N_7_560x400_100_2.jpg"
-        Category="모집/공고"
-        title="입사 지원서 양식"
-        keyword="#지원서 #신청서"
-      />
-      <CardComponent
-        img="https://png.pngtree.com/element_our/png/20180902/chevron-herringbone-seamless-pattern-with-black-and-white-colors-vector-png_75145.jpg"
-        Category="비즈니스"
-        title="단체 주문 신청서"
-        keyword="#쇼핑몰 #주문서"
-      />
-      <CardComponent
-        img="https://img.freepik.com/premium-vector/blue-triangle-shaped-seamless-pattern-wallpaper-vector_53876-164505.jpg?w=2000"
-        Category="행사"
-        title="박람회 만족도조사"
-        keyword="#행사 #만족도조사"
-      />
-      <CardComponent
-        img="https://img.freepik.com/free-vector/white-pattern-background-abstract-geometric-in-simple-design-vector_53876-156384.jpg?w=360"
-        Category="대외활동/서포터즈"
-        title="활동 보고서 양식"
-        keyword="#간단보고서"
-      />
-      <CardComponent
-        img="https://cdn.pixabay.com/photo/2017/03/25/18/06/color-2174065_960_720.png"
-        Category="개인"
-        title="파티 신청서"
-        keyword="#약속"
+        img="https://img.freepik.com/free-vector/nice-photo-frames-abstract-background_1017-31688.jpg?w=826&t=st=1666795017~exp=1666795617~hmac=eac9aded6d2e332ff6d9c6b1f137dc011d06521d67dff8c737267df6ed51c4ea"
+        Category="AI"
+        title="AI추천 기본2"
+        keyword="#AI"
       />
         
     </StyledCardSlider>

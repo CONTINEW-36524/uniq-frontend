@@ -1,6 +1,7 @@
 import { useState } from 'react';
+import { useSelector, useDispatch } from "react-redux/";
 import styled from 'styled-components';
-
+import { checkReq} from "../../components/Slice/OnepageSlice";
 const ToggleContainer = styled.div`
   position: relative;
   cursor: pointer;
@@ -38,12 +39,23 @@ const Desc = styled.div`
   margin: 15px;
 `;
 
-function Toggle () {
-  const [isOn, setisOn] = useState(false);
- 
+
+function Toggle (props) {
+  const data= useSelector((state)=>state.onepage.data);
+  const temp = data.filter(item => item.id === props.id)
+  // temp[0].req
+  // const [isOn, setisOn] = useState(false);
+  const dispatch = useDispatch();
+  console.log(props.id)
+
   const toggleHandler = () => {
     // isOn의 상태를 변경하는 메소드를 구현
-    setisOn(!isOn)
+    // setisOn(!isOn)
+    const passs={
+      id: props.id,
+      req : !(temp[0].req)
+    }
+    dispatch(checkReq(passs));
   };
 
   return (
@@ -53,8 +65,8 @@ function Toggle () {
         onClick={toggleHandler}>
         {/* 아래에 div 엘리먼트 2개가 있다. 각각의 클래스를 'toggle-container', 'toggle-circle' 로 지정 */}
         {/* Toggle Switch가 ON인 상태일 경우에만 toggle--checked 클래스를 div 엘리먼트 2개에 모두 추가. 조건부 스타일링을 활용*/}
-        <div className={`toggle-container ${isOn ? "toggle--checked" : null}`}/>
-        <div className={`toggle-circle ${isOn ? "toggle--checked" : null}`}/>
+        <div className={`toggle-container ${temp[0].req ? "toggle--checked" : null}`}/>
+        <div className={`toggle-circle ${temp[0].req ? "toggle--checked" : null}`}/>
       </ToggleContainer>
       
       {/* Desc 컴포넌트를 활용*/}
