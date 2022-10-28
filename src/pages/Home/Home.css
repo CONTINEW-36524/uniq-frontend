@@ -282,6 +282,40 @@ body {
   font-family: "S-CoreDream-3Light";
 }
 
+.intext3 {
+  float: right;
+  margin-top: 350px;
+  
+  margin-left: 80px;
+  font-size: 50px;
+  font-family: "S-CoreDream-3Light";
+}
+
+.intext4 {
+  float: right;
+  margin-top: 50px;
+
+  font-size: 20px;
+  font-family: "S-CoreDream-3Light";
+}
+
+.intext5 {
+  float: right;
+  margin-top: 350px;
+  
+  margin-left: 200px;
+  font-size: 50px;
+  font-family: "S-CoreDream-3Light";
+}
+
+.intext6 {
+  float: right;
+  margin-top: 50px;
+
+  font-size: 20px;
+  font-family: "S-CoreDream-3Light";
+}
+
 
 .StartBtn {
   background-color: #5AC0EF;
@@ -308,10 +342,25 @@ body {
   margin-left: 200px;
 }
 
-.textSet {
+.templateImg {
+  width: 800px;
+  height: 480px;
+  margin-top: 210px;
+  margin-left: 200px;
+}
+
+.qrImg {
+  width: 450px;
+  height: 450px;
+  margin-top: 250px;
+  margin-left: 250px;
+}
+
+.textSet1 {
   margin-left: 100px;
-
-
+}
+.textSet2 {
+  margin-left: 0px;
 }
 
 @font-face {
