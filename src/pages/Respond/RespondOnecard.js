@@ -12,10 +12,7 @@ import DropDown from "../../components/createsurvey/dropdown";
 
 
 function RespondOnecard() {
-  let [datas] = useState(data)
-  const survey = useSelector((state)=>state.onepage.survey);
-  const dispatch = useDispatch();
-  const count = useSelector((state)=>state.onepage.count);
+
   const location=useLocation();
   const [responddata,setresponddata] =useState([]);
   const [question, setquestion] = useState();

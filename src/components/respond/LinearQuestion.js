@@ -1,15 +1,24 @@
 import React, { useEffect,useState } from 'react';
+import { useSelector, useDispatch } from "react-redux/";
+import {changecontent} from "../../components/Slice/RespondSlice";
 
-function LinearQuestion() {
+function LinearQuestion(props) {
   let data = [1, 2, 3, 4];
+  const dispatch = useDispatch();
 
-  let [btnActive, setBtnActive] = useState("");
+  const [btnclick, setbtnclick] = useState();
 
   const toggleActive = (e) => {
-    setBtnActive((prev) => {
-      return e.target.value;
-    });
-  };
+    setbtnclick(e);
+    };
+
+  const passcontent = (e) =>{
+    const passs={
+      id: props.data.id,
+      item : e
+    }
+    dispatch(changecontent(passs));
+  }
 
   return (
     <div className="LinearContainer">
@@ -22,8 +31,11 @@ function LinearQuestion() {
             
             <button
               value={idx}
-              className={"btn" + (idx == btnActive ? " active" : "")}
-              onClick={toggleActive}
+              className={"btn" + (idx == btnclick ? " active" : "")}
+              onClick={()=>{
+                toggleActive(idx);
+                passcontent(item);
+                }}
             >
               {item}
             </button>

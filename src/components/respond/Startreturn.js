@@ -1,7 +1,17 @@
 import Form from 'react-bootstrap/Form';
+import { useSelector, useDispatch } from "react-redux/";
 import WithHeaderAndQuoteExample from './WithHeaderAndQuoteExample';
+import {savesurvey} from "../../components/Slice/RespondSlice";
 
 function Startreturn(props){
+
+  const dispatch = useDispatch();
+
+  const savesurveyid =(e) => {
+    // console.log(e.target.value)
+    dispatch(savesurvey(props.responddata[0].surveyid));
+  }
+
     if(props.responddata.length>0){
       return (
       <>
@@ -29,10 +39,10 @@ function Startreturn(props){
                 </div>
               ))} */}
   
-              { <WithHeaderAndQuoteExample responddata={props.responddata} /> }
+              { <WithHeaderAndQuoteExample responddata={props.responddata[0]} /> }
               
               <div className="respondContainerFooter">
-                <button className="w-btn-outline2 w-btn-yellow-outline2" type="button" > 제출하기</button>
+                <button className="w-btn-outline2 w-btn-yellow-outline2" type="button"onClick={savesurveyid} > 제출하기</button>
               </div>
             </div>
           </div>

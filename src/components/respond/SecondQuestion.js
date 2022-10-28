@@ -1,20 +1,33 @@
 import React, { useEffect,useState } from 'react';
+import { useSelector, useDispatch } from "react-redux/";
+import {changecontent} from "../../components/Slice/RespondSlice";
 
 function SecondQuestion(props) {
   
-    let [btnActive, setBtnActive] = useState("");
+  const data = useSelector((state)=>state.respond.survey.data);
+    const dispatch = useDispatch();
+
+
+    const passcontent = (e) =>{
+      const passs={
+        id: props.id,
+        item : e
+      }
+      dispatch(changecontent(passs));
   
-    const toggleActive = (e) => {
-      setBtnActive((prev) => {
-        return e.target.value;
-      });
     };
+
+    const answer = data.filter(item => item.id === props.id)[0].answer
+    console.log(data)
+    // const answer = data.filter(item => item.id === props.id)[0].answer
+  
+   
   
     return (
       <div className="firstContainer">
          <textarea className="secondcon" type = "text"
-         
-          onChange ={(e)=>e.target.value} 
+          value={answer}
+          onChange ={(e)=>passcontent(e.target.value)} 
         />
       </div>
     );
