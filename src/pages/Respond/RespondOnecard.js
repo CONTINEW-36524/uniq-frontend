@@ -15,40 +15,43 @@ function RespondOnecard() {
   const dispatch = useDispatch();
   const count = useSelector((state)=>state.onepage.count);
   const location=useLocation();
-  const [responddata, setresponddata] = useState();
+  const [responddata,setresponddata] =useState([]);
   const [question, setquestion] = useState();
 
   // 
 
-//   function TestAxios() {
-//      axios.get("/api/respond/survey")
-//   .then(function (response) {
-//         console.log(response); 
-//   }).catch(function (error) {
+//    const TestAxios=()=> {
+//        axios.get("/api/respond/survey",{params:{url: location.pathname}})
+//   .then((response)=> {
+//     //2. Parser
+//     setresponddata(response.data);
+//     // setresponddata(JSON.parse(response.data[0].datalist));
+//         console.log(JSON.parse(responddata[0].datalist)[0].type); 
+//         console.log(responddata); 
+//   }).catch( (error)=> {
 //       // 오류발생시 실행
-//   }).then(function() {
-//       // 항상 실행
-//   });
-//   console.log(useLocation())
-// }
+//   })
+//   };
+//  }
 
 useEffect(()=>{
   axios.get("/api/respond/survey",{params:{url: location.pathname}})
-  .then(function (response) {
+  .then((response)=> {
     //2. Parser
-    setresponddata(response.data);
+    //responddata=response.data;
     // setresponddata(JSON.parse(response.data[0].datalist));
-        console.log(JSON.parse(responddata[0].datalist)[0].type); 
-        console.log(responddata); 
+        //console.log(JSON.parse(responddata[0].datalist)[0].type); 
+        setresponddata(response.data);
   }).catch(function (error) {
       // 오류발생시 실행
   }).then(function() {
       // 항상 실행
   });
 }, [])
+
+useEffect(()=>{console.log(responddata);},[responddata])
   return (
     <>
-      
         {/* <div class='respondContainer'>
             <WithHeaderAndQuoteExample/>
         </div> */}
@@ -72,7 +75,7 @@ useEffect(()=>{
                 <DropDown id={item.id}/> 
               </div>
             ))} */}
-            <WithHeaderAndQuoteExample responddata={responddata} />
+            { <WithHeaderAndQuoteExample responddata={responddata} /> }
             <div className="respondContainerFooter">
               <button className="w-btn-outline2 w-btn-yellow-outline2" type="button" > 제출하기</button>
             </div>
