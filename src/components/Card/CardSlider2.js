@@ -28,7 +28,8 @@ export default function CardSlider2(props) {
 
   const goleft = props.goleft;
   const goRight = props.goRight;
-
+  const data = props.data
+  
   useEffect((e)=> {
     console.log('check');
     handleLeftClick(e);
@@ -62,7 +63,12 @@ export default function CardSlider2(props) {
   return (
     <StyledCardSlider ref={SliderRef}>
 
-      <CardComponent
+    {data.map((index)=><CardComponent img="https://yozm.wishket.com/media/news/1231/image017.png"
+                                              Category={index.category}
+                                              keyword={index.tag}
+                                              title={index.title}
+                                              />)}
+      {/* <CardComponent
         img="https://unblast.com/wp-content/uploads/2020/04/Geometric-Line-Patterns.jpg"
         Category="비즈니스"
         title="특강 만족도조사"
@@ -97,7 +103,7 @@ export default function CardSlider2(props) {
         Category="모집/공고"
         title="아르바이트 공고"
         keyword="#아르바이트 #이력서"
-      />
+      /> */}
         
     </StyledCardSlider>
   );

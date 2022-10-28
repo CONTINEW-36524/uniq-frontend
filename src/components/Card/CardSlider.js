@@ -28,6 +28,7 @@ export default function CardSlider(props) {
 
   const goleft = props.goleft;
   const goRight = props.goRight;
+  const data = props.data;
 
   useEffect((e)=> {
     console.log('check');
@@ -61,8 +62,12 @@ export default function CardSlider(props) {
 
   return (
     <StyledCardSlider ref={SliderRef}>
-
-      <CardComponent
+    {data.map((index)=><CardComponent img="https://realfabric.net/wys2/file_attach/2018/02/09/1518160180_6385_original_N_7_560x400_100_2.jpg"
+                                              Category={index.category}
+                                              keyword={index.tag}
+                                              title={index.title}
+                                              />)}
+      {/* <CardComponent
         img="https://yozm.wishket.com/media/news/1231/image017.png"
         Category="학교/교육"
         keyword="#퀴즈"
@@ -97,7 +102,7 @@ export default function CardSlider(props) {
         Category="개인"
         title="파티 신청서"
         keyword="#약속"
-      />
+      /> */}
         
     </StyledCardSlider>
   );
