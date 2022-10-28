@@ -96,7 +96,8 @@ export default function ShopFilterSidebar({ openFilter, onOpenFilter, onCloseFil
           type="submit"
           color="inherit"
           variant="outlined"
-          startIcon={<Iconify icon="ic:round-clear-all" />}
+          startIcon={<Iconify icon="ic:round-clear-all" />} 
+          onClick={onCloseFilter}
         >
           Select
         </Button>

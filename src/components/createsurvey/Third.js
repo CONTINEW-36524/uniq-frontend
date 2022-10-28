@@ -8,7 +8,7 @@ import styles from "./Dropdown.module.css";
 
 function Third(props) {
 
-  const data = useSelector((state)=>state.onepage.data);
+  const data = useSelector((state)=>state.onepage.survey.data);
   const temp= data.filter((data)=>data.id===props.id);
   const title = data.filter(item => item.id === props.id)[0].title;
   const content = data.filter(item => item.id === props.id)[0].content;
@@ -54,6 +54,7 @@ function Third(props) {
           placeholder="질문을 입력해주세요."
           onChange ={(e)=>passtitle(e.target.value)} 
         />
+
         <div className="thirdCon">
           <div className={classNames(onepageStyles.third)}>
             {btnvalue.map((item,index) =>(
@@ -64,6 +65,7 @@ function Third(props) {
               }}>{item}</button>
             ))}
           </div>
+          
         </div>
 
       </div>

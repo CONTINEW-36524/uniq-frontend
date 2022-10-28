@@ -7,7 +7,7 @@ import styles from "./Dropdown.module.css";
 function First(props) {
 
 
-    const data = useSelector((state)=>state.onepage.data);
+    const data = useSelector((state)=>state.onepage.survey.data);
     const temp= data.filter((data)=>data.id===props.id)
     const dispatch = useDispatch();
 
@@ -53,11 +53,16 @@ function First(props) {
                 <Firstcontent id={props.id} idx={idx} />
               </div>
             ))}
-          </div> 
+          </div>
+          
+          {/* <button className="firstbtn" onClick={listminus}>-</button>
+          <button className="firstbtn" onClick={listpush}>+</button> */}
+
           <div className={styles.side}>  
           <button className={styles.plus} onClick={listpush}>+</button>
           <button className={styles.minus} onClick={listminus}>-</button>
         </div> 
+
         </div>  
 
       </div>

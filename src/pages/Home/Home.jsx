@@ -23,7 +23,7 @@ function Home() {
   const next = useSelector((state) => state.createSurvey.next);
   const [modalOpen, setModalOpen] = useState(false);
 
-  const openModal = () => {
+  const openModal = () => {'GmarketSansMedium'
     setModalOpen(true);
     console.log(next)
   };

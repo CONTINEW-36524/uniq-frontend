@@ -2,8 +2,6 @@
     width: 100%;
     height: 100%;
     margin-top: 200px;
-    align-items: center;
-    justify-content: center;
     font-family: "Pretendard-Regular";
     animation: smoothAppear 1s;
 }
@@ -77,14 +75,46 @@
 }
 
 .tplist {
-    width: 100%;
+    width: 80vw;
     height: 100%;
-    display: flex;
     justify-content: center;
     align-items: center;
     scroll-snap-align: center;
+    margin-right: auto;
+    margin-left: auto;
     animation: smoothAppear 1s;
+}
 
+
+.tpparent {
+    display: block;
+    padding-bottom: 150px;
+    margin-top: 250px;
+}
+
+.tprecent {
+    font-size: 24px;
+    margin-left: 160px;
+    margin-bottom: 50px;
+}
+
+.tpcontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.tppopular {
+    font-size: 24px;
+    margin-left: 160px;
+    margin-bottom: 50px;
+}
+
+.tpai {
+    font-size: 24px;
+    margin-left: 160px;
+    margin-bottom: 50px;
 }
 
 .tpprev:hover {

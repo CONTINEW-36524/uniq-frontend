@@ -63,25 +63,32 @@ const AddAsk = (props) => {
   return (
     <div className='typecardcontainer'>
 
-        <div className='numq' >
-            <div >
-            <input  className='typecarddiv' type = "number" min='0' value={mult} onChange = {changeMult}/>객관식
+        <div className='numq'>
+            <div className='QType'>
+              <p className="qType">객관식 :</p>
+              <input className='typecarddiv' id='gackguan' type = "number" min='0' value={mult} onChange = {changeMult}/>
             </div>
-            <div>
-            <input className='typecarddiv' type = "number" min='0' value={sub} onChange = {changeSub}/>주관식
+            <div className='QType'>
+              <p className="qType">주관식 : </p>
+              <input className='typecarddiv' type = "number" min='0' value={sub} onChange = {changeSub}/>
             </div>
-            <div><input  className='typecarddiv'type = "number" min='0' value={linear} onChange = {changeLine}/>선형배율</div>
+            <div className='QType'>
+              <p className="qType">선형배율 : </p>
+              <input className='typecarddiv' id='sunhyung' type = "number" min='0' value={linear} onChange = {changeLine}/>
+            </div>
         </div>
 
-        <div  className='popupmakebtn'>
-
-        <Link to={selecttype[pagetype]}>
-        <button  onClick={add}>만들기</button>
-        <button >기본양식으로 만들기</button>
-        </Link>
-        
+        <div className='popupmakebtn'>
+          <Link to={selecttype[pagetype]}>
+            <button className='makeBtn' onClick={add}>만들기</button>
+          </Link>
+          <Link to={selecttype[pagetype]}>
+            {/* <button  onClick={add}>만들기</button> */}
+            <button className='standBtn'>기본양식으로 만들기</button>
+          </Link>
 
         </div>
+
     </div>
     );
 

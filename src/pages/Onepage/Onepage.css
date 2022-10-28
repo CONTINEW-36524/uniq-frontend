@@ -58,7 +58,6 @@
   height: 200px;
   background-color: #b6cefc;
   padding: 2%;
-  display: inline-block; 
   
   /* 어딘가에서 css가 겹쳐서 그런가
   footer만 옆으로 살짝 이동해 있길래 강제로 -로 이동*/
@@ -67,7 +66,6 @@
   display: flex;
   justify-content: center;
   align-items: flex-end;
-
   font-family: 'GmarketSansMedium';
 }
 @font-face {
@@ -87,13 +85,14 @@
 /* 질문 추가 버튼 */
 .plusBtn {
   position: relative;
-  top: -150px; 
+  top: -130px; 
   left: 70px;
   border-radius: 50%;
   height: 50px;
   width: 50px;
   box-shadow: gray 0.2em 0.2em 0.2em;
   font-size: 30px;
+  padding-top: 3px;
 }
 
 
@@ -124,14 +123,7 @@
 }
 
 
-/* 페이지 번호 나타내는 p태그 */
-.count{
-  position: relative;
-  font-size: 18px;
-  top: 15px;
-  left: -100px;
-  text-align: center;
-}
+
 
 
 
@@ -228,6 +220,12 @@ ul {
   list-style: none;
 }
 li {
+  color: black;
+}
+p {
+  color: black;
+}
+span {
   color: black;
 }
 a {
@@ -466,6 +464,7 @@ a {
   width: 85%;
   height: 6.25em;
   resize: none;
+  
 }
 
 .thirdCon {
@@ -494,3 +493,13 @@ a {
   background-color: lightblue;
 }
 
+.options {
+  display: block;
+}
+
+.optionUItag {
+  margin-left: 30px;
+}
+.option1Btn:hover{
+  cursor: pointer;
+}
