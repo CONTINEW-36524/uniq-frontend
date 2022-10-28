@@ -10,6 +10,8 @@ import SelectType from "../../components/createsurvey/SelectType.js"
 import { exit } from "../../components/Slice/CreateSurveySlice.js"
 import AddAsk from '../../components/createsurvey/AddAsk';
 import BannerSlider from '../BannerSlider';
+import formImg from '../../assets/formImg.jpg';
+
 function Home() {
 
   const [goleft1, setGoleft1] = useState(false);
@@ -82,12 +84,28 @@ function Home() {
       </div>
 
       {/* page 3 */}
-      <div class="list">
-        <div class="three">
+      <div class="list2">
+       
+          <div class='textSet'>
           <h3 class="intext1">다양한 형태의 설문지 폼</h3>
           <br/>
           <h5 class="intext2">One page형 Card형 원하는 형식으로 생성해보세요.</h5>
-        </div>
+          <div class='button'>
+          <a href="/template">
+                <button class='StartBtn'>지금 시작하기</button>
+          </a>
+          </div>
+          </div>
+          <br/>
+          <br/>
+          
+          
+          <div>
+          <img src={ formImg } class='formImg' />
+          </div>
+          <br/>
+          
+        
       </div>
 
     </div>
