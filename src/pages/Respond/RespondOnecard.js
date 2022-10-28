@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
+import "./respondOnecard.css"
 import Card from 'react-bootstrap/Card';
 import data from './respondData';
-import "./respondOnecard.css"
 import Form from 'react-bootstrap/Form';
 import { useSelector, useDispatch } from "react-redux/";
 import DropDown from "../../components/createsurvey/dropdown";
@@ -38,6 +38,7 @@ function RespondOnecard() {
                 <DropDown id={item.id}/> 
               </div>
             ))} */}
+            
             <WithHeaderAndQuoteExample/>
             <div className="respondContainerFooter">
               <button className="w-btn-outline2 w-btn-yellow-outline2" type="button"> 제출하기</button>
@@ -49,25 +50,41 @@ function RespondOnecard() {
 }
 
 
+
+
+
+
 function WithHeaderAndQuoteExample() {
-    let [datas] = useState(data)
+    let [datas] = useState(data);
+
+    const [currentClick, setCurrentClick] = React.useState(null);
+    const btnClick = (e) => {
+      setCurrentClick(e.target.className);
+      console.log(e.target.className);
+      
+    };
 
     return (
       datas.map((datas => (
-        <Card className="text-center w-100" >
+        <Card className="repondCardContainer" >
           <div>
-            <Card.Header>Question Number {datas.id}</Card.Header>
+            <Card.Header className="repondCardHeader"> 
+              Q{datas.id} : {datas.question} {datas.needed}
+            </Card.Header>
             <Card.Body>
               <blockquote className="blockquote mb-0">
                 <p>
                   {' '}
-                  질문: {datas.question}
+                  <FirstQuestion/>
+                  {/* <LinearQuestion/> */}
+                  
                   {' '}
                 </p>
-                <footer className="blockquote-footer">
-                  type: {datas.type} 
-                  {/* (질문 타입에 따라 답 적는칸 다르게 구현해야함) */}
-                </footer>
+
+                {/* <footer className="blockquote-footer">
+                  
+                  (질문 타입에 따라 답 적는칸 다르게 구현해야함)
+                </footer> */}
               </blockquote>
             </Card.Body>
           </div>
@@ -76,5 +93,80 @@ function WithHeaderAndQuoteExample() {
         
     );
 }
+
+function FirstQuestion() {
+  let data = ['1학년', '2학년', '3힉년', '4힉년'];
+
+  let [btnActive, setBtnActive] = useState("");
+
+  const toggleActive = (e) => {
+    setBtnActive((prev) => {
+      return e.target.value;
+    });
+  };
+
+  return (
+    <div className="firstContainer">
+      {data.map((item, idx) => {
+        return (
+          <>
+          <div className="firstDiv">
+            <button
+              value={idx}
+              className={"firstBtn" + (idx == btnActive ? " active" : "")}
+              onClick={toggleActive}
+            >
+              ☐
+            </button>
+            <p className="bogiPTag">{item}</p>
+          </div>
+          </>
+        );
+      })}
+    </div>
+  );
+}
+
+
+
+function LinearQuestion() {
+  let data = [1, 2, 3, 4];
+
+  let [btnActive, setBtnActive] = useState("");
+
+  const toggleActive = (e) => {
+    setBtnActive((prev) => {
+      return e.target.value;
+    });
+  };
+
+  return (
+    <div className="LinearContainer">
+
+      <p className='leftText'>전혀 아니다</p>
+      {data.map((item, idx) => {
+        return (
+          <>
+          <div>
+            
+            <button
+              value={idx}
+              className={"btn" + (idx == btnActive ? " active" : "")}
+              onClick={toggleActive}
+            >
+              {item}
+            </button>
+            
+          </div>
+          </>
+        );
+      })}
+      <p className='rightText'>매우 그렇다</p>
+    </div>
+  );
+}
+
+
+
 
 export default RespondOnecard;

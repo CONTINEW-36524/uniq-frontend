@@ -223,6 +223,12 @@ ul {
 li {
   color: black;
 }
+p {
+  color: black;
+}
+span {
+  color: black;
+}
 a {
   text-decoration: none;
   color: black;
@@ -488,3 +494,13 @@ a {
   background-color: lightblue;
 }
 
+.options {
+  display: block;
+}
+
+.optionUItag {
+  margin-left: 30px;
+}
+.option1Btn:hover{
+  cursor: pointer;
+}
