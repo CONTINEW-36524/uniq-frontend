@@ -33,7 +33,6 @@ const Onepage = (props) =>{
     //         return e.target.value;
     //     })
     // }
-    const surveydata={...survey,...data}
 
     const testAxios=() =>{
         
