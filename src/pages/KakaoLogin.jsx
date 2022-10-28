@@ -6,9 +6,9 @@ import "./KakaoLogin.css";
 const KakaoLogin = () => {
 
     // kakao developers application key
-    const REST_API_KEY = "637c722561c612190048a1d771920d91";
-    const REDIRECT_URI = "http://localhost:3000/oauth/callback/kakao";
-    const KAKAO_AUTH_URL = `https://kauth.kakao.com/oauth/authorize?client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}&response_type=code`;
+    // const REST_API_KEY = "637c722561c612190048a1d771920d91";
+    // const REDIRECT_URI = "http://localhost:3000/oauth/callback/kakao";
+    // const KAKAO_AUTH_URL = `https://kauth.kakao.com/oauth/authorize?client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}&response_type=code`;
 
     // get auth code from kakao server
     const code = new URL(window.location.href).searchParams.get("code");
@@ -43,7 +43,7 @@ const KakaoLogin = () => {
                 // response fail error message
                 console.error(e);
                 //window.alert("로그인 실패");
-                navigate("/"); //수정 필요할 수도 있음
+                //navigate("/"); //수정 필요할 수도 있음
             }
 
             // get token from local storage
@@ -80,9 +80,12 @@ const KakaoLogin = () => {
     return (
         <>
             <a href={KAKAO_AUTH_URL}>
-                <button class='KakaoBtn'> </button>
+                {/* <button class='KakaoBtn'>로그인</button> */}
             </a>
         </>
     );
 };
 export default KakaoLogin;
+export const REDIRECT_URI="http://localhost:3000/oauth/callback/kakao";
+export const REST_API_KEY = "637c722561c612190048a1d771920d91";
+export const KAKAO_AUTH_URL = `https://kauth.kakao.com/oauth/authorize?client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}&response_type=code`;

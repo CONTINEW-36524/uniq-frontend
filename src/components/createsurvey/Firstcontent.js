@@ -17,7 +17,6 @@ function Firstcontent(props) {
 
 
 
-
   const passcontent = (e) =>{
     const passs={
       id: props.id,
@@ -32,7 +31,7 @@ function Firstcontent(props) {
     width: "360px",
     height: "30px",
     margin: "5px",
-    border: "1px solid teal"
+    border: "none"
   };
 
 

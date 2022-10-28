@@ -28,6 +28,7 @@ function Second(props) {
     dispatch(changecontent(passs));
 
   };
+  
 
 
 

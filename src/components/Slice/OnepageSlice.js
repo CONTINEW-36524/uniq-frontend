@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import uuid from "react-uuid" 
 
 const initialState = {
-    id : 0,
+    id : uuid(),
     survey : 
         {
             maintitle : '',
@@ -39,6 +39,7 @@ export const OnepageSlice = createSlice({
     name: 'Onepage',
     initialState,
     reducers:{
+       
         increament: (state) =>{
             state.survey.data.push({id:uuid() , type:'객관식', title:'',content: [{id: state.count*100, con:''}]});
             state.count+=1;

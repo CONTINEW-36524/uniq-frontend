@@ -1,9 +1,9 @@
 #tpwrapper {
     width: 100%;
     height: 100%;
-    margin-top: 110px;
+    margin-top: 200px;
     font-family: "Pretendard-Regular";
-    animation:  smoothAppear 1s;
+    animation: smoothAppear 1s;
 }
 
 @font-face {
@@ -11,38 +11,42 @@
     src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
     font-weight: 400;
     font-style: normal;
-  }
-  @keyframes smoothAppear {
+}
+
+@keyframes smoothAppear {
     from {
-      opacity: 0;
-      transform: translateY(-5%);
+        opacity: 0;
+        transform: translateY(-5%);
     }
+
     to {
-      opacity: 1;
-      transform: translateY(0);
+        opacity: 1;
+        transform: translateY(0);
     }
-  }
-  
+}
+
 .tptop {
     position: relative;
     display: flex;
     text-align: left;
     align-items: center;
     justify-content: center;
-    height: 400px;
-    width: 940px;
+    height: 30vh;
+    width: 100vw;
     margin-right: auto;
     margin-left: auto;
 
 }
+
 .tptopcontent {
     margin-top: 5
 }
+
 .tptopleft {
     position: relative;
     height: 400px;
     width: 470px;
-    margin-top: 10%;
+    margin-top: 10vh;
     padding-left: 3%;
     padding-right: 3%;
 }
@@ -54,33 +58,6 @@
     background-image: url('../../assets/templateImage.png');
     background-repeat: no-repeat;
     background-size: 470px 400px;
-}
-
-.tpcategory {
-    display: flex;
-    position: relative;
-    border-radius: 15px;
-    vertical-align: middle;
-    background-color: #DAE6FE;
-    width: 50%;
-    height: 60px;
-    margin-right: auto;
-    margin-left: auto;
-    padding-left: 50px;
-}
-
-.tpbuttom {
-    position: relative;
-    display: grid;
-    text-align: center;
-    align-items: center;
-    place-items: center;
-    width: 940px;
-    justify-content: center;
-    gap: 20px;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    margin-right: auto;
-    margin-left: auto;
 }
 
 .tpcreate {
@@ -97,67 +74,77 @@
     box-shadow: 0 7px 28px rgba(0, 0, 0, 0.25), 0 5px 5px rgba(0, 0, 0, 0.22);
 }
 
-.tplogin {
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-    margin: auto;
-    margin-top: 1%;
-    margin-left: 5%;
-    width: 160px;
-    height: 40px;
-    background-color: #FFEC6C;
-    box-shadow: 0 7px 28px rgba(0, 0, 0, 0.25), 0 5px 5px rgba(0, 0, 0, 0.22);
-}
-
-.tptt {
-    border: 1px dashed;
-    width: 50%;
-    margin-right: auto;
-    margin-left: auto;
-}
-
-.recentTem,
-.popularTem {
-    text-align: center;
+.tplist {
+    width: 80vw;
+    height: 100%;
+    justify-content: center;
     align-items: center;
-    place-items: center;
+    scroll-snap-align: center;
     margin-right: auto;
     margin-left: auto;
+    animation: smoothAppear 1s;
+}
+
+
+.tpparent {
+    display: block;
+    padding-bottom: 150px;
+    margin-top: 250px;
+}
+
+.tprecent {
+    font-size: 24px;
+    margin-left: 160px;
+    margin-bottom: 50px;
+}
+
+.tpcontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.tppopular {
+    font-size: 24px;
+    margin-left: 160px;
+    margin-bottom: 50px;
+}
+
+.tpai {
+    font-size: 24px;
+    margin-left: 160px;
+    margin-bottom: 50px;
+}
+
+.tpprev:hover {
+    cursor: pointer;
+}
+
+.tpprev {
+    background-color: #bcbcbc;
+    padding: 10px;
+    margin-right: 10px;
+    margin-top: 100px;
+}
+
+.tpprev b {
+    color: white;
     font-size: 25px;
 }
 
-#tpbox {
-    border: solid 2px;
-    height: 215px;
-    margin-top: 5%;
+.tpnext:hover {
+    cursor: pointer;
 }
 
-#tpbox:hover {
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-    transform: translateY(-10px);
+.tpnext {
+    background-color: #bcbcbc;
+    padding: 10px;
+    margin-left: 15px;
+    margin-top: 100px;
 }
 
-.tpplus {
-    position: relative;
-    border-radius: 50%;
-    margin-top: 40%;
-    width: 40px;
-    height: 40px;
-}
-
-.tpboximg {
-    background: url('../../assets/showingImage.png');
-    background-size: contain;
-    width: 150px;
-    height: 150px;
-}
-
-.tphead {
-    font-size: 20px;
-    margin-top: 5px;
-}
-
-.tpboxcontent {
-    font-size: 12px;
+.tpnext b {
+    color: white;
+    font-size: 25px;
 }

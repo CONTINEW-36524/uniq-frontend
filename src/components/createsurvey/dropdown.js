@@ -9,8 +9,8 @@ import { Link, Route, Routes, BrowserRouter as Router } from "react-router-dom";
 import First from "./First"
 import Second from "./Second"
 import Third from "./Third";
-
 import { FcList } from "react-icons/fc";
+
 import uuid from "react-uuid";
 import Toggle from '../../components/createsurvey/Toggle';
 
@@ -42,9 +42,8 @@ const DropDown = (props) => {
       id: props.id,
       item : e
     }
-
     dispatch(changetype(passs));
-   
+
   };
   
   const handleDelete =(e) => {
@@ -59,6 +58,7 @@ const DropDown = (props) => {
     // console.log({type})
     return (selectComponent[type])
   }
+
   // console.log({isOpen});
   // console.log({dropDownRef});
 
@@ -80,6 +80,7 @@ const DropDown = (props) => {
           onClick={() =>setIsOpen(!isOpen)}>
             ▼
         </button>
+
 
         <button className={styles.option} onClick={()=>toggleSidebar2()}>☰</button>
           

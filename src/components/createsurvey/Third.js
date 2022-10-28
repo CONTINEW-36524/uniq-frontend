@@ -54,6 +54,7 @@ function Third(props) {
           placeholder="질문을 입력해주세요."
           onChange ={(e)=>passtitle(e.target.value)} 
         />
+
         <div className="thirdCon">
           <div className={classNames(onepageStyles.third)}>
             {btnvalue.map((item,index) =>(
@@ -64,6 +65,7 @@ function Third(props) {
               }}>{item}</button>
             ))}
           </div>
+          
         </div>
 
       </div>

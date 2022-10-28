@@ -1,3 +1,4 @@
+// 최신 UNIQ템플릿
 import React, { useRef, useEffect } from "react";
 import styled from "styled-components";
 import CardComponent from "./CardComponent";
