@@ -12,11 +12,12 @@ import { isDOMComponent } from "react-dom/test-utils";
 import DropDown from "../../components/createsurvey/dropdown";
 import {useDrag} from 'react-use-gesture';
 import Form from 'react-bootstrap/Form';
+import axios from 'axios';
 
 const Onepage = (props) =>{
 
     const survey = useSelector((state)=>state.onepage.survey);
-    const data = useSelector((state)=>state.onepage.data);
+    const data = useSelector((state)=>state.onepage.survey.data);
     const count = useSelector((state)=>state.onepage.count);
     const pagecount = useSelector((state)=>state.onepage.pagecount);
     const dispatch = useDispatch();
@@ -33,10 +34,22 @@ const Onepage = (props) =>{
     //     })
     // }
 
+    const testAxios=() =>{
+        
+        axios.post('/api/create/survey',
+        survey
+            ).then(function (response) {
+                console.log(response)
+              })
+          .catch(function(){
+            console.log('실패함')
+          })
+          console.log(survey)
+          
 
-    const nextpage = () => {
-        alert('Next Page')
-     }
+
+    }  
+
 
      const toggleSidebar = () =>{
       closeSidebar(isSidebarOpen => !isSidebarOpen)
@@ -60,7 +73,7 @@ const Onepage = (props) =>{
                 <Form class="form">
                     <Form.Group className="mb-3" controlId="formGrouptitle">
                         <Form.Label column="lg" lg={2}>설문지 제목</Form.Label>
-                        <Form.Control size="lg" type="title" value={survey.title}
+                        <Form.Control size="lg" type="title" value={survey.maintitle}
                      onChange ={(e)=>dispatch(changesurtitle(e.target.value))}placeholder="설문지 제목을 입력하세요." />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formGroupexplain">
@@ -82,7 +95,7 @@ const Onepage = (props) =>{
                         <p class="CardNum">- {pagecount+1}/{count} -</p>
                         <button class="nextcard" onClick={()=>dispatch(pluscardpage())}>다음</button>
                     </div>
-                    <button className="w-btn-outline w-btn-yellow-outline" type="button" onClick={nextpage} >생성하기</button>   
+                    <button className="w-btn-outline w-btn-yellow-outline" type="button" onClick={testAxios} >생성하기</button>   
                 </div>
             </div>
 

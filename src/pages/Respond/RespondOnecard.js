@@ -1,8 +1,12 @@
-import React, { useState } from 'react';
+
+import React, { useEffect,useState } from 'react';
 import "./respondOnecard.css"
 import Card from 'react-bootstrap/Card';
 import data from './respondData';
+import { useLocation } from 'react-router-dom';
+
 import Form from 'react-bootstrap/Form';
+import axios from 'axios';
 import { useSelector, useDispatch } from "react-redux/";
 import DropDown from "../../components/createsurvey/dropdown";
 
@@ -12,9 +16,41 @@ function RespondOnecard() {
   const survey = useSelector((state)=>state.onepage.survey);
   const dispatch = useDispatch();
   const count = useSelector((state)=>state.onepage.count);
+  const location=useLocation();
+  const [responddata, setresponddata] = useState();
+  const [question, setquestion] = useState();
 
+  // 
+
+//   function TestAxios() {
+//      axios.get("/api/respond/survey")
+//   .then(function (response) {
+//         console.log(response); 
+//   }).catch(function (error) {
+//       // 오류발생시 실행
+//   }).then(function() {
+//       // 항상 실행
+//   });
+//   console.log(useLocation())
+// }
+
+useEffect(()=>{
+  axios.get("/api/respond/survey",{params:{url: location.pathname}})
+  .then(function (response) {
+    //2. Parser
+    setresponddata(response.data);
+    // setresponddata(JSON.parse(response.data[0].datalist));
+        console.log(JSON.parse(responddata[0].datalist)[0].type); 
+        console.log(responddata); 
+  }).catch(function (error) {
+      // 오류발생시 실행
+  }).then(function() {
+      // 항상 실행
+  });
+}, [])
   return (
     <>
+      
         {/* <div class='respondContainer'>
             <WithHeaderAndQuoteExample/>
         </div> */}
@@ -23,10 +59,10 @@ function RespondOnecard() {
           <div className="containerHeader">
             <Form class="form">
               <Form.Group className="mb-3" controlId="formGrouptitle">
-                <h3 class='respondHeadTitle'> {datas[0].title} </h3>
+                <h3 class='respondHeadTitle'> {responddata[0].maintitle} </h3>
               </Form.Group>
               <Form.Group className="mb-3" controlId="formGroupexplain">
-                <h5 class='respondHeadOverview'> {datas[0].overview} </h5>
+                <h5 class='respondHeadOverview'> {responddata[0].subtitle} </h5>
               </Form.Group>
             </Form>
             
@@ -38,10 +74,10 @@ function RespondOnecard() {
                 <DropDown id={item.id}/> 
               </div>
             ))} */}
-            
-            <WithHeaderAndQuoteExample/>
+
+            <WithHeaderAndQuoteExample responddata={responddata} />
             <div className="respondContainerFooter">
-              <button className="w-btn-outline2 w-btn-yellow-outline2" type="button"> 제출하기</button>
+              <button className="w-btn-outline2 w-btn-yellow-outline2" type="button" > 제출하기</button>
             </div>
           </div>
         </div>
@@ -50,34 +86,46 @@ function RespondOnecard() {
 }
 
 
+// <<<<<<< HEAD
 
 
 
 
-function WithHeaderAndQuoteExample() {
-    let [datas] = useState(data);
+// function WithHeaderAndQuoteExample() {
+//     let [datas] = useState(data);
 
-    const [currentClick, setCurrentClick] = React.useState(null);
-    const btnClick = (e) => {
-      setCurrentClick(e.target.className);
-      console.log(e.target.className);
+//     const [currentClick, setCurrentClick] = React.useState(null);
+//     const btnClick = (e) => {
+//       setCurrentClick(e.target.className);
+//       console.log(e.target.className);
       
-    };
+//     };
+
+//     return (
+//       datas.map((datas => (
+//         <Card className="repondCardContainer" >
+//           <div>
+//             <Card.Header className="repondCardHeader"> 
+//               Q{datas.id} : {datas.question} {datas.needed}
+//             </Card.Header>
+// =======
+function WithHeaderAndQuoteExample(props) {
+    const aa=JSON.parse(props.responddata[0].datalist)
 
     return (
-      datas.map((datas => (
-        <Card className="repondCardContainer" >
+      aa.map(((datas,idx) => (
+        <Card className="text-center w-100" >
           <div>
-            <Card.Header className="repondCardHeader"> 
-              Q{datas.id} : {datas.question} {datas.needed}
-            </Card.Header>
+            <Card.Header>Question Number {idx+1}</Card.Header>
             <Card.Body>
               <blockquote className="blockquote mb-0">
                 <p>
                   {' '}
+
                   <FirstQuestion/>
                   {/* <LinearQuestion/> */}
                   
+
                   {' '}
                 </p>
 

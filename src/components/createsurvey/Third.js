@@ -8,7 +8,7 @@ import styles from "./Dropdown.module.css";
 
 function Third(props) {
 
-  const data = useSelector((state)=>state.onepage.data);
+  const data = useSelector((state)=>state.onepage.survey.data);
   const temp= data.filter((data)=>data.id===props.id);
   const title = data.filter(item => item.id === props.id)[0].title;
   const content = data.filter(item => item.id === props.id)[0].content;

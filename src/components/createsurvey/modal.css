@@ -91,7 +91,7 @@
   /* padding: 5%; */
   /* align-items: center; */
   margin-right: 100px;
-  width: 550px;
+  width: 250px;
   height: 290px;
   background-color: #F3F6FA;
   background-image: url('/public/assets/onepagePopup.png');
@@ -104,7 +104,7 @@
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
 }
 .cardtype{
-  width: 550px;
+  width: 250px;
   height: 290px;
   background-color: #F3F6FA;
   background-image: url('/public/assets/cardPopup.png');
@@ -127,7 +127,8 @@
 }
 
 .typecardcontainer{
-  width: 850px;
+  width: 100%;
+  height: 100%;
   display: inline-block; 
   margin: 0.5px;  
   margin-left: 50px;
@@ -137,11 +138,18 @@
 .typecarddiv{
   margin-top: 3px;
   margin-right: 220px;
-  float: right;
+  margin-left: 100px;
+}
+.typecarddiv#gackguan {
+  margin-left: 102px;
+}
+.typecarddiv#sunhyung {
+  margin-left: 83px;
 }
 
 
 .numq{
+  width: 100%;
   margin-top: 20px;
   margin-bottom: 50px;
   align-items: center;
@@ -171,20 +179,34 @@
 
 .popupmakebtn{
   width: 500px;
-  margin-left: 300px;
+  margin-left: 200px;
   margin-top: 20px;
   margin-bottom: 20px;
   text-align: center;
 }
 
 .makeBtn{
-  width: 30px;
-  height: 50px;
+  width: 100px;
+  height: 30px;
   font-size: 20px;
   text-decoration-line: none;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
 }
 .makeBtn:hover{
+  transform: translateY(-0.7%);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+}
+
+.standBtn{
+  width: 200px;
+  height: 30px;
+  font-size: 20px;
+  margin-left: 20px;
+  -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+}
+.standBtn:hover{
   transform: translateY(-0.7%);
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
 }

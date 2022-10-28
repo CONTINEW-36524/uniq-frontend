@@ -41,7 +41,7 @@ const Desc = styled.div`
 
 
 function Toggle (props) {
-  const data= useSelector((state)=>state.onepage.data);
+  const data= useSelector((state)=>state.onepage.survey.data);
   const temp = data.filter(item => item.id === props.id)
   // temp[0].req
   // const [isOn, setisOn] = useState(false);
