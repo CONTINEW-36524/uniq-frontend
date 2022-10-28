@@ -22,7 +22,7 @@ function Home() {
   const next = useSelector((state) => state.createSurvey.next);
   const [modalOpen, setModalOpen] = useState(false);
 
-  const openModal = () => {
+  const openModal = () => {'GmarketSansMedium'
     setModalOpen(true);
     console.log(next)
   };
@@ -49,7 +49,7 @@ function Home() {
             {next ?
               <Modal open={modalOpen} close={closeModal} header="질문 유형 개수를 선택해주세요.">
                 <AddAsk />
-              </Modal> :
+              </Modal> : 
               <Modal open={modalOpen} close={closeModal} header="설문 유형을 선택해주세요.">
                 <SelectType />
               </Modal>

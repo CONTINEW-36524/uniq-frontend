@@ -7,6 +7,7 @@
   left: 0;
   z-index: 99;
   background-color: rgba(0, 0, 0, 0.6);
+  font-family: 'SBAggroB';
 }
 .modal button {
   outline: none;
@@ -131,7 +132,7 @@
 
 .typecarddiv{
   margin-top: 3px;
-  margin-right: 250px;
+  margin-right: 220px;
   float: right;
 }
 
@@ -182,4 +183,24 @@
 .makeBtn:hover{
   transform: translateY(-0.7%);
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+}
+
+  /* 폰트 적용 */
+@font-face {
+    font-family: 'SBAggroB';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+  font-family: 'SDSamliphopangche_Outline';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/SDSamliphopangche_Outline.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'yg-jalnan';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
