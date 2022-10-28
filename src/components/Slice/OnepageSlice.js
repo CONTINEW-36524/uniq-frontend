@@ -33,9 +33,7 @@ const initialState = {
     count: 2,
     contentcount:1,
     pagecount:1,
-
-   
-}
+    }
 
 export const OnepageSlice = createSlice({
     name: 'Onepage',
@@ -44,7 +42,6 @@ export const OnepageSlice = createSlice({
         increament: (state) =>{
             state.survey.data.push({id:uuid() , type:'객관식', title:'',content: [{id: state.count*100, con:''}]});
             state.count+=1;
-            // console.log("타입 머에여" + state.data[state.count].type)
         },
         increament2: (state) =>{
             state.survey.data.push({id: uuid() , type:'주관식', title:'',content: [{id: state.count*100, con:''}]});
@@ -130,7 +127,7 @@ export const OnepageSlice = createSlice({
 
         },
 
-        deleteinit(state, action){
+        deleteinit:(state, action)=>{
             if (action.payload == 0)
             {
                 state.pagecount=0
@@ -145,8 +142,12 @@ export const OnepageSlice = createSlice({
                 state.count=1
                 state.survey.data.pop()
             }
+        },
+        checkReq:(state, action)=>{
+            const index = state.data.findIndex((data) => data.id == action.payload.id)
+            state.data[index].req = action.payload.req
+            console.log(state.data[index].req)
         }
-
         
 
 
@@ -156,6 +157,6 @@ export const OnepageSlice = createSlice({
     }
 });
 
-export const {increament, changeval,conincreament, changetype, changetitle, pluscontent,minuscontent, changecontent,changesurtitle, changesursubtitle, increament2, increament3, pluscardpage,minuscardpage, deletecontent, deleteinit} = OnepageSlice.actions;
+export const {increament, changeval,conincreament, changetype, changetitle, pluscontent,minuscontent, changecontent,changesurtitle, changesursubtitle, increament2, increament3, pluscardpage,minuscardpage, deletecontent, deleteinit, checkReq} = OnepageSlice.actions;
 
 export default OnepageSlice.reducer;
