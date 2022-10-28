@@ -29,7 +29,7 @@ function Home() {
     setModalOpen(false);
     dispatch(exit())
   };
-
+ 
   return (
 
     <div class='detail'>
