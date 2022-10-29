@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./KakaoLogin.css";
+import { KAKAO_AUTH_URL } from "./OAuth";
 
 const KakaoLogin = () => {
 
@@ -12,7 +13,7 @@ const KakaoLogin = () => {
 
     // get auth code from kakao server
     const code = new URL(window.location.href).searchParams.get("code");
-
+    console.log({code})
     // login success: move to MySpace page
     const navigate = useNavigate();
     useEffect(() => {
@@ -26,7 +27,7 @@ const KakaoLogin = () => {
                     // get auth code from this URL
                     .get(
                         // 백엔드에서 설정한 주소
-                        `http://localhost:8080/api/kakao?code=${code}`
+                        `http://localhost:8088/oauth/callback/kakao?code=${code}`
 
                     )
 
@@ -52,13 +53,13 @@ const KakaoLogin = () => {
             // pass token to backend
             try {
                 const res = await axios
-                    .get(
+                    .post(
                         // 백엔드에서 설정한 주소
-                        "http://localhost:8080", //수정 필요
+                        "/api/post", //수정 필요
                         {
                             headers: {
                                 Authorization: token,
-                                request: token,
+                                //request: token,
                             },
                         }
                     )
