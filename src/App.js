@@ -69,7 +69,7 @@ function App(props) {
           <Route path="/respond" element={<Respond />}/>
           <Route path="/Onepage" element={<Onepage />}/>
           <Route path="/option" element={<Option/>}/>
-          <Route path="/oauth/callback/kakao" />
+          {/* <Route path="/oauth/callback/kakao" /> */}
           <Route path="/Card" element={<Card />} />
           <Route path="/Onepage" element={<Onepage />}/>
           <Route path="/oauth/callback/kakao" element={<KakaoLogin />}/>
