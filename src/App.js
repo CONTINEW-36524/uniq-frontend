@@ -15,6 +15,7 @@ import Respond from "./pages/Respond/RespondOnecard";
 import KakaoLogin from './pages/KakaoLogin';
 import Card from "./pages/Card/Card"
 import Result from "./pages/Result/Result"
+import EndCreate from "./pages/EndCreate/EndCreate"
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
@@ -65,6 +66,7 @@ function App(props) {
           <Route path="/about" element={<About />} />
           <Route path="/template" element={<Template />} />
           <Route path="/createSurvey" element={<CreateSurvey/>}/>
+          <Route path="/endcreate" element={<EndCreate/>}/>
           <Route path="/respond" element={<Respond />}/>
           <Route path="/Onepage" element={<Onepage />}/>
           <Route path="/option" element={<Option/>}/>
