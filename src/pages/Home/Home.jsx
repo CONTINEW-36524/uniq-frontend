@@ -1,6 +1,6 @@
 import './Home.css'
 import React from "react";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from "react-redux/";
 import { Link } from "react-router-dom";
 import CardSlider from '../../components/Card/CardSlider';
@@ -13,6 +13,8 @@ import BannerSlider from '../BannerSlider';
 import formImg from '../../assets/formImg.jpg';
 import templateImg from '../../assets/templateImg.gif';
 import qrImg from '../../assets/qrImg.png';
+import axios from 'axios';
+
 
 function Home() {
 
@@ -20,7 +22,9 @@ function Home() {
   const [goRight1, setGoRight1] = useState(false);
   const [goleft2, setGoleft2] = useState(false);
   const [goRight2, setGoRight2] = useState(false);
-
+  const [recent, setRecent] = useState([]);
+  const [popular, setPopular] = useState([]);
+  
   const dispatch = useDispatch()
   const next = useSelector((state) => state.createSurvey.next);
   const [modalOpen, setModalOpen] = useState(false);
@@ -33,6 +37,29 @@ function Home() {
     setModalOpen(false);
     dispatch(exit())
   };
+
+  useEffect(()=>{
+    axios.get('/api/template/recent')
+    .then(function(response){
+      console.log(response.data)
+      setRecent(response.data)
+      
+      console.log('마운트');
+    
+    }).catch(function(error){
+      console.log("에러")
+    });
+
+    axios.get('/api/template/popular')
+    .then(function(response){
+      console.log(response.data)
+      setPopular(response.data)
+
+      console.log('마운트');
+    }).catch(function(error){
+      console.log("에러")
+    });
+  }, [])
 
   return (
 
@@ -72,14 +99,14 @@ function Home() {
           <b class='recent'>최신 UNIQ 템플릿</b>
           <div class="container">
             <div class="prev1" onClick={(e) => { setGoleft1(!goleft1) }}> <b>‹</b> </div>
-            <CardSlider goleft={goleft1} goRight={goRight1} />
+            <CardSlider data={recent} goleft={goleft1} goRight={goRight1} />
             <div class="next1" onClick={(e) => { setGoRight1(!goRight1) }}> <b>›</b> </div>
           </div>
 
           <b class='popular'>인기있는 UNIQ 템플릿</b>
           <div class="container">
             <div class="prev2" onClick={(e) => { setGoleft2(!goleft2) }}> <b>‹</b> </div>
-            <CardSlider2 goleft={goleft2} goRight={goRight2} />
+            <CardSlider2 data={popular} goleft={goleft2} goRight={goRight2} />
             <div class="next2" onClick={(e) => { setGoRight2(!goRight2) }}> <b>›</b> </div>
           </div>
         </div>
