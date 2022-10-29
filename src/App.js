@@ -4,7 +4,7 @@ import { Link, Route, Routes, BrowserRouter as Router } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import About from "./pages/About";
 import Template from "./pages/Template/Template";
-import Login from "./pages/Login";
+import Login from "./pages/Login/Login";
 import MySpace from "./pages/MySpace/MySpace";
 import NotFound from "./pages/NotFound";
 import Logo from "./assets/logo.png";
@@ -12,7 +12,7 @@ import CreateSurvey from "./pages/CreateSurvey";
 import Option from "./pages/Option/Option";
 import Onepage from "./pages/Onepage/Onepage";
 import Respond from "./pages/Respond/RespondOnecard";
-import KakaoLogin from './pages/KakaoLogin';
+import KakaoLogin from "./pages/Login/KakaoLogin";
 import Card from "./pages/Card/Card"
 import Result from "./pages/Result/Result"
 import optionDropdown from "./components/createsurvey/optionDropdown";
@@ -22,7 +22,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import {Button, Container, Nav, Navbar, NavDropdown, Form, Col, Row} from 'react-bootstrap';
 
-import { REST_API_KEY, REDIRECT_URI, KAKAO_AUTH_URL} from './pages/KakaoLogin';
+import { REST_API_KEY, REDIRECT_URI, KAKAO_AUTH_URL} from './pages/Login/KakaoLogin';
 
 
 function App(props) {
@@ -71,7 +71,6 @@ function App(props) {
           <Route path="/respond" element={<Respond />}/>
           <Route path="/Onepage" element={<Onepage />}/>
           <Route path="/option" element={<Option/>}/>
-          <Route path="/oauth/callback/kakao" />
           <Route path="/Card" element={<Card />} />
           <Route path="/Onepage" element={<Onepage />}/>
           <Route path="/oauth/callback/kakao" element={<KakaoLogin />}/>

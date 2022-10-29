@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import styled from "styled-components";
-import { inputID, inputPW, loginClick, signupClick } from "../components/Slice/LoginSlice";
+import { inputID, inputPW, loginClick, signupClick } from "../../components/Slice/LoginSlice";
 
 
 const Layout = styled.div`
