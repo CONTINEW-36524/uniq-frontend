@@ -4,10 +4,8 @@ import { Link, Route, Routes, BrowserRouter as Router } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import About from "./pages/About";
 import Template from "./pages/Template/Template";
-import Login from "./pages/Login";
 import MySpace from "./pages/MySpace/MySpace";
 import NotFound from "./pages/NotFound";
-import Logo from "./assets/logo.png";
 import CreateSurvey from "./pages/CreateSurvey";
 import Option from "./pages/Option/Option";
 import Onepage from "./pages/Onepage/Onepage";
@@ -21,7 +19,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import {Button, Container, Nav, Navbar, NavDropdown, Form, Col, Row} from 'react-bootstrap';
 
-import { REST_API_KEY, REDIRECT_URI, KAKAO_AUTH_URL} from './pages/KakaoLogin';
+import {KAKAO_AUTH_URL} from './pages/Login/OAuth';
 
 
 function App(props) {
