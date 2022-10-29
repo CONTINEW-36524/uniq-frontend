@@ -62,7 +62,7 @@ export default function CardSlider(props) {
 
   return (
     <StyledCardSlider ref={SliderRef}>
-    {data.map((index)=><CardComponent img="https://realfabric.net/wys2/file_attach/2018/02/09/1518160180_6385_original_N_7_560x400_100_2.jpg"
+   {data.map((index)=><CardComponent img="https://yozm.wishket.com/media/news/1231/image017.png"
                                               Category={index.category}
                                               keyword={index.tag}
                                               title={index.title}

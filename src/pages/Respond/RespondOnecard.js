@@ -67,14 +67,4 @@ return(
 
 
 
-
-
-
-
-
-
-
-
-
-
 export default RespondOnecard;
