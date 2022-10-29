@@ -28,7 +28,8 @@ export default function CardSlider2(props) {
 
     const goleft = props.goleft;
     const goRight = props.goRight;
-
+    const data = props.data;
+    
     useEffect((e) => {
         console.log('check');
         handleLeftClick(e);
@@ -61,8 +62,12 @@ export default function CardSlider2(props) {
 
     return (
         <StyledCardSlider ref={SliderRef}>
-
-            <CardComponent
+      {data.map((index)=><CardComponent img="https://yozm.wishket.com/media/news/1231/image017.png"
+                                              Category={index.category}
+                                              keyword={index.tag}
+                                              title={index.title}
+                                              />)}
+            {/* <CardComponent
                 img="https://img.freepik.com/premium-vector/blue-triangle-shaped-seamless-pattern-wallpaper-vector_53876-164505.jpg?w=2000"
                 Category="학교/교육"
                 keyword="#만족도 조사"
@@ -73,7 +78,7 @@ export default function CardSlider2(props) {
                 Category="행사"
                 title="학생회 행사 참여인원 조사"
                 keyword="#행사 #참여인원 조사"
-            />
+            /> */}
         </StyledCardSlider>
     );
 }

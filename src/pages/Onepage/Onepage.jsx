@@ -85,9 +85,9 @@ const Onepage = (props) => {
                 <Form class="form">
                     <Form.Group className="mb-3" controlId="formGrouptitle">
                         <Form.Label column="lg" lg={2}>설문지 제목</Form.Label>
-
                         <Form.Control size="lg" type="title" value={survey.title} multiline rows={3}
                             onChange={(e) => dispatch(changesurtitle(e.target.value))} placeholder="설문지 제목을 입력하세요." />
+
                         {/* <FormControl fullWidth sx={{ m: 1 }}> 
                             <TextField
                                 label="내용"
@@ -118,6 +118,7 @@ const Onepage = (props) => {
                     <Link to="/endcreate">
                         <button className="w-btn-outline2 w-btn-yellow-outline2" type="button" onClick={nextpage}>생성하기</button>
                     </Link>
+
                     {/* nextpage대신 testAxios 였음 */}
 
                 </div>

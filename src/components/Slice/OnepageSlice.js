@@ -93,7 +93,7 @@ export const OnepageSlice = createSlice({
             // console.log(action.payload.id);
         },
         changesurtitle:(state, action) =>{
-            state.survey.title=action.payload;
+            state.survey.maintitle=action.payload;
 
         },
         changesursubtitle:(state, action) =>{
