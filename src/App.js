@@ -10,7 +10,7 @@ import CreateSurvey from "./pages/CreateSurvey";
 import Option from "./pages/Option/Option";
 import Onepage from "./pages/Onepage/Onepage";
 import Respond from "./pages/Respond/RespondOnecard";
-import KakaoLogin from './pages/KakaoLogin';
+
 import Card from "./pages/Card/Card"
 import Result from "./pages/Result/Result"
 import optionDropdown from "./components/createsurvey/optionDropdown";
@@ -18,7 +18,7 @@ import optionDropdown from "./components/createsurvey/optionDropdown";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import {Button, Container, Nav, Navbar, NavDropdown, Form, Col, Row} from 'react-bootstrap';
-
+import KakaoLogin from './pages/Login/KakaoLogin';
 import {KAKAO_AUTH_URL} from './pages/Login/OAuth';
 
 
