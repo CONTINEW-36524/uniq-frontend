@@ -131,12 +131,22 @@ const Onepage = (props) => {
                                 <FcList color="white" size="50" role="button" onClick={() => toggleSidebar()} />
                                 {/* <a class="nav__logo">커스터마이징</a> */}
                             </div>
-                            <ul>
-                                <li>서식 옵션</li>
-                                <li>설정 옵션</li>
-                                <li>공유 옵션</li>
-                                <li>저장 옵션</li>
-                            </ul>
+                            {/* 보류상태입니당..!  */}
+                            <div className='options'>
+                                <p classNmae='option1'>서식옵션</p>
+                                <div className='optionUItag'>
+                                    <ui>
+                                        <li>
+                                            크기 <span className='option1Btn' > ▼ </span> 
+                                        </li> 
+                                        <li>
+                                            배경색 <span className='option1Btn' > ▼ </span>
+                                        </li>
+                                    </ui>
+                                </div>
+                                
+                            </div>  
+                            
                         </div>
                     </nav>
                 </div>

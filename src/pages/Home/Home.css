@@ -40,6 +40,15 @@ body {
   background-color: #6cd2fe3d;
 }
 
+.list2 {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  
+  scroll-snap-align: center;
+  animation: smoothAppear 1s
+}
+
 /* 1은 없어도 되나봐요 이유는 모르겠음 */
 .list:nth-child(2) {
   background-size: cover;
@@ -258,18 +267,100 @@ body {
 
 .intext1 {
   float: right;
-  margin-top: 35px;
-  padding-left: 10px;
+  margin-top: 350px;
+  
+  margin-left: 200px;
   font-size: 50px;
   font-family: "S-CoreDream-3Light";
 }
 
 .intext2 {
   float: right;
-  margin-top: 35px;
-  padding-left: 10px;
+  margin-top: 50px;
+
   font-size: 20px;
   font-family: "S-CoreDream-3Light";
+}
+
+.intext3 {
+  float: right;
+  margin-top: 350px;
+  
+  margin-left: 80px;
+  font-size: 50px;
+  font-family: "S-CoreDream-3Light";
+}
+
+.intext4 {
+  float: right;
+  margin-top: 50px;
+
+  font-size: 20px;
+  font-family: "S-CoreDream-3Light";
+}
+
+.intext5 {
+  float: right;
+  margin-top: 350px;
+  
+  margin-left: 200px;
+  font-size: 50px;
+  font-family: "S-CoreDream-3Light";
+}
+
+.intext6 {
+  float: right;
+  margin-top: 50px;
+
+  font-size: 20px;
+  font-family: "S-CoreDream-3Light";
+}
+
+
+.StartBtn {
+  background-color: #5AC0EF;
+  border: none;
+  border-radius: 20px;
+  color: #ffffff;
+  width: 200px;
+  height: 40px;
+  font-weight: bold;
+  font-family: 'S-CoreDream-3Light';
+  margin-top: 50px;
+  margin-left: 350px;
+ 
+
+  cursor: pointer;
+    
+    box-shadow: 0 7px 28px rgba(0, 0, 0, 0.25), 0 5px 5px rgba(0, 0, 0, 0.22);
+
+}
+.formImg {
+  width: 700px;
+  height: 700px;
+  margin-top: 150px;
+  margin-left: 200px;
+}
+
+.templateImg {
+  width: 800px;
+  height: 480px;
+  margin-top: 210px;
+  margin-left: 200px;
+}
+
+.qrImg {
+  width: 450px;
+  height: 450px;
+  margin-top: 250px;
+  margin-left: 250px;
+}
+
+.textSet1 {
+  margin-left: 100px;
+}
+.textSet2 {
+  margin-left: 0px;
 }
 
 @font-face {

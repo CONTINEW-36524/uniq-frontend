@@ -15,6 +15,7 @@ import Respond from "./pages/Respond/RespondOnecard";
 import KakaoLogin from './pages/KakaoLogin';
 import Card from "./pages/Card/Card"
 import Result from "./pages/Result/Result"
+import optionDropdown from "./components/createsurvey/optionDropdown";
 import EndCreate from "./pages/EndCreate/EndCreate"
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -76,6 +77,7 @@ function App(props) {
           <Route path="/oauth/callback/kakao" element={<KakaoLogin />}/>
           <Route path="/myspace" element={<MySpace />}/>
           <Route path="/result" element={<Result/>}/>
+          <Route path="option1" element={<optionDropdown/>}/>
 
           <Route path="*" element={<NotFound />} />
           {/* 지정하지 않은 주소로 들어올 때는 NotFound가 뜬다. */}

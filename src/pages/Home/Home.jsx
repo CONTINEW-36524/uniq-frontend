@@ -10,6 +10,10 @@ import SelectType from "../../components/createsurvey/SelectType.js"
 import { exit } from "../../components/Slice/CreateSurveySlice.js"
 import AddAsk from '../../components/createsurvey/AddAsk';
 import BannerSlider from '../BannerSlider';
+import formImg from '../../assets/formImg.jpg';
+import templateImg from '../../assets/templateImg.gif';
+import qrImg from '../../assets/qrImg.png';
+
 function Home() {
 
   const [goleft1, setGoleft1] = useState(false);
@@ -82,12 +86,75 @@ function Home() {
       </div>
 
       {/* page 3 */}
-      <div class="list">
-        <div class="three">
+      <div class="list2">
+       
+          <div class='textSet1'>
           <h3 class="intext1">다양한 형태의 설문지 폼</h3>
           <br/>
           <h5 class="intext2">One page형 Card형 원하는 형식으로 생성해보세요.</h5>
-        </div>
+          <div class='button'>
+          <a href="/template">
+                <button class='StartBtn'>지금 시작하기</button>
+          </a>
+          </div>
+          </div>
+          <br/>
+          <br/>
+          
+          
+          <div>
+          <img src={ formImg } class='formImg' />
+          </div>
+          <br/>
+          
+        
+      </div>
+
+      {/* page 3 */}
+      <div class="list2">
+      <div>
+          <img src={ templateImg } class='templateImg' />
+          </div>
+          <div class='textSet2'>
+          <h3 class="intext3">다양한 템플릿으로 누구나 쉽게</h3>
+          <br/>
+          <h5 class="intext4">인기있는 템플릿,     최신 템플릿,    AI추천 맞춤 템플릿까지!</h5>
+          <div class='button'>
+          <a href="/template">
+                <button class='StartBtn'>지금 시작하기</button>
+          </a>
+          </div>
+          </div>
+          <br/>
+          <br/>
+          
+          <br/>
+          
+        
+      </div>
+      {/* page 3 */}
+      <div class="list2">
+       
+          <div class='textSet'>
+          <h3 class="intext5">QR코드로 간편하게 공유</h3>
+          <br/>
+          <h5 class="intext6">길고 복잡한 링크주소 대신 QR코드로 쉽게 공유하세요.</h5>
+          <div class='button'>
+          <a href="/template">
+                <button class='StartBtn'>지금 시작하기</button>
+          </a>
+          </div>
+          </div>
+          <br/>
+          <br/>
+          
+          
+          <div>
+          <img src={ qrImg } class='qrImg' />
+          </div>
+          <br/>
+          
+        
       </div>
 
     </div>

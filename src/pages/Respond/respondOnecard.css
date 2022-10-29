@@ -77,3 +77,61 @@
   font-weight: normal;
   font-style: normal;
 }
+
+.repondCardContainer {
+    margin-bottom: 15px;
+    
+}
+.repondCardHeader {
+   text-align: left;
+   display: inline-flex;
+   width: 100%;
+   font-size: large;
+}
+.firstDiv {
+    display: inline-flex;
+    width: 80%;
+    
+}
+.firstBtn {
+    margin-bottom: 10px;
+    width: 30%;
+    color: white;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+
+}
+
+.bogiPTag {
+    margin-top: 10px;
+    margin-left: 5px;
+}
+
+
+.firstContainer {
+    
+    display: inline-block;
+    margin-left: 50px;
+    
+}
+.firstContainer button {
+    text-align: left;
+    width: fit-content;
+}
+
+/* LinearContainer */
+.LinearContainer {
+    margin-top: 15px;
+    width: 70%;
+    display: inline-flex;
+    overflow: scroll;
+    -ms-overflow-style: none;
+    margin-bottom: 20px;
+    font-family: 'yg-jalnan';
+}
+.leftText {
+}
+.rightText {
+}
