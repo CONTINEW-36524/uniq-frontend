@@ -1,7 +1,7 @@
 import Form from 'react-bootstrap/Form';
 import { useSelector, useDispatch } from "react-redux/";
 import WithHeaderAndQuoteExample from './WithHeaderAndQuoteExample';
-import {savesurvey} from "../../components/Slice/RespondSlice";
+import {savesurvey, postrespond} from "../../components/Slice/RespondSlice";
 
 function Startreturn(props){
 
@@ -10,6 +10,7 @@ function Startreturn(props){
   const savesurveyid =(e) => {
     // console.log(e.target.value)
     dispatch(savesurvey(props.responddata[0].surveyid));
+    dispatch(postrespond());
   }
 
     if(props.responddata.length>0){
