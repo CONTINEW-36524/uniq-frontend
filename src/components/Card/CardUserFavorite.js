@@ -2,7 +2,7 @@
 import React, { useRef, useEffect } from "react";
 import styled from "styled-components";
 import CardComponent from "./CardComponent";
-
+import axios from "axios";
 const StyledCardSlider = styled.div`
   display: flex;
   align-items: center;
@@ -28,6 +28,10 @@ export default function CardSlider2(props) {
 
     const goleft = props.goleft;
     const goRight = props.goRight;
+    const data = props.data;
+
+    console.log(data[0].category)
+    data.map(index => console.log(index.category))
 
     useEffect((e) => {
         console.log('check');
@@ -43,6 +47,7 @@ export default function CardSlider2(props) {
 
     useEffect((e) => {
         SliderRef.current.scrollLeft = 0;
+      
     }, [])
 
     const handleLeftClick = (e) => {
@@ -57,12 +62,14 @@ export default function CardSlider2(props) {
         // SliderRef.current.scroll({ left: -50, behavior: "smooth" });
     };
 
-
-
     return (
         <StyledCardSlider ref={SliderRef}>
-
-            <CardComponent
+            {data.map((index)=><CardComponent img="https://yozm.wishket.com/media/news/1231/image017.png"
+                                              Category={index.category}
+                                              keyword={index.tag}
+                                              title={index.title}
+                                              />)}
+            {/* <CardComponent
                 img="https://yozm.wishket.com/media/news/1231/image017.png"
                 Category="학교/교육"
                 keyword="#퀴즈"
@@ -79,7 +86,7 @@ export default function CardSlider2(props) {
                 Category="개인"
                 title="파티 신청서"
                 keyword="#약속"
-            />
+            /> */}
         </StyledCardSlider>
     );
 }

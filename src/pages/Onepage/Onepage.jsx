@@ -1,28 +1,28 @@
 import { useSelector, useDispatch } from "react-redux/";
 
-import { increament, changesurtitle,changesursubtitle} from "../../components/Slice/OnepageSlice";
-import { useState} from 'react';
+import { increament, changesurtitle, changesursubtitle } from "../../components/Slice/OnepageSlice";
+import { useState } from 'react';
 import React from "react";
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { FcList } from "react-icons/fc";
 import './Onepage.css';
 import '../../../src/App.css'
 import { isDOMComponent } from "react-dom/test-utils";
 import DropDown from "../../components/createsurvey/dropdown";
-import {useDrag} from 'react-use-gesture';
+import { useDrag } from 'react-use-gesture';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import axios from 'axios';
-import QRModal from '../../components/createQR/QRModal'
+import EndCreate from '../../pages/EndCreate/EndCreate'
 
 // import { TextField, FormControl } from "@material-ui/core";
 
 
-const Onepage = (props) =>{
-    const surId= useSelector((state)=>state.onepage.id);
-    const survey = useSelector((state)=>state.onepage.survey);
-    const data1 = useSelector((state)=>state.onepage.survey.data);
-    const count = useSelector((state)=>state.onepage.count);
+const Onepage = (props) => {
+    const surId = useSelector((state) => state.onepage.id);
+    const survey = useSelector((state) => state.onepage.survey);
+    const data1 = useSelector((state) => state.onepage.survey.data);
+    const count = useSelector((state) => state.onepage.count);
     const dispatch = useDispatch();
     const [title, settitle] = useState('설문 제목');
     const [subtitle, setsubtitle] = useState('설문 개요');
@@ -30,62 +30,64 @@ const Onepage = (props) =>{
     const [ip, setIp] = useState("");
     const [isSidebarOpen, closeSidebar] = useState(false);
 
-    const [logoPos, setlogoPos] = useState({x:0, y:0});
-    const bindLogoPos = useDrag(()=>{});
+    const [logoPos, setlogoPos] = useState({ x: 0, y: 0 });
+    const bindLogoPos = useDrag(() => { });
     const [active, setAtive] = useState("inactive");
     const formData = new FormData();
-    const config = {"Content-Type": 'application/json'};
-    
+    const config = { "Content-Type": 'application/json' };
 
-    formData.append("data",JSON.stringify(
+
+    formData.append("data", JSON.stringify(
         {
-         id: "11",
-         type: "객관식",
-         title: "hi",
-         content: [{id: 1, con: "123"}]
+            id: "11",
+            type: "객관식",
+            title: "hi",
+            content: [{ id: 1, con: "123" }]
         }
-        ))
+    ))
 
     const toggleActive = (e) => {
-        setAtive ((prev)=>{
+        setAtive((prev) => {
             return e.target.value;
         })
     }
     const nextpage = () => {
-       alert('설문이 생성되었습니다!\n'+"http://localhost:3000/"+surId)
-       setIp("http://localhost:3000/respond")
-       setModalOpen(true);
+        // 생성 후 db로 설문지 info 넣기
+        // alert('설문이 생성되었습니다!\n' + "http://localhost:3000/" + surId)
+        // setIp("http://localhost:3000/respond")
+        // setModalOpen(true);
+        // <EndCreate ip={ip} modalOpen={modalOpen}/>
     }
 
-    const testAxios=() =>{
-        axios.post('/api/create/survey',survey
-            ).then(function (response) {
-                console.log(response)
-              })
-          .catch(function(){
-            console.log('실패함')
-          })
-          console.log(JSON.stringify(data1))
-          
+    const testAxios = () => {
+        axios.post('/api/create/survey', survey
+        ).then(function (response) {
+            console.log(response)
+        })
+            .catch(function () {
+                console.log('실패함')
+            })
+        console.log(JSON.stringify(data1))
 
 
-    }  
-    const toggleSidebar = () =>{
-      closeSidebar(isSidebarOpen => !isSidebarOpen)
+
     }
-    
+    const toggleSidebar = () => {
+        closeSidebar(isSidebarOpen => !isSidebarOpen)
+    }
 
-    return ( 
 
-        
+    return (
+
+
         <div className="container">
             <div className="containerHeader">
                 <Form class="form">
                     <Form.Group className="mb-3" controlId="formGrouptitle">
                         <Form.Label column="lg" lg={2}>설문지 제목</Form.Label>
-
                         <Form.Control size="lg" type="title" value={survey.title} multiline rows={3}
-                            onChange ={(e)=>dispatch(changesurtitle(e.target.value))}placeholder="설문지 제목을 입력하세요." />
+                            onChange={(e) => dispatch(changesurtitle(e.target.value))} placeholder="설문지 제목을 입력하세요." />
+
                         {/* <FormControl fullWidth sx={{ m: 1 }}> 
                             <TextField
                                 label="내용"
@@ -94,38 +96,40 @@ const Onepage = (props) =>{
                             
                              />
                         </FormControl> */}
-                            
+
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formGroupexplain">
                         <Form.Label>설문지 설명</Form.Label>
-                        <Form.Control type="explain" placeholder="설문지 설명을 입력하세요." value={survey.subtitle} onChange ={(e)=>dispatch(changesursubtitle(e.target.value))} />
+                        <Form.Control type="explain" placeholder="설문지 설명을 입력하세요." value={survey.subtitle} onChange={(e) => dispatch(changesursubtitle(e.target.value))} />
                     </Form.Group>
                 </Form>
 
             </div>
 
             <div className="containerContent">
-                { data1.map((item,index)=>( 
+                {data1.map((item, index) => (
                     <div className="fadein">
-                    <DropDown id={item.id}/> 
+                        <DropDown id={item.id} />
                     </div>
                 ))}
                 <div className="containerFooter">
-                    <button class="plusBtn" onClick={()=>dispatch(increament())}> + </button>
+                    <button class="plusBtn" onClick={() => dispatch(increament())}> + </button>
                     <p class="count">- {count} -</p>
-                    <button className="w-btn-outline2 w-btn-yellow-outline2" type="button" onClick={nextpage}>생성하기</button> 
+                    <Link to="/endcreate">
+                        <button className="w-btn-outline2 w-btn-yellow-outline2" type="button" onClick={nextpage}>생성하기</button>
+                    </Link>
+
                     {/* nextpage대신 testAxios 였음 */}
-                    {modalOpen && <QRModal setModalOpen={setModalOpen} ip={ip}/>}
 
                 </div>
             </div>
-           
+
             <section>
                 <div className={`${isSidebarOpen ? 'show-sidebar' : 'l-navbar'}`}>
                     <nav class="sidenav">
                         <div>
                             <div class="nav__brand">
-                                <FcList color="white" size="50" role="button" onClick={()=>toggleSidebar()}/>
+                                <FcList color="white" size="50" role="button" onClick={() => toggleSidebar()} />
                                 {/* <a class="nav__logo">커스터마이징</a> */}
                             </div>
                             {/* 보류상태입니당..!  */}
@@ -149,8 +153,8 @@ const Onepage = (props) =>{
                 </div>
             </section>
         </div>
-     
-     
+
+
     );
 }
 export default Onepage;
