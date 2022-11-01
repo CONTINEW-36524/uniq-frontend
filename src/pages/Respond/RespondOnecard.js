@@ -1,7 +1,7 @@
 
 import React, { useEffect,useState } from 'react';
 import data from './respondData';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 import "./respondOnecard.css"
 import Startreturn from '../../components/respond/Startreturn';
 
@@ -19,6 +19,7 @@ function RespondOnecard() {
   const location=useLocation();
   const [responddata,setresponddata] =useState([]);
   const [question, setquestion] = useState();
+  const { respondId} = useParams();
 
   // 
 
@@ -37,7 +38,7 @@ function RespondOnecard() {
 //  }
 
 useEffect(()=>{
-  axios.get("/api/respond/survey",{params:{url: location.pathname}})
+  axios.get("/api/respond/survey",{params:{url: respondId}})
   .then((response)=> {
     //2. Parser
     //responddata=response.data;
@@ -45,6 +46,7 @@ useEffect(()=>{
         //console.log(JSON.parse(responddata[0].datalist)[0].type); 
         setresponddata(response.data);
   }).catch(function (error) {
+    console.log(error)
       // 오류발생시 실행
   }).then(function() {
       // 항상 실행
@@ -52,7 +54,7 @@ useEffect(()=>{
 }, [])
 
 useEffect(()=>{console.log(responddata);},[responddata])
-
+console.log(respondId)
 
 
 return( 

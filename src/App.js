@@ -66,6 +66,8 @@ function App(props) {
           <Route path="/about" element={<About />} />
           <Route path="/template" element={<Template />} />
           <Route path="/createSurvey" element={<CreateSurvey/>}/>
+          <Route path="/endcreate" element={<EndCreate/>}/>
+          <Route path="/respond/:respondId" element={<Respond />}/>
           <Route path="/respond" element={<Respond />}/>
           <Route path="/Onepage" element={<Onepage />}/>
           <Route path="/option" element={<Option/>}/>

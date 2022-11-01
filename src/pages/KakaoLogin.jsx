@@ -38,9 +38,11 @@ const KakaoLogin = () => {
                     // response from backend server
                     .then((response) => {
                         console.log("ok response", response);
-                        const token = response.headers.authorization;
+                        const token = response.data.access_token;
+                        console.log(token)
                         // store token in local storage
                         window.localStorage.setItem("token", token);
+                        // window.localStorage.setIem("nickname", response.kakao_account.profile.nickname)
                         navigate("/"); //수정 필요할 수도 있음
                     }).catch(function(error){
                         console.log("에러")

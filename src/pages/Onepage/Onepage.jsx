@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux/";
-
+import { Link, Route, Routes, BrowserRouter as Router } from "react-router-dom";
 import { increament, changesurtitle,changesursubtitle} from "../../components/Slice/OnepageSlice";
 import { useState} from 'react';
 import React from "react";
@@ -57,21 +57,37 @@ const Onepage = (props) =>{
        setModalOpen(true);
     }
 
-    const testAxios=() =>{
-        axios.post('/api/create/survey',survey
-            ).then(function (response) {
-                console.log(response)
-              })
-          .catch(function(){
-            console.log('실패함')
-          })
-          console.log(JSON.stringify(data1))
+// <<<<<<< Updated upstream
+//     const testAxios=() =>{
+//         axios.post('/api/create/survey',survey
+//             ).then(function (response) {
+//                 console.log(response)
+//               })
+//           .catch(function(){
+//             console.log('실패함')
+//           })
+//           console.log(JSON.stringify(data1))
           
 
 
-    }  
-    const toggleSidebar = () =>{
-      closeSidebar(isSidebarOpen => !isSidebarOpen)
+//     }  
+//     const toggleSidebar = () =>{
+//       closeSidebar(isSidebarOpen => !isSidebarOpen)
+// =======
+    const testAxios = () => {
+        axios.post('/api/create/survey', survey
+        ).then(function (response) {
+            console.log(response)
+        })
+            .catch(function () {
+                console.log('실패함')
+            })
+        console.log(JSON.stringify(data1))
+    }
+    
+    const toggleSidebar = () => {
+        closeSidebar(isSidebarOpen => !isSidebarOpen)
+
     }
     
 
@@ -113,7 +129,10 @@ const Onepage = (props) =>{
                 <div className="containerFooter">
                     <button class="plusBtn" onClick={()=>dispatch(increament())}> + </button>
                     <p class="count">- {count} -</p>
-                    <button className="w-btn-outline2 w-btn-yellow-outline2" type="button" onClick={testAxios}>생성하기</button> 
+                    <Link to="/endcreate">
+                        <button className="w-btn-outline2 w-btn-yellow-outline2" type="button" onClick={testAxios}>생성하기</button>
+                    </Link>
+
                     {/* nextpage대신 testAxios 였음 */}
                     {modalOpen && <QRModal setModalOpen={setModalOpen} ip={ip}/>}
 
