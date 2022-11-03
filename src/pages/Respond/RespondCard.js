@@ -3,7 +3,7 @@ import React, { useEffect,useState } from 'react';
 
 import data from './respondData';
 import { useLocation } from 'react-router-dom';
-import "./respondOnecard.css"
+import "./respondCard.css"
 import Startreturn from '../../components/respond/Startreturn';
 
 
@@ -13,7 +13,7 @@ import { useSelector, useDispatch } from "react-redux/";
 import DropDown from "../../components/createsurvey/dropdown";
 
 
-function RespondOnecard() {
+function RespondCard() {
   let [datas] = useState(data)
   const survey = useSelector((state)=>state.onepage.survey);
   const dispatch = useDispatch();
@@ -66,4 +66,4 @@ useEffect(()=>{console.log(responddata);},[responddata])
 
 
 
-export default RespondOnecard;
+export default RespondCard;

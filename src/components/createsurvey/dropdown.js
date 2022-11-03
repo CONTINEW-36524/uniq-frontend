@@ -8,7 +8,8 @@ import classNames from "classnames";
 import { Link, Route, Routes, BrowserRouter as Router } from "react-router-dom";
 import First from "./First"
 import Second from "./Second"
-import Third from "./Third";
+import Linear from "./Linear";
+import Checkbox from "./Checkbox"
 import { FcList } from "react-icons/fc";
 
 import uuid from "react-uuid";
@@ -21,15 +22,16 @@ const DropDown = (props) => {
   const dropDownRef = useRef(null);
   const data= useSelector((state)=>state.onepage.survey.data);
   const [isOpen, setIsOpen] = useDetectClose(dropDownRef, false);
-  const [question, setquestion] = useState(['객관식','주관식','선형배율']);
+  const [question, setquestion] = useState(['객관식', '체크박스', '주관식','선형배율']);
   const dispatch = useDispatch();
   const [content, setContent] = useState('객관식');
   const [switchOn, switchChange] = useState(false);
   const [btnclick, setbtnclick] = useState();
   const selectComponent = {
-    객관식: <First id={props.id} />,
+    객관식: <First id={props.id}/>,
+    체크박스: <Checkbox id={props.id}/>,
     주관식: <Second id={props.id}/>,
-    선형배율: <Third id={props.id}/>,
+    선형배율: <Linear id={props.id}/>,
   };
   // console.log(type);
   const toggleActive = (e) => {

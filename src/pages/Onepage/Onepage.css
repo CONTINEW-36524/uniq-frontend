@@ -101,7 +101,7 @@
   border: 3px solid #fce205;
   color: #6e6e6e;
   top: 20px;
-  left: 500px;
+  left: 450px;
 }
 .w-btn-outline2 {
   position: relative;
@@ -426,7 +426,7 @@ a {
 }
 
 .firstcontent{
-  display: flex;
+  display: inline-flex;
   width: 300px;
   height: 45px;
 }
@@ -473,6 +473,33 @@ a {
   width: 550px;
   justify-content: center;
 }
+.optionSelect {
+  display: inline-flex;
+}
+.optionSelect select{
+  width: 50px;
+  height: 40px;
+}
+.optionSelect p {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 10px;
+}
+
+.condition {
+  display: inline-flex;
+}
+
+.condition p {
+  margin-top: 15px;
+}
+.conditions input {
+  margin-left: 20px;
+  margin-right: 200px;
+  margin-top: 8px;
+  height: 40px;
+}
+
 .third{
   width:550px
   
@@ -502,4 +529,8 @@ a {
 }
 .option1Btn:hover{
   cursor: pointer;
+}
+
+.count{
+  margin-left:28px;
 }
