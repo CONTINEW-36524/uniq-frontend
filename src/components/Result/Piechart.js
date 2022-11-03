@@ -14,20 +14,21 @@ const Piechart = () => {
 
     return (
         // chart height이 100%이기 때문이 chart를 덮는 마크업 요소에 height 설정
-        <div style={{ width: '600px', height: '300px', margin: '0 auto' }}>
+        <div style={{ width: '700px', height: '350px', margin: '0 auto' }}>
             <ResponsivePie
                 /**
                  * chart에 사용될 데이터
                  */
                 data={[
-                    { id: 'cola', value: 324 },
-                    { id: 'cidar', value: 88 },
-                    { id: 'fanta', value: 221 },
+                    { id: '1학년', value: 45 },
+                    { id: '2학년', value: 33 },
+                    { id: '3학년', value: 27 },
+                    { id: '4학년', value: 12 },
                 ]}
                 /**
                  * chart margin
                  */
-                margin={{ top: 40, right: 80, bottom: 80, left: 80 }}
+                margin={{ top: 20, right: 80, bottom: 70, left: 80 }}
                 /**
                  * chart 중간 빈공간 반지름
                  */
@@ -43,8 +44,8 @@ const Piechart = () => {
                 /**
                  * chart 색상
                  */
-                colors={['olive', 'brown', 'orange']} // 커스터하여 사용할 때
-                // colors={{ scheme: 'nivo' }} // nivo에서 제공해주는 색상 조합 사용할 때
+                //colors={['olive', 'brown', 'orange']} // 커스터하여 사용할 때
+                colors={{ scheme: 'nivo' }} // nivo에서 제공해주는 색상 조합 사용할 때
                 /**
                  * pad border 두께 설정
                  */

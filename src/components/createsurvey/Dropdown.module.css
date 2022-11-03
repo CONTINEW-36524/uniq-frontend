@@ -6,12 +6,12 @@
     top: 30px;
     right: 0;
     width: 150px;
-    height: 100px;
+    height: 120px;
     text-align: center;
     box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
     opacity: 0;
     visibility: hidden;
-    transform: translateY(0px) translateX(-150px);
+    transform: translateY(0px) translateX(-200px);
     transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
     padding: 10px;
 }
@@ -19,7 +19,7 @@
 .active {
     opacity: 1;
     visibility: visible;
-    transform: translateY(0px) translateX(-150px);
+    transform: translateY(0px) translateX(-200px);
 }
 
 .list{
@@ -34,7 +34,14 @@
     background-color: white;
 
 }
-
+.checkboxContent {
+    display: inline-flex;
+}
+.checkboxContentP{
+    width: 30px;
+    margin-top: 8px;
+    text-align: center;
+}
 .side {
     width: auto;
     text-align: center;
@@ -42,6 +49,15 @@
     margin: 15px;
     
 }
+.checkboxSide {
+    width: auto;
+    text-align: center;
+    display: inline-flex;
+    margin: 15px;
+    margin-left: 35px;
+}
+
+
 
 .change {
     width: 40px;

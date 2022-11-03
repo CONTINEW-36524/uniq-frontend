@@ -115,7 +115,7 @@ const Onepage = (props) => {
                 <div className="containerFooter">
                     <button class="plusBtn" onClick={() => dispatch(increament())}> + </button>
                     <p class="count">- {count} -</p>
-                    <Link to="/endcreate">
+                    <Link to="/endcreate" className="endcreateLinkTag">
                         <button className="w-btn-outline2 w-btn-yellow-outline2" type="button" onClick={nextpage}>생성하기</button>
                     </Link>
 
