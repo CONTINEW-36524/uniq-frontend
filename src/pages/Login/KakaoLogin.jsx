@@ -7,7 +7,7 @@ const KakaoLogin = () => {
 
     // kakao developers application key
     // const REST_API_KEY = "637c722561c612190048a1d771920d91";
-    // const REDIRECT_URI = "http://localhost:3000/oauth/callback/kakao";
+    // const REDIRECT_URI = "http://210.109.62.78:3000//oauth/callback/kakao";
     // const KAKAO_AUTH_URL = `https://kauth.kakao.com/oauth/authorize?client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}&response_type=code`;
 
     // get auth code from kakao server
@@ -38,16 +38,19 @@ const KakaoLogin = () => {
                     // response from backend server
                     .then((response) => {
                         console.log("ok response", response);
-                        const token = response.data.access_token;
+                        const token = res.headers.authorization;
+
                         console.log(token)
                         // store token in local storage
                         window.localStorage.setItem("token", token);
+                        
                         // window.localStorage.setIem("nickname", response.kakao_account.profile.nickname)
                         navigate("/"); //수정 필요할 수도 있음
                     }).catch(function(error){
                         console.log("에러")
+                        navigate("/")
                       });;
-                console.log(res);
+                // console.log(res);
             } catch (e) {
                 // response fail error message
                 console.error(e);
