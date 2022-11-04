@@ -4,7 +4,6 @@ import { Link, Route, Routes, BrowserRouter as Router } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import About from "./pages/About";
 import Template from "./pages/Template/Template";
-import Login from "./pages/Login/Login";
 import MySpace from "./pages/MySpace/MySpace";
 import NotFound from "./pages/NotFound";
 import Logo from "./assets/logo.png";
@@ -22,21 +21,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import {Button, Container, Nav, Navbar, NavDropdown, Form, Col, Row} from 'react-bootstrap';
 
-import { REST_API_KEY, REDIRECT_URI, KAKAO_AUTH_URL} from './pages/Login/KakaoLogin';
 
 
 function App(props) {
-  const [hello, setHello] = useState('')
-
-    useEffect(() => {
-        axios.get('/api/hello')
-        .then(response => setHello(response.data))
-        .catch(error => console.log(error))
-    }, []);
-
-
-
-
+  
   return (
     <Router>
       <Navbar collapseOnSelect fixed="top" className="menu" bg="white">
@@ -53,7 +41,7 @@ function App(props) {
             </div>
             <li/>
             <div className='item3'>
-            <Nav.Link href={KAKAO_AUTH_URL}>로그인</Nav.Link>
+            <Nav.Link href={process.env.REACT_APP_KAKAO_AUTH_URL}>로그인</Nav.Link>
             </div>
         </Container>
       </Navbar>
