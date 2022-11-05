@@ -10,9 +10,11 @@ import sampleImg1 from '../../assets/banner1.png';
 import sampleImg2 from '../../assets/banner2.png';
 import sampleImg3 from '../../assets/banner3.png';
 
+
 const Wrap = styled.div`
 margin: 5% auto;
 width: 100%;
+overflow: hidden;
 place-items: center;
 .slick-prev:before {
   opaicty: 1; // 기존에 숨어있던 화살표 버튼이 보이게

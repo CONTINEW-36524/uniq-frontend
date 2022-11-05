@@ -9,7 +9,7 @@ import Modal from "../../components/createsurvey/Modal"
 import SelectType from "../../components/createsurvey/SelectType.js"
 import { exit } from "../../components/Slice/CreateSurveySlice.js"
 import AddAsk from '../../components/createsurvey/AddAsk';
-import BannerSlider from '../BannerSlider';
+import BannerSlider from '././BannerSlider';
 import formImg from '../../assets/formImg.jpg';
 import templateImg from '../../assets/templateImg.gif';
 import qrImg from '../../assets/qrImg.png';
@@ -67,7 +67,7 @@ function Home() {
 
       {/* page 1 */}
       
-      <div class="list">
+      <div className="list">
         {/* <div class="jumbotron">
           <h1 class="display-8">이제는 설문 템플릿도 공유하자! </h1>
           <h1 class="display-3">UNIQ</h1>
@@ -77,7 +77,7 @@ function Home() {
           <div style={{ textDecoration: 'none' }}>
             <button class='btn3' onClick={openModal}> <b> 설문 생성하러 가기 </b></button> <br /> */}
        
-          <BannerSlider />
+
         {/* {next ?
           <Modal open={modalOpen} close={closeModal} header="질문 유형 개수를 선택해주세요.">
             <AddAsk />
@@ -86,7 +86,14 @@ function Home() {
             <SelectType />
           </Modal>
         } */}
+        
+        <div class = "list2Side"/>
 
+        <div class = "list2Main">
+          <BannerSlider/>
+        </div>
+
+        <div class = "list2Side"/>
       </div>
   
 
@@ -114,8 +121,13 @@ function Home() {
 
       {/* page 3 */}
       <div class="list2">
-       
-          <div class='textSet1'>
+      
+      <div class = "list2Side"/>
+
+      <div class = "list2Main">
+
+        <div class = "list2MainLeft">
+        <div class='textSet1'>
           <h3 class="intext1">다양한 형태의 설문지 폼</h3>
           <br/>
           <h5 class="intext2">One page형 Card형 원하는 형식으로 생성해보세요.</h5>
@@ -125,44 +137,55 @@ function Home() {
           </a>
           </div>
           </div>
-          <br/>
-          <br/>
-          
-          
-          <div>
-          <img src={ formImg } class='formImg' />
-          </div>
-          <br/>
-          
+        </div>
         
+        <div class = "list2MainRight">
+          <img src={ formImg } class='formImg' />
+        </div>          
       </div>
 
-      {/* page 3 */}
+      <div class = "list2Side"/>
+
+      </div>
+
+      {/* page 4 */}
+
       <div class="list2">
-      <div>
+      
+      <div class = "list2Side"/>
+
+      <div class = "list2Main">
+
+        <div class = "list2MainLeft">
           <img src={ templateImg } class='templateImg' />
-          </div>
-          <div class='textSet2'>
-          <h3 class="intext3">다양한 템플릿으로 누구나 쉽게</h3>
+        </div>
+
+        <div class = "list2MainRight">
+        <div class='textSet2'>
+          <h3 class="intext3">다양한 템플릿으로 <br />누구나 쉽게</h3>
           <br/>
           <h5 class="intext4">인기있는 템플릿,     최신 템플릿,    AI추천 맞춤 템플릿까지!</h5>
           <div class='button'>
           <a href="/template">
-                <button class='StartBtn'>지금 시작하기</button>
+                <button class='StartBtn2'>지금 시작하기</button>
           </a>
           </div>
           </div>
-          <br/>
-          <br/>
-          
-          <br/>
-          
-        
+        </div>          
       </div>
-      {/* page 3 */}
+
+      <div class = "list2Side"/>
+        </div>
+      {/* page 5 */}
+
       <div class="list2">
-       
-          <div class='textSet'>
+      
+      <div class = "list2Side"/>
+
+      <div class = "list2Main">
+
+        <div class = "list2MainLeft">
+        <div class='textSet'>
           <h3 class="intext5">QR코드로 간편하게 공유</h3>
           <br/>
           <h5 class="intext6">길고 복잡한 링크주소 대신 QR코드로 쉽게 공유하세요.</h5>
@@ -172,19 +195,16 @@ function Home() {
           </a>
           </div>
           </div>
-          <br/>
-          <br/>
-          
-          
-          <div>
+        </div>
+        <div class = "list2MainRight">
           <img src={ qrImg } class='qrImg' />
-          </div>
-          <br/>
-          
-        
+        </div>          
       </div>
 
-    </div>
+      <div class = "list2Side"/>
+
+      </div>
+      </div>
   );
 }
 export default Home;
