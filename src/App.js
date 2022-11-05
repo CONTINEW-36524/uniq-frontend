@@ -24,7 +24,27 @@ import {Button, Container, Nav, Navbar, NavDropdown, Form, Col, Row} from 'react
 
 
 function App(props) {
-  
+  const [name, setName] = useState("로그인")
+  const [isLogin, setLogin] = useState(false)
+
+
+  const logout = () =>{
+    localStorage.removeItem("userName")
+    localStorage.removeItem("token")
+    setName("로그인")
+    setLogin(false)
+    
+  }
+  //로그인후 새로고침해야 "로그인" -> "안녕하세요~님"으로 변경됨 수정필요
+  useEffect(()=>{
+    if (localStorage.getItem('userName'))
+    {
+        setName("안녕하세요, "+localStorage.getItem('userName')+"님!")
+        setLogin(true)
+    }
+  })
+
+
   return (
     <Router>
       <Navbar collapseOnSelect fixed="top" className="menu" bg="white">
@@ -34,14 +54,14 @@ function App(props) {
             <div className='item1'>
             <Nav.Link href="/template">템플릿</Nav.Link>
             </div>
-            {/* <li/><li/><li/><li/><li/><li/><li/><li/><li/><li/><li/><li/><li/><li/><li/><li/><li/>
-          <li/><li/><li/><li/><li/><li/><li/><li/><li/><li/><li/><li/><li/><li/><li/><li/><li/> */}
-            <div className='item2'>
+              <div className='item2'>
               <Nav.Link href="/myspace">나의공간</Nav.Link> 
             </div>
             <li/>
             <div className='item3'>
-            <Nav.Link href={process.env.REACT_APP_KAKAO_AUTH_URL}>로그인</Nav.Link>
+            {
+              isLogin? <a onClick={logout}>{name}</a> : <Nav.Link href={process.env.REACT_APP_KAKAO_AUTH_URL}>{name}</Nav.Link>
+            }
             </div>
         </Container>
       </Navbar>
@@ -56,8 +76,8 @@ function App(props) {
           <Route path="/template" element={<Template />} />
           <Route path="/createSurvey" element={<CreateSurvey/>}/>
           <Route path="/endcreate" element={<EndCreate/>}/>
-          <Route path="/respond/:respondId" element={<Respond />}/>
-          <Route path="/respond" element={<Respond />}/>
+          {/* <Route path="/respond/:respondId" element={<Respond />}/>
+          <Route path="/respond" element={<Respond />}/> */}
           <Route path="/RespondCard" element={<RespondCard />}/>
           <Route path="/Onepage" element={<Onepage />}/>
           <Route path="/option" element={<Option/>}/>

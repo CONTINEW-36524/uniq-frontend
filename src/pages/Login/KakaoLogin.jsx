@@ -27,11 +27,12 @@ const KakaoLogin = () => {
                                 code : code
                             }
                         }
+                    
                     )
                     // response from backend server
                     .then((response) => {
                         console.log("ok response", response);
-                        const token = res.headers.authorization;
+                        const token = response.headers.authorization;
 
                         console.log(token)
                         // store token in local storage
@@ -39,45 +40,38 @@ const KakaoLogin = () => {
                         
                         // window.localStorage.setIem("nickname", response.kakao_account.profile.nickname)
                         navigate("/"); //수정 필요할 수도 있음
-                    }).catch(function(error){
-                        console.log("에러")
+                    }).catch(function(e){
+                        console.log(e)
                         navigate("/")
-                      });;
+                      });
                 // console.log(res);
             } catch (e) {
                 // response fail error message
-                console.error(e);
-                //window.alert("로그인 실패");
-                //navigate("/"); //수정 필요할 수도 있음
+                console.log(e);
+                navigate("/"); //수정 필요할 수도 있음
             }
 
             // get token from local storage
             const token = window.localStorage.getItem("token");
-
+            console.log(token)
             // pass token to backend
             try {
                 const res = await axios
                     .get(
                         // 백엔드에서 설정한 주소
-                        "http://localhost:8080", //수정 필요
+                        "/api/me", //수정 필요
                         {
                             headers: {
                                 Authorization: token,
-                                request: token,
-                            },
+                        },
                         }
                     )
-
-                    .then((data) => {
-                        window.localStorage.setItem("profile", data);
-                        console.log(data);
-                        // if get User info, move to MySpace page
-                        if (data) {
-                            navigate("/myspace"); // 수정 필요
-                        }
+                    .then((response) => {
+                        window.localStorage.setItem("userName", response.data.kakaoNickname);
+                        console.log(response);
                     });
             } catch (e) {
-                console.error(e);
+                console.log(e);
             }
         })();
     }, []);
