@@ -1,14 +1,12 @@
-import './EndCreate.css'
 import React from "react";
 import { Link } from "react-router-dom";
 import { useState } from 'react'
 import QRCODE from "react-qr-code";
 import { getSuggestedQuery } from '@testing-library/react';
-import Calendar from 'react-calendar';
-import 'react-calendar/dist/Calendar.css';
 
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import './EndCreate.css'
 
 function EndCreate(props) {
     const [QR, setQR] = useState(false);
@@ -37,17 +35,7 @@ function EndCreate(props) {
             <div className="qrbox">
                 {QR && <QRCODE value={ip} />}
             </div>
-
-            <div className='calendar'>
-                <h4>설문 시작 날짜: </h4>
-                {/* <Calendar onChange={onChange} value={value} /> */}
-                <DatePicker selected={startDate} onChange={(date=Date) => setStartDate(date)} />
-                {/* <div className="text-gray-500 mt-4">
-                    {moment(value).format("YYYY년 MM월 DD일")} 
-                </div> */}
-                
-            </div>
-
+           
         </div>
     );
 }

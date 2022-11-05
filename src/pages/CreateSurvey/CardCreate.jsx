@@ -5,16 +5,16 @@ import { useState} from 'react';
 import React from "react";
 import { NavLink } from 'react-router-dom';
 import { FcList } from "react-icons/fc";
-import '../Onepage/Onepage.css';
+import '../CreateSurvey/OnePageCreate.css';
 import '../../../src/App.css'
-import './Card.css'
+import './CardCreate.css'
 import { isDOMComponent } from "react-dom/test-utils";
-import DropDown from "../../components/createsurvey/dropdown";
+import DropDown from "../../components/CreateSurvey/dropdown";
 import {useDrag} from 'react-use-gesture';
 import Form from 'react-bootstrap/Form';
 import axios from 'axios';
 
-const Onepage = (props) =>{
+const CardCreate = (props) =>{
 
     const survey = useSelector((state)=>state.onepage.survey);
     const data = useSelector((state)=>state.onepage.survey.data);
@@ -121,4 +121,4 @@ const Onepage = (props) =>{
 
     );
 }
-export default Onepage;
+export default CardCreate;

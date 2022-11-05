@@ -1,8 +1,8 @@
 import {useRef, useState} from "react";
 import { useSelector, useDispatch } from "react-redux/";
-import { changetype, deletecontent} from "../../components/Slice/OnepageSlice";
+import { changetype, deletecontent} from "../Slice/OnepageSlice";
 import useDetectClose from "../../hooks/useDetectClose";
-import "../../pages/Onepage/Onepage.css";
+import "../../pages/CreateSurvey/OnePageCreate.css";
 import styles from "./Dropdown.module.css";
 import classNames from "classnames";
 import { Link, Route, Routes, BrowserRouter as Router } from "react-router-dom";
@@ -13,7 +13,7 @@ import Checkbox from "./Checkbox"
 import { FcList } from "react-icons/fc";
 
 import uuid from "react-uuid";
-import Toggle from '../../components/createsurvey/Toggle';
+import Toggle from './Toggle';
 
 
 

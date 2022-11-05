@@ -1,5 +1,5 @@
 
-import onepageStyles from "../../pages/Onepage/Onepage.css";
+import onepageStyles from "../../pages/CreateSurvey/OnePageCreate.css";
 import classNames from "classnames";
 import {useRef, useState} from "react";
 import { useSelector, useDispatch } from "react-redux/";

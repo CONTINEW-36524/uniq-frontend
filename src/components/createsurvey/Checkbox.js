@@ -1,8 +1,8 @@
 import {useRef, useState} from "react";
 import { useSelector, useDispatch } from "react-redux/";
-import { changetitle,pluscontent,minuscontent} from "../../components/Slice/OnepageSlice";
+import { changetitle,pluscontent,minuscontent} from "../Slice/OnepageSlice";
 import Firstcontent from "./Firstcontent";
-import "../../pages/Onepage/Onepage.css";
+import "../../pages/CreateSurvey/OnePageCreate.css";
 import styles from "./Dropdown.module.css";
 
 function Checkbox(props) {

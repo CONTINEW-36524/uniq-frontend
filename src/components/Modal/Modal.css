@@ -33,7 +33,7 @@
 }
 .modal > section > header button {
   position: absolute;
-  top: -10px;
+  top: 4px;
   right: 20px;
   width: 30px;
   height: 30px;
@@ -51,16 +51,10 @@
   height: 75%;
 }
 .modal > section > footer {
-  padding: 12px 10px;
+  padding: 10px 10px;
   text-align: right;
 }
-.modal > section > footer button {
-  padding: 6px 12px;
-  color: #fff;
-  background-color: #6c757d;
-  border-radius: 5px;
-  font-size: 13px;
-}
+
 .modal.openModal {
   display: flex;
   align-items: center;
@@ -211,7 +205,50 @@
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
 }
 
-  /* 폰트 적용 */
+/* 설문작성 후 설문기간 설정 모달 */
+.Modal-Dialog {
+  padding: 5%;
+  display: block;
+  text-align: center;
+}
+.close-h5:hover {
+  cursor: pointer;
+}
+.Modal-Body {
+  padding: 1%;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+.calendar {
+  /* display: inline-flex; */
+  position: relative;
+  display: inline-flex;
+  margin-top: 40px;
+  
+}
+.calendar h4{
+  width: 300px;
+}
+.react-datepicker__input-container{
+  width: 70%;
+}
+.react-datepicker-wrapper {
+  width: 180px;
+}
+.react-datepicker-wrapper input {
+  width: 200px;
+}
+.react-datepicker-wrapper input:hover{
+  cursor: pointer;
+}
+.ModalSaveBtn {
+  margin-top: 50px;
+  margin-right: 30px;
+  text-align: center;
+}
+
+
+/* 폰트 적용 */
 @font-face {
     font-family: 'SBAggroB';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff') format('woff');

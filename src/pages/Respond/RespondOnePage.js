@@ -2,7 +2,7 @@ import Form from 'react-bootstrap/Form';
 import React, { useEffect,useState } from 'react';
 import WithHeaderAndQuoteExample from '../../components/respond/WithHeaderAndQuoteExample';
 import ShortAnswerResult from "../../components/Result/ShortAnswerResult";
-import './respondOnePage.css'
+import './RespondOnePage.css'
 import FirstQuestion from "../../components/respond/FirstQuestion";
 import SecondQuestion from "../../components/respond/SecondQuestion";
 import LinearQuestion from "../../components/respond/LinearQuestion";
@@ -28,10 +28,10 @@ function RespondOnePage(props) {
             <div className="RespondOnePageContainerHeader">
                 <Form class="form">
                     <Form.Group className="mb-3" controlId="formGrouptitle">
-                    <h3 class='RespondOnePageHeadTitle'> 제목 시발아 </h3>
+                    <h3 class='RespondOnePageHeadTitle'> 제목 </h3>
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formGroupexplain">
-                    <h5 class='RespondOnePageHeadOverview'> 설문 개요 미친 </h5>
+                    <h5 class='RespondOnePageHeadOverview'> 설문 개요 </h5>
                     </Form.Group>
                 </Form>
             </div>
