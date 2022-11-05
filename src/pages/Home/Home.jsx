@@ -9,7 +9,7 @@ import Modal from "../../components/Modal/Modal"
 import SelectType from "../../components/Modal/SelectType.js"
 import { exit } from "../../components/Slice/CreateSurveySlice.js"
 import AddAsk from '../../components/Modal/AddAsk';
-import BannerSlider from '../BannerSlider';
+import BannerSlider from './BannerSlider';
 import formImg from '../../assets/formImg.jpg';
 import templateImg from '../../assets/templateImg.gif';
 import qrImg from '../../assets/qrImg.png';

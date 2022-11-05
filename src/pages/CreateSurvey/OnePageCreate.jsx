@@ -61,23 +61,23 @@ const OnePageCreate = (props) => {
         // <EndCreate ip={ip} modalOpen={modalOpen}/>
     }
 
-// <<<<<<< Updated upstream
-//     const testAxios=() =>{
-//         axios.post('/api/create/survey',survey
-//             ).then(function (response) {
-//                 console.log(response)
-//               })
-//           .catch(function(){
-//             console.log('실패함')
-//           })
-//           console.log(JSON.stringify(data1))
-          
+    // <<<<<<< Updated upstream
+    //     const testAxios=() =>{
+    //         axios.post('/api/create/survey',survey
+    //             ).then(function (response) {
+    //                 console.log(response)
+    //               })
+    //           .catch(function(){
+    //             console.log('실패함')
+    //           })
+    //           console.log(JSON.stringify(data1))
+            
 
 
-//     }  
-//     const toggleSidebar = () =>{
-//       closeSidebar(isSidebarOpen => !isSidebarOpen)
-// =======
+    //     }  
+    //     const toggleSidebar = () =>{
+    //       closeSidebar(isSidebarOpen => !isSidebarOpen)
+    // =======
     const testAxios = () => {
         axios.post('/api/create/survey', survey
         ).then(function (response) {
@@ -91,9 +91,8 @@ const OnePageCreate = (props) => {
     
     const toggleSidebar = () => {
         closeSidebar(isSidebarOpen => !isSidebarOpen)
+    }
 
-
-   
     const openModal = () => {
         setEndModal(true);
     };
@@ -190,8 +189,7 @@ const OnePageCreate = (props) => {
 
 
     );
-
-}
+    
 }
 
 export default OnePageCreate;

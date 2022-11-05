@@ -2,7 +2,6 @@ import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import { Link, Route, Routes, BrowserRouter as Router } from "react-router-dom";
 import Home from "./pages/Home/Home";
-import About from "./pages/About";
 import Template from "./pages/Template/Template";
 import MySpace from "./pages/MySpace/MySpace";
 import NotFound from "./pages/NotFound";
@@ -70,9 +69,7 @@ function App(props) {
         {/* Switch has been replaced with Routes from v6 */}
         <Routes>
           <Route exact path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
           <Route path="/template" element={<Template />} />
-          
           <Route path="/endcreate" element={<EndCreate/>}/>
           {/* <Route path="/respond/:respondId" element={<Respond />}/>
           <Route path="/respond" element={<Respond />}/> */}
