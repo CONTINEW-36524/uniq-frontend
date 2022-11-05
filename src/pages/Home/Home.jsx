@@ -14,7 +14,7 @@ import formImg from '../../assets/formImg.jpg';
 import templateImg from '../../assets/templateImg.gif';
 import qrImg from '../../assets/qrImg.png';
 import axios from 'axios';
-
+import ImageSlider from './ImageSlider';
 
 function Home() {
 
@@ -87,16 +87,9 @@ function Home() {
           </Modal>
         } */}
         
-        <div class = "list2Side"/>
-
-        <div class = "list2Main">
-          <BannerSlider/>
-        </div>
-
-        <div class = "list2Side"/>
-      </div>
+        <ImageSlider />
   
-
+        </div>
 
 
 
