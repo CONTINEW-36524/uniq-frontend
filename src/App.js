@@ -10,7 +10,7 @@ import Logo from "./assets/logo.png";
 import OnePageCreate from "./pages/CreateSurvey/OnePageCreate";
 import RespondCard from "./pages/Respond/RespondCard";
 import KakaoLogin from "./pages/Login/KakaoLogin";
-import Card from "./pages/Card/Card"
+import CardCreate from "./pages/CreateSurvey/CardCreate"
 import CardResult from "./pages/Result/CardResult"
 import EndCreate from "./pages/EndCreate/EndCreate"
 import RespondOnePage from "./pages/Respond/RespondOnePage"
@@ -75,7 +75,7 @@ function App(props) {
           <Route path="/respond" element={<Respond />}/> */}
           <Route path="/RespondCard" element={<RespondCard />}/>
           <Route path="/OnePageCreate" element={<OnePageCreate />}/>
-          <Route path="/Card" element={<Card />} />
+          <Route path="/CardCreate" element={<CardCreate />} />
           <Route path="/oauth/callback/kakao" element={<KakaoLogin />}/>
           <Route path="/MySpace" element={<MySpace />}/>
           <Route path="/RespondOnePage" element={<RespondOnePage />}/>
