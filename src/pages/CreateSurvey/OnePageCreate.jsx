@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from "react-redux/";
+import { increament, changesurtitle,changesursubtitle} from "../../components/Slice/OnepageSlice";
+import { useState} from 'react';
 
-import { increament, changesurtitle, changesursubtitle } from "../../components/Slice/OnepageSlice";
-import { useState } from 'react';
 import React from "react";
 import { Link } from 'react-router-dom';
 import { FcList } from "react-icons/fc";
@@ -61,6 +61,23 @@ const OnePageCreate = (props) => {
         // <EndCreate ip={ip} modalOpen={modalOpen}/>
     }
 
+// <<<<<<< Updated upstream
+//     const testAxios=() =>{
+//         axios.post('/api/create/survey',survey
+//             ).then(function (response) {
+//                 console.log(response)
+//               })
+//           .catch(function(){
+//             console.log('실패함')
+//           })
+//           console.log(JSON.stringify(data1))
+          
+
+
+//     }  
+//     const toggleSidebar = () =>{
+//       closeSidebar(isSidebarOpen => !isSidebarOpen)
+// =======
     const testAxios = () => {
         axios.post('/api/create/survey', survey
         ).then(function (response) {
@@ -70,13 +87,11 @@ const OnePageCreate = (props) => {
                 console.log('실패함')
             })
         console.log(JSON.stringify(data1))
-
-
-
     }
+    
     const toggleSidebar = () => {
         closeSidebar(isSidebarOpen => !isSidebarOpen)
-    }
+
 
    
     const openModal = () => {
@@ -127,7 +142,7 @@ const OnePageCreate = (props) => {
                 <div className="containerFooter">
                     <button class="plusBtn" onClick={() => dispatch(increament())}> + </button>
                     <p class="count">- {count} -</p>
-                    
+
                     <button className="w-btn-outline2 w-btn-yellow-outline2" type="button" onClick={()=>openModal()}>생성하기</button>
                     { showEndModal ? 
                         <Modal open={openModal} close={closeModal} header="설문 기간을 설정해주세요."> 
@@ -175,5 +190,8 @@ const OnePageCreate = (props) => {
 
 
     );
+
 }
+}
+
 export default OnePageCreate;

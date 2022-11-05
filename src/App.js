@@ -4,7 +4,6 @@ import { Link, Route, Routes, BrowserRouter as Router } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import About from "./pages/About";
 import Template from "./pages/Template/Template";
-import Login from "./pages/Login/Login";
 import MySpace from "./pages/MySpace/MySpace";
 import NotFound from "./pages/NotFound";
 import Logo from "./assets/logo.png";
@@ -20,19 +19,28 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import {Button, Container, Nav, Navbar, NavDropdown, Form, Col, Row} from 'react-bootstrap';
 
-import { REST_API_KEY, REDIRECT_URI, KAKAO_AUTH_URL} from './pages/Login/KakaoLogin';
 
 
 function App(props) {
-  const [hello, setHello] = useState('')
-
-    useEffect(() => {
-        axios.get('/api/hello')
-        .then(response => setHello(response.data))
-        .catch(error => console.log(error))
-    }, []);
+  const [name, setName] = useState("로그인")
+  const [isLogin, setLogin] = useState(false)
 
 
+  const logout = () =>{
+    localStorage.removeItem("userName")
+    localStorage.removeItem("token")
+    setName("로그인")
+    setLogin(false)
+    
+  }
+  //로그인후 새로고침해야 "로그인" -> "안녕하세요~님"으로 변경됨 수정필요
+  useEffect(()=>{
+    if (localStorage.getItem('userName'))
+    {
+        setName("안녕하세요, "+localStorage.getItem('userName')+"님!")
+        setLogin(true)
+    }
+  })
 
 
   return (
@@ -44,14 +52,14 @@ function App(props) {
             <div className='item1'>
             <Nav.Link href="/template">템플릿</Nav.Link>
             </div>
-            {/* <li/><li/><li/><li/><li/><li/><li/><li/><li/><li/><li/><li/><li/><li/><li/><li/><li/>
-          <li/><li/><li/><li/><li/><li/><li/><li/><li/><li/><li/><li/><li/><li/><li/><li/><li/> */}
-            <div className='item2'>
+              <div className='item2'>
               <Nav.Link href="/myspace">나의공간</Nav.Link> 
             </div>
             <li/>
             <div className='item3'>
-            <Nav.Link href={KAKAO_AUTH_URL}>로그인</Nav.Link>
+            {
+              isLogin? <a onClick={logout}>{name}</a> : <Nav.Link href={process.env.REACT_APP_KAKAO_AUTH_URL}>{name}</Nav.Link>
+            }
             </div>
         </Container>
       </Navbar>
@@ -66,6 +74,8 @@ function App(props) {
           <Route path="/template" element={<Template />} />
           
           <Route path="/endcreate" element={<EndCreate/>}/>
+          {/* <Route path="/respond/:respondId" element={<Respond />}/>
+          <Route path="/respond" element={<Respond />}/> */}
           <Route path="/RespondCard" element={<RespondCard />}/>
           <Route path="/OnePageCreate" element={<OnePageCreate />}/>
           <Route path="/Card" element={<Card />} />
