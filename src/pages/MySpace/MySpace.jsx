@@ -3,10 +3,10 @@ import React, { useState, useEffect } from "react";
 import { Container, Stack, Typography } from '@mui/material';
 import { useSelector, useDispatch } from "react-redux/";
 import { exit } from "../../components/Slice/CreateSurveySlice.js"
-import AddAsk from '../../components/createsurvey/AddAsk';
+import AddAsk from '../../components/Modal/AddAsk';
 import { MyspaceSidebar } from '../../section/myspace'
-import Modal from "../../components/createsurvey/Modal"
-import SelectType from "../../components/createsurvey/SelectType.js"
+import Modal from "../../components/Modal/Modal"
+import SelectType from "../../components/Modal/SelectType.js"
 import FavoriteUNIQ from './FavoriteUNIQ'
 import RecentUNIQ from './RecentUNIQ'
 import axios from "axios";

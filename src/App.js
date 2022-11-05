@@ -8,14 +8,12 @@ import Login from "./pages/Login/Login";
 import MySpace from "./pages/MySpace/MySpace";
 import NotFound from "./pages/NotFound";
 import Logo from "./assets/logo.png";
-import CreateSurvey from "./pages/CreateSurvey";
-import Option from "./pages/Option/Option";
-import Onepage from "./pages/Onepage/Onepage";
+
+import OnePageCreate from "./pages/CreateSurvey/OnePageCreate";
 import RespondCard from "./pages/Respond/RespondCard";
 import KakaoLogin from "./pages/Login/KakaoLogin";
 import Card from "./pages/Card/Card"
-import Result from "./pages/Result/CardResult"
-import optionDropdown from "./components/createsurvey/optionDropdown";
+import CardResult from "./pages/Result/CardResult"
 import EndCreate from "./pages/EndCreate/EndCreate"
 import RespondOnePage from "./pages/Respond/RespondOnePage"
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -66,18 +64,15 @@ function App(props) {
           <Route exact path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/template" element={<Template />} />
-          <Route path="/createSurvey" element={<CreateSurvey/>}/>
+          
           <Route path="/endcreate" element={<EndCreate/>}/>
           <Route path="/RespondCard" element={<RespondCard />}/>
-          <Route path="/Onepage" element={<Onepage />}/>
-          <Route path="/option" element={<Option/>}/>
+          <Route path="/OnePageCreate" element={<OnePageCreate />}/>
           <Route path="/Card" element={<Card />} />
           <Route path="/oauth/callback/kakao" element={<KakaoLogin />}/>
-          <Route path="/myspace" element={<MySpace />}/>
+          <Route path="/MySpace" element={<MySpace />}/>
           <Route path="/RespondOnePage" element={<RespondOnePage />}/>
-          <Route path="/result" element={<Result/>}/>
-          <Route path="option1" element={<optionDropdown/>}/>
-
+          <Route path="/CardResult" element={<CardResult/>}/>
           <Route path="*" element={<NotFound />} />
           {/* 지정하지 않은 주소로 들어올 때는 NotFound가 뜬다. */}
         </Routes>

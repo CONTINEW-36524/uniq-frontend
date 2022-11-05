@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link} from "react-router-dom";
-import './modal.css';
-import Onepage from '../../pages/Onepage/Onepage'
+import './Modal.css';
+import Onepage from '../../pages/CreateSurvey/OnePageCreate'
 import Card from '../../pages/Card/Card'
 import { useSelector, useDispatch } from "react-redux/";
 import { useState} from 'react'
 
-import { increament, increament2, increament3, deleteinit} from "../../components/Slice/OnepageSlice";
+import { increament, increament2, increament3, deleteinit} from "../Slice/OnepageSlice";
 
 
 const AddAsk = (props) => {

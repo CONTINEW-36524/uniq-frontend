@@ -21,15 +21,8 @@
     background-color: #5AC0EF;
     color: white;
 }
-.calendar {
-    display: inline-flex;
-}
-.calendar h4{
-    width: 300px;
-}
-.react-datepicker-wrapper {
-    align-self: flex-start;
-}
+
+
 
 @font-face {
     font-family: 'Pretendard-Regular';

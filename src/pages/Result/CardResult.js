@@ -3,13 +3,12 @@ import Piechart from "../../components/Result/Piechart";
 import Barchart from "../../components/Result/Barchart";
 import ShortAnswerResult from "../../components/Result/ShortAnswerResult";
 import Form from 'react-bootstrap/Form';
-import data from '../Respond/respondData';
-import "./result.css"
+
+import "./CardResult.css"
 import Button from '@mui/material/Button';
 
 
 const CardResult = () => {
-    let [datas] = useState(data)
 
     // 문항이 5개라고 가정
     let QNum = 5
@@ -22,10 +21,10 @@ const CardResult = () => {
             <div className="resultContainerHeader">
                 <Form class="form">
                 <Form.Group className="mb-3" controlId="formGrouptitle">
-                    <h3 class='respondHeadTitle'> {datas[0].title} </h3>
+                    <h3 class='respondHeadTitle'> 설문 제목 </h3>
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formGroupexplain">
-                    <h5 class='respondHeadOverview'> {datas[0].overview} </h5>
+                    <h5 class='respondHeadOverview'> 설문 개요 </h5>
                 </Form.Group>
                 </Form>
             </div>

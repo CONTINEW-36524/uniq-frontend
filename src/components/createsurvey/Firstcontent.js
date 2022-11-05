@@ -1,6 +1,6 @@
 import {useRef, useState} from "react";
 import { useSelector, useDispatch } from "react-redux/";
-import { changecontent} from "../../components/Slice/OnepageSlice";
+import { changecontent} from "../Slice/OnepageSlice";
 
 
 function Firstcontent(props) {

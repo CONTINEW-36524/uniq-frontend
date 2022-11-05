@@ -5,20 +5,21 @@ import { useState } from 'react';
 import React from "react";
 import { Link } from 'react-router-dom';
 import { FcList } from "react-icons/fc";
-import './Onepage.css';
+import './OnePageCreate.css';
 import '../../../src/App.css'
 import { isDOMComponent } from "react-dom/test-utils";
-import DropDown from "../../components/createsurvey/dropdown";
+import DropDown from "../../components/CreateSurvey/dropdown";
 import { useDrag } from 'react-use-gesture';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import axios from 'axios';
-import EndCreate from '../../pages/EndCreate/EndCreate'
-
+import EndCreate from '../EndCreate/EndCreate'
+import EndCreateModal from '../../components/Modal/EndCreateModal'
+import Modal from "../../components/Modal/Modal"
 // import { TextField, FormControl } from "@material-ui/core";
 
 
-const Onepage = (props) => {
+const OnePageCreate = (props) => {
     const surId = useSelector((state) => state.onepage.id);
     const survey = useSelector((state) => state.onepage.survey);
     const data1 = useSelector((state) => state.onepage.survey.data);
@@ -26,7 +27,7 @@ const Onepage = (props) => {
     const dispatch = useDispatch();
     const [title, settitle] = useState('설문 제목');
     const [subtitle, setsubtitle] = useState('설문 개요');
-    const [modalOpen, setModalOpen] = useState(false);
+
     const [ip, setIp] = useState("");
     const [isSidebarOpen, closeSidebar] = useState(false);
 
@@ -35,7 +36,8 @@ const Onepage = (props) => {
     const [active, setAtive] = useState("inactive");
     const formData = new FormData();
     const config = { "Content-Type": 'application/json' };
-
+    const [showEndModal, setEndModal] = useState(false);
+    
 
     formData.append("data", JSON.stringify(
         {
@@ -76,9 +78,17 @@ const Onepage = (props) => {
         closeSidebar(isSidebarOpen => !isSidebarOpen)
     }
 
+   
+    const openModal = () => {
+        setEndModal(true);
+    };
+    const closeModal = () => {
+        setEndModal(false);
+        // dispatch(exit())
+    };
+
 
     return (
-
 
         <div className="container">
             <div className="containerHeader">
@@ -105,24 +115,33 @@ const Onepage = (props) => {
                 </Form>
 
             </div>
-
+            
             <div className="containerContent">
+                
                 {data1.map((item, index) => (
                     <div className="fadein">
                         <DropDown id={item.id} />
                     </div>
                 ))}
+                
                 <div className="containerFooter">
                     <button class="plusBtn" onClick={() => dispatch(increament())}> + </button>
                     <p class="count">- {count} -</p>
-                    <Link to="/endcreate" className="endcreateLinkTag">
-                        <button className="w-btn-outline2 w-btn-yellow-outline2" type="button" onClick={nextpage}>생성하기</button>
-                    </Link>
+                    
+                    <button className="w-btn-outline2 w-btn-yellow-outline2" type="button" onClick={()=>openModal()}>생성하기</button>
+                    { showEndModal ? 
+                        <Modal open={openModal} close={closeModal} header="설문 기간을 설정해주세요."> 
+                            <EndCreateModal/> 
+                        </Modal>
+                        : null 
+                    }
 
                     {/* nextpage대신 testAxios 였음 */}
 
                 </div>
+                
             </div>
+            
 
             <section>
                 <div className={`${isSidebarOpen ? 'show-sidebar' : 'l-navbar'}`}>
@@ -157,4 +176,4 @@ const Onepage = (props) => {
 
     );
 }
-export default Onepage;
+export default OnePageCreate;

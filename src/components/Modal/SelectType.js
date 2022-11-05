@@ -1,5 +1,5 @@
 import React from 'react';
-import './modal.css';
+import './Modal.css';
 import { useSelector, useDispatch } from "react-redux/";
 import {selectOnepage, selectCard} from "../Slice/CreateSurveySlice"
 

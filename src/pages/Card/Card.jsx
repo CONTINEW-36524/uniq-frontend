@@ -5,11 +5,11 @@ import { useState} from 'react';
 import React from "react";
 import { NavLink } from 'react-router-dom';
 import { FcList } from "react-icons/fc";
-import '../Onepage/Onepage.css';
+import '../CreateSurvey/OnePageCreate.css';
 import '../../../src/App.css'
 import './Card.css'
 import { isDOMComponent } from "react-dom/test-utils";
-import DropDown from "../../components/createsurvey/dropdown";
+import DropDown from "../../components/CreateSurvey/dropdown";
 import {useDrag} from 'react-use-gesture';
 import Form from 'react-bootstrap/Form';
 import axios from 'axios';

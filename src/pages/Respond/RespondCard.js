@@ -1,20 +1,19 @@
 
 import React, { useEffect,useState } from 'react';
 
-import data from './respondData';
 import { useLocation } from 'react-router-dom';
-import "./respondCard.css"
+import "./RespondCard.css"
 import Startreturn from '../../components/respond/Startreturn';
 
 
 import Form from 'react-bootstrap/Form';
 import axios from 'axios';
 import { useSelector, useDispatch } from "react-redux/";
-import DropDown from "../../components/createsurvey/dropdown";
+import DropDown from "../../components/CreateSurvey/dropdown";
 
 
 function RespondCard() {
-  let [datas] = useState(data)
+
   const survey = useSelector((state)=>state.onepage.survey);
   const dispatch = useDispatch();
   const count = useSelector((state)=>state.onepage.count);
