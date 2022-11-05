@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link} from "react-router-dom";
 import './Modal.css';
-import Onepage from '../../pages/CreateSurvey/OnePageCreate'
-import Card from '../../pages/Card/Card'
 import { useSelector, useDispatch } from "react-redux/";
 import { useState} from 'react'
 
@@ -56,7 +54,7 @@ const AddAsk = (props) => {
 
 
     const selecttype = {
-        onepage: "/Onepage",
+        onepage: "/OnePageCreate",
         card: "/Card"
       };
 
