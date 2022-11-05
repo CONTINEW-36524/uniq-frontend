@@ -4,39 +4,27 @@ import { Link, Route, Routes, BrowserRouter as Router } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import About from "./pages/About";
 import Template from "./pages/Template/Template";
-import Login from "./pages/Login/Login";
 import MySpace from "./pages/MySpace/MySpace";
 import NotFound from "./pages/NotFound";
 import Logo from "./assets/logo.png";
 import CreateSurvey from "./pages/CreateSurvey";
 import Option from "./pages/Option/Option";
 import Onepage from "./pages/Onepage/Onepage";
-import Respond from "./pages/Respond/RespondOnecard";
+import RespondCard from "./pages/Respond/RespondCard";
 import KakaoLogin from "./pages/Login/KakaoLogin";
 import Card from "./pages/Card/Card"
-import Result from "./pages/Result/Result"
+import Result from "./pages/Result/CardResult"
 import optionDropdown from "./components/createsurvey/optionDropdown";
 import EndCreate from "./pages/EndCreate/EndCreate"
-
+import RespondOnePage from "./pages/Respond/RespondOnePage"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import {Button, Container, Nav, Navbar, NavDropdown, Form, Col, Row} from 'react-bootstrap';
 
-import { REST_API_KEY, REDIRECT_URI, KAKAO_AUTH_URL} from './pages/Login/KakaoLogin';
 
 
 function App(props) {
-  const [hello, setHello] = useState('')
-
-    useEffect(() => {
-        axios.get('/api/hello')
-        .then(response => setHello(response.data))
-        .catch(error => console.log(error))
-    }, []);
-
-
-
-
+  
   return (
     <Router>
       <Navbar collapseOnSelect fixed="top" className="menu" bg="white">
@@ -53,7 +41,7 @@ function App(props) {
             </div>
             <li/>
             <div className='item3'>
-            <Nav.Link href={KAKAO_AUTH_URL}>로그인</Nav.Link>
+            <Nav.Link href={process.env.REACT_APP_KAKAO_AUTH_URL}>로그인</Nav.Link>
             </div>
         </Container>
       </Navbar>
@@ -70,12 +58,13 @@ function App(props) {
           <Route path="/endcreate" element={<EndCreate/>}/>
           <Route path="/respond/:respondId" element={<Respond />}/>
           <Route path="/respond" element={<Respond />}/>
+          <Route path="/RespondCard" element={<RespondCard />}/>
           <Route path="/Onepage" element={<Onepage />}/>
           <Route path="/option" element={<Option/>}/>
           <Route path="/Card" element={<Card />} />
-          <Route path="/Onepage" element={<Onepage />}/>
           <Route path="/oauth/callback/kakao" element={<KakaoLogin />}/>
           <Route path="/myspace" element={<MySpace />}/>
+          <Route path="/RespondOnePage" element={<RespondOnePage />}/>
           <Route path="/result" element={<Result/>}/>
           <Route path="option1" element={<optionDropdown/>}/>
 

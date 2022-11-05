@@ -1,22 +1,19 @@
 import React, { useEffect,useState } from 'react';
+import "./respond.css"
 
 function SecondQuestion(props) {
   
-    let [btnActive, setBtnActive] = useState("");
-  
-    const toggleActive = (e) => {
-      setBtnActive((prev) => {
-        return e.target.value;
-      });
-    };
-  
+    
     return (
-      <div className="firstContainer">
-         <textarea className="secondcon" type = "text"
-         
-          onChange ={(e)=>e.target.value} 
+   
+      <div className="Qlayout">
+        <h3>질문: ____ ?</h3>
+        <textarea className="SecondRespond" 
+          type = "text" 
+          placeholder="답변을 입력해주세요."
         />
       </div>
+
     );
   }
   export default SecondQuestion;

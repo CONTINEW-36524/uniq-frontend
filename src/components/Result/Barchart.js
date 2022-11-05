@@ -35,7 +35,7 @@ const Barchart = () => {
                 /**
                  * chart margin
                  */
-                margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
+                margin={{ top: 50, right: 130, bottom: 70, left: 80 }}
                 /**
                  * chart padding (bar간 간격)
                  */
@@ -99,7 +99,7 @@ const Barchart = () => {
                     tickRotation: 0, // tick 기울기
                     legend: 'bottle', // bottom 글씨
                     legendPosition: 'middle', // 글씨 위치
-                    legendOffset: 40, // 글씨와 chart간 간격
+                    legendOffset: 50, // 글씨와 chart간 간격
                 }}
                 /**
                  * axis left 설정
@@ -110,7 +110,7 @@ const Barchart = () => {
                     tickRotation: 0, // tick 기울기
                     legend: 'price', // left 글씨
                     legendPosition: 'middle', // 글씨 위치
-                    legendOffset: -60, // 글씨와 chart간 간격
+                    legendOffset: -70, // 글씨와 chart간 간격
                 }}
                 /**
                  * label 안보이게 할 기준 width

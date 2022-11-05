@@ -1,9 +1,11 @@
 
 import React, { useEffect,useState } from 'react';
+
 import data from './respondData';
 import { useLocation, useParams } from 'react-router-dom';
-import "./respondOnecard.css"
+import "./respondCard.css"
 import Startreturn from '../../components/respond/Startreturn';
+
 
 import Form from 'react-bootstrap/Form';
 import axios from 'axios';
@@ -11,7 +13,7 @@ import { useSelector, useDispatch } from "react-redux/";
 import DropDown from "../../components/createsurvey/dropdown";
 
 
-function RespondOnecard() {
+function RespondCard() {
   let [datas] = useState(data)
   const survey = useSelector((state)=>state.onepage.survey);
   const dispatch = useDispatch();
@@ -44,7 +46,7 @@ useEffect(()=>{
     //responddata=response.data;
     // setresponddata(JSON.parse(response.data[0].datalist));
         //console.log(JSON.parse(responddata[0].datalist)[0].type); 
-        setresponddata(response.data);
+        setresponddata(response.data); 
   }).catch(function (error) {
     console.log(error)
       // 오류발생시 실행
@@ -68,5 +70,4 @@ return(
 
 
 
-
-export default RespondOnecard;
+export default RespondCard;

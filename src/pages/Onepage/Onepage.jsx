@@ -134,6 +134,9 @@ const Onepage = (props) => {
                         <button className="w-btn-outline2 w-btn-yellow-outline2" type="button" onClick={testAxios}>생성하기</button>
 
                         {/* <button className="w-btn-outline2 w-btn-yellow-outline2" type="button" onClick={nextpage}>생성하기</button> */}
+{/* 
+                    <Link to="/endcreate" className="endcreateLinkTag">
+                        <button className="w-btn-outline2 w-btn-yellow-outline2" type="button" onClick={nextpage}>생성하기</button> */}
 
                     </Link>
 
