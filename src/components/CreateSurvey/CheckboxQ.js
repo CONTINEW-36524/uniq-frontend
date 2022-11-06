@@ -1,11 +1,11 @@
 import {useRef, useState} from "react";
 import { useSelector, useDispatch } from "react-redux/";
 import { changetitle,pluscontent,minuscontent} from "../Slice/OnepageSlice";
-import Firstcontent from "./Firstcontent";
+import InputContent from "./InputContent";
 import "../../pages/CreateSurvey/OnePageCreate.css";
-import styles from "./Dropdown.module.css";
+import styles from "../Dropdown/Dropdown.module.css";
 
-function Checkbox(props) {
+function CheckboxQ(props) {
 
 
     const data = useSelector((state)=>state.onepage.survey.data);
@@ -52,7 +52,7 @@ function Checkbox(props) {
             {content.map((item,idx) =>(
               <div className={styles.checkboxContent}> 
                 <p className={styles.checkboxContentP}>☐</p>
-                <Firstcontent id={props.id} idx={idx} />
+                <InputContent id={props.id} idx={idx} />
               </div>
             ))}
           </div>
@@ -71,4 +71,4 @@ function Checkbox(props) {
   );
 }
 
-  export default Checkbox;
+  export default CheckboxQ;

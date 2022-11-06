@@ -1,7 +1,8 @@
 import Card from 'react-bootstrap/Card';
-import FirstQuestion from './FirstQuestion';
+import RadioQuestion from './RadioQuestion';
+import CheckBoxQuestion from './CheckBoxQuestion';
+import ShortQuestion from './ShortQuestion';
 import LinearQuestion from './LinearQuestion';
-import SecondQuestion from './SecondQuestion';
 
 function WithHeaderAndQuoteExample(props) {
     const aa=JSON.parse(props.responddata[0].datalist)
@@ -10,8 +11,9 @@ function WithHeaderAndQuoteExample(props) {
 
       function SelectCom(e){
         const selectComponent={
-            객관식: <FirstQuestion data={e.content} />,
-            주관식: <SecondQuestion />,
+            객관식: <RadioQuestion data={e.content} />,
+            체크박스: <CheckBoxQuestion />,
+            주관식: <ShortQuestion />,
             선형배율: <LinearQuestion />,
           };
         return (selectComponent[e.type])

@@ -12,6 +12,7 @@ import RespondCard from "./pages/Respond/RespondCard";
 import KakaoLogin from "./pages/Login/KakaoLogin";
 import CardCreate from "./pages/CreateSurvey/CardCreate"
 import CardResult from "./pages/Result/CardResult"
+import OnePageResult from "./pages/Result/OnePageResult"
 import EndCreate from "./pages/EndCreate/EndCreate"
 import RespondOnePage from "./pages/Respond/RespondOnePage"
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -80,6 +81,7 @@ function App(props) {
           <Route path="/MySpace" element={<MySpace />}/>
           <Route path="/RespondOnePage" element={<RespondOnePage />}/>
           <Route path="/CardResult" element={<CardResult/>}/>
+          <Route path="/OnePageResult" element={<OnePageResult/>}/>
           <Route path="*" element={<NotFound />} />
           {/* 지정하지 않은 주소로 들어올 때는 NotFound가 뜬다. */}
         </Routes>
