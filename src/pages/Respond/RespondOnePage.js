@@ -2,7 +2,7 @@ import Form from 'react-bootstrap/Form';
 import React, { useEffect,useState } from 'react';
 import WithHeaderAndQuoteExample from '../../components/respond/WithHeaderAndQuoteExample';
 import ShortAnswerResult from "../../components/Result/ShortAnswerResult";
-import './RespondOnePage.css'
+import './respondOnePage.css'
 import FirstQuestion from "../../components/respond/FirstQuestion";
 import SecondQuestion from "../../components/respond/SecondQuestion";
 import LinearQuestion from "../../components/respond/LinearQuestion";

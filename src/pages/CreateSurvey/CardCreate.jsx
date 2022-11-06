@@ -9,7 +9,7 @@ import '../CreateSurvey/OnePageCreate.css';
 import '../../../src/App.css'
 import './CardCreate.css'
 import { isDOMComponent } from "react-dom/test-utils";
-import DropDown from "../../components/CreateSurvey/dropdown";
+import DropDown from "../../components/createsurvey/dropdown";
 import {useDrag} from 'react-use-gesture';
 import Form from 'react-bootstrap/Form';
 import axios from 'axios';
