@@ -1,10 +1,14 @@
 import React, { useEffect,useState } from 'react';
 import { useSelector, useDispatch } from "react-redux/";
 import {changecontent} from "../../components/Slice/RespondSlice";
+import "./Respond.css"
 
 function LinearQuestion(props) {
   let data = [1, 2, 3, 4];
   const dispatch = useDispatch();
+
+
+
 
   const [btnclick, setbtnclick] = useState();
 
@@ -21,30 +25,31 @@ function LinearQuestion(props) {
   }
 
   return (
-    <div className="LinearContainer">
+      <div className="Qlayout">
+        <h3>질문: ____?</h3>
+        <div className="LinearContainer">
+          <p className='leftText'>전혀 아니다</p>
+          {data.map((item, idx) => {
+            return (
+              <div>
+                
+                <button
+                  value={idx}
+                  className={"btn" + (idx == btnActive ? "-active" : "")}
+                  onClick={()=>{
+                    toggleActive(idx);
+                    passcontent(item);
+                    }}
+                >
+                  {item}
+                </button>
+                
+              </div>
+            );
+          })}
+          <p className='rightText'>매우 그렇다</p>
+        </div>
 
-      <p className='leftText'>전혀 아니다</p>
-      {data.map((item, idx) => {
-        return (
-          <>
-          <div>
-            
-            <button
-              value={idx}
-              className={"btn" + (idx == btnclick ? " active" : "")}
-              onClick={()=>{
-                toggleActive(idx);
-                passcontent(item);
-                }}
-            >
-              {item}
-            </button>
-            
-          </div>
-          </>
-        );
-      })}
-      <p className='rightText'>매우 그렇다</p>
     </div>
   );
     }

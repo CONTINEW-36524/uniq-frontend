@@ -1,13 +1,14 @@
 import "./Template.css"
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux/";
-import Modal from "../../components/createsurvey/Modal"
-import SelectType from "../../components/createsurvey/SelectType.js"
+import Modal from "../../components/Modal/Modal"
+import SelectType from "../../components/Modal/SelectType.js"
 import { exit } from "../../components/Slice/CreateSurveySlice.js"
-import AddAsk from '../../components/createsurvey/AddAsk';
+import AddAsk from '../../components/Modal/AddAsk';
 import CardSlider from '../../components/Card/CardSlider';
 import CardSlider2 from '../../components/Card/CardSlider2';
 import CardSlider3 from '../../components/Card/CardSlider3';
+import axios from "axios";
 
 function Template() {
 
@@ -20,10 +21,31 @@ function Template() {
   const [goRight2, setGoRight2] = useState(false);
   const [goleft3, setGoleft3] = useState(false);
   const [goRight3, setGoRight3] = useState(false);
+  const [recent, setRecent] = useState([]);
+  const [popular, setPopular] = useState([]);
+ 
+  useEffect(()=>{
+    axios.get('/api/template/recent')
+    .then(function(response){
+      console.log(response.data)
+      setRecent(response.data)
+      
+      console.log('마운트');
+    
+    }).catch(function(error){
+      console.log("에러")
+    });
 
-  // const recentList = [["설문조사 이름", "#카테고리"], ["설문조사 이름", "#카테고리"], ["설문조사 이름", "#카테고리"], ["설문조사 이름", "#카테고리"]];
-  // // db에서 나중에 data 가져오기.
-  // const popularList = [["설문조사 이름", "#카테고리"], ["설문조사 이름", "#카테고리"], ["설문조사 이름", "#카테고리"], ["설문조사 이름", "#카테고리"]];
+    axios.get('/api/template/popular')
+    .then(function(response){
+      console.log(response.data)
+      setPopular(response.data)
+
+      console.log('마운트');
+    }).catch(function(error){
+      console.log("에러")
+    });
+  }, [])
 
   const openModal = () => {
     setModalOpen(true);
@@ -64,14 +86,14 @@ function Template() {
           <b class='tprecent'>최신 UNIQ 템플릿</b>
           <div class="tpcontainer">
             <div class="tpprev" onClick={(e) => { setGoleft(!goleft) }}> <b>‹</b> </div>
-            <CardSlider goleft={goleft} goRight={goRight} />
+            <CardSlider data={recent} goleft={goleft} goRight={goRight} />
             <div class="tpnext" onClick={(e) => { setGoRight(!goRight) }}> <b>›</b> </div>
           </div>
 
           <b class='tppopular'>인기있는 UNIQ 템플릿</b>
           <div class="tpcontainer">
             <div class="tpprev" onClick={(e) => { setGoleft2(!goleft2) }}> <b>‹</b> </div>
-            <CardSlider2 goleft={goleft2} goRight={goRight2} />
+            <CardSlider2 data={popular} goleft={goleft2} goRight={goRight2} />
             <div class="tpnext" onClick={(e) => { setGoRight2(!goRight2) }}> <b>›</b> </div>
           </div>
 

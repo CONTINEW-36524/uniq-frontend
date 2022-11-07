@@ -9,24 +9,23 @@ const initialState = {
             subtitle: '',
             data :[
                 { 
-                    did: uuid(), 
+
                     type : '객관식',
                     title:'' ,
                     content:[{
-                        con_id: 0,
+                        id: uuid(),
                         con:''
                     }]
                 },
-                { 
-                    did: uuid(), 
+                {
                     type : '객관식',
                     title:'' ,
                     content:[{
-                        con_id: 0,
+                        id: uuid(),
                         con:''
                     }]
                 },
-        
+   
             ]
         }
     ,
@@ -50,6 +49,7 @@ export const OnepageSlice = createSlice({
         },
         increament3: (state) =>{
             state.survey.data.push({did: uuid() , type:'선형배율', title:'',content: [{con_id: state.count*100, con:''}]});
+
             state.count+=1;
         },
         changeval: (state, action ) =>{
@@ -76,14 +76,14 @@ export const OnepageSlice = createSlice({
         pluscontent:(state, action) =>{
             const index = state.survey.data.findIndex((data) => data.did == action.payload)
 
-            state.survey.data[index].content.push({id:(index+100)+state.contentcount, con:''})
-            state.contentcount+=1;
+            state.survey.data[index].content.push({id:uuid(), con:''})
+ 
             // console.log(action.payload.id);
         },
         minuscontent:(state, action) =>{
             const index = state.survey.data.findIndex((data) => data.did == action.payload)
             state.survey.data[index].content.pop()
-            state.contentcount-=1;
+         
             // console.log(action.payload.id);
         },
 
@@ -117,6 +117,7 @@ export const OnepageSlice = createSlice({
             if(state.pagecount===state.count)
             {
                 state.survey.data.push({did: uuid() , type:'객관식', title:'',content: [{con_id: state.count*100, con:''}]});
+
                 state.count+=1
             }
         },
@@ -128,6 +129,24 @@ export const OnepageSlice = createSlice({
 
         },
 
+        pluscardresultpage:(state) =>{
+            state.nowQNum+=1;
+            if(state.nowQNum===state.count)
+            {
+                state.nowQNum+=1
+            }
+        },
+
+        minuscardresultpage:(state) =>{
+            if(state.nowQNum>0){
+            state.nowQNum-=1;
+            }
+
+        },
+
+
+
+
         deleteinit:(state, action)=>{
             if (action.payload == 0)
             {
@@ -135,7 +154,9 @@ export const OnepageSlice = createSlice({
                 state.count=1
                 state.survey.data.pop()
                 state.survey.data.pop()
+
                 state.survey.data.push({did: uuid() , type:'객관식', title:'',content: [{con_id: state.count*100, con:''}]});
+
 
             }
             else{
@@ -158,6 +179,6 @@ export const OnepageSlice = createSlice({
     }
 });
 
-export const {increament, changeval,conincreament, changetype, changetitle, pluscontent,minuscontent, changecontent,changesurtitle, changesursubtitle, increament2, increament3, pluscardpage,minuscardpage, deletecontent, deleteinit, checkReq} = OnepageSlice.actions;
+export const {pluscardresultpage, minuscardresultpage, increament, changeval,conincreament, changetype, changetitle, pluscontent,minuscontent, changecontent,changesurtitle, changesursubtitle, increament2, increament3, pluscardpage,minuscardpage, deletecontent, deleteinit, checkReq} = OnepageSlice.actions;
 
 export default OnepageSlice.reducer;

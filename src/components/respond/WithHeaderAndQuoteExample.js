@@ -6,6 +6,10 @@ import LinearQuestion from './LinearQuestion';
 import SecondQuestion from './SecondQuestion';
 import {pluscon} from "../../components/Slice/RespondSlice";
 import FirstContents from './FirstContents';
+import RadioQuestion from './RadioQuestion';
+import CheckBoxQuestion from './CheckBoxQuestion';
+import ShortQuestion from './ShortQuestion';
+
 
 function WithHeaderAndQuoteExample(props) {
     const dispatch = useDispatch();
@@ -20,9 +24,11 @@ function WithHeaderAndQuoteExample(props) {
         dispatch(pluscon(e.data.id))
 
         const selectComponent={
-            객관식: <FirstQuestion data={e.data} />,
-            주관식: <SecondQuestion data={e.data}/>,
-            선형배율: <LinearQuestion data={e.data}/>,
+
+            객관식: <RadioQuestion data={e.content} />,
+            체크박스: <CheckBoxQuestion />,
+            주관식: <ShortQuestion />,
+            선형배율: <LinearQuestion />,
           };
         return (selectComponent[e.data.type])
       }
