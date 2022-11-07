@@ -1,5 +1,5 @@
 import React, { useEffect,useState } from 'react';
-import "./respond.css"
+import "./Respond.css"
 
 function LinearQuestion() {
   let data = [1, 2, 3, 4, 5];
