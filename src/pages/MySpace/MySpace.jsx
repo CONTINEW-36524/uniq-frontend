@@ -3,10 +3,10 @@ import React, { useState, useEffect } from "react";
 import { Container, Stack, Typography } from '@mui/material';
 import { useSelector, useDispatch } from "react-redux/";
 import { exit } from "../../components/Slice/CreateSurveySlice.js"
-import AddAsk from '../../components/createsurvey/AddAsk';
-import { MyspaceSidebar } from '../../section/myspace'
-import Modal from "../../components/createsurvey/Modal"
-import SelectType from "../../components/createsurvey/SelectType.js"
+import AddAsk from '../../components/Modal/AddAsk';
+import MyspaceSidebar from './MyspaceSidebar'
+import Modal from "../../components/Modal/Modal"
+import SelectType from "../../components/Modal/SelectType.js"
 import FavoriteUNIQ from './FavoriteUNIQ'
 import RecentUNIQ from './RecentUNIQ'
 import axios from "axios";
@@ -16,6 +16,8 @@ function MySpace(props) {
   const next = useSelector((state) => state.createSurvey.next);
   const [modalOpen, setModalOpen] = useState(false);
   const [openFilter, setOpenFilter] = useState(false);
+  const [category, setCategory] = useState("none");
+  const [like, setLike] = useState("0");
   const [visible1, setVisible1] = useState(false);
   const [visible2, setVisible2] = useState(false);
   const [myUniq, setMyUniq] = useState([]);
@@ -37,7 +39,16 @@ function MySpace(props) {
   const handleCloseFilter = () => {
     setOpenFilter(false);
   };
-  
+
+  const handleCategory = (e) => {
+    console.log(e.target.value);
+    setCategory(e.target.value);
+  };
+
+  const handleLike = (e) => {
+    console.log(e.target.value);
+    setLike(e.target.value);
+  };
 
   useEffect(()=>{
     axios.get('/api/myspace/my-uniq',{
@@ -50,7 +61,6 @@ function MySpace(props) {
       setMyUniq(response.data)
       console.log(myUniq)
       console.log('마운트');
-    
     }).catch(function(error){
       console.log("에러")
     });
@@ -70,7 +80,6 @@ function MySpace(props) {
     console.log("에러")
   });
   }, [])
-  // db에서 나중에 data 가져오기.
 
   return (
     <div id="mswrapper">
@@ -100,6 +109,8 @@ function MySpace(props) {
           openFilter={openFilter}
           onOpenFilter={handleOpenFilter}
           onCloseFilter={handleCloseFilter}
+          Category={handleCategory}
+          Like={handleLike}
         />
       </div>
       {/* 버튼 눌러 list불러오기 */}

@@ -126,6 +126,24 @@ export const OnepageSlice = createSlice({
 
         },
 
+        pluscardresultpage:(state) =>{
+            state.nowQNum+=1;
+            if(state.nowQNum===state.count)
+            {
+                state.nowQNum+=1
+            }
+        },
+
+        minuscardresultpage:(state) =>{
+            if(state.nowQNum>0){
+            state.nowQNum-=1;
+            }
+
+        },
+
+
+
+
         deleteinit:(state, action)=>{
             if (action.payload == 0)
             {
@@ -156,6 +174,6 @@ export const OnepageSlice = createSlice({
     }
 });
 
-export const {increament, changeval,conincreament, changetype, changetitle, pluscontent,minuscontent, changecontent,changesurtitle, changesursubtitle, increament2, increament3, pluscardpage,minuscardpage, deletecontent, deleteinit, checkReq} = OnepageSlice.actions;
+export const {pluscardresultpage, minuscardresultpage, increament, changeval,conincreament, changetype, changetitle, pluscontent,minuscontent, changecontent,changesurtitle, changesursubtitle, increament2, increament3, pluscardpage,minuscardpage, deletecontent, deleteinit, checkReq} = OnepageSlice.actions;
 
 export default OnepageSlice.reducer;
