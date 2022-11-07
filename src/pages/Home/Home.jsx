@@ -87,7 +87,7 @@ function Home() {
           </Modal>
         } */}
         <div className='textSet1'>
-          <h3 className="intext7">👇 SWIPE</h3>
+          <h3 className="intext7">👇 SWIPE 👇</h3>
           </div>
       </div>
   
