@@ -4,7 +4,7 @@ import { Container, Stack, Typography } from '@mui/material';
 import { useSelector, useDispatch } from "react-redux/";
 import { exit } from "../../components/Slice/CreateSurveySlice.js"
 import AddAsk from '../../components/Modal/AddAsk';
-import { MyspaceSidebar } from '../../section/Myspace'
+import MyspaceSidebar from './MyspaceSidebar'
 import Modal from "../../components/Modal/Modal"
 import SelectType from "../../components/Modal/SelectType.js"
 import FavoriteUNIQ from './FavoriteUNIQ'
