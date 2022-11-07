@@ -14,7 +14,7 @@ import formImg from '../../assets/formImg.jpg';
 import templateImg from '../../assets/templateImg.gif';
 import qrImg from '../../assets/qrImg.png';
 import axios from 'axios';
-
+import ImageSlider from './ImageSlider'
 
 function Home() {
 
@@ -77,7 +77,7 @@ function Home() {
           <div style={{ textDecoration: 'none' }}>
             <button class='btn3' onClick={openModal}> <b> 설문 생성하러 가기 </b></button> <br /> */}
        
-          <BannerSlider />
+          <ImageSlider />
         {/* {next ?
           <Modal open={modalOpen} close={closeModal} header="질문 유형 개수를 선택해주세요.">
             <AddAsk />
