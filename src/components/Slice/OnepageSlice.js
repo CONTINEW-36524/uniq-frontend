@@ -9,7 +9,7 @@ const initialState = {
             subtitle: '',
             data :[
                 { 
-
+                    did : uuid(),
                     type : '객관식',
                     title:'' ,
                     content:[{
@@ -18,6 +18,7 @@ const initialState = {
                     }]
                 },
                 {
+                    did : uuid(),
                     type : '객관식',
                     title:'' ,
                     content:[{

@@ -20,34 +20,19 @@ import Modal from "../../components/Modal/Modal"
 
 
 const OnePageCreate = (props) => {
-    const surId = useSelector((state) => state.onepage.id);
     const survey = useSelector((state) => state.onepage.survey);
     const data1 = useSelector((state) => state.onepage.survey.data);
     const count = useSelector((state) => state.onepage.count);
     const dispatch = useDispatch();
-    const [title, settitle] = useState('설문 제목');
-    const [subtitle, setsubtitle] = useState('설문 개요');
 
-    const [ip, setIp] = useState("");
     const [isSidebarOpen, closeSidebar] = useState(false);
 
-    const [logoPos, setlogoPos] = useState({ x: 0, y: 0 });
-    const bindLogoPos = useDrag(() => { });
     const [active, setAtive] = useState("inactive");
     const formData = new FormData();
-    const config = { "Content-Type": 'application/json' };
     const [showEndModal, setEndModal] = useState(false);
     
 
-    formData.append("data", JSON.stringify(
-        {
-         did: "11",
-         type: "객관식",
-         title: "hi",
-         content: [{id: 1, con: "123"}]
 
-        }
-    ))
 
     const toggleActive = (e) => {
         setAtive((prev) => {
@@ -71,7 +56,7 @@ const OnePageCreate = (props) => {
           .catch(function(){
             console.log('실패함')
           })
-          console.log(JSON.stringify(data1))
+        }
           
 
 
@@ -79,17 +64,6 @@ const OnePageCreate = (props) => {
     //     const toggleSidebar = () =>{
     //       closeSidebar(isSidebarOpen => !isSidebarOpen)
     // =======
-    const testAxios = () => {
-        axios.post('/api/create/survey', survey
-        ).then(function (response) {
-            console.log(response)
-        })
-            .catch(function () {
-                console.log('실패함')
-            })
-        console.log(JSON.stringify(data1))
-    }
-    
     const toggleSidebar = () => {
         closeSidebar(isSidebarOpen => !isSidebarOpen)
     }
@@ -193,7 +167,6 @@ const OnePageCreate = (props) => {
 
     );
     
-}
 }
 
 export default OnePageCreate;

@@ -1,6 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 import uuid from "react-uuid" 
-import data from "../../pages/Respond/respondData";
 import axios from 'axios';
 
 const initialState = {

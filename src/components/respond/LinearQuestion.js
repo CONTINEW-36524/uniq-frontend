@@ -1,7 +1,7 @@
 import React, { useEffect,useState } from 'react';
 import { useSelector, useDispatch } from "react-redux/";
 import {changecontent} from "../../components/Slice/RespondSlice";
-import "./Respond.css"
+import "./respond.css"
 
 function LinearQuestion(props) {
   let data = [1, 2, 3, 4];
@@ -35,7 +35,7 @@ function LinearQuestion(props) {
                 
                 <button
                   value={idx}
-                  className={"btn" + (idx == btnActive ? "-active" : "")}
+                  className={"btn" + (idx == btnclick ? "-active" : "")}
                   onClick={()=>{
                     toggleActive(idx);
                     passcontent(item);

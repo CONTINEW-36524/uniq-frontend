@@ -2,7 +2,7 @@ import React, { useEffect,useState } from 'react';
 import { useSelector, useDispatch } from "react-redux/";
 import {changecontent} from "../../components/Slice/RespondSlice";
 
-function FirstContents(props) {
+function FirstQuestion(props) {
     const dispatch = useDispatch();
   
     let [btnActive, setBtnActive] = useState();
@@ -27,7 +27,7 @@ function FirstContents(props) {
 <h3>질문: ____ ?</h3>
 
 <div className="radioContainer">
-  {data.map((item, idx) => {
+  {props.data.map((item, idx) => {
     return (
       <div>
         <button
