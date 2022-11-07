@@ -63,19 +63,19 @@ function Home() {
 
   return (
 
-    <div class='detail'>
+    <div className='detail'>
 
       {/* page 1 */}
       
-      <div class="list">
-        {/* <div class="jumbotron">
-          <h1 class="display-8">이제는 설문 템플릿도 공유하자! </h1>
-          <h1 class="display-3">UNIQ</h1>
+      <div className="list">
+        {/* <div className="jumbotron">
+          <h1 className="display-8">이제는 설문 템플릿도 공유하자! </h1>
+          <h1 className="display-3">UNIQ</h1>
           <br />
           <p>설문조사 무료 디자인 툴</p>
 
           <div style={{ textDecoration: 'none' }}>
-            <button class='btn3' onClick={openModal}> <b> 설문 생성하러 가기 </b></button> <br /> */}
+            <button className='btn3' onClick={openModal}> <b> 설문 생성하러 가기 </b></button> <br /> */}
        
           <ImageSlider />
         {/* {next ?
@@ -86,7 +86,9 @@ function Home() {
             <SelectType />
           </Modal>
         } */}
-
+        <div className='textSet1'>
+          <h3 className="intext7">👇 SWIPE</h3>
+          </div>
       </div>
   
 

@@ -24,6 +24,8 @@ body {
   height: 100vh;
   background-color: white;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   padding-top:100px;
   scroll-snap-align: center;
   animation: smoothAppear 1s;
@@ -330,6 +332,13 @@ body {
   font-family: "S-CoreDream-3Light";
 }
 
+.intext7 {
+  margin:100px;
+  display:flex;
+  justify-content: center;
+  font-size: 25px;
+  font-family: "S-CoreDream-3Light";
+}
 
 
 .StartBtn {
