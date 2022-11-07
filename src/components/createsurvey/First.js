@@ -8,7 +8,7 @@ function First(props) {
 
 
     const data = useSelector((state)=>state.onepage.survey.data);
-    const temp= data.filter((data)=>data.id===props.id)
+    const temp= data.filter((data)=>data.did===props.id)
     const dispatch = useDispatch();
 
 
@@ -33,8 +33,8 @@ function First(props) {
 
 
 
-    const title = data.filter(item => item.id === props.id)[0].title
-    const content = data.filter(item => item.id === props.id)[0].content
+    const title = data.filter(item => item.did === props.id)[0].title
+    const content = data.filter(item => item.did === props.id)[0].content
 
 
   return (

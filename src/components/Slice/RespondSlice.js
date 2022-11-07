@@ -30,7 +30,7 @@ export const RespondSlice = createSlice({
         },
 
         pluscon:(state, action) =>{
-            console.log(state.survey.responddata.findIndex((data) => data.id == action.payload.id))
+            console.log(state.survey.responddata.findIndex((data) => data.id == action.payload))
             // if(state.survey.responddata.findIndex((data) => data.id == action.payload.id)==-1)
              state.survey.responddata.push({id: action.payload, answer: ''})
             

@@ -51,7 +51,7 @@ const DropDown = (props) => {
     dispatch(deletecontent(e.target.value));
   }
   const selectCom = () =>{
-    const temp = data.filter(item => item.id === props.id)
+    const temp = data.filter(item => item.did === props.id)
     // console.log(temp)
   
     const type = temp[0].type

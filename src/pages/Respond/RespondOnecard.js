@@ -40,7 +40,9 @@ useEffect(()=>{
     //responddata=response.data;
     // setresponddata(JSON.parse(response.data[0].datalist));
         //console.log(JSON.parse(responddata[0].datalist)[0].type); 
-        setresponddata(response.data);
+        console.log(response.data)
+        setresponddata(...responddata, response.data);
+        console.log(responddata)
   }).catch(function (error) {
       // 오류발생시 실행
   }).then(function() {

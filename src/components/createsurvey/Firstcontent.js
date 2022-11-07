@@ -9,7 +9,7 @@ function Firstcontent(props) {
   // const content = useSelector((state)=>state.onepage.data[props.id].content);
   const data = useSelector((state)=>state.onepage.survey.data);
 
-  const content = data.filter(item => item.id === props.id)[0].content
+  const content = data.filter(item => item.did === props.id)[0].content
   console.log(content)
   const [questionc, setquestionc] = useState();
   const dispatch = useDispatch();

@@ -40,7 +40,7 @@ function Startreturn(props){
                 </div>
               ))} */}
   
-              { <WithHeaderAndQuoteExample responddata={props.responddata[0]} /> }
+              { <WithHeaderAndQuoteExample responddata={props.responddata} /> }
               
               <div className="respondContainerFooter">
                 <button className="w-btn-outline2 w-btn-yellow-outline2" type="button"onClick={savesurveyid} > 제출하기</button>

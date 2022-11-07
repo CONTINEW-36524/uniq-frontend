@@ -5,16 +5,15 @@ import { useSelector, useDispatch } from "react-redux/";
 import LinearQuestion from './LinearQuestion';
 import SecondQuestion from './SecondQuestion';
 import {pluscon} from "../../components/Slice/RespondSlice";
+import FirstContents from './FirstContents';
 
 function WithHeaderAndQuoteExample(props) {
-    const aa=JSON.parse(props.responddata.datalist)
     const dispatch = useDispatch();
 
+    console.log(props.responddata)
+    const quest=[];
+
     
-
-
-    
-
       function SelectCom(e){
 
 
@@ -29,7 +28,7 @@ function WithHeaderAndQuoteExample(props) {
       }
 
     return (
-      aa.map(((datas,idx) => (
+      props.responddata.map(((datas,idx) => (
         
         <Card className="text-center w-100" >
           <div>

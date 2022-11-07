@@ -39,7 +39,7 @@ const Onepage = (props) =>{
 
     formData.append("data",JSON.stringify(
         {
-         id: "11",
+         did: "11",
          type: "객관식",
          title: "hi",
          content: [{id: 1, con: "123"}]
@@ -58,6 +58,7 @@ const Onepage = (props) =>{
     }
 
     const testAxios=() =>{
+        console.log(survey)
         axios.post('/api/create/survey',survey
             ).then(function (response) {
                 console.log(response)
@@ -107,7 +108,7 @@ const Onepage = (props) =>{
             <div className="containerContent">
                 { data1.map((item,index)=>( 
                     <div className="fadein">
-                    <DropDown id={item.id}/> 
+                    <DropDown id={item.did}/> 
                     </div>
                 ))}
                 <div className="containerFooter">
