@@ -8,7 +8,7 @@ import { FcList } from "react-icons/fc";
 import './OnePageCreate.css';
 import '../../../src/App.css'
 import { isDOMComponent } from "react-dom/test-utils";
-import DropDown from "../../components/createsurvey/dropdown";
+import DropDown from "../../components/Dropdown/Dropdown";
 import { useDrag } from 'react-use-gesture';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';

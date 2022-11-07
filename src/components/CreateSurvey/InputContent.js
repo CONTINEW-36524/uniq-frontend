@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux/";
 import { changecontent} from "../Slice/OnepageSlice";
 
 
-function Firstcontent(props) {
+function InputContent(props) {
 
 
   // const content = useSelector((state)=>state.onepage.data[props.id].content);
@@ -47,4 +47,4 @@ function Firstcontent(props) {
   );
 }
 
-export default Firstcontent;
+export default InputContent;

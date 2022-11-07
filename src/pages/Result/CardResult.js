@@ -1,20 +1,27 @@
 import React, { useState } from 'react';
+import { useSelector, useDispatch } from "react-redux/";
 import Piechart from "../../components/Result/Piechart";
 import Barchart from "../../components/Result/Barchart";
 import ShortAnswerResult from "../../components/Result/ShortAnswerResult";
 import Form from 'react-bootstrap/Form';
-
 import "./CardResult.css"
 import Button from '@mui/material/Button';
+
+import { pluscardresultpage,minuscardresultpage} from "../../components/Slice/OnepageSlice";
 
 
 const CardResult = () => {
 
-    // 문항이 5개라고 가정
-    let QNum = 5
-    let [nowQNum, changenowQNum] = useState(1)
-    let progress = eval(100/QNum)
-    console.log(progress)
+    const QList = {
+        results: [
+            {QNum: 1, QType: 'Radio', question: "학년을 선택하세요."},
+            {QNum: 2, QType: 'Checkbox', question: "좋아하는 음료를 골라볼까요?"},
+            {QNum: 3, QType: 'ShortAnswer', question: "궁금한 점이 있다면 적어주세요 :)"},
+        ]
+    }
+    const dispatch1 = useDispatch();
+
+    let [nowQNum, changenowQNum] = useState(0)
 
     return (
         <div className='container'>
@@ -28,39 +35,49 @@ const CardResult = () => {
                 </Form.Group>
                 </Form>
             </div>
+            
             <div className="resultContainerContent">
-
-                <h3 className="question">질문: _________ ?</h3>
+                
+                <h3 className="question">{QList.results[nowQNum].question}</h3>
                 <div className="resultChat">
                     <h4 className='answer'>답변 결과: </h4>
                     {/* <Barchart/> */}
                     {/* <Piechart/> */}
+                    {/* <ShortAnswerResult/> */}
 
-                    <ShortAnswerResult/>
+                    {{
+                        'Radio' : <Piechart/>,
+                        'Checkbox' : <Barchart/>,
+                        'ShortAnswer' : <ShortAnswerResult/>
+                    }[QList.results[nowQNum].QType]}
+
                     <div className="resultContainerFooter">
-                    <button 
-                        class="w-btn w-btn-blue prevBtn" 
-                        type="button"
-                        onClick={() => {
-                            PrevPage(-1) 
-                            changenowQNum(nowQNum-1)
-                        }
-                    }> 🡸 
-                    </button>
-                        <h4 className='PageNum'> {nowQNum} / {QNum}</h4>
-                        
-                    <button 
-                        class="w-btn w-btn-blue nextBtn" 
-                        type="button"
-                        onClick={() => {
-                            NextPage(1)
-                            changenowQNum(nowQNum+1)
-                        }
-                    }> 🡺 
-                    </button>
-                    </div>
-                </div>
+                        <button 
+                            class="w-btn w-btn-blue prevBtn" 
+                            type="button"
+                            onClick={() => {
+                                // PrevPage(-1) 
+                                dispatch1(minuscardresultpage())
+                                changenowQNum(nowQNum-1)
+                            }
+                        }> 🡸 
+                        </button>
+                        <h4 className='PageNum'> {QList.results[nowQNum].QNum} / {QList.results.length}</h4>
+                                            
+                        <button 
+                            class="w-btn w-btn-blue nextBtn" 
+                            type="button"
+                            onClick={() => {
+                                // NextPage(1)
+                                dispatch1(pluscardresultpage())
+                                changenowQNum(nowQNum+1)
+                            }
+                        }> 🡺 
+                        </button>
+                    </div>                          
+                </div> 
             </div>
+       
         </div>
 
         
