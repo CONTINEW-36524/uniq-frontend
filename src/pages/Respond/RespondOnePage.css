@@ -1,0 +1,81 @@
+.RespondOnePageContainer {
+    width: 100%;
+    overflow: scroll;
+    -ms-overflow-style: none;
+    margin-bottom: 20px;
+    font-family: 'yg-jalnan';
+    display: flex;
+    justify-content: center;
+}
+/* Header : 설문 제목, 개요 */
+.RespondOnePageContainerHeader {
+    width: 70%;
+    height: fit-content;
+    background-color: #b6cefc;
+    padding: 1%;
+    margin-top: 120px;
+}
+.RespondOnePageHeadTitle {
+    color: #333333;
+    font-weight: bold;
+    text-align: center;
+}
+.RespondOnePageHeadOverview {
+    color: #333333;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* ContainerContent : 질문 내용 */
+.RespondOnePageContainerContent {
+    width: 70%;
+    height: fit-content;
+    background-color: #b6cefc;
+    padding: 1%;
+    display: inline-block; 
+    position: absolute;
+    margin-top: 280px;
+   
+    animation: smoothApper 1s;
+}
+
+
+
+
+/* ContainerFooter : 결과보기 버튼 */
+.RespondOnePageContainerFooter {
+    width: 70%;
+    height: fit-content;
+    background-color: #b6cefc;
+    padding: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+.showResultBtn {
+    font-family: 'yg-jalnan';
+}
+
+
+
+
+
+/* 폰트 */
+@font-face {
+    font-family: 'SBAggroB';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+  font-family: 'SDSamliphopangche_Outline';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/SDSamliphopangche_Outline.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'yg-jalnan';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
