@@ -68,6 +68,7 @@ const KakaoLogin = () => {
                     )
                     .then((response) => {
                         window.localStorage.setItem("userName", response.data.kakaoNickname);
+                        window.localStorage.setItem("userCode", response.data.userCode);
                         console.log(response);
                     });
             } catch (e) {

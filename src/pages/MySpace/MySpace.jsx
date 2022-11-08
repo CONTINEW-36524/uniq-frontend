@@ -52,12 +52,12 @@ function MySpace(props) {
       console.log('마운트');
     
     }).catch(function(error){
-      console.log("에러")
+      console.log(error)
     });
 
     axios.get('/api/myspace/my-favorites',{
       params:{
-        user_id: 1
+        user_id: localStorage.getItem('userCode')
       }
     }
   ).then(function(response){

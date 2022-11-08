@@ -29,6 +29,7 @@ export default function CardSlider2(props) {
     const goleft = props.goleft;
     const goRight = props.goRight;
     const data = props.data;
+    console.log(data)
     
     useEffect((e) => {
         console.log('check');
