@@ -1,5 +1,5 @@
 import React, { useEffect,useState } from 'react';
-import "./respond.css"
+import "./Respond.css"
 
 function SecondQuestion(props) {
   

@@ -15,7 +15,7 @@ import {
 } from '@mui/material';
 // components
 import Iconify from '../../components/iconify';
-import Scrollbar from '../../components/scrollbar';
+import Scrollbar from '../../components/Scrollbar/index';
 // ----------------------------------------------------------------------
 // 정렬기능 추후 추가
 // export const SORT_BY_OPTIONS = [
