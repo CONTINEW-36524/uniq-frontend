@@ -20,6 +20,8 @@
     "bootstrap": "^5.2.2",
     "browserify-zlib": "^0.2.0",
     "classnames": "^2.3.2",
+    "dotenv": "^16.0.3",
+    "env-cmd": "^10.1.0",
     "http-proxy-middleware": "^2.0.6",
     "https-browserify": "^1.0.0",
     "jquery": "^3.6.1",
@@ -53,6 +55,9 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "start:dev": "env-cmd -f .env.development react-scripts start",
+    "start:prod": "env-cmd -f .env.production react-scripts start",
+    "start:qa": "env-cmd -f .env.qa react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
