@@ -1,6 +1,6 @@
 import {useRef, useState} from "react";
 import { useSelector, useDispatch } from "react-redux/";
-import { changetitle,changecontent} from "../Slice/OnepageSlice";
+import { changetitle,changecontent} from "../../Slice/OnepageSlice";
 
 function ShortAnswerQ(props) {
 

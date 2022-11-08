@@ -2,7 +2,7 @@ import React from 'react';
 import './Modal.css';
 import { useState} from 'react';
 import { useSelector, useDispatch } from "react-redux/";
-import {closeModal} from "../Slice/CreateSurveySlice"
+import {closeModal} from "../../Slice/CreateSurveySlice"
 
 const Modal = (props) => {
   // 열기, 닫기, 모달 헤더 텍스트를 부모로부터 받아옴

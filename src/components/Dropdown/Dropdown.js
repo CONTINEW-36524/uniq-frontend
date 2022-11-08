@@ -1,6 +1,6 @@
 import {useRef, useState} from "react";
 import { useSelector, useDispatch } from "react-redux/";
-import { changetype, deletecontent} from "../Slice/OnepageSlice";
+import { changetype, deletecontent} from "../../Slice/OnepageSlice";
 import useDetectClose from "../../hooks/useDetectClose";
 import "../../pages/CreateSurvey/OnePageCreate.css";
 import styles from "./Dropdown.module.css";

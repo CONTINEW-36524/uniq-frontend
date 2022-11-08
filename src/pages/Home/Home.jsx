@@ -7,7 +7,7 @@ import CardSlider from '../../components/Card/CardSlider';
 import CardSlider2 from '../../components/Card/CardSlider2';
 import Modal from "../../components/Modal/Modal"
 import SelectType from "../../components/Modal/SelectType.js"
-import { exit } from "../../components/Slice/CreateSurveySlice.js"
+import { exit } from "../../Slice/CreateSurveySlice.js"
 import AddAsk from '../../components/Modal/AddAsk';
 import BannerSlider from './BannerSlider';
 import formImg from '../../assets/formImg.jpg';

@@ -4,7 +4,7 @@ import './Modal.css';
 import { useSelector, useDispatch } from "react-redux/";
 import { useState} from 'react'
 
-import { increament, increament2, increament3, deleteinit} from "../Slice/OnepageSlice";
+import { increament, increament2, increament3, deleteinit} from "../../Slice/OnepageSlice";
 
 
 const AddAsk = (props) => {
