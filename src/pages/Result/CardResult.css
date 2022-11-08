@@ -13,7 +13,7 @@
     height: fit-content;
     padding: 1%;
     position: absolute;
-    margin-top: 250px;
+    margin-top: 260px;
     animation: smoothApper 1s;
 }
 
@@ -21,6 +21,7 @@
     background-color: #F0F8FF;
     padding: 1%;
     box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.2);
+    text-align: center;
 }
 .resultChat {
     background-color: #F0F8FF;

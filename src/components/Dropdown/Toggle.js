@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useSelector, useDispatch } from "react-redux/";
 import styled from 'styled-components';
-import { checkReq} from "../../components/Slice/OnepageSlice";
+import { checkReq} from "../Slice/OnepageSlice";
 const ToggleContainer = styled.div`
   position: relative;
   cursor: pointer;
@@ -42,7 +42,7 @@ const Desc = styled.div`
 
 function Toggle (props) {
   const data= useSelector((state)=>state.onepage.survey.data);
-  const temp = data.filter(item => item.id === props.id)
+  const temp = data.filter(item => item.did === props.id)
   // temp[0].req
   // const [isOn, setisOn] = useState(false);
   const dispatch = useDispatch();

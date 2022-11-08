@@ -1,15 +1,15 @@
 import {useRef, useState} from "react";
 import { useSelector, useDispatch } from "react-redux/";
-import { changetitle,pluscontent,minuscontent} from "../../components/Slice/OnepageSlice";
-import Firstcontent from "./Firstcontent";
-import "../../pages/Onepage/Onepage.css";
-import styles from "./Dropdown.module.css";
+import { changetitle,pluscontent,minuscontent} from "../Slice/OnepageSlice";
+import InputContent from "./InputContent";
+import "../../pages/CreateSurvey/OnePageCreate.css";
+import styles from "../Dropdown/Dropdown.module.css";
 
-function Checkbox(props) {
+function CheckboxQ(props) {
 
 
     const data = useSelector((state)=>state.onepage.survey.data);
-    const temp= data.filter((data)=>data.id===props.id)
+    const temp= data.filter((data)=>data.did===props.id)
     const dispatch = useDispatch();
 
 
@@ -34,8 +34,8 @@ function Checkbox(props) {
 
 
 
-    const title = data.filter(item => item.id === props.id)[0].title
-    const content = data.filter(item => item.id === props.id)[0].content
+    const title = data.filter(item => item.did === props.id)[0].title
+    const content = data.filter(item => item.did === props.id)[0].content
 
 
   return (
@@ -52,7 +52,7 @@ function Checkbox(props) {
             {content.map((item,idx) =>(
               <div className={styles.checkboxContent}> 
                 <p className={styles.checkboxContentP}>☐</p>
-                <Firstcontent id={props.id} idx={idx} />
+                <InputContent id={props.id} idx={idx} />
               </div>
             ))}
           </div>
@@ -71,4 +71,4 @@ function Checkbox(props) {
   );
 }
 
-  export default Checkbox;
+  export default CheckboxQ;

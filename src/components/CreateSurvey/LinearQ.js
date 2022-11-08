@@ -1,13 +1,9 @@
-
-import onepageStyles from "../../pages/Onepage/Onepage.css";
-import classNames from "classnames";
 import {useRef, useState} from "react";
 import { useSelector, useDispatch } from "react-redux/";
 import { changetitle,changecontent} from "../Slice/OnepageSlice";
-import styles from "./Dropdown.module.css";
-import 'react-dropdown/style.css';
+import styles from "../Dropdown/Dropdown.module.css";
 
-function Linear(props) {
+function LinearQ(props) {
 
   const data = useSelector((state)=>state.onepage.survey.data);
   const temp= data.filter((data)=>data.id===props.id);
@@ -119,4 +115,4 @@ function Linear(props) {
   );
 }
 
-export default Linear;
+export default LinearQ;

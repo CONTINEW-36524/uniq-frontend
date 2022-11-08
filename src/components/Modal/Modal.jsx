@@ -1,5 +1,5 @@
 import React from 'react';
-import './modal.css';
+import './Modal.css';
 import { useState} from 'react';
 import { useSelector, useDispatch } from "react-redux/";
 import {closeModal} from "../Slice/CreateSurveySlice"
@@ -28,11 +28,11 @@ const Modal = (props) => {
             </button>
           </header>
           <main>{props.children}</main>
-          {/* <footer>
-            <button className="close" onClick={close }>
+          <footer>
+            {/* <button className="close" onClick={close }>
               close
-            </button>
-          </footer> */}
+            </button> */}
+          </footer>
         </section>
       ) : null}
     </div>

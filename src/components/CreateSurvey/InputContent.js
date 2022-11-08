@@ -1,15 +1,15 @@
 import {useRef, useState} from "react";
 import { useSelector, useDispatch } from "react-redux/";
-import { changecontent} from "../../components/Slice/OnepageSlice";
+import { changecontent} from "../Slice/OnepageSlice";
 
 
-function Firstcontent(props) {
+function InputContent(props) {
 
 
   // const content = useSelector((state)=>state.onepage.data[props.id].content);
   const data = useSelector((state)=>state.onepage.survey.data);
 
-  const content = data.filter(item => item.id === props.id)[0].content
+  const content = data.filter(item => item.did === props.id)[0].content
   console.log(content)
   const [questionc, setquestionc] = useState();
   const dispatch = useDispatch();
@@ -47,4 +47,4 @@ function Firstcontent(props) {
   );
 }
 
-export default Firstcontent;
+export default InputContent;

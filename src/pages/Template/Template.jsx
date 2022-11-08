@@ -1,10 +1,10 @@
 import "./Template.css"
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux/";
-import Modal from "../../components/createsurvey/Modal"
-import SelectType from "../../components/createsurvey/SelectType.js"
+import Modal from "../../components/Modal/Modal"
+import SelectType from "../../components/Modal/SelectType.js"
 import { exit } from "../../components/Slice/CreateSurveySlice.js"
-import AddAsk from '../../components/createsurvey/AddAsk';
+import AddAsk from '../../components/Modal/AddAsk';
 import CardSlider from '../../components/Card/CardSlider';
 import CardSlider2 from '../../components/Card/CardSlider2';
 import CardSlider3 from '../../components/Card/CardSlider3';

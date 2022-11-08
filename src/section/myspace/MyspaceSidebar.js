@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import React, { useState } from "react";
 // @mui
 import {
   Box,
@@ -16,27 +17,30 @@ import {
 import Iconify from '../../components/iconify';
 import Scrollbar from '../../components/scrollbar';
 // ----------------------------------------------------------------------
-
-export const SORT_BY_OPTIONS = [
-  { value: 'featured', label: 'Featured' },
-  { value: 'newest', label: 'Newest' },
-  { value: 'priceDesc', label: 'Price: High-Low' },
-  { value: 'priceAsc', label: 'Price: Low-High' },
-];
+// 정렬기능 추후 추가
+// export const SORT_BY_OPTIONS = [
+//   { value: 'featured', label: 'Featured' },
+//   { value: 'newest', label: 'Newest' },
+//   { value: 'priceDesc', label: 'Price: High-Low' },
+//   { value: 'priceAsc', label: 'Price: Low-High' },
+// ];
 export const FILTER_CATEGORY_OPTIONS = ['모두', '교육', '비즈니스', '모집/공고'];
 export const FILTER_LIKE_OPTIONS = [
-  { value: '이하', label: '10개 이하' },
-  { value: '사이', label: '10~50개 사이' },
-  { value: '이상', label: '50개 이상' },
+'10개 이하',
+'10~50개 사이',
+'50개 이상',
 ]
 
-ShopFilterSidebar.propTypes = {
+MySpaceSidebar.propTypes = {
   openFilter: PropTypes.bool,
   onOpenFilter: PropTypes.func,
   onCloseFilter: PropTypes.func,
+  Category: PropTypes.func,
+  Like: PropTypes.func,
 };
 
-export default function ShopFilterSidebar({ openFilter, onOpenFilter, onCloseFilter }) {
+export default function MySpaceSidebar({ openFilter, onOpenFilter, onCloseFilter, Category, Like }) {
+
   return (
     <>
       <Button disableRipple color="inherit" endIcon={<Iconify icon="ic:round-filter-list" />} onClick={onOpenFilter}>
@@ -71,7 +75,7 @@ export default function ShopFilterSidebar({ openFilter, onOpenFilter, onCloseFil
             </Typography>
             <RadioGroup>
               {FILTER_CATEGORY_OPTIONS.map((item) => (
-                <FormControlLabel key={item} value={item} control={<Radio />} label={item} />
+                <FormControlLabel key={item} value={item} control={<Radio />} label={item} onClick={Category}/>
               ))}
             </RadioGroup>
           </div>
@@ -82,7 +86,7 @@ export default function ShopFilterSidebar({ openFilter, onOpenFilter, onCloseFil
               </Typography>
               <RadioGroup>
                 {FILTER_LIKE_OPTIONS.map((item) => (
-                  <FormControlLabel key={item.value} value={item.value} control={<Radio />} label={item.label} />
+                  <FormControlLabel key={item} value={item} control={<Radio />} label={item} onClick={Like}/>
                 ))}
               </RadioGroup>
             </div>

@@ -1,19 +1,19 @@
 import {useRef, useState} from "react";
 import { useSelector, useDispatch } from "react-redux/";
-import { changetype, deletecontent} from "../../components/Slice/OnepageSlice";
+import { changetype, deletecontent} from "../Slice/OnepageSlice";
 import useDetectClose from "../../hooks/useDetectClose";
-import "../../pages/Onepage/Onepage.css";
+import "../../pages/CreateSurvey/OnePageCreate.css";
 import styles from "./Dropdown.module.css";
 import classNames from "classnames";
 import { Link, Route, Routes, BrowserRouter as Router } from "react-router-dom";
-import First from "./First"
-import Second from "./Second"
-import Linear from "./Linear";
-import Checkbox from "./Checkbox"
+import RadioButtonQ from "../CreateSurvey/RadioButtonQ"
+import ShortAnswerQ from "../CreateSurvey/ShortAnswerQ"
+import CheckboxQ from "../CreateSurvey/CheckboxQ";
+import LinearQ from "../CreateSurvey/LinearQ"
 import { FcList } from "react-icons/fc";
 
 import uuid from "react-uuid";
-import Toggle from '../../components/createsurvey/Toggle';
+import Toggle from './Toggle';
 
 
 
@@ -28,10 +28,10 @@ const DropDown = (props) => {
   const [switchOn, switchChange] = useState(false);
   const [btnclick, setbtnclick] = useState();
   const selectComponent = {
-    객관식: <First id={props.id}/>,
-    체크박스: <Checkbox id={props.id}/>,
-    주관식: <Second id={props.id}/>,
-    선형배율: <Linear id={props.id}/>,
+    객관식: <RadioButtonQ id={props.id}/>,
+    체크박스: <CheckboxQ id={props.id}/>,
+    주관식: <ShortAnswerQ id={props.id}/>,
+    선형배율: <LinearQ id={props.id}/>,
   };
   // console.log(type);
   const toggleActive = (e) => {
@@ -53,7 +53,7 @@ const DropDown = (props) => {
     dispatch(deletecontent(e.target.value));
   }
   const selectCom = () =>{
-    const temp = data.filter(item => item.id === props.id)
+    const temp = data.filter(item => item.did === props.id)
     // console.log(temp)
   
     const type = temp[0].type

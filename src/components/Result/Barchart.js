@@ -43,8 +43,8 @@ const Barchart = () => {
                 /**
                  * chart 색상
                  */
-                colors={['olive', 'brown', 'orange']} // 커스터하여 사용할 때
-                // colors={{ scheme: 'nivo' }} // nivo에서 제공해주는 색상 조합 사용할 때
+                //colors={['olive', 'brown', 'orange']} // 커스터하여 사용할 때
+                colors={{ scheme: 'nivo' }} // nivo에서 제공해주는 색상 조합 사용할 때
                 /**
                  * color 적용 방식
                  */
