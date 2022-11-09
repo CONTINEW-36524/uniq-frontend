@@ -55,8 +55,8 @@ const OnePageCreate = (props) => {
     }
     const nextpage = () => {
         // 생성 후 db로 설문지 info 넣기
-        // alert('설문이 생성되었습니다!\n' + "http://localhost:3000/" + surId)
-        // setIp("http://localhost:3000/respond")
+        // alert('설문이 생성되었습니다!\n' + "http://210.109.62.78:3000/" + surId)
+        // setIp("http://210.109.62.78:3000/respond")
         // setModalOpen(true);
         // <EndCreate ip={ip} modalOpen={modalOpen}/>
     }

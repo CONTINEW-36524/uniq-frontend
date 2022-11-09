@@ -6,7 +6,6 @@ import LinearResult from "../../components/Result/LinearResult";
 import Form from 'react-bootstrap/Form';
 
 import "./OnePageResult.css"
-import Button from '@mui/material/Button';
 
 
 const OnePageResult = () => {

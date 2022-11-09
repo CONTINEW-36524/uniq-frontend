@@ -14,7 +14,7 @@ function EndCreate(props) {
 
     const qrstat = () => {
         setQR(true);
-        setIp("http://localhost:3000/respond");
+        setIp("http://210.109.62.78:3000/respond");
         
     }
     const qrout = () => {
