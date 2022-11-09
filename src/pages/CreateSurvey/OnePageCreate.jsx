@@ -119,7 +119,7 @@ const OnePageCreate = (props) => {
                     <button class="plusBtn" onClick={() => dispatch(increament())}> + </button>
                     <p class="count">- {count} -</p>
 
-                    <button className="w-btn-outline2 w-btn-yellow-outline2" type="button" onClick={()=>openModal()}>생성하기</button>
+                    <button className="w-btn-outline2 w-btn-yellow-outline2" type="button" onClick={()=>{openModal(); testAxios();}}>생성하기</button>
                     { showEndModal ? 
                         <Modal open={openModal} close={closeModal} header="설문 기간을 설정해주세요."> 
                             <EndCreateModal/> 

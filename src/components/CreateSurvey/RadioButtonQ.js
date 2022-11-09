@@ -22,7 +22,7 @@ function RadioButtonQ(props) {
 
   const passtitle = (e) =>{
     const passs={
-      id: props.did,
+      id: props.id,
       item : e
     }
     dispatch(changetitle(passs));
