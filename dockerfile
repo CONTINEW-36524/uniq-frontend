@@ -22,4 +22,4 @@ RUN npm run build
 
 # # 80포트 오픈하고 nginx 실행
 EXPOSE 3000
-CMD ["npm", "run", "start"]
+CMD ["npm", "run", "start:dev"]
