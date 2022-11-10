@@ -1,15 +1,9 @@
 import './Home.css'
 import React from "react";
 import { useState, useEffect } from 'react';
-import { useSelector, useDispatch } from "react-redux/";
-import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux/";
 import CardSlider from '../../components/Card/CardSlider';
 import CardSlider2 from '../../components/Card/CardSlider2';
-import Modal from "../../components/Modal/Modal"
-import SelectType from "../../components/Modal/SelectType.js"
-import { exit } from "../../Slice/CreateSurveySlice.js"
-import AddAsk from '../../components/Modal/AddAsk';
-import BannerSlider from './BannerSlider';
 import formImg from '../../assets/formImg.jpg';
 import templateImg from '../../assets/templateImg.gif';
 import qrImg from '../../assets/qrImg.png';
@@ -26,17 +20,6 @@ function Home() {
   const [popular, setPopular] = useState([]);
   
   const dispatch = useDispatch()
-  const next = useSelector((state) => state.createSurvey.next);
-  const [modalOpen, setModalOpen] = useState(false);
-
-  const openModal = () => {'GmarketSansMedium'
-    setModalOpen(true);
-    console.log(next)
-  };
-  const closeModal = () => {
-    setModalOpen(false);
-    dispatch(exit())
-  };
 
   useEffect(()=>{
     axios.get('/api/template/recent')
