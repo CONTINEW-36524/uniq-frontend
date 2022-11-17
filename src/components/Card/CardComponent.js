@@ -75,7 +75,7 @@ const StyledCard = styled.div`
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
-      margin-right: 100px; 
+      width: 170px;
     }
 
     /* keyword */
