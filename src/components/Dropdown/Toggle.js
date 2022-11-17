@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useSelector, useDispatch } from "react-redux/";
 import styled from 'styled-components';
-import { checkReq} from "../Slice/OnepageSlice";
+import { checkReq} from "../../Slice/OnepageSlice";
 const ToggleContainer = styled.div`
   position: relative;
   cursor: pointer;

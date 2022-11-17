@@ -1,6 +1,6 @@
 import {useRef, useState} from "react";
 import { useSelector, useDispatch } from "react-redux/";
-import { changetitle,pluscontent,minuscontent} from "../Slice/OnepageSlice";
+import { changetitle,pluscontent,minuscontent} from "../../Slice/OnepageSlice";
 import InputContent from "./InputContent";
 import "../../pages/CreateSurvey/OnePageCreate.css";
 import styles from "../Dropdown/Dropdown.module.css";

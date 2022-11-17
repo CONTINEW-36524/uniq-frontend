@@ -7,7 +7,7 @@ import Form from 'react-bootstrap/Form';
 import "./CardResult.css"
 import Button from '@mui/material/Button';
 
-import { pluscardresultpage,minuscardresultpage} from "../../components/Slice/OnepageSlice";
+import { pluscardresultpage,minuscardresultpage} from "../../Slice/OnepageSlice";
 
 
 const CardResult = () => {

@@ -4,3 +4,37 @@
     margin-left: 50px;
     margin-right: 50px;
 }
+.LinearBtnResult {
+    display: block;
+    width: 600px;
+    margin-right: 20px;
+}
+.LinearBtn1 {
+    display: inline;
+}
+.LinearBtn1 button {
+    margin-bottom: 20px;
+}
+.LinearBtn2 {
+    display: inline;
+    margin-top: 30px;
+}
+.leftTextResult {
+    text-align: center;
+}
+.rightTextResult{
+    text-align: center;
+}
+.countContent{
+    background-color: #F0F8FF;
+    border: none;
+}
+.LinearBtn1Result {
+    margin-bottom: 20px;
+}
+.LinearBtn1Result :hover{
+    cursor: default;
+}
+.LinearBtn2Result :hover{
+    cursor: default;
+}

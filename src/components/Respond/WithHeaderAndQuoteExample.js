@@ -4,7 +4,7 @@ import React, { useEffect,useState } from 'react';
 import { useSelector, useDispatch } from "react-redux/";
 import LinearQuestion from './LinearQuestion';
 import SecondQuestion from './SecondQuestion';
-import {pluscon} from "../../components/Slice/RespondSlice";
+import {pluscon} from "../../Slice/RespondSlice";
 import FirstContents from './FirstContents';
 import RadioQuestion from './RadioQuestion';
 import CheckBoxQuestion from './CheckBoxQuestion';

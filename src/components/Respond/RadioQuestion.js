@@ -1,6 +1,7 @@
-import React, { useEffect,useState } from 'react';
+import React, { useEffect,useState, useCallback  } from 'react';
 import { useSelector, useDispatch } from "react-redux/";
-import {changecontent} from "../../components/Slice/RespondSlice";
+import {changecontent} from "../../Slice/RespondSlice";
+import "./respond.css"
 
 function FirstQuestion(props) {
     const dispatch = useDispatch();
@@ -10,6 +11,9 @@ function FirstQuestion(props) {
     const toggleActive = (e) => {
       setBtnActive(e)
       };
+
+
+
 
 
     const passcontent = (e) =>{

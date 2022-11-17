@@ -1,7 +1,7 @@
 import { defaultProps } from '@nivo/pie';
 import React, { useEffect,useState } from 'react';
 import { useSelector, useDispatch } from "react-redux/";
-import {changecontent} from "../../components/Slice/RespondSlice";
+import {changecontent} from "../../Slice/RespondSlice";
 import FirstContents from './FirstContents';
 
 function FirstQuestion(props) {

@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import Piechart from "../../components/Result/Piechart";
 import Barchart from "../../components/Result/Barchart";
 import ShortAnswerResult from "../../components/Result/ShortAnswerResult";
+import LinearResult from "../../components/Result/LinearResult";
 import Form from 'react-bootstrap/Form';
 
 import "./OnePageResult.css"
-import Button from '@mui/material/Button';
 
 
 const OnePageResult = () => {
@@ -15,6 +15,7 @@ const OnePageResult = () => {
             {QNum: 1, QType: 'Radio', question: "학년을 선택하세요."},
             {QNum: 2, QType: 'Checkbox', question: "좋아하는 음료를 골라볼까요?"},
             {QNum: 3, QType: 'ShortAnswer', question: "궁금한 점이 있다면 적어주세요 :)"},
+            {QNUm: 4, QType: 'Linear', question: "선형배율 결과 화면"}
         ]
     }
 
@@ -56,7 +57,8 @@ const OnePageResult = () => {
                                     {{
                                         'Radio' : <Piechart/>,
                                         'Checkbox' : <Barchart/>,
-                                        'ShortAnswer' : <ShortAnswerResult/>
+                                        'ShortAnswer' : <ShortAnswerResult/>,
+                                        'Linear': <LinearResult/>,
                                     }[item.QType]}
                                                             
                                 </div>
