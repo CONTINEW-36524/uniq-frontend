@@ -7,6 +7,11 @@ const initialState = {
         {
             maintitle : '',
             subtitle: '',
+            writer: 1,
+            url: 'asdf',
+            tag : 'tag',
+            category: '교육',
+            
             data :[
                 { 
                     did : uuid(),

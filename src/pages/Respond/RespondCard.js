@@ -1,17 +1,23 @@
-import React, { useEffect, useState, useParams } from 'react';
-import { useLocation } from 'react-router-dom';
+
+import React, { useEffect,useState } from 'react';
+
+// import data from './respondData';
+import { useLocation, useParams } from 'react-router-dom';
 import "./respondCard.css"
 import Startreturn from '../../components/respond/Startreturn';
+
+
 import Form from 'react-bootstrap/Form';
 import axios from 'axios';
 import { useSelector, useDispatch } from "react-redux/";
-
+import DropDown from "../../components/Dropdown/Dropdown";
 
 
 function RespondCard() {
-
-
-
+  // let [datas] = useState(data)
+  const survey = useSelector((state)=>state.onepage.survey);
+  const dispatch = useDispatch();
+  const count = useSelector((state)=>state.onepage.count);
   const location=useLocation();
   const [responddata,setresponddata] =useState([]);
   const [question, setquestion] = useState();
@@ -40,10 +46,7 @@ useEffect(()=>{
     //responddata=response.data;
     // setresponddata(JSON.parse(response.data[0].datalist));
         //console.log(JSON.parse(responddata[0].datalist)[0].type); 
-        console.log(response.data)
-        setresponddata(...responddata, response.data);
-        console.log(responddata)
-
+        setresponddata(response.data); 
   }).catch(function (error) {
     console.log(error)
       // 오류발생시 실행

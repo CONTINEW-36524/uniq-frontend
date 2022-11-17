@@ -48,9 +48,14 @@ const OnePageCreate = (props) => {
     }
 
     const testAxios=() =>{
-        console.log(survey)
-        axios.post('/api/create/survey',survey
-            ).then(function (response) {
+        const axiosConfig = {
+            headers:{
+                "Content-Type": "application/json"
+            }
+        }
+        console.log(JSON.stringify(survey))
+        axios.post('/api/create/survey',JSON.stringify(survey),axiosConfig
+        ).then(function (response) {
                 console.log(response)
               })
           .catch(function(){
@@ -70,6 +75,7 @@ const OnePageCreate = (props) => {
 
     const openModal = () => {
         setEndModal(true);
+        
     };
     const closeModal = () => {
         setEndModal(false);
@@ -84,7 +90,7 @@ const OnePageCreate = (props) => {
                 <Form class="form">
                     <Form.Group className="mb-3" controlId="formGrouptitle">
                         <Form.Label column="lg" lg={2}>설문지 제목</Form.Label>
-                        <Form.Control size="lg" type="title" value={survey.title} multiline rows={3}
+                        <Form.Control size="lg" type="title" value={survey.maintitle} multiline rows={3}
                             onChange={(e) => dispatch(changesurtitle(e.target.value))} placeholder="설문지 제목을 입력하세요." />
 
                         {/* <FormControl fullWidth sx={{ m: 1 }}> 
@@ -119,7 +125,7 @@ const OnePageCreate = (props) => {
                     <button class="plusBtn" onClick={() => dispatch(increament())}> + </button>
                     <p class="count">- {count} -</p>
 
-                    <button className="w-btn-outline2 w-btn-yellow-outline2" type="button" onClick={()=>openModal()}>생성하기</button>
+                    <button className="w-btn-outline2 w-btn-yellow-outline2" type="button"onClick={()=>{openModal(); testAxios();}}>생성하기</button>
                     { showEndModal ? 
                         <Modal open={openModal} close={closeModal} header="설문 기간을 설정해주세요."> 
                             <EndCreateModal/> 
