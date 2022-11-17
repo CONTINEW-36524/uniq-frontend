@@ -7,7 +7,7 @@ function MyUNIQ(props) {
     const [goleft, setGoleft] = useState(false);
     const [goRight, setGoRight] = useState(false);
     const data = props.data;
-
+    console.log(data)
     return (
         <div className='mslist'>
         <div className='msparent'>

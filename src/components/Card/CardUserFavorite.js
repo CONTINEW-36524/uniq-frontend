@@ -24,14 +24,14 @@ const StyledCardSlider = styled.div`
   }
 `;
 
-export default function CardSlider2(props) {
+export default function CardUserFavorite(props) {
 
     const goleft = props.goleft;
     const goRight = props.goRight;
     const data = props.data;
 
-    console.log(data[0].category)
-    data.map(index => console.log(index.category))
+    // console.log(data[0].category)
+    // data.map(index => console.log(index.category))
 
     useEffect((e) => {
         console.log('check');
