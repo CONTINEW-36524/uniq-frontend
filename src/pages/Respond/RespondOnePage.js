@@ -26,12 +26,12 @@ function RespondOnePage(props) {
     <>
         <div className="RespondOnePageContainer">
             <div className="RespondOnePageContainerHeader">
-                <Form class="form">
+                <Form className="form">
                     <Form.Group className="mb-3" controlId="formGrouptitle">
-                    <h3 class='RespondOnePageHeadTitle'> 제목 </h3>
+                    <h3 className='RespondOnePageHeadTitle'> 제목 </h3>
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formGroupexplain">
-                    <h5 class='RespondOnePageHeadOverview'> 설문 개요 </h5>
+                    <h5 className='RespondOnePageHeadOverview'> 설문 개요 </h5>
                     </Form.Group>
                 </Form>
             </div>

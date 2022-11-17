@@ -63,14 +63,14 @@ const CardCreate = (props) =>{
         <div className="container">
             <div className="containerHeader">
                 {/* 설문 제목, 설문 개요 */}
-                {/* <input class="title-header" type = "text"
+                {/* <input className="title-header" type = "text"
                     value={survey.title}
                     onChange ={(e)=>changesurtitle(e.target.value)} />
                 
-                <input class="title-header" type = "text"
+                <input className="title-header" type = "text"
                     value={survey.subtitle}
                     onChange ={(e)=>changesursubtitle(e.target.value)} /> */}
-                <Form class="form">
+                <Form className="form">
                     <Form.Group className="mb-3" controlId="formGrouptitle">
                         <Form.Label column="lg" lg={2}>설문지 제목</Form.Label>
                         <Form.Control size="lg" type="title" value={survey.maintitle}
@@ -90,10 +90,10 @@ const CardCreate = (props) =>{
                 </div> 
        
                 <div className="containerFooterCard">
-                    <div class="Cardpage">
-                        <button class="nextcard" onClick={()=>dispatch(minuscardpage())}>이전</button>
-                        <p class="CardNum">- {pagecount+1}/{count} -</p>
-                        <button class="nextcard" onClick={()=>dispatch(pluscardpage())}>다음</button>
+                    <div className="Cardpage">
+                        <button className="nextcard" onClick={()=>dispatch(minuscardpage())}>이전</button>
+                        <p className="CardNum">- {pagecount+1}/{count} -</p>
+                        <button className="nextcard" onClick={()=>dispatch(pluscardpage())}>다음</button>
                     </div>
                     <button className="w-btn-outline w-btn-yellow-outline" type="button" onClick={testAxios} >생성하기</button>   
                 </div>
@@ -101,11 +101,11 @@ const CardCreate = (props) =>{
 
             <section>
                 <div className={`${isSidebarOpen ? 'show-sidebar' : 'l-navbar'}`}>
-                    <nav class="sidenav">
+                    <nav className="sidenav">
                         <div>
-                            <div class="nav__brand">
+                            <div className="nav__brand">
                                 <FcList color="white" size="50" role="button" onClick={()=>toggleSidebar()}/>
-                                <a class="nav__logo">커스터마이징</a>
+                                <a className="nav__logo">커스터마이징</a>
                             </div>
                             <ul >
                                 <li>서식 옵션</li>

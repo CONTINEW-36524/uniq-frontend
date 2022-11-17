@@ -83,8 +83,8 @@ function MySpace(props) {
 
   return (
     <div id="mswrapper">
-      <div class="mstop">
-        <button class='mscreate' onClick={openModal}> 설문 생성하기</button>
+      <div className="mstop">
+        <button className='mscreate' onClick={openModal}> 설문 생성하기</button>
         {next ?
           <Modal open={modalOpen} close={closeModal} header="질문 유형 개수를 선택해주세요.">
             <AddAsk />
@@ -95,13 +95,13 @@ function MySpace(props) {
         }
       </div>
 
-      <hr class="mstt" />
-      <div class="msmiddle">
-        <button class="msbtn" 
+      <hr className="mstt" />
+      <div className="msmiddle">
+        <button className="msbtn" 
         onClick={() => {
           setVisible1(true);
           setVisible2(false);}}>UNIQ 찜 목록</button>
-        <button class="msbtn" id="last" 
+        <button className="msbtn" id="last" 
         onClick={() => {
           setVisible1(false);
           setVisible2(true);}}>최근 설문지</button>

@@ -106,7 +106,7 @@ const OnePageCreate = (props) => {
 
         <div className="container">
             <div className="containerHeader">
-                <Form class="form">
+                <Form className="form">
                     <Form.Group className="mb-3" controlId="formGrouptitle">
                         <Form.Label column="lg" lg={2}>설문지 제목</Form.Label>
                         <Form.Control size="lg" type="title" value={survey.title} multiline rows={3}
@@ -139,8 +139,8 @@ const OnePageCreate = (props) => {
                 ))}
                 
                 <div className="containerFooter">
-                    <button class="plusBtn" onClick={() => dispatch(increament())}> + </button>
-                    <p class="count">- {count} -</p>
+                    <button className="plusBtn" onClick={() => dispatch(increament())}> + </button>
+                    <p className="count">- {count} -</p>
 
                     <button className="w-btn-outline2 w-btn-yellow-outline2" type="button" onClick={()=>openModal()}>생성하기</button>
                     { showEndModal ? 
@@ -159,11 +159,11 @@ const OnePageCreate = (props) => {
 
             <section>
                 <div className={`${isSidebarOpen ? 'show-sidebar' : 'l-navbar'}`}>
-                    <nav class="sidenav">
+                    <nav className="sidenav">
                         <div>
-                            <div class="nav__brand">
+                            <div className="nav__brand">
                                 <FcList color="white" size="50" role="button" onClick={() => toggleSidebar()} />
-                                {/* <a class="nav__logo">커스터마이징</a> */}
+                                {/* <a className="nav__logo">커스터마이징</a> */}
                             </div>
                             {/* 보류상태입니당..!  */}
                             <div className='options'>

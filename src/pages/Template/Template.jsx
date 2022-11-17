@@ -58,15 +58,15 @@ function Template() {
 
   return (
     <div id="tpwrapper">
-      <div class="tptop">
-        <div class="tptopleft">
-          <h1 class="tptopcontent">
+      <div className="tptop">
+        <div className="tptopleft">
+          <h1 className="tptopcontent">
             당신에게 맞는 템플릿을 찾아보세요!
           </h1>
           <p></p>
           <>UNIQ는 다양한 템플릿을 통해 당신에게 적합한 설문지를 생성하도록 도와줍니다.</>
           <p></p>
-          <button class="tpcreate" onClick={openModal}>설문 생성하러 가기</button>
+          <button className="tpcreate" onClick={openModal}>설문 생성하러 가기</button>
           {next ?
             <Modal open={modalOpen} close={closeModal} header="질문 유형 개수를 선택해주세요.">
               <AddAsk />
@@ -77,31 +77,31 @@ function Template() {
           }
           <p></p>
         </div>
-        <div class="tptopright">
+        <div className="tptopright">
         </div>
       </div>
       
-      <div class='tplist'>
-        <div class='tpparent'>
-          <b class='tprecent'>최신 UNIQ 템플릿</b>
-          <div class="tpcontainer">
-            <div class="tpprev" onClick={(e) => { setGoleft(!goleft) }}> <b>‹</b> </div>
+      <div className='tplist'>
+        <div className='tpparent'>
+          <b className='tprecent'>최신 UNIQ 템플릿</b>
+          <div className="tpcontainer">
+            <div className="tpprev" onClick={(e) => { setGoleft(!goleft) }}> <b>‹</b> </div>
             <CardSlider data={recent} goleft={goleft} goRight={goRight} />
-            <div class="tpnext" onClick={(e) => { setGoRight(!goRight) }}> <b>›</b> </div>
+            <div className="tpnext" onClick={(e) => { setGoRight(!goRight) }}> <b>›</b> </div>
           </div>
 
-          <b class='tppopular'>인기있는 UNIQ 템플릿</b>
-          <div class="tpcontainer">
-            <div class="tpprev" onClick={(e) => { setGoleft2(!goleft2) }}> <b>‹</b> </div>
+          <b className='tppopular'>인기있는 UNIQ 템플릿</b>
+          <div className="tpcontainer">
+            <div className="tpprev" onClick={(e) => { setGoleft2(!goleft2) }}> <b>‹</b> </div>
             <CardSlider2 data={popular} goleft={goleft2} goRight={goRight2} />
-            <div class="tpnext" onClick={(e) => { setGoRight2(!goRight2) }}> <b>›</b> </div>
+            <div className="tpnext" onClick={(e) => { setGoRight2(!goRight2) }}> <b>›</b> </div>
           </div>
 
-          <b class='tpai'>AI 추천 템플릿</b>
-          <div class="tpcontainer">
-            <div class="tpprev" onClick={(e) => { setGoleft3(!goleft3) }}> <b>‹</b> </div>
+          <b className='tpai'>AI 추천 템플릿</b>
+          <div className="tpcontainer">
+            <div className="tpprev" onClick={(e) => { setGoleft3(!goleft3) }}> <b>‹</b> </div>
             <CardSlider3 goleft={goleft3} goRight={goRight3} />
-            <div class="tpnext" onClick={(e) => { setGoRight3(!goRight3) }}> <b>›</b> </div>
+            <div className="tpnext" onClick={(e) => { setGoRight3(!goRight3) }}> <b>›</b> </div>
           </div>
         </div>
       </div>
