@@ -68,6 +68,7 @@ export default function CardUserFavorite(props) {
                                               Category={index.category}
                                               keyword={index.tag}
                                               title={index.title}
+                                              likenum={index.likenum}
                                               />)}
             {/* <CardComponent
                 img="https://yozm.wishket.com/media/news/1231/image017.png"

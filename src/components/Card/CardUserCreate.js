@@ -66,6 +66,7 @@ export default function CardUserCreate(props) {
                                               Category={index.category}
                                               keyword={index.tag}
                                               title={index.title}
+                                              likenum={index.likenum}
                                               />)}
             {/* <CardComponent
                 img="https://img.freepik.com/premium-vector/blue-triangle-shaped-seamless-pattern-wallpaper-vector_53876-164505.jpg?w=2000"
