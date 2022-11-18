@@ -2,9 +2,9 @@ import "./MySpace.css"
 import React, { useState, useEffect } from "react";
 import { Container, Stack, Typography } from '@mui/material';
 import { useSelector, useDispatch } from "react-redux/";
-import { exit } from "../../components/Slice/CreateSurveySlice.js"
+import { exit } from "../../Slice/CreateSurveySlice.js"
 import AddAsk from '../../components/Modal/AddAsk';
-import { MyspaceSidebar } from '../../section/myspace'
+// import { MyspaceSidebar } from './MySpaceSidebar'
 import Modal from "../../components/Modal/Modal"
 import SelectType from "../../components/Modal/SelectType.js"
 import FavoriteUNIQ from './FavoriteUNIQ'
@@ -105,13 +105,13 @@ function MySpace(props) {
         onClick={() => {
           setVisible1(false);
           setVisible2(true);}}>최근 설문지</button>
-        <MyspaceSidebar
+        {/* <MyspaceSidebar
           openFilter={openFilter}
           onOpenFilter={handleOpenFilter}
           onCloseFilter={handleCloseFilter}
           Category={handleCategory}
           Like={handleLike}
-        />
+        /> */}
       </div>
       {/* 버튼 눌러 list불러오기 */}
       {visible1 && <FavoriteUNIQ data={myFavorites}/>}

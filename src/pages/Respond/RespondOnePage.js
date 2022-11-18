@@ -1,12 +1,12 @@
 import Form from 'react-bootstrap/Form';
 import React, { useEffect,useState } from 'react';
-import WithHeaderAndQuoteExample from '../../components/respond/WithHeaderAndQuoteExample';
+import WithHeaderAndQuoteExample from '../../components/Respond/WithHeaderAndQuoteExample';
 import ShortAnswerResult from "../../components/Result/ShortAnswerResult";
-import './respondOnePage.css'
-import FirstQuestion from "../../components/respond/RadioQuestion";
-import SecondQuestion from "../../components/respond/ShortQuestion";
-import LinearQuestion from "../../components/respond/LinearQuestion";
-import CheckBoxQuestion from "../../components/respond/CheckBoxQuestion";
+import './RespondOnePage.css'
+import FirstQuestion from "../../components/Respond/RadioQuestion";
+import SecondQuestion from "../../components/Respond/ShortQuestion";
+import LinearQuestion from "../../components/Respond/LinearQuestion";
+import CheckBoxQuestion from "../../components/Respond/CheckBoxQuestion";
 
 
 function RespondOnePage(props) {
