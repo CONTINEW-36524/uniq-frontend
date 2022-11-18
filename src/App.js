@@ -74,7 +74,7 @@ function App(props) {
           <Route path="/endcreate" element={<EndCreate/>}/>
           {/* <Route path="/respond/:respondId" element={<Respond />}/>
           <Route path="/respond" element={<Respond />}/> */}
-          <Route path="/RespondCard" element={<RespondCard />}/>
+          <Route path="/Respond*" element={<RespondCard />}/>
           <Route path="/OnePageCreate" element={<OnePageCreate />}/>
           <Route path="/CardCreate" element={<CardCreate />} />
           <Route path="/oauth/callback/kakao" element={<KakaoLogin />}/>

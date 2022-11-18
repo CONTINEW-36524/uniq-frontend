@@ -7,6 +7,7 @@ const initialState = {
         {
             maintitle : '',
             subtitle : '',
+            url:'',
             data :[
                 { 
                     did : uuid(),
@@ -170,6 +171,11 @@ export const OnepageSlice = createSlice({
             const index = state.data.findIndex((data) => data.Did == action.payload.id)
             state.data[index].req = action.payload.req
             console.log(state.data[index].req)
+        },
+
+        makeurl:(state)=>{
+            state.survey.url="/Respond/"+uuid();
+            console.log(state.survey.url)
         }
         
 
@@ -180,6 +186,6 @@ export const OnepageSlice = createSlice({
     }
 });
 
-export const {pluscardresultpage, minuscardresultpage, increament, changeval,conincreament, changetype, changetitle, pluscontent,minuscontent, changecontent,changesurtitle, changesursubtitle, increament2, increament3, pluscardpage,minuscardpage, deletecontent, deleteinit, checkReq} = OnepageSlice.actions;
+export const {pluscardresultpage, minuscardresultpage,makeurl, increament, changeval,conincreament, changetype, changetitle, pluscontent,minuscontent, changecontent,changesurtitle, changesursubtitle, increament2, increament3, pluscardpage,minuscardpage, deletecontent, deleteinit, checkReq} = OnepageSlice.actions;
 
 export default OnepageSlice.reducer;

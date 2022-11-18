@@ -4,14 +4,35 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { Link } from 'react-router-dom';
 import { ko } from "date-fns/esm/locale";
+import {makeurl} from "../../components/Slice/OnepageSlice";
 import Button from 'react-bootstrap/Button';
 import './Modal.css'
+import { useSelector, useDispatch } from "react-redux/";
+import axios from 'axios';
 
 
 function EndCreateModal() {
 
     const [startDate, setStartDate] = useState(new Date());
     const [endDate, setEndDate] = useState(new Date());
+    const survey = useSelector((state) => state.onepage.survey);
+    const dispatch = useDispatch();
+
+    const testAxios=() =>{
+        const axiosConfig = {
+            headers:{
+                "Content-Type": "application/json"
+            }
+        }
+        console.log(JSON.stringify(survey))
+        axios.post('/api/create/survey',JSON.stringify(survey),axiosConfig
+        ).then(function (response) {
+                console.log(response)
+              })
+          .catch(function(){
+            console.log('실패함')
+          })
+        }
 
 
     return (
@@ -82,7 +103,7 @@ function EndCreateModal() {
             </div> <br/>
 
             <Link to="/endcreate" className="endcreateLinkTag">
-                <Button className="ModalSaveBtn" variant="primary">Save</Button>
+                <Button className="ModalSaveBtn" variant="primary" onClick={()=>{testAxios();}}>Save</Button>
             </Link>
         </div>
     );

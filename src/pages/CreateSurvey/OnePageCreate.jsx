@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux/";
-import { increament, changesurtitle,changesursubtitle} from "../../components/Slice/OnepageSlice";
+import { increament,makeurl, changesurtitle,changesursubtitle} from "../../components/Slice/OnepageSlice";
 import { useState} from 'react';
 
 import React from "react";
@@ -47,21 +47,21 @@ const OnePageCreate = (props) => {
         // <EndCreate ip={ip} modalOpen={modalOpen}/>
     }
 
-    const testAxios=() =>{
-        const axiosConfig = {
-            headers:{
-                "Content-Type": "application/json"
-            }
-        }
-        console.log(JSON.stringify(survey))
-        axios.post('/api/create/survey',JSON.stringify(survey),axiosConfig
-        ).then(function (response) {
-                console.log(response)
-              })
-          .catch(function(){
-            console.log('실패함')
-          })
-        }
+    // const testAxios=() =>{
+    //     const axiosConfig = {
+    //         headers:{
+    //             "Content-Type": "application/json"
+    //         }
+    //     }
+    //     console.log(JSON.stringify(survey))
+    //     axios.post('/api/create/survey',JSON.stringify(survey),axiosConfig
+    //     ).then(function (response) {
+    //             console.log(response)
+    //           })
+    //       .catch(function(){
+    //         console.log('실패함')
+    //       })
+    //     }
           
 
 
@@ -124,7 +124,7 @@ const OnePageCreate = (props) => {
                     <button class="plusBtn" onClick={() => dispatch(increament())}> + </button>
                     <p class="count">- {count} -</p>
 
-                    <button className="w-btn-outline2 w-btn-yellow-outline2" type="button" onClick={()=>{openModal(); testAxios();}}>생성하기</button>
+                    <button className="w-btn-outline2 w-btn-yellow-outline2" type="button" onClick={()=>{openModal();dispatch(makeurl());}}>생성하기</button>
                     { showEndModal ? 
                         <Modal open={openModal} close={closeModal} header="설문 기간을 설정해주세요."> 
                             <EndCreateModal/> 
