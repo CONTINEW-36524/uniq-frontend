@@ -20,20 +20,20 @@ function SecondQuestion(props) {
     const answer = data.filter(item => item.id == props.data.id)[0].answer
     console.log(props.data.id)
     console.log(data)
+    // const answer = data.filter(item => item.id === props.id)[0].answer
   
-    
-    return (
    
-      <div className="Qlayout">
-      <h3>질문: ____ ?</h3>
-      <textarea className="SecondRespond" 
-        type = "text" 
-        value={answer}
-        onChange ={(e)=>passcontent(e.target.value)}
-        placeholder="답변을 입력해주세요."
-      />
-    </div>
+  
+    return (
+      <div className="firstContainer">
+         <textarea className="secondcon" type = "text"
+          value={answer}
+          onChange ={(e)=>passcontent(e.target.value)} 
 
+
+          
+        />
+      </div>
     );
   }
   export default SecondQuestion;
