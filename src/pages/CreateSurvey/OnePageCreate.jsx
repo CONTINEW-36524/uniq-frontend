@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux/";
-import { increament,makeurl, changesurtitle,changesursubtitle} from "../../components/Slice/OnepageSlice";
+import { increament,makeurl, changesurtitle,changesursubtitle} from "../../Slice/OnepageSlice";
 import { useState} from 'react';
 
 import React from "react";

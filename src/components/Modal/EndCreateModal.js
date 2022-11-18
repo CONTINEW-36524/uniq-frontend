@@ -4,7 +4,6 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { Link } from 'react-router-dom';
 import { ko } from "date-fns/esm/locale";
-import {makeurl} from "../../components/Slice/OnepageSlice";
 import Button from 'react-bootstrap/Button';
 import './Modal.css'
 import { useSelector, useDispatch } from "react-redux/";
