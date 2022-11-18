@@ -35,20 +35,20 @@ const CardCreate = (props) =>{
     // }
 
     const testAxios=() =>{
-        
-        axios.post('/api/create/survey',
-        survey
-            ).then(function (response) {
+        const axiosConfig = {
+            headers:{
+                "Content-Type": "application/json"
+            }
+        }
+        console.log(JSON.stringify(survey))
+        axios.post('/api/create/survey',JSON.stringify(survey),axiosConfig
+        ).then(function (response) {
                 console.log(response)
               })
           .catch(function(){
             console.log('실패함')
           })
-          console.log(survey)
-          
-
-
-    }  
+        }
 
 
      const toggleSidebar = () =>{

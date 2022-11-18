@@ -15,6 +15,8 @@ function RespondCard() {
   const location=useLocation();
   const [responddata,setresponddata] =useState([]);
   const [question, setquestion] = useState();
+  const map=new Map();
+  
 
   // 
 
@@ -33,7 +35,8 @@ function RespondCard() {
 //  }
 
 useEffect(()=>{
-  axios.get("/api/respond/survey",{params:{url: location.pathname}})
+  console.log(location.pathname)
+  axios.get("/api/create/respond",{params:{url: location.pathname}})
   .then((response)=> {
     //2. Parser
     //responddata=response.data;

@@ -6,13 +6,13 @@ const initialState = {
     survey : 
         {
             maintitle : '',
-            subtitle: '',
+            subtitle : '',
             data :[
                 { 
                     did : uuid(),
                     type : '객관식',
-                    title:'' ,
-                    content:[{
+                    title :'' ,
+                    content :[{
                         id: uuid(),
                         con:''
                     }]

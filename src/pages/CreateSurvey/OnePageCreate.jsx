@@ -48,9 +48,14 @@ const OnePageCreate = (props) => {
     }
 
     const testAxios=() =>{
-        console.log(survey)
-        axios.post('/api/create/survey',survey
-            ).then(function (response) {
+        const axiosConfig = {
+            headers:{
+                "Content-Type": "application/json"
+            }
+        }
+        console.log(JSON.stringify(survey))
+        axios.post('/api/create/survey',JSON.stringify(survey),axiosConfig
+        ).then(function (response) {
                 console.log(response)
               })
           .catch(function(){
