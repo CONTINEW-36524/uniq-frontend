@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useParams } from 'react';
 import { useLocation } from 'react-router-dom';
-import "./respondCard.css"
-import Startreturn from '../../components/respond/Startreturn';
+import "./RespondCard.css"
+import Startreturn from '../../components/Respond/Startreturn';
 import Form from 'react-bootstrap/Form';
 import axios from 'axios';
 import { useSelector, useDispatch } from "react-redux/";

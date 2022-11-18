@@ -41,8 +41,8 @@ const OnePageCreate = (props) => {
     }
     const nextpage = () => {
         // 생성 후 db로 설문지 info 넣기
-        // alert('설문이 생성되었습니다!\n' + "http://localhost:3000/" + surId)
-        // setIp("http://localhost:3000/respond")
+        // alert('설문이 생성되었습니다!\n' + "http://210.109.62.78:3000/" + surId)
+        // setIp("http://210.109.62.78:3000/respond")
         // setModalOpen(true);
         // <EndCreate ip={ip} modalOpen={modalOpen}/>
     }
@@ -86,7 +86,7 @@ const OnePageCreate = (props) => {
 
         <div className="container">
             <div className="containerHeader">
-                <Form class="form">
+                <Form className="form">
                     <Form.Group className="mb-3" controlId="formGrouptitle">
                         <Form.Label column="lg" lg={2}>설문지 제목</Form.Label>
                         <Form.Control size="lg" type="title" value={survey.title} multiline rows={3}
@@ -121,8 +121,8 @@ const OnePageCreate = (props) => {
                 ))}
                 
                 <div className="containerFooter">
-                    <button class="plusBtn" onClick={() => dispatch(increament())}> + </button>
-                    <p class="count">- {count} -</p>
+                    <button className="plusBtn" onClick={() => dispatch(increament())}> + </button>
+                    <p className="count">- {count} -</p>
 
                     <button className="w-btn-outline2 w-btn-yellow-outline2" type="button" onClick={()=>{openModal();dispatch(makeurl());}}>생성하기</button>
                     { showEndModal ? 
@@ -141,11 +141,11 @@ const OnePageCreate = (props) => {
 
             <section>
                 <div className={`${isSidebarOpen ? 'show-sidebar' : 'l-navbar'}`}>
-                    <nav class="sidenav">
+                    <nav className="sidenav">
                         <div>
-                            <div class="nav__brand">
+                            <div className="nav__brand">
                                 <FcList color="white" size="50" role="button" onClick={() => toggleSidebar()} />
-                                {/* <a class="nav__logo">커스터마이징</a> */}
+                                {/* <a className="nav__logo">커스터마이징</a> */}
                             </div>
                             {/* 보류상태입니당..!  */}
                             <div className='options'>

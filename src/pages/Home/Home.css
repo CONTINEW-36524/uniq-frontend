@@ -22,11 +22,13 @@ body {
 .list {
   width: 100%;
   height: 100vh;
+  background-color: white;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
+  padding-top:100px;
   scroll-snap-align: center;
-  animation: smoothAppear 1s
+  animation: smoothAppear 1s;
 }
 
 .list1 {
@@ -47,6 +49,36 @@ body {
   
   scroll-snap-align: center;
   animation: smoothAppear 1s
+}
+
+.list2Side {
+  width: 9%;
+  background-color: white;
+}
+
+.list2Main {
+  width: 91%;
+  display:flex;
+  flex-direction:row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.list2MainLeft {
+  width: 50%;
+  display:flex;
+  flex-direction:row;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.list2MainRight {
+  width: 50%;
+  display:flex;
+  flex-direction:row;
+  align-items: center;
+  justify-content: center;
 }
 
 /* 1은 없어도 되나봐요 이유는 모르겠음 */
@@ -267,52 +299,44 @@ body {
 
 .intext1 {
   float: right;
-  margin-top: 350px;
-  
-  margin-left: 200px;
   font-size: 50px;
   font-family: "S-CoreDream-3Light";
 }
 
 .intext2 {
   float: right;
-  margin-top: 50px;
-
-  font-size: 20px;
   font-family: "S-CoreDream-3Light";
 }
 
 .intext3 {
-  float: right;
-  margin-top: 350px;
-  
-  margin-left: 80px;
+  float: left;
   font-size: 50px;
   font-family: "S-CoreDream-3Light";
 }
 
 .intext4 {
-  float: right;
-  margin-top: 50px;
-
+  float: left;
   font-size: 20px;
   font-family: "S-CoreDream-3Light";
 }
 
 .intext5 {
   float: right;
-  margin-top: 350px;
-  
-  margin-left: 200px;
   font-size: 50px;
   font-family: "S-CoreDream-3Light";
 }
 
 .intext6 {
   float: right;
-  margin-top: 50px;
-
   font-size: 20px;
+  font-family: "S-CoreDream-3Light";
+}
+
+.intext7 {
+  margin:100px;
+  display:flex;
+  justify-content: center;
+  font-size: 25px;
   font-family: "S-CoreDream-3Light";
 }
 
@@ -335,25 +359,39 @@ body {
     box-shadow: 0 7px 28px rgba(0, 0, 0, 0.25), 0 5px 5px rgba(0, 0, 0, 0.22);
 
 }
+
+.StartBtn2 {
+  background-color: rgb(254, 254, 89);
+  border: none;
+  border-radius: 20px;
+  color: #2e2e2e;
+  width: 200px;
+  height: 40px;
+  font-weight: bold;
+  font-family: 'S-CoreDream-3Light';
+  margin-top: 50px;
+ 
+
+  cursor: pointer;
+    
+    box-shadow: 0 7px 28px rgba(0, 0, 0, 0.25), 0 5px 5px rgba(0, 0, 0, 0.22);
+
+}
+
 .formImg {
-  width: 700px;
-  height: 700px;
-  margin-top: 150px;
-  margin-left: 200px;
+  width: 450px;
+  height: 450px;
 }
 
 .templateImg {
-  width: 800px;
-  height: 480px;
-  margin-top: 210px;
-  margin-left: 200px;
+  width: 500px;
+  height: 350px;
+  margin-right: 50px;
 }
 
 .qrImg {
   width: 450px;
   height: 450px;
-  margin-top: 250px;
-  margin-left: 250px;
 }
 
 .textSet1 {

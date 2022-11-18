@@ -17,6 +17,7 @@ function EndCreate(props) {
     const qrstat = () => {
         setQR(true);
         setIp("http://localhost:3000"+survey.url);
+
         
     }
     const qrout = () => {
@@ -32,8 +33,9 @@ function EndCreate(props) {
             <h1 class="qrtitle">설문 생성 완료!</h1>
             <h2>url: http://localhost:3000{survey.url} </h2>
             <button class="qrbtn" onClick={qrstat}>QR코드 생성</button>
+
             <Link to="/">
-                <button class="qrbtn" onClick={qrout}>홈으로 이동</button>
+                <button className="qrbtn" onClick={qrout}>홈으로 이동</button>
             </Link>
             <div className="qrbox">
                 {QR && <QRCODE value={ip} />}

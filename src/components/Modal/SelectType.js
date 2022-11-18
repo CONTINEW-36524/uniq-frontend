@@ -1,7 +1,7 @@
 import React from 'react';
 import './Modal.css';
 import { useSelector, useDispatch } from "react-redux/";
-import {selectOnepage, selectCard} from "../Slice/CreateSurveySlice"
+import {selectOnepage, selectCard} from "../../Slice/CreateSurveySlice"
 
 const SelectType = (props) => {
   // 열기, 닫기, 모달 헤더 텍스트를 부모로부터 받아옴

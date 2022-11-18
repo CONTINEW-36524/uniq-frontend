@@ -24,7 +24,7 @@ const StyledCardSlider = styled.div`
   }
 `;
 
-export default function CardSlider2(props) {
+export default function CardUserCreate(props) {
 
     const goleft = props.goleft;
     const goRight = props.goRight;
@@ -66,6 +66,7 @@ export default function CardSlider2(props) {
                                               Category={index.category}
                                               keyword={index.tag}
                                               title={index.title}
+                                              likenum={index.likenum}
                                               />)}
             {/* <CardComponent
                 img="https://img.freepik.com/premium-vector/blue-triangle-shaped-seamless-pattern-wallpaper-vector_53876-164505.jpg?w=2000"

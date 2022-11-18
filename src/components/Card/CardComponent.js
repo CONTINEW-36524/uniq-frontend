@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import styled from "styled-components";
 
 const StyledCard = styled.div`
@@ -9,7 +9,14 @@ const StyledCard = styled.div`
   background-color : white;
   cursor: pointer;
   transition: 0.2s;
+  font-family: 'SBAggroB';
 
+  @font-face {
+    font-family: 'SBAggroB';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
   /* 카드의 크기 */
   width: 240px;
   height: 220px;
@@ -55,12 +62,20 @@ const StyledCard = styled.div`
     }
 
     /* title */
+    .title-div {
+      display: inline-flex; 
+    }
+    .heart-checked {
+      transition: 0.2s;
+    }
+
     .card-middle {
       margin-bottom: 0.5rem;
       /* 글자가 너무 길어질 경우 말줄임표로 대체 */
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
+      width: 170px;
     }
 
     /* keyword */
@@ -75,10 +90,31 @@ const StyledCard = styled.div`
       white-space: nowrap; */
     }
   }
+}
 `;
 
 
-function CardComponent({ img = "", Category = "", keyword = "", title = "" }) {
+function CardComponent({ img = "", Category = "", keyword = "", title = "" , likenum = 0}) {
+  const [heartText, setheartText] = useState("🤍");
+  const [heartOn, setheartOn] = useState(false);
+  const [heartCount, setheartCount] = useState(likenum);
+
+  const heartChange = () => {
+    console.log(heartCount)
+    if (heartOn === false) {
+      console.log('false')
+      setheartText('❤️')
+      setheartOn(true)
+      setheartCount(heartCount+1);
+      
+    } else if (heartOn === true) {
+      console.log('true 입니당')
+      setheartText('🤍')
+      setheartOn(false)
+      setheartCount(heartCount-1);
+    }
+  }
+
   return (
     
     <StyledCard className="card-item">
@@ -87,7 +123,13 @@ function CardComponent({ img = "", Category = "", keyword = "", title = "" }) {
       </div>
       <div className="card-content">
         <h6 className="card-header">{Category}</h6>
-        <h4 className="card-middle">{title}</h4>
+        <div className="title-div"> 
+          <h4 className="card-middle">{title}</h4> 
+      
+          <h6 className={`${heartOn ? "heart-checked" : null}`}
+            onClick={()=>heartChange()}>{heartText}</h6>
+          <span>{heartCount}</span>
+        </div>
         <p className="card-text">{keyword}</p>
       </div>
     </StyledCard>

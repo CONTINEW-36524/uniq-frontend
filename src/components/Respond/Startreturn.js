@@ -2,7 +2,7 @@ import Form from 'react-bootstrap/Form';
 import { useSelector, useDispatch } from "react-redux/";
 import React, { useEffect,useState } from 'react';
 import WithHeaderAndQuoteExample from './WithHeaderAndQuoteExample';
-import {savesurvey, postrespond} from "../../components/Slice/RespondSlice";
+import {savesurvey, postrespond} from "../../Slice/RespondSlice";
 
 function Startreturn(props){
 
