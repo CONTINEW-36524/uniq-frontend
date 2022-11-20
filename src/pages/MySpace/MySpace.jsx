@@ -16,12 +16,13 @@ function MySpace(props) {
   const next = useSelector((state) => state.createSurvey.next);
   const [modalOpen, setModalOpen] = useState(false);
   const [openFilter, setOpenFilter] = useState(false);
-  const [category, setCategory] = useState("none");
-  const [like, setLike] = useState("0");
+  const [category, setCategory] = useState("*");
+  const [like, setLike] = useState("*");
   const [visible1, setVisible1] = useState(false);
   const [visible2, setVisible2] = useState(false);
   const [myUniq, setMyUniq] = useState([]);
   const [myFavorites, setMyFavorites] = useState([]);
+
 
 
   const openModal = () => {
@@ -53,7 +54,9 @@ function MySpace(props) {
   useEffect(() => {
     axios.get('/api/myspace/my-uniq', {
       params: {
-        user_id: 1
+        user_id: 1,
+        category: category,
+        like: like
       }
     }
     ).then(function (response) {
@@ -67,7 +70,9 @@ function MySpace(props) {
 
     axios.get('/api/myspace/my-favorites', {
       params: {
-        user_id: 1
+        user_id: 1,
+        category: category,
+        like: like
       }
     }
     ).then(function (response) {

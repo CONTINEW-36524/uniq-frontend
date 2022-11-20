@@ -26,9 +26,10 @@ import Scrollbar from '../../components/Scrollbar/index';
 // ];
 export const FILTER_CATEGORY_OPTIONS = ['모두', '교육', '비즈니스', '모집/공고'];
 export const FILTER_LIKE_OPTIONS = [
-'10개 이하',
-'10~50개 사이',
-'50개 이상',
+{key : '10개 이상', value : '10'},
+{key : '30개 이상', value : '30'},
+{key : '50개 이상', value : '50'},
+{key : '모두', value : '0'}
 ]
 
 MySpaceSidebar.propTypes = {
@@ -75,7 +76,7 @@ export default function MySpaceSidebar({ openFilter, onOpenFilter, onCloseFilter
             </Typography>
             <RadioGroup>
               {FILTER_CATEGORY_OPTIONS.map((item) => (
-                <FormControlLabel key={item} value={item} control={<Radio />} label={item} onClick={Category}/>
+                <FormControlLabel key={item} value={item} control={<Radio />} label={item.key} onClick={Category}/>
               ))}
             </RadioGroup>
           </div>
@@ -86,7 +87,7 @@ export default function MySpaceSidebar({ openFilter, onOpenFilter, onCloseFilter
               </Typography>
               <RadioGroup>
                 {FILTER_LIKE_OPTIONS.map((item) => (
-                  <FormControlLabel key={item} value={item} control={<Radio />} label={item} onClick={Like}/>
+                  <FormControlLabel key={item.key} value={item.value} control={<Radio />} label={item} onClick={Like}/>
                 ))}
               </RadioGroup>
             </div>
