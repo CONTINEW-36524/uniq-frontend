@@ -1,6 +1,6 @@
 
-import React, { useEffect, useState} from 'react';
-import { useLocation, useParams } from 'react-router-dom';
+import React, { useEffect, useState, useParams } from 'react';
+import { useLocation } from 'react-router-dom';
 import "./RespondCard.css"
 import Startreturn from '../../components/Respond/Startreturn';
 import Form from 'react-bootstrap/Form';
@@ -17,7 +17,8 @@ function RespondCard() {
   const location=useLocation();
   const [responddata,setresponddata] =useState([]);
   const [question, setquestion] = useState();
-  const { respondId} = useParams();
+  const map=new Map();
+  
 
   // 
 
@@ -36,7 +37,8 @@ function RespondCard() {
 //  }
 
 useEffect(()=>{
-  axios.get("/api/respond/survey",{params:{url: respondId}})
+  console.log(location.pathname)
+  axios.get("/api/create/respond",{params:{url: location.pathname}})
   .then((response)=> {
     //2. Parser
     //responddata=response.data;
@@ -52,7 +54,6 @@ useEffect(()=>{
 }, [])
 
 useEffect(()=>{console.log(responddata);},[responddata])
-console.log(respondId)
 
 
 return( 

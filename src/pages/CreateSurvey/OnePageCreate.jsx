@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux/";
-import { increament, changesurtitle,changesursubtitle} from "../../Slice/OnepageSlice";
+import { increament,makeurl, changesurtitle,changesursubtitle} from "../../Slice/OnepageSlice";
 import { useState} from 'react';
 
 import React from "react";
@@ -47,21 +47,23 @@ const OnePageCreate = (props) => {
         // <EndCreate ip={ip} modalOpen={modalOpen}/>
     }
 
-    const testAxios=() =>{
-        const axiosConfig = {
-            headers:{
-                "Content-Type": "application/json"
-            }
-        }
-        console.log(JSON.stringify(survey))
-        axios.post('/api/create/survey',JSON.stringify(survey),axiosConfig
-        ).then(function (response) {
-                console.log(response)
-              })
-          .catch(function(){
-            console.log('실패함')
-          })
-        }
+
+    // const testAxios=() =>{
+    //     const axiosConfig = {
+    //         headers:{
+    //             "Content-Type": "application/json"
+    //         }
+    //     }
+    //     console.log(JSON.stringify(survey))
+    //     axios.post('/api/create/survey',JSON.stringify(survey),axiosConfig
+    //     ).then(function (response) {
+    //             console.log(response)
+    //           })
+    //       .catch(function(){
+    //         console.log('실패함')
+    //       })
+    //     }
+
           
 
 
@@ -87,7 +89,7 @@ const OnePageCreate = (props) => {
 
         <div className="container">
             <div className="containerHeader">
-                <Form class="form">
+                <Form className="form">
                     <Form.Group className="mb-3" controlId="formGrouptitle">
                         <Form.Label column="lg" lg={2}>설문지 제목</Form.Label>
                         <Form.Control size="lg" type="title" value={survey.maintitle} multiline rows={3}
@@ -122,10 +124,10 @@ const OnePageCreate = (props) => {
                 ))}
                 
                 <div className="containerFooter">
-                    <button class="plusBtn" onClick={() => dispatch(increament())}> + </button>
-                    <p class="count">- {count} -</p>
+                    <button className="plusBtn" onClick={() => dispatch(increament())}> + </button>
+                    <p className="count">- {count} -</p>
 
-                    <button className="w-btn-outline2 w-btn-yellow-outline2" type="button"onClick={()=>{openModal(); testAxios();}}>생성하기</button>
+                    <button className="w-btn-outline2 w-btn-yellow-outline2" type="button" onClick={()=>{openModal();dispatch(makeurl());}}>생성하기</button>
                     { showEndModal ? 
                         <Modal open={openModal} close={closeModal} header="설문 기간을 설정해주세요."> 
                             <EndCreateModal/> 
@@ -142,11 +144,11 @@ const OnePageCreate = (props) => {
 
             <section>
                 <div className={`${isSidebarOpen ? 'show-sidebar' : 'l-navbar'}`}>
-                    <nav class="sidenav">
+                    <nav className="sidenav">
                         <div>
-                            <div class="nav__brand">
+                            <div className="nav__brand">
                                 <FcList color="white" size="50" role="button" onClick={() => toggleSidebar()} />
-                                {/* <a class="nav__logo">커스터마이징</a> */}
+                                {/* <a className="nav__logo">커스터마이징</a> */}
                             </div>
                             {/* 보류상태입니당..!  */}
                             <div className='options'>

@@ -18,7 +18,7 @@ function LinearQuestion(props) {
 
   const passcontent = (e) =>{
     const passs={
-      id: props.data.id,
+      id: props.data[0].id_question,
       item : e
     }
     dispatch(changecontent(passs));
@@ -26,7 +26,7 @@ function LinearQuestion(props) {
 
   return (
       <div className="Qlayout">
-        <h3>질문: ____?</h3>
+        <h3>질문:{props.data[0].title}?</h3>
         <div className="LinearContainer">
           <p className='leftText'>전혀 아니다</p>
           {data.map((item, idx) => {
@@ -38,7 +38,7 @@ function LinearQuestion(props) {
                   className={"btn" + (idx == btnclick ? "-active" : "")}
                   onClick={()=>{
                     toggleActive(idx);
-                    passcontent(item);
+                    passcontent(item.sub_question);
                     }}
                 >
                   {item}

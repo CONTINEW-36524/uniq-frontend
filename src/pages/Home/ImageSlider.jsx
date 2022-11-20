@@ -64,7 +64,7 @@ export default class SimpleSlider extends Component {
                     return (
                         <div key={item.id}>
                             <ImageContainer>
-                                <Image class="sliderImage" src={item.url} />
+                                <Image className="sliderImage" src={item.url} />
                             </ImageContainer>
                         </div>
                     );

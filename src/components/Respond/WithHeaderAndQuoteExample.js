@@ -9,42 +9,49 @@ import FirstContents from './FirstContents';
 import RadioQuestion from './RadioQuestion';
 import CheckBoxQuestion from './CheckBoxQuestion';
 import ShortQuestion from './ShortQuestion';
+import { data } from 'jquery';
 
 
 function WithHeaderAndQuoteExample(props) {
     const dispatch = useDispatch();
 
     console.log(props.responddata)
-    const quest=[];
 
     
       function SelectCom(e){
+        console.log(e.data[1][0].type)
 
 
-        dispatch(pluscon(e.data.id))
+       dispatch(pluscon(e.data[1][0].id_question))
 
         const selectComponent={
 
-            객관식: <RadioQuestion data={e.content} />,
-            체크박스: <CheckBoxQuestion />,
-            주관식: <ShortQuestion />,
-            선형배율: <LinearQuestion />,
+            객관식: <RadioQuestion data={e.data[1]} />,
+            체크박스: <CheckBoxQuestion data={e.data[1]} />,
+            주관식: <ShortQuestion data={e.data[1]} />,
+            선형배율: <LinearQuestion data={e.data[1]} />,
           };
-        return (selectComponent[e.data.type])
+        return (selectComponent[e.data[1][0].type])
       }
 
-    return (
-      props.responddata.map(((datas,idx) => (
-        
-        <Card className="text-center w-100" >
+      //useEffect(()=>{props.responddata.map(function(element){findnum(element)})},[])
+    
+
+      
+      return(
+        <>
+     {props.responddata.map((item) => {
+      console.log(item)
+    return(
+      <Card className="text-center w-100" >
           <div>
-            <Card.Header>Question Number {idx+1}</Card.Header>
+            <Card.Header>Question Number</Card.Header>
             <Card.Body>
               <blockquote className="blockquote mb-0">
                 <p>
                   {' '}
                   
-                  <SelectCom data={datas} index={idx}/>
+                  <SelectCom data={item}/>
                   {/* <LinearQuestion/> */}
                   
                   {' '}
@@ -58,9 +65,14 @@ function WithHeaderAndQuoteExample(props) {
             </Card.Body>
           </div>
         </Card>
-      )))
+    )
+      
+     })}</>)
         
-    );
+        
 }
+              
+      
+        
 
 export default WithHeaderAndQuoteExample;

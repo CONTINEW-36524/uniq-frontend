@@ -1,7 +1,6 @@
 import React, { useEffect,useState } from 'react';
 import { useSelector, useDispatch } from "react-redux/";
 import {changecontent} from "../../Slice/RespondSlice";
-import "./respond.css"
 
 
 function SecondQuestion(props) {
@@ -12,22 +11,22 @@ function SecondQuestion(props) {
 
     const passcontent = (e) =>{
       const passs={
-        id: props.data.id,
+        id: props.data[0].id_question,
         item : e
       }
       dispatch(changecontent(passs));
   
     };
 
-    const answer = data.filter(item => item.id == props.data.id)[0].answer
-    console.log(props.data.id)
-    console.log(data)
+    const answer = data.filter(item => item.rid_question == props.data[0].id_question)[0].answer
+    // console.log(props.data.id)
+    // console.log(data)
   
     
     return (
    
       <div className="Qlayout">
-      <h3>질문: ____ ?</h3>
+      <h3>질문: {props.data[0].title} ?</h3>
       <textarea className="SecondRespond" 
         type = "text" 
         value={answer}

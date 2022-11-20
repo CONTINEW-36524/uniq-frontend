@@ -13,9 +13,8 @@ import {
   RadioGroup,
   FormControlLabel,
 } from '@mui/material';
-// components
 import Iconify from '../../components/iconify';
-import Scrollbar from '../../components/Scrollbar/index';
+import Scrollbar from '../../components/Scrollbar';
 
 // ----------------------------------------------------------------------
 // 정렬기능 추후 추가
@@ -40,7 +39,7 @@ MySpaceSidebar.propTypes = {
   Like: PropTypes.func,
 };
 
-export default function MySpaceSidebar({ openFilter, onOpenFilter, onCloseFilter, Category, Like }) {
+function MySpaceSidebar({ openFilter, onOpenFilter, onCloseFilter, Category, Like }) {
 
   return (
     <>
@@ -111,3 +110,5 @@ export default function MySpaceSidebar({ openFilter, onOpenFilter, onCloseFilter
     </>
   );
 }
+
+export default MySpaceSidebar;

@@ -9,6 +9,7 @@ import LinearQuestion from "../../components/Respond/LinearQuestion";
 import CheckBoxQuestion from "../../components/Respond/CheckBoxQuestion";
 
 
+
 function RespondOnePage(props) {
 
     let data = ['1학년', '2학년', '3힉년', '4힉년'];
@@ -26,12 +27,12 @@ function RespondOnePage(props) {
     <>
         <div className="RespondOnePageContainer">
             <div className="RespondOnePageContainerHeader">
-                <Form class="form">
+                <Form className="form">
                     <Form.Group className="mb-3" controlId="formGrouptitle">
-                    <h3 class='RespondOnePageHeadTitle'> 제목 </h3>
+                    <h3 className='RespondOnePageHeadTitle'> 제목 </h3>
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formGroupexplain">
-                    <h5 class='RespondOnePageHeadOverview'> 설문 개요 </h5>
+                    <h5 className='RespondOnePageHeadOverview'> 설문 개요 </h5>
                     </Form.Group>
                 </Form>
             </div>

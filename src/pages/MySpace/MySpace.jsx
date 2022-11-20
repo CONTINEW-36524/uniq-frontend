@@ -105,13 +105,13 @@ function MySpace(props) {
         onClick={() => {
           setVisible1(false);
           setVisible2(true);}}>최근 설문지</button>
-        <MyspaceSidebar
+        {/* <MyspaceSidebar
           openFilter={openFilter}
           onOpenFilter={handleOpenFilter}
           onCloseFilter={handleCloseFilter}
           Category={handleCategory}
           Like={handleLike}
-        />
+        /> */}
       </div>
       {/* 버튼 눌러 list불러오기 */}
       {visible1 && <FavoriteUNIQ data={myFavorites}/>}

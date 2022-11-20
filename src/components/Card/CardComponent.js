@@ -75,7 +75,7 @@ const StyledCard = styled.div`
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
-      margin-right: 100px; 
+      width: 170px;
     }
 
     /* keyword */
@@ -94,12 +94,13 @@ const StyledCard = styled.div`
 `;
 
 
-function CardComponent({ img = "", Category = "", keyword = "", title = "" }) {
+function CardComponent({ img = "", Category = "", keyword = "", title = "" , likenum = 0}) {
   const [heartText, setheartText] = useState("🤍");
   const [heartOn, setheartOn] = useState(false);
-  const [heartCount, setheartCount] = useState(0);
+  const [heartCount, setheartCount] = useState(likenum);
 
   const heartChange = () => {
+    console.log(heartCount)
     if (heartOn === false) {
       console.log('false')
       setheartText('❤️')

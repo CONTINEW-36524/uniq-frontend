@@ -24,14 +24,14 @@ const StyledCardSlider = styled.div`
   }
 `;
 
-export default function CardSlider2(props) {
+export default function CardUserFavorite(props) {
 
     const goleft = props.goleft;
     const goRight = props.goRight;
     const data = props.data;
 
-    console.log(data[0].category)
-    data.map(index => console.log(index.category))
+    // console.log(data[0].category)
+    // data.map(index => console.log(index.category))
 
     useEffect((e) => {
         console.log('check');
@@ -68,6 +68,7 @@ export default function CardSlider2(props) {
                                               Category={index.category}
                                               keyword={index.tag}
                                               title={index.title}
+                                              likenum={index.likenum}
                                               />)}
             {/* <CardComponent
                 img="https://yozm.wishket.com/media/news/1231/image017.png"

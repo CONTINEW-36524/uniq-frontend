@@ -24,7 +24,7 @@ const StyledCardSlider = styled.div`
   }
 `;
 
-export default function CardSlider2(props) {
+export default function CardUserRecent(props) {
 
     const goleft = props.goleft;
     const goRight = props.goRight;

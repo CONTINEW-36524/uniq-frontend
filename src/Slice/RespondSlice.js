@@ -18,25 +18,25 @@ export const RespondSlice = createSlice({
     reducers:{
        
         changecontent:(state, action) =>{
-            const index = state.survey.responddata.findIndex((data) => data.id == action.payload.id)
+            const index = state.survey.responddata.findIndex((data) => data.rid_question == action.payload.id)
 
             state.survey.responddata[index].answer=action.payload.item;
             // console.log(action.payload.id);
         },
         savesurvey:(state, action) =>{
+            console.log(state.survey.responddata);
             state.survey.surveyid=action.payload;
            
         },
 
         pluscon:(state, action) =>{
-            console.log(state.survey.responddata.findIndex((data) => data.id == action.payload))
+            console.log(state.survey.responddata.findIndex((data) => data.rid_question == action.payload))
             // if(state.survey.responddata.findIndex((data) => data.id == action.payload.id)==-1)
-             state.survey.responddata.push({id: action.payload, answer: ''})
+             state.survey.responddata.push({rid_question: action.payload, answer: ''})
             
         },
 
         postrespond:(state)=>{
-            // console.log(state.survey.surveyid);
             axios.post('/api/respond/answer',state.survey
             ).then(function (response) {
                 console.log(response)

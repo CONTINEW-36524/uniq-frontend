@@ -1,7 +1,7 @@
-import React, { useEffect,useState, useCallback  } from 'react';
+import React, { useEffect,useState } from 'react';
 import { useSelector, useDispatch } from "react-redux/";
 import {changecontent} from "../../Slice/RespondSlice";
-import "./respond.css"
+
 
 function FirstQuestion(props) {
     const dispatch = useDispatch();
@@ -14,11 +14,9 @@ function FirstQuestion(props) {
 
 
 
-
-
     const passcontent = (e) =>{
         const passs={
-          id: props.data.did,
+          id: props.data[0].id_question,
           item : e
         }
         dispatch(changecontent(passs));
@@ -28,21 +26,22 @@ function FirstQuestion(props) {
 
     return (
       <div className="Qlayout">
-<h3>질문: ____ ?</h3>
+<h3>질문: {props.data[0].title} ?</h3>
 
-<div className="radioContainer">
+<div className="firstContainer">
   {props.data.map((item, idx) => {
+    console.log(item)
     return (
-      <div>
+      <div className="firstDiv">
         <button
           value={idx}
           className={"radioBtn" + (idx == btnActive ? "-active" : "")}
           onClick={()=>{
-            toggleActive(idx+1);
-            passcontent(item.con);
+            toggleActive(idx);
+            passcontent(item.sub_question);
             }}
         >
-        o {item}
+        o {item.sub_question}
         </button>
       </div>
     );
