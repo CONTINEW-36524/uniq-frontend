@@ -76,7 +76,7 @@ export default function MySpaceSidebar({ openFilter, onOpenFilter, onCloseFilter
             </Typography>
             <RadioGroup>
               {FILTER_CATEGORY_OPTIONS.map((item) => (
-                <FormControlLabel key={item} value={item} control={<Radio />} label={item.key} onClick={Category}/>
+                <FormControlLabel key={item} value={item} control={<Radio />} label={item} onClick={Category}/>
               ))}
             </RadioGroup>
           </div>
@@ -87,7 +87,7 @@ export default function MySpaceSidebar({ openFilter, onOpenFilter, onCloseFilter
               </Typography>
               <RadioGroup>
                 {FILTER_LIKE_OPTIONS.map((item) => (
-                  <FormControlLabel key={item.key} value={item.value} control={<Radio />} label={item} onClick={Like}/>
+                  <FormControlLabel key={item.key} value={item.value} control={<Radio />} label={item.key} onClick={Like}/>
                 ))}
               </RadioGroup>
             </div>

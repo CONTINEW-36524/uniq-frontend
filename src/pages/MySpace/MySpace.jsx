@@ -16,8 +16,8 @@ function MySpace(props) {
   const next = useSelector((state) => state.createSurvey.next);
   const [modalOpen, setModalOpen] = useState(false);
   const [openFilter, setOpenFilter] = useState(false);
-  const [category, setCategory] = useState("*");
-  const [like, setLike] = useState("*");
+  const [category, setCategory] = useState('%');
+  const [like, setLike] = useState('0');
   const [visible1, setVisible1] = useState(false);
   const [visible2, setVisible2] = useState(false);
   const [myUniq, setMyUniq] = useState([]);
