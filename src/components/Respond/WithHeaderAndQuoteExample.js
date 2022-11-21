@@ -40,12 +40,12 @@ function WithHeaderAndQuoteExample(props) {
       
       return(
         <>
-     {props.responddata.map((item) => {
+     {props.responddata.map((item,idx) => {
       console.log(item)
     return(
       <Card className="text-center w-100" >
           <div>
-            <Card.Header>Question Number</Card.Header>
+            <Card.Header>Question Number {idx+1}</Card.Header>
             <Card.Body>
               <blockquote className="blockquote mb-0">
                 <p>
