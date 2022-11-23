@@ -5,9 +5,10 @@ import { changetitle,changecontent} from "../../Slice/OnepageSlice";
 function ShortAnswerQ(props) {
 
   const data = useSelector((state)=>state.onepage.survey.data);
-  const temp= data.filter((data)=>data.id===props.id);
-  const title = data.filter(item => item.id === props.id)[0].title;
-  const content = data.filter(item => item.id === props.id)[0].content;
+    const temp= data.filter((data)=>data.did===props.id);
+    const title = data.filter(item => item.did === props.id)[0].title;
+    const content = data.filter(item => item.did === props.id)[0].content;
+
   const dispatch = useDispatch();
 
   const passtitle = (e) =>{

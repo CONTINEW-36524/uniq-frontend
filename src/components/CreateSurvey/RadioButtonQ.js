@@ -28,8 +28,8 @@ function RadioButtonQ(props) {
     dispatch(changetitle(passs));
   };
 
-  const title = data.filter(item => item.id === props.id)[0].title
-  const content = data.filter(item => item.id === props.id)[0].content
+  const title = data.filter(item => item.did === props.id)[0].title
+  const content = data.filter(item => item.did === props.id)[0].content
 
   return (
 

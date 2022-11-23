@@ -1,21 +1,22 @@
-import React, { useEffect, useState} from 'react';
-import { useLocation, useParams } from 'react-router-dom';
+import React, { useEffect, useState, useParams } from 'react';
+import { useLocation } from 'react-router-dom';
 import "./RespondCard.css"
-import Startreturn from '../../components/Respond/Startreturn';
+import Startreturn from '../../components/respond/Startreturn';
 import Form from 'react-bootstrap/Form';
 import axios from 'axios';
 import { useSelector, useDispatch } from "react-redux/";
 
 
+
 function RespondCard() {
 
-  const survey = useSelector((state)=>state.onepage.survey);
-  const dispatch = useDispatch();
-  const count = useSelector((state)=>state.onepage.count);
+
+
   const location=useLocation();
   const [responddata,setresponddata] =useState([]);
   const [question, setquestion] = useState();
-  const { respondId} = useParams();
+  const map=new Map();
+  
 
   // 
 
@@ -34,13 +35,17 @@ function RespondCard() {
 //  }
 
 useEffect(()=>{
-  axios.get("/api/respond/survey",{params:{url: respondId}})
+  console.log(location.pathname)
+  axios.get("/api/create/respond",{params:{url: location.pathname}})
   .then((response)=> {
     //2. Parser
     //responddata=response.data;
     // setresponddata(JSON.parse(response.data[0].datalist));
         //console.log(JSON.parse(responddata[0].datalist)[0].type); 
-        setresponddata(response.data); 
+        console.log(response.data)
+        setresponddata(...responddata, response.data);
+        console.log(responddata)
+
   }).catch(function (error) {
     console.log(error)
       // 오류발생시 실행
@@ -50,7 +55,6 @@ useEffect(()=>{
 }, [])
 
 useEffect(()=>{console.log(responddata);},[responddata])
-console.log(respondId)
 
 
 return( 
