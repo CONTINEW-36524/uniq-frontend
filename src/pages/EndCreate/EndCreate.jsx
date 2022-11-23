@@ -17,8 +17,6 @@ function EndCreate(props) {
     const qrstat = () => {
         setQR(true);
         setIp("http://localhost:3000"+survey.url);
-
-        
     }
     const qrout = () => {
         setQR(false);

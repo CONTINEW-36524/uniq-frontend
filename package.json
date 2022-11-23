@@ -2,7 +2,7 @@
   "name": "uniq-frontend-react",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://210.109.62.78:8080",
+  "proxy": "http://localhost:8080",
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.4",
@@ -55,6 +55,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "start:local": "env-cmd -f .env react-scripts start",
     "start:dev": "env-cmd -f .env.development react-scripts start",
     "start:prod": "env-cmd -f .env.production react-scripts start",
     "start:qa": "env-cmd -f .env.qa react-scripts start",
