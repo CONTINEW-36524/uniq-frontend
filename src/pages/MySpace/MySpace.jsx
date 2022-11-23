@@ -4,7 +4,7 @@ import { Container, Stack, Typography } from '@mui/material';
 import { useSelector, useDispatch } from "react-redux/";
 import { exit } from "../../Slice/CreateSurveySlice.js"
 import AddAsk from '../../components/Modal/AddAsk';
-import MyspaceSidebar from './MyspaceSidebar'
+// import { MyspaceSidebar } from './MySpaceSidebar'
 import Modal from "../../components/Modal/Modal"
 import SelectType from "../../components/Modal/SelectType.js"
 import FavoriteUNIQ from './FavoriteUNIQ'
@@ -16,13 +16,12 @@ function MySpace(props) {
   const next = useSelector((state) => state.createSurvey.next);
   const [modalOpen, setModalOpen] = useState(false);
   const [openFilter, setOpenFilter] = useState(false);
-  const [category, setCategory] = useState('%');
-  const [like, setLike] = useState('0');
+  const [category, setCategory] = useState("none");
+  const [like, setLike] = useState("0");
   const [visible1, setVisible1] = useState(false);
   const [visible2, setVisible2] = useState(false);
   const [myUniq, setMyUniq] = useState([]);
   const [myFavorites, setMyFavorites]=useState([]);
-
 
 
   const openModal = () => {
@@ -51,14 +50,13 @@ function MySpace(props) {
     setLike(e.target.value);
   };
 
-
-  useEffect(() => {
-    axios.get('/api/myspace/my-uniq', {
-      params: {
-        user_id: 1,
-        category: category,
-        like: like
-
+  useEffect(()=>{
+    axios.get('/api/myspace/my-uniq',{
+        params:{
+          user_id: 1,
+          category: category,
+          like: like
+        }
       }
     ).then(function(response){
       console.log(response.data)
@@ -66,15 +64,14 @@ function MySpace(props) {
       console.log(myUniq)
       console.log('마운트');
     }).catch(function(error){
-      console.log(error)
+      console.log("에러")
     });
 
-    axios.get('/api/myspace/my-favorites', {
-      params: {
+    axios.get('/api/myspace/my-favorites',{
+      params:{
         user_id: 1,
         category: category,
         like: like
-
       }
     }
   ).then(function(response){
