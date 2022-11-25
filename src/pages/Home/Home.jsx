@@ -22,7 +22,7 @@ function Home() {
   const dispatch = useDispatch()
 
   useEffect(()=>{
-    axios.get('/api/template/recent')
+    axios.get('/survey-read-service/api/template/recent')
     .then(function(response){
       console.log(response.data)
       setRecent(response.data)
@@ -33,7 +33,7 @@ function Home() {
       console.log("에러")
     });
 
-    axios.get('/api/template/popular')
+    axios.get('/survey-read-service/api/template/popular')
     .then(function(response){
       console.log(response.data)
       setPopular(response.data)
