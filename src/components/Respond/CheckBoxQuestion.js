@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useCallback } from 'react';
-import "./respond.css"
+import "./Respond.css"
 
 function CheckBoxQuestion() {
   let [datas, setDatas] = useState([
