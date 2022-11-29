@@ -1,6 +1,6 @@
 import Form from 'react-bootstrap/Form';
-import React, { useEffect,useState } from 'react';
-import { useSelector, useDispatch } from "react-redux/";
+import React from 'react';
+import { useDispatch } from "react-redux/";
 import OnePageQuestions from '../../components/Respond/OnePageQuestions';
 import './RespondOnePage.css'
 import {savesurvey, postrespond} from "../../Slice/RespondSlice";
