@@ -3,14 +3,11 @@ import { useSelector, useDispatch } from "react-redux/";
 import { increament, changesurtitle,changesursubtitle, pluscardpage,minuscardpage} from "../../Slice/OnepageSlice";
 import { useState} from 'react';
 import React from "react";
-import { NavLink } from 'react-router-dom';
 import { FcList } from "react-icons/fc";
 import '../CreateSurvey/OnePageCreate.css';
 import '../../../src/App.css'
 import './CardCreate.css'
-import { isDOMComponent } from "react-dom/test-utils";
 import DropDown from "../../components/Dropdown/Dropdown";
-import {useDrag} from 'react-use-gesture';
 import Form from 'react-bootstrap/Form';
 import axios from 'axios';
 
@@ -74,7 +71,7 @@ const CardCreate = (props) =>{
                     <Form.Group className="mb-3" controlId="formGrouptitle">
                         <Form.Label column="lg" lg={2}>설문지 제목</Form.Label>
                         <Form.Control size="lg" type="title" value={survey.maintitle}
-                     onChange ={(e)=>dispatch(changesurtitle(e.target.value))}placeholder="설문지 제목을 입력하세요." />
+                        onChange ={(e)=>dispatch(changesurtitle(e.target.value))}placeholder="설문지 제목을 입력하세요." />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formGroupexplain">
                         <Form.Label>설문지 설명</Form.Label>

@@ -51,7 +51,6 @@ export const OnepageSlice = createSlice({
         },
         increament3: (state) =>{
             state.survey.data.push({did: uuid() , type:'선형배율', title:'',content: [{con_id: state.count*100, con:''}]});
-
             state.count+=1;
         },
         changeval: (state, action ) =>{

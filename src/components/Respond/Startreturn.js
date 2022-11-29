@@ -1,8 +1,9 @@
 import Form from 'react-bootstrap/Form';
 import { useSelector, useDispatch } from "react-redux/";
 import React, { useEffect,useState } from 'react';
-import WithHeaderAndQuoteExample from './WithHeaderAndQuoteExample';
+import WithHeaderAndQuoteExample from './AllQuestions';
 import {savesurvey, postrespond} from "../../Slice/RespondSlice";
+
 
 function Startreturn(props){
 
@@ -13,45 +14,34 @@ function Startreturn(props){
     dispatch(postrespond());
   }
   console.log(Object.entries(props.responddata).length)
-  console.log(Object.entries(props.responddata).length)
+  
 
-    if(Object.entries(props.responddata).length){
-      return (
-      <>
-          {/* <div class='respondContainer'>
-              <WithHeaderAndQuoteExample/>
-          </div> */}
+  if(Object.entries(props.responddata).length){
+    return (
+    <>
+      <div className="RespondOnePageContainer">
+        <div className="RespondOnePageContainerHeader">
+          <Form class="form">
+            <Form.Group className="mb-3" controlId="formGrouptitle">
+              <h3 class='RespondOnePageHeadTitle'> {Object.entries(props.responddata)[0][1][0].maintitle} </h3>
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formGroupexplain">
+              <h5 class='RespondOnePageHeadOverview'> {Object.entries(props.responddata)[0][1][0].subtitle} </h5>
+            </Form.Group>
+          </Form>
+        </div>
   
-          <div className="RespondOnePageContainer">
-            <div className="RespondOnePageContainerHeader">
-              <Form class="form">
-                <Form.Group className="mb-3" controlId="formGrouptitle">
-                  <h3 class='RespondOnePageHeadTitle'> {Object.entries(props.responddata)[0][1][0].maintitle} </h3>
-                </Form.Group>
-                <Form.Group className="mb-3" controlId="formGroupexplain">
-                  <h5 class='RespondOnePageHeadOverview'> {Object.entries(props.responddata)[0][1][0].subtitle} </h5>
-                </Form.Group>
-              </Form>
+        <div className="RespondOnePageContainerContent">
+          { <WithHeaderAndQuoteExample responddata={Object.entries(props.responddata)} /> }
               
-            </div>
-  
-            <div className="RespondOnePageContainerContent">
-              {/* { datas.map((item,index)=>( 
-                <div className="fadein">
-                  <DropDown id={item.id}/> 
-                </div>
-              ))} */}
-  
-              { <WithHeaderAndQuoteExample responddata={Object.entries(props.responddata)} /> }
-              
-              <div className="respondContainerFooter">
-                <button className="w-btn-outline2 w-btn-yellow-outline2" type="button"onClick={savesurveyid} > 제출하기</button>
-              </div>
-            </div>
+          <div className="respondContainerFooter">
+            <button className="w-btn-outline2 w-btn-yellow-outline2" type="button"onClick={savesurveyid} > 제출하기</button>
           </div>
-      </> 
-   );
-            }
-          }
+        </div>
+      </div>
+    </> 
+    );
+  }
+}
 
 export default Startreturn;

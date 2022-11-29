@@ -1,36 +1,34 @@
-.container {
-    width: 70%;
-    align-items: flex-start;
+.RespondCardContainer {
+    width: 100%;
     overflow: scroll;
     -ms-overflow-style: none;
     margin-bottom: 20px;
     font-family: 'yg-jalnan';
+    display: flex;
+    justify-content: center;
 }
-  
-.containerHeader {
+
+/* Header : 설문 제목, 개요 */
+.RespondCardContainerHeader {
     width: 70%;
     height: fit-content;
     background-color: #b6cefc;
     padding: 1%;
-    display: grid;
-    position: absolute;
     margin-top: 120px;
 }
-
-.respondHeadTitle {
+.RespondCardHeadTitle {
+    color: #333333;
+    font-weight: bold;
+    text-align: center;
+}
+.RespondCardHeadOverview {
     color: #333333;
     font-weight: bold;
     text-align: center;
 }
 
-.respondHeadOverview {
-    color: #333333;
-    font-weight: bold;
-    text-align: center;
-}
-
-
-.respondContainerContent {
+/* ContainerContent : 질문 내용 */
+.RespondCardContainerContent {
     width: 70%;
     height: fit-content;
     background-color: #b6cefc;
@@ -38,24 +36,45 @@
     display: inline-block; 
     position: absolute;
     margin-top: 280px;
-   
     animation: smoothApper 1s;
 }
 
-.respondContainerFooter {
-    width: 100.1%;
-    height: 200px;
+
+/* ContainerFooter : 제출하기 버튼 */
+.RespondCardContainerFooter {
+    height: fit-content;
     background-color: #b6cefc;
     padding: 2%;
-    display: inline-block; 
-    
-    /* 어딘가에서 css가 겹쳐서 그런가
-    footer만 옆으로 살짝 이동해 있길래 강제로 -로 이동*/
-    left:-0.5px;
-  
     display: flex;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
+    
+}
+.RespondCardPage{
+    display: inline-flex;
+    position: relative;
+    left: 50px;
+    top: 30px;
+}
+.RespondCardNum {
+    position: relative;
+    font-size: 18px;
+    
+}
+.RespondCardNextBtn{
+    width: 60px;
+    height: fit-content;
+    border: none;
+    border-radius: 5px;
+    margin-left: 20px;
+    margin-right: 20px;
+    background-color: rgb(233,233,234);
+}
+/* 제출하기 버튼 */
+.RespondCardBtn {
+    align-items: flex-start;
+    display: block;
+    left: 380px;
 }
 
 /* 폰트 적용 */
@@ -76,15 +95,4 @@
   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff');
   font-weight: normal;
   font-style: normal;
-}
-
-.repondCardContainer {
-    margin-bottom: 15px;
-    
-}
-.repondCardHeader {
-   text-align: left;
-   display: inline-flex;
-   width: 100%;
-   font-size: large;
 }

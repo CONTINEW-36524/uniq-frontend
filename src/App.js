@@ -8,13 +8,14 @@ import NotFound from "./pages/NotFound";
 import Logo from "./assets/logo.png";
 
 import OnePageCreate from "./pages/CreateSurvey/OnePageCreate";
-import RespondCard from "./pages/Respond/RespondCard";
+import Respond from "./pages/Respond/Respond"
+// import RespondCard from "./pages/Respond/RespondCard";
+// import RespondOnePage from "./pages/Respond/RespondOnePage"
 import KakaoLogin from "./pages/Login/KakaoLogin";
 import CardCreate from "./pages/CreateSurvey/CardCreate"
 import CardResult from "./pages/Result/CardResult"
 import OnePageResult from "./pages/Result/OnePageResult"
 import EndCreate from "./pages/EndCreate/EndCreate"
-import RespondOnePage from "./pages/Respond/RespondOnePage"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import {Button, Container, Nav, Navbar, NavDropdown, Form, Col, Row} from 'react-bootstrap';
@@ -72,14 +73,11 @@ function App(props) {
           <Route exact path="/" element={<Home />} />
           <Route path="/template" element={<Template />} />
           <Route path="/endcreate" element={<EndCreate/>}/>
-          {/* <Route path="/respond/:respondId" element={<Respond />}/>
-          <Route path="/respond" element={<Respond />}/> */}
-          <Route path="/Respond*" element={<RespondCard />}/>
+          <Route path="/Respond/*" element={<Respond />}/>
           <Route path="/OnePageCreate" element={<OnePageCreate />}/>
           <Route path="/CardCreate" element={<CardCreate />} />
           <Route path="/oauth/callback/kakao" element={<KakaoLogin />}/>
           <Route path="/MySpace" element={<MySpace />}/>
-          <Route path="/RespondOnePage" element={<RespondOnePage />}/>
           <Route path="/CardResult" element={<CardResult/>}/>
           <Route path="/OnePageResult" element={<OnePageResult/>}/>
           <Route path="*" element={<NotFound />} />

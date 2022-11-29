@@ -26,29 +26,29 @@ const AddAsk = (props) => {
         setLinear(e.target.value)
     }
     const add  = () => {
-    if (mult < 2)
-    {
+      if (mult < 2)
+      {
         dispatch(deleteinit(mult))
-        
-    for (let i = 0; i <sub; i++) {
-        dispatch(increament2())
-      }
-    for (let i = 0; i <linear; i++) {
-        dispatch(increament3())
-      }
-    }
-    else 
-    {
-        for (let i = 0; i <mult-2; i++) {
-            dispatch(increament())
-          }
+          
         for (let i = 0; i <sub; i++) {
-            dispatch(increament2())
-          }
-        for (let i = 0; i <linear; i++) {
-            dispatch(increament3())
-          }
+          dispatch(increament2())
         }
+        for (let i = 0; i <linear; i++) {
+          dispatch(increament3())
+        }
+      }
+      else 
+      {
+        for (let i = 0; i <mult-2; i++) {
+          dispatch(increament())
+        }
+        for (let i = 0; i <sub; i++) {
+          dispatch(increament2())
+        }
+        for (let i = 0; i <linear; i++) {
+          dispatch(increament3())
+        }
+      }
     }
     
 
@@ -81,7 +81,6 @@ const AddAsk = (props) => {
             <button className='makeBtn' onClick={add}>만들기</button>
           </Link>
           <Link to={selecttype[pagetype]}>
-            {/* <button  onClick={add}>만들기</button> */}
             <button className='standBtn'>기본양식으로 만들기</button>
           </Link>
 

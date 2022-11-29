@@ -57,7 +57,7 @@ const CardResult = () => {
                             type="button"
                             onClick={() => {
                                 // PrevPage(-1) 
-                                dispatch1(minuscardresultpage())
+                                // dispatch1(minuscardresultpage())
                                 changenowQNum(nowQNum-1)
                             }
                         }> 🡸 
@@ -69,7 +69,7 @@ const CardResult = () => {
                             type="button"
                             onClick={() => {
                                 // NextPage(1)
-                                dispatch1(pluscardresultpage())
+                                // dispatch1(pluscardresultpage())
                                 changenowQNum(nowQNum+1)
                             }
                         }> 🡺 

@@ -2,7 +2,7 @@ import React, { useEffect,useState } from 'react';
 import { useSelector, useDispatch } from "react-redux/";
 import {changecontent} from "../../Slice/RespondSlice";
 
-function SecondQuestion(props) {
+function ShortQuestion(props) {
   
   const data = useSelector((state)=>state.respond.survey.responddata);
     const dispatch = useDispatch();
@@ -36,4 +36,4 @@ function SecondQuestion(props) {
 
     );
   }
-  export default SecondQuestion;
+  export default ShortQuestion;

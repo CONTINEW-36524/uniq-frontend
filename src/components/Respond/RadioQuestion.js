@@ -2,7 +2,7 @@ import React, { useEffect,useState } from 'react';
 import { useSelector, useDispatch } from "react-redux/";
 import {changecontent} from "../../Slice/RespondSlice";
 
-function FirstQuestion(props) {
+function RadioQuestion(props) {
     const dispatch = useDispatch();
   
     let [btnActive, setBtnActive] = useState();
@@ -51,4 +51,4 @@ function FirstQuestion(props) {
 
 
 
-  export default FirstQuestion;
+  export default RadioQuestion;
