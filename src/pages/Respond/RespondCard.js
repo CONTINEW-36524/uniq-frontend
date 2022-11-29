@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useParams } from 'react';
 import { useLocation } from 'react-router-dom';
 import "./RespondCard.css"
-import Startreturn from '../../components/respond/Startreturn';
+import Startreturn from '../../components/Respond/Startreturn';
 import Form from 'react-bootstrap/Form';
 import axios from 'axios';
 import { useSelector, useDispatch } from "react-redux/";
@@ -36,7 +36,7 @@ function RespondCard() {
 
 useEffect(()=>{
   console.log(location.pathname)
-  axios.get("/api/create/respond",{params:{url: location.pathname}})
+  axios.get("/respond-write-service/api/create/respond",{params:{url: location.pathname}})
   .then((response)=> {
     //2. Parser
     //responddata=response.data;

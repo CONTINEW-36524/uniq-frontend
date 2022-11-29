@@ -37,7 +37,7 @@ export const RespondSlice = createSlice({
         },
 
         postrespond:(state)=>{
-            axios.post('/api/respond/answer',state.survey
+            axios.post('/respond-write-service/api/respond/answer',state.survey
             ).then(function (response) {
                 console.log(response)
               })
