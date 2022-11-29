@@ -22,12 +22,11 @@ const KakaoLogin = () => {
         (async () => {
             try {
                 const res = await axios.get(
-                        '/api/kakao?code', {
+                        '/user-service/api/kakao?code', {
                             params:{
                                 code : code
                             }
                         }
-                    
                     )
                     // response from backend server
                     .then((response) => {
@@ -59,7 +58,7 @@ const KakaoLogin = () => {
                 const res = await axios
                     .get(
                         // 백엔드에서 설정한 주소
-                        "/api/me", //수정 필요
+                        "/user-service/api/me", //수정 필요
                         {
                             headers: {
                                 Authorization: token,

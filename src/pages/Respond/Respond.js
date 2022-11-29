@@ -8,13 +8,13 @@ import RespondOnePage from "./RespondOnePage";
 
 function Respond() {
 
-    const location = useLocation();
+    const location = useLocation()
     const [responddata,setresponddata] = useState([]);
 
 
     useEffect(()=>{
         console.log(location.pathname)
-        axios.get("/api/create/respond",{params:{url: location.pathname}})
+        axios.get("/survey-read-service/api/create/respond",{params:{url: location.pathname}})
         .then((response)=> {
             console.log(response.data)
             setresponddata(...responddata, response.data);
