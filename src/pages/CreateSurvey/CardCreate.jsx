@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from "react-redux/";
 
-import { increament, changesurtitle,changesursubtitle, pluscardpage,minuscardpage} from "../../Slice/OnepageSlice";
+import { makeurl, changesurtitle,changesursubtitle, pluscardpage,minuscardpage} from "../../Slice/OnepageSlice";
 import { useState} from 'react';
 import React from "react";
 import { FcList } from "react-icons/fc";
@@ -9,7 +9,8 @@ import '../../../src/App.css'
 import './CardCreate.css'
 import DropDown from "../../components/Dropdown/Dropdown";
 import Form from 'react-bootstrap/Form';
-import axios from 'axios';
+import EndCreateModal from '../../components/Modal/EndCreateModal'
+import Modal from "../../components/Modal/Modal"
 
 const CardCreate = (props) =>{
 
@@ -20,53 +21,25 @@ const CardCreate = (props) =>{
     const dispatch = useDispatch();
 
     const [isSidebarOpen, closeSidebar] = useState(false);
+    const [showEndModal, setEndModal] = useState(false);
 
-    // const [logoPos, setlogoPos] = useState({x:0, y:0});
-    // const bindLogoPos = useDrag(()=>{});
-    // const [active, setAtive] = useState("inactive");
-
-    // const toggleActive = (e) => {
-    //     setAtive ((prev)=>{
-    //         return e.target.value;
-    //     })
-    // }
-
-    const testAxios=() =>{
-        const axiosConfig = {
-            headers:{
-                "Content-Type": "application/json"
-            }
-        }
-        console.log(JSON.stringify(survey))
-        axios.post('/api/create/survey',JSON.stringify(survey),axiosConfig
-        ).then(function (response) {
-                console.log(response)
-              })
-          .catch(function(){
-            console.log('실패함')
-          })
-        }
-
-
-     const toggleSidebar = () =>{
+    const toggleSidebar = () =>{
       closeSidebar(isSidebarOpen => !isSidebarOpen)
-     }
+    }
+
+    const openModal = () => {
+        setEndModal(true);
+    };
+    const closeModal = () => {
+        setEndModal(false);
+        // dispatch(exit())
+    };
 
     return ( 
   
-
-
-
         <div className="container">
             <div className="containerHeader">
-                {/* 설문 제목, 설문 개요 */}
-                {/* <input className="title-header" type = "text"
-                    value={survey.title}
-                    onChange ={(e)=>changesurtitle(e.target.value)} />
-                
-                <input className="title-header" type = "text"
-                    value={survey.subtitle}
-                    onChange ={(e)=>changesursubtitle(e.target.value)} /> */}
+
                 <Form className="form">
                     <Form.Group className="mb-3" controlId="formGrouptitle">
                         <Form.Label column="lg" lg={2}>설문지 제목</Form.Label>
@@ -92,7 +65,13 @@ const CardCreate = (props) =>{
                         <p className="CardNum">- {pagecount+1}/{count} -</p>
                         <button className="nextcard" onClick={()=>dispatch(pluscardpage())}>다음</button>
                     </div>
-                    <button className="w-btn-outline w-btn-yellow-outline" type="button" onClick={testAxios} >생성하기</button>   
+                    <button className="w-btn-outline w-btn-yellow-outline" type="button" onClick={()=>{openModal();dispatch(makeurl());}}>생성하기</button>   
+                    { showEndModal ? 
+                        <Modal open={openModal} close={closeModal} header="설문 기간을 설정해주세요."> 
+                            <EndCreateModal/> 
+                        </Modal>
+                        : null 
+                    }
                 </div>
             </div>
 
