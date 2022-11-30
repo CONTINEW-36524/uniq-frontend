@@ -19,7 +19,7 @@ function OnePageQuestions(props) {
         console.log(e.data[1][0].type)
 
 
-       dispatch(pluscon(e.data[1][0].id_question))
+        dispatch(pluscon(e.data[1][0].id_question))
 
         const selectComponent={
 

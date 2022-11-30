@@ -18,7 +18,10 @@ function RespondCard(props) {
     dispatch(savesurvey(Object.entries(props.responddata)[0][1][0].surveyid));
     dispatch(postrespond());
   }
-  console.log(Object.entries(props.responddata).length)
+  console.log(Object.entries(props.responddata).length);
+
+  const count = Object.entries(props.responddata).length;
+
   
 
   let [nowRespondQNum, changenowRespondQNum] = useState(0);
@@ -42,23 +45,29 @@ function RespondCard(props) {
           <div className="RespondCardContainerContent">
             {/* { <CardQuestions responddata={Object.entries(props.responddata)} /> } */}
 
-
             {{
-              '객관식' : <RadioQuestion data={Object.entries(props.responddata)[0][1]}/>,
+              '객관식' : <RadioQuestion data={Object.entries(props.responddata)[nowRespondQNum][1]}/>,
               '체크박스' : <CheckBoxQuestion />,
-              '주관식' : <ShortQuestion data={Object.entries(props.responddata)[0][1]}/>,
+              '주관식' : <ShortQuestion data={Object.entries(props.responddata)[nowRespondQNum][1]}/>,
               '선형배율':<LinearQuestion />,
             }[Object.entries(props.responddata)[nowRespondQNum][1][0].type]}
+
 
             <div className="RespondCardContainerFooter">
               <div className="RespondCardPage">
                 <button className="RespondCardNextBtn" 
-                  onClick={()=>changenowRespondQNum(nowRespondQNum-1)}>
+                  onClick={() => {
+                    //PrevPage(-1)
+                    changenowRespondQNum(nowRespondQNum-1)
+                  }}>
                   이전
                 </button>
-                <p className="RespondCardNum">- {nowRespondQNum+1}/{Object.entries(props.responddata).length} -</p>
+                <p className="RespondCardNum">- {nowRespondQNum+1}/{count} -</p>
                 <button className="RespondCardNextBtn" 
-                  onClick={()=>changenowRespondQNum(nowRespondQNum+1)}>
+                  onClick={() => {
+                    //NextPage(1)
+                    changenowRespondQNum(nowRespondQNum+1)
+                  }}>
                   다음
                 </button>
               </div>
@@ -70,6 +79,31 @@ function RespondCard(props) {
     );
   }
 
+}
+
+function PrevPage(props){
+  // if (props==0) {
+  //     return(
+  //         alert("첫 문항입니다.")
+  //     );
+  // } 
+  // else {
+  //     return(
+  //         alert("이전 페이지로~")
+  //     );
+  // }
+  console.log(props)
+  return(
+      alert("이전 페이지로~")
+  );
+}
+
+function NextPage(props) {
+
+  return(
+      
+    alert("다음페이지로~")
+  );
 }
 
 export default RespondCard;

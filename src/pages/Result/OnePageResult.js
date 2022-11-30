@@ -1,14 +1,35 @@
 import React, { useState } from 'react';
+import { userLocation } from 'react-router-dom';
 import Piechart from "../../components/Result/Piechart";
 import Barchart from "../../components/Result/Barchart";
 import ShortAnswerResult from "../../components/Result/ShortAnswerResult";
 import LinearResult from "../../components/Result/LinearResult";
 import Form from 'react-bootstrap/Form';
+import axios from "axios";
 
 import "./OnePageResult.css"
 
 
 const OnePageResult = () => {
+    const location = userLocation();
+    const [onepR, setOnepR] = useState([]);
+
+    useEffect(() => {
+        axios.get('/respond-read-service/api/read/answer', {
+            params: {
+                url: location.pathname,
+                type: 'onepage'
+            }
+        }
+        ).then(function (response) {
+            console.log(response.data)
+            setOnepR(response.data)
+            console.log(onepR)
+            console.log('마운트');
+        }).catch(function (error) {
+            console.log("에러")
+        });
+    }, [])
 
     const QList = {
         results: [

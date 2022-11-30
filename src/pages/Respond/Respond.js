@@ -8,13 +8,13 @@ import RespondOnePage from "./RespondOnePage";
 
 function Respond() {
 
-    const location = useLocation();
+    const location = useLocation()
     const [responddata,setresponddata] = useState([]);
 
 
     useEffect(()=>{
         console.log(location.pathname)
-        axios.get("/respond-write-service/api/create/respond",{params:{url: location.pathname}})
+        axios.get("/survey-read-service/api/create/respond",{params:{url: location.pathname}})
         .then((response)=> {
             console.log(response.data)
             setresponddata(...responddata, response.data);
@@ -38,6 +38,7 @@ function Respond() {
     }
     console.log(Object.entries(responddata).length)
 
+    // DB에 SurveyType넣고 불러오는거로 변경해야 됨 
     const surveyType = "onepage"
 
     // OnePage형인지 Card형인지 
