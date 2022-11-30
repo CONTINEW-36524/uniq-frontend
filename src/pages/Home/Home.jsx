@@ -18,6 +18,7 @@ function Home() {
   const [goRight2, setGoRight2] = useState(false);
   const [recent, setRecent] = useState([]);
   const [popular, setPopular] = useState([]);
+  const [respondWrite, setRespondWrite] = useState([]);
   
   const dispatch = useDispatch()
 
@@ -42,6 +43,18 @@ function Home() {
     }).catch(function(error){
       console.log("에러")
     });
+
+    //respond-read-service axios 통신 테스트
+    axios.get('/respond-write-service/api/test')
+    .then(function(response){
+      console.log(response.data)
+      setRespondWrite(response.data)
+
+      console.log("respond-write-serivce Mount Success");
+    }).catch(function(error){
+      console.log("respond-write-serivce Mount failed")
+    });
+
   }, [])
 
   return (
@@ -71,6 +84,7 @@ function Home() {
         } */}
         <div className='textSet1'>
           <h3 className="intext7">👇 SWIPE 👇</h3>
+          {/* <div>Connection:{respondWrite} </div> */}
           </div>
       </div>
   

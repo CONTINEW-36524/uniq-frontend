@@ -14,7 +14,7 @@ function Respond() {
 
     useEffect(()=>{
         console.log(location.pathname)
-        axios.get("/api/create/respond",{params:{url: location.pathname}})
+        axios.get("/respond-write-service/api/create/respond",{params:{url: location.pathname}})
         .then((response)=> {
             console.log(response.data)
             setresponddata(...responddata, response.data);
