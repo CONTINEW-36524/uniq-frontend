@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { userLocation } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import { useSelector, useDispatch } from "react-redux/";
 import Piechart from "../../components/Result/Piechart";
 import Barchart from "../../components/Result/Barchart";
@@ -13,7 +13,7 @@ import { pluscardresultpage, minuscardresultpage } from "../../Slice/OnepageSlic
 
 
 const CardResult = () => {
-    const location = userLocation();
+    const location = useLocation();
     const [onepR, setOnepR] = useState([]);
 
     useEffect(() => {

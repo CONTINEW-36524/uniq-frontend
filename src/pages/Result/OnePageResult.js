@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { userLocation } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import Piechart from "../../components/Result/Piechart";
 import Barchart from "../../components/Result/Barchart";
 import ShortAnswerResult from "../../components/Result/ShortAnswerResult";
@@ -11,7 +11,7 @@ import "./OnePageResult.css"
 
 
 const OnePageResult = () => {
-    const location = userLocation();
+    const location = useLocation();
     const [onepR, setOnepR] = useState([]);
 
     useEffect(() => {
