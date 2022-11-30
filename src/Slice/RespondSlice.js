@@ -13,9 +13,18 @@ export const RespondSlice = createSlice({
     name: 'Respond',
     initialState,
     reducers:{
-       
+        postrespond:(state)=>{
+            axios.post('/respond-write-service/api/respond/answer',state.survey
+            ).then(function (response) {
+                console.log(response)
+              })
+          .catch(function(){
+            console.log('실패함')
+          })
+        },
+
         changecontent:(state, action) =>{
-            const index = state.survey.responddata.findIndex((data) => data.rid_question == action.payload.id)
+            const index = state.survey.responddata.findIndex((data) => data[0].rid_question == action.payload.id)
 
             state.survey.responddata[index].answer=action.payload.item;
             // console.log(action.payload.id);
@@ -34,15 +43,6 @@ export const RespondSlice = createSlice({
             
         },
 
-        postrespond:(state)=>{
-            axios.post('/respond-write-service/api/respond/answer',state.survey
-            ).then(function (response) {
-                console.log(response)
-              })
-          .catch(function(){
-            console.log('실패함')
-          })
-        },
 
 
         

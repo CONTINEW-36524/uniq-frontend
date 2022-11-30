@@ -4,8 +4,10 @@ import {changecontent} from "../../Slice/RespondSlice";
 
 function ShortQuestion(props) {
   
+  console.log(props)
+
   const data = useSelector((state)=>state.respond.survey.responddata);
-    const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
 
     const passcontent = (e) =>{
@@ -17,8 +19,8 @@ function ShortQuestion(props) {
   
     };
 
-    const answer = data.filter(item => item.rid_question == props.data[0].id_question)[0].answer
-    // console.log(props.data.id)
+    const answer = data.filter(item => item.rid_question == props.data[0].id_question).answer
+    //console.log(props.data.id)
     // console.log(data)
   
     

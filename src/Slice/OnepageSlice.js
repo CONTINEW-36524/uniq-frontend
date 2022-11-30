@@ -125,28 +125,10 @@ export const OnepageSlice = createSlice({
 
         minuscardpage:(state) =>{
             if(state.pagecount>0){
-            state.pagecount-=1;
+                state.pagecount-=1;
             }
 
         },
-
-        pluscardresultpage:(state) =>{
-            state.nowQNum+=1;
-            if(state.nowQNum===state.count)
-            {
-                state.nowQNum+=1
-            }
-        },
-
-        minuscardresultpage:(state) =>{
-            if(state.nowQNum>0){
-            state.nowQNum-=1;
-            }
-
-        },
-
-
-
 
         deleteinit:(state, action)=>{
             if (action.payload == 0)

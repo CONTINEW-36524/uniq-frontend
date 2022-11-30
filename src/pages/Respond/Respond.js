@@ -38,6 +38,7 @@ function Respond() {
     }
     console.log(Object.entries(responddata).length)
 
+    // DB에 SurveyType넣고 불러오는거로 변경해야 됨 
     const surveyType = "onepage"
 
     // OnePage형인지 Card형인지 
