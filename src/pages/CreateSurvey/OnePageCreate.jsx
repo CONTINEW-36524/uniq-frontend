@@ -54,7 +54,7 @@ const OnePageCreate = (props) => {
     //         }
     //     }
     //     console.log(JSON.stringify(survey))
-    //     axios.post('/api/create/survey',JSON.stringify(survey),axiosConfig
+    //     axios.post('/survey-create-service/api/create/survey',JSON.stringify(survey),axiosConfig
     //     ).then(function (response) {
     //             console.log(response)
     //           })
