@@ -9,7 +9,6 @@ import axios from "axios";
 
 import "./OnePageResult.css"
 
-
 const OnePageResult = () => {
     const location = useLocation();
     const [onepR, setOnepR] = useState([]);
