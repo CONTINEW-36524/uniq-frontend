@@ -10,14 +10,6 @@ import ShortQuestion from '..//../components/Respond//ShortQuestion';
 import LinearQuestion from '..//../components/Respond//LinearQuestion';
 import { plusrespondcardpage, minusrespondcardpage} from "../../Slice/RespondSlice";
 
-// const spawn = require('child_process').spawn;
-// const result = spawn('python', ["C:/Users/Admin/Desktop/WordCloud2/main.py"]);
-// result.stdout.on('data', function(data) {
-//     console.log(data.toString());
-// });
-// result.stderr.on('data', function(data) {
-//     console.log(data.toString());
-// })
 
 function RespondCard(props) {
 

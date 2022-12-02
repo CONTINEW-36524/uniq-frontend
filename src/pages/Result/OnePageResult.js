@@ -4,10 +4,18 @@ import Piechart from "../../components/Result/Piechart";
 import Barchart from "../../components/Result/Barchart";
 import ShortAnswerResult from "../../components/Result/ShortAnswerResult";
 import LinearResult from "../../components/Result/LinearResult";
+import "./OnePageResult.css"
 import Form from 'react-bootstrap/Form';
 import axios from "axios";
 
-import "./OnePageResult.css"
+// const spawn = require('child_process').spawn;
+// const result = spawn('python', ["C:/Users/Admin/Desktop/WordCloud2/main.py"]);
+// result.stdout.on('data', function(data) {
+//     console.log(data.toString());
+// });
+// result.stderr.on('data', function(data) {
+//     console.log(data.toString());
+// })
 
 const OnePageResult = () => {
     const location = useLocation();
@@ -16,7 +24,7 @@ const OnePageResult = () => {
     useEffect(() => {
         axios.get('/respond-read-service/api/read/answer', {
             params: {
-                url: location.pathname,
+                // url: location.pathname,
                 type: 'onepage'
             }
         }
