@@ -3,13 +3,12 @@ import React, { useEffect, useState, useParams } from 'react';
 import { useSelector, useDispatch } from "react-redux/";
 import CardQuestions from '../../components/Respond/CardQuestions';
 import "./RespondCard.css"
-import {savesurvey, postrespond} from "../../Slice/RespondSlice";
+import {savesurvey, postrespond, saverespondanswer} from "../../Slice/RespondSlice";
 import RadioQuestion from '..//../components/Respond//RadioQuestion';
 import CheckBoxQuestion from '..//../components/Respond/CheckBoxQuestion';
 import ShortQuestion from '..//../components/Respond//ShortQuestion';
 import LinearQuestion from '..//../components/Respond//LinearQuestion';
-import { plusrespondcardpage, minusrespondcardpage} from "../../Slice/RespondSlice";
-
+import {pluscon} from "../../Slice/RespondSlice";
 
 function RespondCard(props) {
 
@@ -22,10 +21,27 @@ function RespondCard(props) {
   console.log(Object.entries(props.responddata).length);
 
   const count = Object.entries(props.responddata).length;
-
-  
-
   let [nowRespondQNum, changenowRespondQNum] = useState(0);
+
+
+  //pluscon
+  function PlusCon(e){
+    //console.log(e.data[1][0].id_question)
+    // const first = 1
+    // {
+    //   first === 1
+    //   ? 
+    //   (
+    //     dispatch(pluscon(e.data[1][0].id_question)),
+    //     first+=1
+    //   )
+    //   : null
+    // }
+    dispatch(pluscon(e.data[1][0].id_question))
+    
+
+  }
+  const first = 1;
   
   
   if(Object.entries(props.responddata).length){
@@ -47,12 +63,14 @@ function RespondCard(props) {
             {/* { <CardQuestions responddata={Object.entries(props.responddata)} /> } */}
 
             {{
-              '객관식' : <RadioQuestion data={Object.entries(props.responddata)[nowRespondQNum][1]}/>,
-              '체크박스' : <CheckBoxQuestion />,
-              '주관식' : <ShortQuestion data={Object.entries(props.responddata)[nowRespondQNum][1]}/>,
-              '선형배율':<LinearQuestion />,
+              '객관식': <RadioQuestion data={Object.entries(props.responddata)[nowRespondQNum][1]}/>, 
+              '체크박스': <CheckBoxQuestion data={Object.entries(props.responddata)[nowRespondQNum][1]}/>,
+              '주관식': <ShortQuestion data={Object.entries(props.responddata)[nowRespondQNum][1]}/> ,
+              '선형배율': <LinearQuestion data={Object.entries(props.responddata)[nowRespondQNum][1]}/>,
             }[Object.entries(props.responddata)[nowRespondQNum][1][0].type]}
 
+            
+            <PlusCon data={Object.entries(props.responddata)[nowRespondQNum]}/>
 
             <div className="RespondCardContainerFooter">
               <div className="RespondCardPage">
@@ -93,7 +111,7 @@ function PrevPage(props){
   //         alert("이전 페이지로~")
   //     );
   // }
-  console.log(props)
+  //console.log(props)
   return(
       alert("이전 페이지로~")
   );

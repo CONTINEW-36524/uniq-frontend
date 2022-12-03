@@ -16,9 +16,9 @@ function Respond() {
         console.log(location.pathname)
         axios.get("/survey-read-service/api/create/respond",{params:{url: location.pathname}})
         .then((response)=> {
-            console.log(response.data)
+            //console.log(response.data)
             setresponddata(...responddata, response.data);
-            console.log(responddata)
+            //console.log(responddata)
 
         }).catch(function (error) {
         console.log(error)
@@ -36,10 +36,10 @@ function Respond() {
         dispatch(savesurvey(Object.entries(responddata)[0][1][0].surveyid));
         dispatch(postrespond());
     }
-    console.log(Object.entries(responddata).length)
+    //console.log(Object.entries(responddata).length)
 
     // DB에 SurveyType넣고 불러오는거로 변경해야 됨 
-    const surveyType = "onepage"
+    const surveyType = "card"
 
     // OnePage형인지 Card형인지 
     if(surveyType === "onepage") {

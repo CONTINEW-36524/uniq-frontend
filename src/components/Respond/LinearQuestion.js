@@ -1,13 +1,18 @@
 import React, { useEffect,useState } from 'react';
 import { useSelector, useDispatch } from "react-redux/";
 import {changecontent} from "../../Slice/RespondSlice";
-import "./Respond.css"
+import "./respond.css"
 
 function LinearQuestion(props) {
   let data = [1, 2, 3, 4];
   const dispatch = useDispatch();
 
 
+  console.log(props.data)
+  const index = data.findIndex(item => item.rid_question === props.data[0].id_question)
+  
+  const datas = useSelector((state)=>state.respond.survey.responddata);
+  
 
 
   const [btnclick, setbtnclick] = useState();

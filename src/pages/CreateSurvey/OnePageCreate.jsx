@@ -47,28 +47,7 @@ const OnePageCreate = (props) => {
         // <EndCreate ip={ip} modalOpen={modalOpen}/>
     }
 
-    // const testAxios=() =>{
-    //     const axiosConfig = {
-    //         headers:{
-    //             "Content-Type": "application/json"
-    //         }
-    //     }
-    //     console.log(JSON.stringify(survey))
-    //     axios.post('/survey-create-service/api/create/survey',JSON.stringify(survey),axiosConfig
-    //     ).then(function (response) {
-    //             console.log(response)
-    //           })
-    //       .catch(function(){
-    //         console.log('실패함')
-    //       })
-    //     }
-          
-
-
-    //     }  
-    //     const toggleSidebar = () =>{
-    //       closeSidebar(isSidebarOpen => !isSidebarOpen)
-    // =======
+    
     const toggleSidebar = () => {
         closeSidebar(isSidebarOpen => !isSidebarOpen)
     }
