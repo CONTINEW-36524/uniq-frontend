@@ -9,6 +9,8 @@ import CheckBoxQuestion from '..//../components/Respond/CheckBoxQuestion';
 import ShortQuestion from '..//../components/Respond//ShortQuestion';
 import LinearQuestion from '..//../components/Respond//LinearQuestion';
 import {pluscon} from "../../Slice/RespondSlice";
+import Modal from "../../components/Modal/Modal"
+import EndRespondModal from '../../components/Modal/EndRespondModal'
 
 function RespondCard(props) {
 
@@ -26,23 +28,17 @@ function RespondCard(props) {
 
   //pluscon
   function PlusCon(e){
-    //console.log(e.data[1][0].id_question)
-    // const first = 1
-    // {
-    //   first === 1
-    //   ? 
-    //   (
-    //     dispatch(pluscon(e.data[1][0].id_question)),
-    //     first+=1
-    //   )
-    //   : null
-    // }
     dispatch(pluscon(e.data[1][0].id_question))
-    
-
   }
-  const first = 1;
   
+  const [showEndModal, setEndModal] = useState(false);
+  const openModal = () => {
+    setEndModal(true);
+  };
+  const closeModal = () => {
+    setEndModal(false);
+    // dispatch(exit())
+  };
   
   if(Object.entries(props.responddata).length){
     return (
@@ -90,7 +86,13 @@ function RespondCard(props) {
                   다음
                 </button>
               </div>
-              <button className="w-btn-outline2 w-btn-yellow-outline2 RespondCardBtn" type="button" onClick={savesurveyid}> 제출하기 </button>
+              <button className="w-btn-outline2 w-btn-yellow-outline2 RespondCardBtn" type="button" onClick={()=>{savesurveyid(); openModal();}}> 제출하기 </button>
+                { showEndModal ? 
+                  <Modal open={openModal} close={closeModal} header="설문 제출 완료"> 
+                    <EndRespondModal/> 
+                  </Modal>
+                  : null 
+                }
             </div>
           </div>
         </div>

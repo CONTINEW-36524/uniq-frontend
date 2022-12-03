@@ -1,14 +1,14 @@
-import {useRef, useState, useEffect} from "react";
+import {useState } from "react";
 import { useSelector, useDispatch } from "react-redux/";
-import { changetitle, changecontent, pluscontent, changeLinear, increament4} from "../../Slice/OnepageSlice";
-import styles from "../Dropdown/Dropdown.module.css";
+import { changetitle, changeLinear } from "../../Slice/OnepageSlice";
+
 
 function LinearQ(props) {
   
   const data = useSelector((state)=>state.onepage.survey.data);
-  console.log(data)
+  //console.log(data)
   const content = data.filter(item => item.did === props.id)[0].content;
-  console.log(content[0].linear2)
+  //console.log(content[0].linear2)
   const title = data.filter(item => item.did === props.id)[0].title;
   const dispatch = useDispatch();
 
@@ -42,8 +42,6 @@ function LinearQ(props) {
       sel1 = e
     } 
     
-    console.log(input1)
-    console.log(input2)
     const passs={
       id: props.id,
       idx1: sel1,
@@ -68,7 +66,6 @@ function LinearQ(props) {
     
   );
   
-  console.log((content[0].linear1) === (option1[0].value))
 
   const handleChange1 = event => {
     setSelected1(event.target.value);
@@ -94,7 +91,7 @@ function LinearQ(props) {
     setSelected2(event.target.value);
     passcontent("22"+event.target.value);
   };
-  console.log(data)
+
   return (
     <>
       <div className="third">

@@ -251,7 +251,23 @@
   text-align: center;
 }
 
-
+/* EndRespondModal */
+.EndRespondText {
+  margin-top: 80px;
+  margin-bottom: 30px;
+}
+.EndRespondBtn {
+  width: 200px;
+  height: 50px;
+  font-size: large;
+  background-color: #dee2e6;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.3rem 0.8rem rgba(0, 0, 0, 0.2);
+}
+.EndRespondBtn:hover{
+  transform: translateY(-0.7%);
+  box-shadow: 0 0.6rem 1rem rgba(0, 0, 0, 0.2);
+}
 /* 폰트 적용 */
 @font-face {
     font-family: 'SBAggroB';
