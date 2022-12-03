@@ -1,19 +1,17 @@
-import {useRef, useState} from "react";
+import {useRef, useState, useEffect} from "react";
 import { useSelector, useDispatch } from "react-redux/";
-import { changetitle,changecontent} from "../../Slice/OnepageSlice";
+import { changetitle, changecontent, pluscontent, changeLinear, increament4} from "../../Slice/OnepageSlice";
 import styles from "../Dropdown/Dropdown.module.css";
 
 function LinearQ(props) {
-
+  
   const data = useSelector((state)=>state.onepage.survey.data);
-  const temp= data.filter((data)=>data.id===props.id);
-  const title = data.filter(item => item.did === props.id)[0].title;
+  console.log(data)
   const content = data.filter(item => item.did === props.id)[0].content;
+  console.log(content[0].linear2)
+  const title = data.filter(item => item.did === props.id)[0].title;
   const dispatch = useDispatch();
-  const [switchOn, switchChange] = useState(false);
-  const [btnclick, setbtnclick] = useState();
-  const [question, setquestion] = useState();
-  const btnvalue=[1,2,3,4,5]
+
 
   const passtitle = (e) =>{
     const passs={
@@ -24,31 +22,57 @@ function LinearQ(props) {
   
   };
 
-  const toggleActive = (e) => {
-    setbtnclick(e)
-  };
-
-
+  let input1 = (content[0].linear1con)
+  let input2 = (content[0].linear2con)
+  let sel1 = (content[0].linear1)
+  let sel2 = (content[0].linear2)
   const passcontent = (e) =>{
+ 
+    if (e.includes("input1"))  {
+      e = e.replaceAll('input1','')
+      input1 = e
+    } else if (e.includes("input2")) {
+      e = e.replaceAll("input2","")
+      input2 = e
+    } else if (e.includes("22"))  {
+      e = e.replaceAll('22','')
+      sel2 = e
+    } else if (e.includes("11"))  {
+      e = e.replaceAll('11','')
+      sel1 = e
+    } 
+    
+    console.log(input1)
+    console.log(input2)
     const passs={
       id: props.id,
-      idx:0,
-      item : e
+      idx1: sel1,
+      idx2: sel2,
+      item1 : input1,
+      item2 : input2,
     }
-    dispatch(changecontent(passs));
-      
-    
+    dispatch(changeLinear(passs));
   };
+
 
   const option1 = [
     {value: '0', text: '0'},
     {value: '1', text: '1'},
     
   ];
-  const [selected1, setSelected1] = useState(option1[0].value);
+  
+  const [selected1, setSelected1] = useState(
+    (content[0].linear1) === (option1[0].value)
+    ? option1[0].value
+    : content[0].linear1
+    
+  );
+  
+  console.log((content[0].linear1) === (option1[0].value))
+
   const handleChange1 = event => {
-    console.log(event.target.value);
     setSelected1(event.target.value);
+    passcontent("11"+event.target.value);
   };
 
   const option2 = [
@@ -61,13 +85,16 @@ function LinearQ(props) {
     {value: '7', text: '7'},
     {value: '8', text: '8'},
   ];
-  const [selected2, setSelected2] = useState(option2[0].value);
+  const [selected2, setSelected2] = useState(
+    (content[0].linear2) === (option2[0].value)
+    ? option2[0].value
+    : content[0].linear2
+  );
   const handleChange2 = event => {
-    console.log(event.target.value);
     setSelected2(event.target.value);
+    passcontent("22"+event.target.value);
   };
-
-
+  console.log(data)
   return (
     <>
       <div className="third">
@@ -101,10 +128,18 @@ function LinearQ(props) {
           
           <div className="conditions">
             <div className="condition">
-              <p>{selected1}</p> <input type="text" placeholder="입력1"/><br/>
+              <p>{selected1}</p> 
+              <input type="text" placeholder="입력1"
+                value={content[0].linear1con}
+                onChange ={(e)=>passcontent("input1"+e.target.value)}
+              /><br/>
             </div>
             <div className="condition">
-              <p>{selected2}</p> <input type="text" placeholder="입력2"/>
+              <p>{selected2}</p> 
+              <input type="text" placeholder="입력2"
+                value={content[0].linear2con}
+                onChange ={(e)=>passcontent("input2"+ e.target.value)}
+              />
             </div>
           </div>
           

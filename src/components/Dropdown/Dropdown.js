@@ -5,16 +5,12 @@ import useDetectClose from "../../hooks/useDetectClose";
 import "../../pages/CreateSurvey/OnePageCreate.css";
 import styles from "./Dropdown.module.css";
 import classNames from "classnames";
-import { Link, Route, Routes, BrowserRouter as Router } from "react-router-dom";
 import RadioButtonQ from "../CreateSurvey/RadioButtonQ"
 import ShortAnswerQ from "../CreateSurvey/ShortAnswerQ"
 import CheckboxQ from "../CreateSurvey/CheckboxQ";
 import LinearQ from "../CreateSurvey/LinearQ"
 import { FcList } from "react-icons/fc";
-
-import uuid from "react-uuid";
 import Toggle from './Toggle';
-
 
 
 
@@ -36,8 +32,7 @@ const DropDown = (props) => {
   // console.log(type);
   const toggleActive = (e) => {
     setbtnclick(!btnclick)
-    };
-
+  };
 
   const pass = (e) => {
     const passs={

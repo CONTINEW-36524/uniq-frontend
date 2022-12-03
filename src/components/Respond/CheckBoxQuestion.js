@@ -40,18 +40,14 @@ function CheckBoxQuestion(props) {
 
               return (
                 <li className="ListItem">
-          
                   <div onClick={() => {
-                    console.log("누른거"+(item.sub_question))
                     {
                       (data[index].answer).includes(item.sub_question)
                       ? setCheckAnswer(checkAnswer = (data[index].answer).replace((item.sub_question), ''))
                       : setCheckAnswer(checkAnswer = checkAnswer + (data[index].answer) + item.sub_question)
                     }
                     toggleActive()
-                    console.log(checkAnswer)
                     setCheckAnswer(checkAnswer.replace((item.sub_question), ''))
-                    console.log(checkAnswer)
                     passcontent(checkAnswer)
                   }}>
                     
