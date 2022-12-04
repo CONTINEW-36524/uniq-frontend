@@ -62,8 +62,11 @@ function LinearQ(props) {
   const [selected1, setSelected1] = useState(
     (content[0].linear1) === (option1[0].value)
     ? option1[0].value
-    : content[0].linear1
-    
+    : ( content[0].linear1 === undefined
+      ? option1[0].value
+      : content[0].linear1
+    )
+
   );
   
 
@@ -85,7 +88,10 @@ function LinearQ(props) {
   const [selected2, setSelected2] = useState(
     (content[0].linear2) === (option2[0].value)
     ? option2[0].value
-    : content[0].linear2
+    : ( content[0].linear2 === undefined
+      ? option2[0].value
+      : content[0].linear2
+    )
   );
   const handleChange2 = event => {
     setSelected2(event.target.value);
