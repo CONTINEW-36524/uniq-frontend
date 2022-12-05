@@ -28,17 +28,17 @@ function App(props) {
 
 
   const logout = () =>{
-    localStorage.removeItem("userName")
-    localStorage.removeItem("token")
+    sessionStorage.removeItem("userName")
+    sessionStorage.removeItem("token")
     setName("로그인")
     setLogin(false)
     
   }
   //로그인후 새로고침해야 "로그인" -> "안녕하세요~님"으로 변경됨 수정필요
   useEffect(()=>{
-    if (localStorage.getItem('userName'))
+    if (sessionStorage.getItem('userName'))
     {
-        setName("안녕하세요, "+localStorage.getItem('userName')+"님!")
+        setName("안녕하세요, "+sessionStorage.getItem('userName')+"님!")
         setLogin(true)
     }
   })

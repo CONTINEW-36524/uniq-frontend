@@ -10,11 +10,14 @@ function Respond() {
 
     const location = useLocation()
     const [responddata,setresponddata] = useState([]);
+    const token = window.sessionStorage.getItem("token");
 
 
     useEffect(()=>{
         console.log(location.pathname)
-        axios.get("/survey-read-service/api/create/respond",{params:{url: location.pathname}})
+        axios.get("/survey-read-service/api/create/respond",{params:{url: location.pathname},  headers: {
+            Authorization: token,
+    }})
         .then((response)=> {
             //console.log(response.data)
             setresponddata(...responddata, response.data);

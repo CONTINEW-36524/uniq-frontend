@@ -35,7 +35,7 @@ const KakaoLogin = () => {
 
                         console.log(token)
                         // store token in local storage
-                        window.localStorage.setItem("token", token);
+                        window.sessionStorage.setItem("token", token);
                         
                         // window.localStorage.setIem("nickname", response.kakao_account.profile.nickname)
                         navigate("/"); //수정 필요할 수도 있음
@@ -51,7 +51,7 @@ const KakaoLogin = () => {
             }
 
             // get token from local storage
-            const token = window.localStorage.getItem("token");
+            const token = window.sessionStorage.getItem("token");
             console.log(token)
             // pass token to backend
             try {
@@ -66,7 +66,7 @@ const KakaoLogin = () => {
                         }
                     )
                     .then((response) => {
-                        window.localStorage.setItem("userName", response.data.kakaoNickname);
+                        window.sessionStorage.setItem("userName", response.data.kakaoNickname);
                         console.log(response);
                     });
             } catch (e) {

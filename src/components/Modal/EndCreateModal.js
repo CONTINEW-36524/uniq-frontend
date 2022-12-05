@@ -17,10 +17,12 @@ function EndCreateModal() {
     const survey = useSelector((state) => state.onepage.survey);
     const dispatch = useDispatch();
 
+    const token = window.sessionStorage.getItem("token");
     const testAxios=() =>{
         const axiosConfig = {
             headers:{
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                Authorization: token
             }
         }
         console.log(JSON.stringify(survey))

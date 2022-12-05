@@ -4,10 +4,10 @@ import { useSelector, useDispatch } from "react-redux/";
 import CardQuestions from '../../components/Respond/CardQuestions';
 import "./RespondCard.css"
 import {savesurvey, postrespond, saverespondanswer} from "../../Slice/RespondSlice";
-import RadioQuestion from '..//../components/Respond//RadioQuestion';
-import CheckBoxQuestion from '..//../components/Respond/CheckBoxQuestion';
-import ShortQuestion from '..//../components/Respond//ShortQuestion';
-import LinearQuestion from '..//../components/Respond//LinearQuestion';
+import RadioQuestion from '../../components/Respond/RadioQuestion';
+import CheckBoxQuestion from '../../components/Respond/CheckBoxQuestion';
+import ShortQuestion from '../../components/Respond/ShortQuestion';
+import LinearQuestion from '../../components/Respond/LinearQuestion';
 import {pluscon} from "../../Slice/RespondSlice";
 import Modal from "../../components/Modal/Modal"
 import EndRespondModal from '../../components/Modal/EndRespondModal'
