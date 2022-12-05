@@ -1,7 +1,7 @@
 import React, { useEffect,useState } from 'react';
 import { useSelector, useDispatch } from "react-redux/";
 import {changecontent} from "../../Slice/RespondSlice";
-import "./respond.css"
+import "./Respond.css"
 
 function LinearQuestion(props) {
   let data = [1, 2, 3, 4];

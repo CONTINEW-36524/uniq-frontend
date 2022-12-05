@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { useSelector, useDispatch } from "react-redux/";
 import {changecontent, addcheckboxanswer} from "../../Slice/RespondSlice";
-import "./respond.css"
+import "./Respond.css"
 
 function CheckBoxQuestion(props) {
   

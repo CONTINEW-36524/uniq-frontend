@@ -29,7 +29,6 @@ const Image = styled.img`
     width:1200px;
 `;
 
-const imgUrl = require('../../assets/banner3.png');
 
 const items = [
     { id: 1, url: sampleImg3 },
