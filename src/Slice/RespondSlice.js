@@ -24,7 +24,7 @@ export const RespondSlice = createSlice({
         },
 
         changecontent:(state, action) =>{
-            //console.log(action.payload.item)
+            console.log(action.payload.item)
             const index = state.survey.responddata.findIndex((data) => data.rid_question === action.payload.id)
             state.survey.responddata[index].answer=action.payload.item; // 답변 저장
             
@@ -40,9 +40,10 @@ export const RespondSlice = createSlice({
         },
 
         pluscon:(state, action) =>{
-            console.log(state.survey.responddata.findIndex((data) => data.rid_question === action.payload))
+           
             // if(state.survey.responddata.findIndex((data) => data.id == action.payload.id)==-1)
             state.survey.responddata.push({rid_question: action.payload, answer: ''})
+            console.log(state.survey.responddata.findIndex((data) => data.rid_question === action.payload.id_question))
             
         },
 
