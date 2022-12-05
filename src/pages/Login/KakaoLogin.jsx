@@ -1,7 +1,6 @@
 import axios from "axios";
 import React, { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import "./KakaoLogin.css";
 
 const KakaoLogin = () => {
 
