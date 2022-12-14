@@ -45,15 +45,15 @@ function Home() {
     });
 
     //respond-read-service axios 통신 테스트
-    axios.get('/respond-write-service/api/test')
-    .then(function(response){
-      console.log(response.data)
-      setRespondWrite(response.data)
+    // axios.get('/api/test')
+    // .then(function(response){
+    //   console.log(response.data)
+    //   setRespondWrite(response.data)
 
-      console.log("respond-write-serivce Mount Success");
-    }).catch(function(error){
-      console.log("respond-write-serivce Mount failed")
-    });
+    //   console.log("respond-write-serivce Mount Success");
+    // }).catch(function(error){
+    //   console.log("respond-write-serivce Mount failed")
+    // });
 
   }, [])
 
