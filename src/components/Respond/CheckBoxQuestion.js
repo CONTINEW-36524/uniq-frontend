@@ -1,73 +1,74 @@
 import React, { useEffect, useState, useCallback } from 'react';
+import { useSelector, useDispatch } from "react-redux/";
+import {changecontent, addcheckboxanswer} from "../../Slice/RespondSlice";
 import "./Respond.css"
 
-function CheckBoxQuestion() {
-  let [datas, setDatas] = useState([
-    {
-      id:1,
-      text: '1학년',
-      checked: false,
-    },
-    {
-      id:2,
-      text: '2학년',
-      checked: false,
-    },
-    {
-      id:3,
-      text: '3학년',
-      checked: false,
-    },
-    {
-      id:4,
-      text: '4학년',
-      checked: false,
-    },
-  ]);
-
-  const onToggle = useCallback((id) => {
-    setDatas((datas) =>
-      datas.map((data) =>
-        data.id === id ? { ...data, checked: !data.checked } : data,
-      ),
-    );
-  }, []);      
+function CheckBoxQuestion(props) {
   
+  let [btnActive, setBtnActive] = useState();
+  let [checkAnswer, setCheckAnswer]  = useState("");
+
+  // 저장되어 있는 응답 가져오기
+  const data = useSelector((state)=>state.respond.survey.responddata);
+  const index = data.findIndex(item => item.rid_question === props.data[0].id_question)
+  //console.log( props.data[0].id_question)
+  //console.log(data[index].answer)
+  
+
+  // 슬라이스에 응답 보내기
+  const dispatch = useDispatch();
+  const passcontent = (e) =>{
+    const passs={
+      id: props.data[0].id_question,
+      item : e,
+    }
+    dispatch(changecontent(passs));
+  };
+
+  const toggleActive = (e) => {
+    setBtnActive(e)
+  };
+
+
     return (
       <div className="Qlayout">
-        <h3>질문: ____ ?</h3>
+        <h3>질문: {props.data[0].title} ?</h3>
         <div className="checkboxContainer">
           <ul className="ulBox">
-            {datas.map((data) => (
-              <ListItem
-                data={data}
-                key={data.id}
-                onToggle={onToggle}
-              />
 
-            ))}
+            {props.data.map((item, idx) => {
+
+              return (
+                <li className="ListItem">
+                  <div onClick={() => {
+                    {
+                      (data[index].answer).includes(item.sub_question)
+                      ? setCheckAnswer(checkAnswer = (data[index].answer).replace((item.sub_question), ''))
+                      : setCheckAnswer(checkAnswer = checkAnswer + (data[index].answer) + item.sub_question)
+                    }
+                    toggleActive()
+                    setCheckAnswer(checkAnswer.replace((item.sub_question), ''))
+                    passcontent(checkAnswer)
+                  }}>
+                    
+                    <p className="checkboxText"> 
+                      {((data[index].answer).includes(item.sub_question)) ? '☑' : '☐'} {item.sub_question}
+                    </p>
+
+                    <br/>
+                  </div>
+                </li>
+              );
+
+            })}
+            
           </ul>
         </div>
       </div>
     );
-  }
+  
 
-  function ListItem({data, onToggle}) {
-    const { id, text, checked } = data;
-
-    return (
-      <li className="ListItem">
-
-        <div onClick={() => onToggle(id)} >
-          
-          <p className="checkboxText"> {checked ? '☑' : '☐'} {text}</p>
-          <br/>
-
-        </div>
-        
-      </li>
-    );
-  }
+}
 
 
 export default CheckBoxQuestion;

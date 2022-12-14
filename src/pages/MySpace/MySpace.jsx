@@ -51,7 +51,7 @@ function MySpace(props) {
     setLike(e.target.value);
   };
   useEffect(()=>{
-    axios.get('/api/myspace/my-uniq',{
+    axios.get('/survey-read-service/api/myspace/my-uniq',{
         params:{
           user_id: 1
         }
@@ -66,7 +66,7 @@ function MySpace(props) {
     });
 
 
-    axios.get('/api/myspace/my-favorites',{
+    axios.get('/survey-read-service/api/myspace/my-favorites',{
       params:{
         user_id: 1
       }

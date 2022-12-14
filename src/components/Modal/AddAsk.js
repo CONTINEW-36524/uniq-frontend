@@ -4,11 +4,12 @@ import './Modal.css';
 import { useSelector, useDispatch } from "react-redux/";
 import { useState} from 'react'
 
-import { increament, increament2, increament3, deleteinit} from "../../Slice/OnepageSlice";
+import { increament, increament2, increament3, increament4, deleteinit} from "../../Slice/OnepageSlice";
 
 
 const AddAsk = (props) => {
     const [mult, setMult] = useState(0)
+    const [checkbox, setCheckbox] = useState(0)
     const [sub, setSub] = useState(0)
     const [linear, setLinear] = useState(0)
 
@@ -16,25 +17,32 @@ const AddAsk = (props) => {
     const dispatch = useDispatch();
 
     const changeMult = (e) =>{
-        setMult(e.target.value)
-        console.log(mult)
+      setMult(e.target.value)
+      console.log(mult)
+    }
+    const changeCheckbox = (e) =>{
+      setCheckbox(e.target.value)
     }
     const changeSub = (e) =>{
-        setSub(e.target.value)
+      setSub(e.target.value)
     }
     const changeLine = (e) =>{
-        setLinear(e.target.value)
+      setLinear(e.target.value)
     }
+
     const add  = () => {
       if (mult < 2)
       {
         dispatch(deleteinit(mult))
           
-        for (let i = 0; i <sub; i++) {
+        for (let i = 0; i <checkbox; i++) {
           dispatch(increament2())
         }
-        for (let i = 0; i <linear; i++) {
+        for (let i = 0; i <sub; i++) {
           dispatch(increament3())
+        }
+        for (let i = 0; i <linear; i++) {
+          dispatch(increament4())
         }
       }
       else 
@@ -42,29 +50,36 @@ const AddAsk = (props) => {
         for (let i = 0; i <mult-2; i++) {
           dispatch(increament())
         }
-        for (let i = 0; i <sub; i++) {
+        for (let i = 0; i <checkbox; i++) {
           dispatch(increament2())
         }
-        for (let i = 0; i <linear; i++) {
+        for (let i = 0; i <sub; i++) {
           dispatch(increament3())
+        }
+        for (let i = 0; i <linear; i++) {
+          dispatch(increament4())
         }
       }
     }
     
 
 
-    const selecttype = {
-        onepage: "/OnePageCreate",
-        card: "/CardCreate"
-      };
+  const selecttype = {
+    onepage: "/OnePageCreate",
+    card: "/CardCreate"
+  };
 
   return (
     <div className='typecardcontainer'>
 
         <div className='numq'>
             <div className='QType'>
-              <p className="qType">객관식 :</p>
+              <p className="qType">객관식 : </p>
               <input className='typecarddiv' id='gackguan' type = "number" min='0' value={mult} onChange = {changeMult}/>
+            </div>
+            <div className='QType'>
+              <p className="qType">체크박스 : </p>
+              <input className='typecarddiv' id='checkbox' type = "number" min='0' value={checkbox} onChange = {changeCheckbox}/>
             </div>
             <div className='QType'>
               <p className="qType">주관식 : </p>
@@ -87,7 +102,7 @@ const AddAsk = (props) => {
         </div>
 
     </div>
-    );
+  );
 
 };
 

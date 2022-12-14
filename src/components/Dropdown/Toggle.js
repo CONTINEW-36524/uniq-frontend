@@ -46,7 +46,7 @@ function Toggle (props) {
   // temp[0].req
   // const [isOn, setisOn] = useState(false);
   const dispatch = useDispatch();
-  console.log(props.id)
+  //console.log(props.id)
   const [isOn, setisOn] = useState(false);
 
   const toggleHandler = () => {

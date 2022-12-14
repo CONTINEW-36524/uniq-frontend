@@ -6,27 +6,32 @@ import Barchart from "../../components/Result/Barchart";
 import ShortAnswerResult from "../../components/Result/ShortAnswerResult";
 import Form from 'react-bootstrap/Form';
 import "./CardResult.css"
-import Button from '@mui/material/Button';
 import axios from "axios";
 
-import { pluscardresultpage, minuscardresultpage } from "../../Slice/OnepageSlice";
-
+// const spawn = require('child_process').spawn;
+// const result = spawn('python', ["C:/Users/Admin/Desktop/WordCloud2/main.py"]);
+// result.stdout.on('data', function(data) {
+//     console.log(data.toString());
+// });
+// result.stderr.on('data', function(data) {
+//     console.log(data.toString());
+// })
 
 const CardResult = () => {
     const location = useLocation();
-    const [onepR, setOnepR] = useState([]);
+    const [onepagedata, setonepagedata] = useState([]);
 
     useEffect(() => {
         axios.get('/respond-read-service/api/read/answer', {
             params: {
-                url: location.pathname,
+                // url: location.pathname,
                 type: 'card'
             }
         }
         ).then(function (response) {
             console.log(response.data)
-            setOnepR(response.data)
-            console.log(onepR)
+            setonepagedata(response.data)
+            console.log(onepagedata)
             console.log('마운트');
         }).catch(function (error) {
             console.log("에러")

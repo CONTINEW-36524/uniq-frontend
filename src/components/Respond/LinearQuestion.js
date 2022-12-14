@@ -8,9 +8,15 @@ function LinearQuestion(props) {
   const dispatch = useDispatch();
 
 
+  console.log(props.data)
+ 
+  
+  const datas = useSelector((state)=>state.respond.survey.responddata);
+  const index = datas.findIndex(item => item.rid_question === props.data[0].id_question)
+  
+console.log(datas[index])
 
-
-  const [btnclick, setbtnclick] = useState();
+  const [btnclick, setbtnclick] = useState(0);
 
   const toggleActive = (e) => {
     setbtnclick(e);
@@ -35,10 +41,10 @@ function LinearQuestion(props) {
                 
                 <button
                   value={idx}
-                  className={"btn" + (idx == btnclick ? "-active" : "")}
+                  className={"btn" + (idx+1 == datas[index].answer ? "-active" : "")}
                   onClick={()=>{
                     toggleActive(idx);
-                    passcontent(item.sub_question);
+                    passcontent(idx+1);
                     }}
                 >
                   {item}

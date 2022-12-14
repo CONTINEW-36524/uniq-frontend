@@ -17,7 +17,7 @@ function EndCreate(props) {
     const qrstat = () => {
         setQR(true);
 
-        setIp("http://210.109.60.250"+survey.url);
+        setIp("http://210.109.61.238"+survey.url);
 
 
     }
@@ -32,7 +32,7 @@ function EndCreate(props) {
     return (
         <div class="ecwrapper">
             <h1 class="qrtitle">설문 생성 완료!</h1>
-            <h2>url: http://localhost:3000{survey.url} </h2>
+            <h2>url: http://210.109.60.250{survey.url} </h2>
             <button class="qrbtn" onClick={qrstat}>QR코드 생성</button>
 
             <Link to="/">

@@ -1,6 +1,6 @@
 import React from 'react';
 import './Modal.css';
-import { useSelector, useDispatch } from "react-redux/";
+import { useDispatch } from "react-redux/";
 import {selectOnepage, selectCard} from "../../Slice/CreateSurveySlice"
 
 const SelectType = (props) => {
@@ -13,9 +13,7 @@ const SelectType = (props) => {
     <div className="popuptypecontainer">
       <div>
         <h5 className="onepageText">One Page 형식</h5>
-        <button className="onepagetype" onClick={()=>{
-            dispatch(selectOnepage())
-        }}></button>
+        <button className="onepagetype" onClick={()=>{dispatch(selectOnepage())}}></button>
       </div>
       <div>
         <h5 className="cardText">Card 형식</h5>

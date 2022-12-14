@@ -3,12 +3,14 @@ import React, { useEffect, useState, useParams } from 'react';
 import { useSelector, useDispatch } from "react-redux/";
 import CardQuestions from '../../components/Respond/CardQuestions';
 import "./RespondCard.css"
-import {savesurvey, postrespond} from "../../Slice/RespondSlice";
-import RadioQuestion from '..//../components/Respond//RadioQuestion';
-import CheckBoxQuestion from '..//../components/Respond/CheckBoxQuestion';
-import ShortQuestion from '..//../components/Respond//ShortQuestion';
-import LinearQuestion from '..//../components/Respond//LinearQuestion';
-import { plusrespondcardpage, minusrespondcardpage} from "../../Slice/RespondSlice";
+import {savesurvey, postrespond, saverespondanswer} from "../../Slice/RespondSlice";
+import RadioQuestion from '../../components/Respond/RadioQuestion';
+import CheckBoxQuestion from '../../components/Respond/CheckBoxQuestion';
+import ShortQuestion from '../../components/Respond/ShortQuestion';
+import LinearQuestion from '../../components/Respond/LinearQuestion';
+import {pluscon} from "../../Slice/RespondSlice";
+import Modal from "../../components/Modal/Modal"
+import EndRespondModal from '../../components/Modal/EndRespondModal'
 
 function RespondCard(props) {
 
@@ -21,11 +23,22 @@ function RespondCard(props) {
   console.log(Object.entries(props.responddata).length);
 
   const count = Object.entries(props.responddata).length;
-
-  
-
   let [nowRespondQNum, changenowRespondQNum] = useState(0);
+
+
+  //pluscon
+  function PlusCon(e){
+    dispatch(pluscon(e.data[1][0].id_question))
+  }
   
+  const [showEndModal, setEndModal] = useState(false);
+  const openModal = () => {
+    setEndModal(true);
+  };
+  const closeModal = () => {
+    setEndModal(false);
+    // dispatch(exit())
+  };
   
   if(Object.entries(props.responddata).length){
     return (
@@ -46,12 +59,14 @@ function RespondCard(props) {
             {/* { <CardQuestions responddata={Object.entries(props.responddata)} /> } */}
 
             {{
-              '객관식' : <RadioQuestion data={Object.entries(props.responddata)[nowRespondQNum][1]}/>,
-              '체크박스' : <CheckBoxQuestion />,
-              '주관식' : <ShortQuestion data={Object.entries(props.responddata)[nowRespondQNum][1]}/>,
-              '선형배율':<LinearQuestion />,
+              '객관식': <RadioQuestion data={Object.entries(props.responddata)[nowRespondQNum][1]}/>, 
+              '체크박스': <CheckBoxQuestion data={Object.entries(props.responddata)[nowRespondQNum][1]}/>,
+              '주관식': <ShortQuestion data={Object.entries(props.responddata)[nowRespondQNum][1]}/> ,
+              '선형배율': <LinearQuestion data={Object.entries(props.responddata)[nowRespondQNum][1]}/>,
             }[Object.entries(props.responddata)[nowRespondQNum][1][0].type]}
 
+            
+            <PlusCon data={Object.entries(props.responddata)[nowRespondQNum]}/>
 
             <div className="RespondCardContainerFooter">
               <div className="RespondCardPage">
@@ -71,7 +86,13 @@ function RespondCard(props) {
                   다음
                 </button>
               </div>
-              <button className="w-btn-outline2 w-btn-yellow-outline2 RespondCardBtn" type="button" onClick={savesurveyid}> 제출하기 </button>
+              <button className="w-btn-outline2 w-btn-yellow-outline2 RespondCardBtn" type="button" onClick={()=>{savesurveyid(); openModal();}}> 제출하기 </button>
+                { showEndModal ? 
+                  <Modal open={openModal} close={closeModal} header="설문 제출 완료"> 
+                    <EndRespondModal/> 
+                  </Modal>
+                  : null 
+                }
             </div>
           </div>
         </div>
@@ -92,7 +113,7 @@ function PrevPage(props){
   //         alert("이전 페이지로~")
   //     );
   // }
-  console.log(props)
+  //console.log(props)
   return(
       alert("이전 페이지로~")
   );
