@@ -36,7 +36,7 @@ const KakaoLogin = () => {
                         // store token in local storage
                         window.sessionStorage.setItem("token", token);
                         
-                        // window.localStorage.setIem("nickname", response.kakao_account.profile.nickname)
+            
                         navigate("/"); //수정 필요할 수도 있음
                     }).catch(function(e){
                         console.log(e)
