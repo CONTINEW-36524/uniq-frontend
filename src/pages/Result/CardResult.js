@@ -36,6 +36,19 @@ const CardResult = () => {
         }).catch(function (error) {
             console.log("에러")
         });
+        
+        axios.get('/respond-read-service/api/redis/respond-read', {
+            params: {
+                // url: location.pathname,
+                type: 'card'
+            }
+        }
+        ).then(function (response) {
+            console.log(response.data)
+            console.log('마운트');
+        }).catch(function (error) {
+            console.log("에러")
+        });
     }, [])
 
     const QList = {
