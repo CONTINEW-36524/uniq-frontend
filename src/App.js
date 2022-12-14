@@ -59,7 +59,7 @@ function App(props) {
             <li/>
             <div className='item3'>
             {
-              isLogin? <a onClick={logout}>{name}</a> : <Nav.Link href={process.env.REACT_APP_KAKAO_AUTH_URL}>{name}</Nav.Link>
+              isLogin? <a onClick={logout}>{name}</a> : <Nav.Link href= "https://kauth.kakao.com/oauth/authorize?client_id=637c722561c612190048a1d771920d91&redirect_uri=http://210.109.61.238/oauth/callback/kakao&response_type=code">{name}</Nav.Link>
             }
             </div>
         </Container>
