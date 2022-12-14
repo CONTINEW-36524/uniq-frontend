@@ -4,6 +4,9 @@ FROM node:18.8.0 as builder
 RUN mkdir /usr/src/app
 WORKDIR /usr/src/app
 ENV PATH /usr/src/app/node_modules/.bin:$PATH
+ENV REACT_APP_REST_API_KEY 637c722561c612190048a1d771920d91
+ENV REACT_APP_REDIRECT_URI http://210.109.61.238/oauth/callback/kakao
+ENV REACT_APP_KAKAO_AUTH_URL https://kauth.kakao.com/oauth/authorize?client_id=637c722561c612190048a1d771920d91&redirect_uri=http://210.109.61.238/oauth/callback/kakao&response_type=code
 COPY package.json /usr/src/app/package.json
 RUN npm install --silent
 RUN npm install react-scripts@2.1.3 -g --silent
